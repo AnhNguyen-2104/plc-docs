@@ -33,6 +33,8 @@ Formula:
 pulse/mm = ( pulses per revolution × unit magnification ) / travel per revolution
 ```
 
+For the QD75, convert the travel per revolution to real mm before dividing: Pr.3 is an integer counted in 0.1 µm, so `AL = Pr.3 × 0.0001 × Pr.4` (see [QD75D4 parameters](/en/q/qd75/parameters)).
+
 ### Illustration only, not module data
 
 Assume (the numbers below only illustrate the calculation, they are not the parameters of any module):

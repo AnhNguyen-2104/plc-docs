@@ -51,7 +51,7 @@ Axis parameters determine how the module interprets position and speed numbers. 
 
 - **Pr.1 — unit:** `0` mm, `1` inch, `2` degree, `3` pulse. This unit applies to the axis position and speed addresses (SH-080058 §5.2.1 p.5-18).
 - **Pr.2 — pulses per revolution:** the number of pulses supplied for one motor revolution. It must match the driver and the mechanism (SH-080058 §5.2.1 p.5-18).
-- **Pr.3 — travel per revolution:** the mechanical travel per revolution, expressed in Pr.1 units, before multiplying by Pr.4 (SH-080058 §5.2.1 p.5-18).
+- **Pr.3 — travel per revolution:** the mechanical travel per revolution, before multiplying by Pr.4. The stored value is an integer counted in Pr.1 LSBs: 0.1 µm for mm, 0.00001 for inch and degree (SH-080058 §5.2.1 p.5-18–5-19, Table 1).
 - **Pr.4 — unit magnification:** multiplied into Pr.3 when one revolution exceeds the Pr.3 limit; accepts 1 / 10 / 100 / 1000 (SH-080058 §5.2.1 p.5-18).
 - **Pr.5 — pulse output mode:** `0` PULSE/SIGN, `1` CW/CCW, `2` A/B phase ×4, `3` A/B phase ×1. The value is latched at the first Y0 OFF → ON transition after power-up or a CPU reset (SH-080058 §5.2.1 p.5-20).
 - **Pr.8 — speed limit:** the speed ceiling for the axis; the commanded speed is clamped to this value. The mm range is 0.01…20000000.00 mm/min, the pulse range is 1…1000000 for the QD75D; default 200000 (SH-080058 §5.2.2 p.5-24).
@@ -59,18 +59,28 @@ Axis parameters determine how the module interprets position and speed numbers. 
 
 ## 3. Converting pulses to units
 
+The manual defines `Movement amount per pulse = Movement amount per rotation (Al) / No. of pulses per rotation (Ap)`, with `Movement amount per rotation (AL) = Al × Pr.4` (SH-080058 §5.2.1 p.5-19). Inverting it gives pulses per unit; remember that Pr.3 is an integer counted in Pr.1 LSBs:
+
 ```text
-pulse/unit = (Pr.2 × Pr.4) / Pr.3
+pulse/unit = Pr.2 × 10^k / (Pr.3 × Pr.4)
 ```
 
-With the mm unit the result is pulse/mm; with degrees it is pulse/degree.
+`10^k` is the number of LSBs per real unit: 10000 for mm (1 LSB = 0.1 µm = 0.0001 mm), 100000 for inch and degree (1 LSB = 0.00001). With the pulse unit, Pr.3 is already a pulse count, so no LSB factor applies.
+
+| Unit (Pr.1) | 1 LSB of Pr.3 | Pr.3 range in LSBs | Formula |
+| --- | --- | --- | --- |
+| mm (0) | 0.0001 mm (0.1 µm) | 1…65535 (max 6.5535 mm/rev) | pulses/mm = Pr.2 × 10000 / (Pr.3 × Pr.4) |
+| inch (1) | 0.00001 in | 1…65535 (max 0.65535 in/rev) | pulses/inch = Pr.2 × 100000 / (Pr.3 × Pr.4) |
+| degree (2) | 0.00001° | 1…65535 (max 0.65535°/rev) | pulses/degree = Pr.2 × 100000 / (Pr.3 × Pr.4) |
+
+Source: SH-080058 §5.2.1 p.5-18–5-19, Table 1.
 
 ### Illustration using the sample unit table
 
-The row "mm, 100 pulse/mm": Pr.2 = 10000, Pr.3 = 100, Pr.4 = 1.
+The row "mm, 100 pulse/mm": Pr.2 = 500, Pr.3 = 50000 (5 mm, written in 0.1 µm), Pr.4 = 1.
 
 ```text
-pulse/mm = (10000 × 1) / 100 = 100
+pulse/mm = 500 × 10000 / 50000 = 100
 ```
 
 That means travelling 250 mm requires 25 000 pulses. The remaining rows in the table below use the same formula, only the value set differs.
@@ -79,11 +89,11 @@ That means travelling 250 mm requires 25 000 pulses. The remaining rows in the t
 
 | Label | Pr.2 | Pr.3 | Pr.4 | Formula | pulse/unit | Source |
 | --- | --- | --- | --- | --- | --- | --- |
-| mm, 100 pulse/mm | 10000 | 100 | 1 | pulses/mm = (Pr.2 x Pr.4) / Pr.3 = (10000 x 1) / 100 | 100 | SH-080058 — Pr.1/Pr.2/Pr.3/Pr.4 |
-| mm, 10000 pulse/mm | 10000 | 10 | 10 | pulses/mm = (Pr.2 x Pr.4) / Pr.3 = (10000 x 10) / 10 | 10000 | SH-080058 — Pr.1/Pr.2/Pr.3/Pr.4 |
-| degree (Pr.1 = 2), 27.78 pulse/degree | 10000 | 360 | 1 | pulses/degree = (Pr.2 x Pr.4) / Pr.3 = (10000 x 1) / 360 | 27.78 | SH-080058 — Pr.1/Pr.2/Pr.3/Pr.4 |
+| mm, 100 pulse/mm | 500 | 50000 | 1 | pulses/mm = Pr.2 × 10000 / (Pr.3 × Pr.4) = 500 × 10000 / 50000 = 100 | 100 | SH-080058 §5.2.1 p.5-18–5-19 |
+| mm, 1000 pulse/mm | 10000 | 10000 | 10 | pulses/mm = Pr.2 × 10000 / (Pr.3 × Pr.4) = 10000 × 10000 / (10000 × 10) | 1000 | SH-080058 §5.2.1 p.5-18–5-19 |
+| degree (Pr.1 = 2), 27.78 pulse/degree | 10000 | 36000 | 1000 | pulses/degree = Pr.2 × 100000 / (Pr.3 × Pr.4) = 10000 × 100000 / (36000 × 1000) | 27.78 | SH-080058 §5.2.1 p.5-18–5-19 |
 
-The numbers in the table above are taken verbatim from the site data, source SH-080058. When communicating with operators, always state which unit is in use.
+All three sets sit inside Pr.2 1…65535, Pr.3 1…65535 and Pr.4 ∈ {1, 10, 100, 1000}. Recompute with the formula before loading. When communicating with operators, always state which unit is in use.
 
 ## 5. Two parameter write paths
 

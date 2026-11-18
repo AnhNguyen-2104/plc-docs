@@ -51,7 +51,7 @@ Thông số trục quyết định cách module hiểu con số vị trí và t�
 
 - **Pr.1 — đơn vị:** `0` mm, `1` inch, `2` độ, `3` pulse. Đơn vị này áp cho địa chỉ vị trí và tốc độ của trục (SH-080058 §5.2.1 p.5-18).
 - **Pr.2 — số xung mỗi vòng:** số xung cấp cho một vòng động cơ. Phải khớp với driver và cơ cấu (SH-080058 §5.2.1 p.5-18).
-- **Pr.3 — quãng đường mỗi vòng:** quãng đường cơ khí đi được trong một vòng, tính theo đơn vị Pr.1, trước khi nhân Pr.4 (SH-080058 §5.2.1 p.5-18).
+- **Pr.3 — quãng đường mỗi vòng:** quãng đường cơ khí đi được trong một vòng, trước khi nhân Pr.4. Giá trị ghi là số nguyên theo LSB của Pr.1: mm 0,1 µm, inch và độ 0,00001 (SH-080058 §5.2.1 p.5-18–5-19, Table 1).
 - **Pr.4 — hệ số nhân đơn vị:** nhân vào Pr.3 khi một vòng vượt quá giới hạn của Pr.3; nhận 1 / 10 / 100 / 1000 (SH-080058 §5.2.1 p.5-18).
 - **Pr.5 — pulse output mode:** `0` PULSE/SIGN, `1` CW/CCW, `2` A/B phase ×4, `3` A/B phase ×1. Giá trị được chốt tại lần Y0 chuyển OFF → ON đầu tiên sau khi cấp điện hoặc reset CPU (SH-080058 §5.2.1 p.5-20).
 - **Pr.8 — tốc độ giới hạn:** trần tốc độ của trục; tốc độ lệnh bị chặn theo giá trị này. Dải theo mm là 0.01…20000000.00 mm/min, theo pulse là 1…1000000 cho QD75D; mặc định 200000 (SH-080058 §5.2.2 p.5-24).
@@ -59,18 +59,28 @@ Thông số trục quyết định cách module hiểu con số vị trí và t�
 
 ## 3. Quy đổi xung trên đơn vị
 
+Manual định nghĩa `Movement amount per pulse = Movement amount per rotation (Al) / No. of pulses per rotation (Ap)`, trong đó `Movement amount per rotation (AL) = Al × Pr.4` (SH-080058 §5.2.1 p.5-19). Đảo lại để ra số xung trên một đơn vị, và nhớ Pr.3 là số nguyên đếm theo LSB của Pr.1:
+
 ```text
-pulse/đơn vị = (Pr.2 × Pr.4) / Pr.3
+pulse/đơn vị = Pr.2 × 10^k / (Pr.3 × Pr.4)
 ```
 
-Với đơn vị mm, kết quả là pulse/mm; với độ, là pulse/độ.
+`10^k` là số LSB của đơn vị trong một đơn vị thật: mm dùng 10000 (1 LSB = 0,1 µm = 0,0001 mm), inch và độ dùng 100000 (1 LSB = 0,00001). Với đơn vị pulse, Pr.3 đã là số xung nên không nhân hệ số LSB.
+
+| Đơn vị (Pr.1) | 1 LSB của Pr.3 | Dải Pr.3 theo LSB | Công thức |
+| --- | --- | --- | --- |
+| mm (0) | 0,0001 mm (0,1 µm) | 1…65535 (tối đa 6,5535 mm/vòng) | pulse/mm = Pr.2 × 10000 / (Pr.3 × Pr.4) |
+| inch (1) | 0,00001 in | 1…65535 (tối đa 0,65535 in/vòng) | pulse/inch = Pr.2 × 100000 / (Pr.3 × Pr.4) |
+| độ (2) | 0,00001° | 1…65535 (tối đa 0,65535°/vòng) | pulse/độ = Pr.2 × 100000 / (Pr.3 × Pr.4) |
+
+Nguồn: SH-080058 §5.2.1 p.5-18–5-19, Table 1.
 
 ### Ví dụ minh hoạ lấy từ bảng đơn vị mẫu
 
-Dòng "mm, 100 pulse/mm": Pr.2 = 10000, Pr.3 = 100, Pr.4 = 1.
+Dòng "mm, 100 pulse/mm": Pr.2 = 500, Pr.3 = 50000 (5 mm, ghi theo 0,1 µm), Pr.4 = 1.
 
 ```text
-pulse/mm = (10000 × 1) / 100 = 100
+pulse/mm = 500 × 10000 / 50000 = 100
 ```
 
 Nghĩa là đi 250 mm cần 25 000 xung. Các dòng còn lại trong bảng dưới đây dùng cùng công thức, chỉ khác bộ giá trị.
@@ -79,11 +89,11 @@ Nghĩa là đi 250 mm cần 25 000 xung. Các dòng còn lại trong bảng dư�
 
 | Nhãn | Pr.2 | Pr.3 | Pr.4 | Công thức | pulse/đơn vị | Nguồn |
 | --- | --- | --- | --- | --- | --- | --- |
-| mm, 100 pulse/mm | 10000 | 100 | 1 | pulses/mm = (Pr.2 x Pr.4) / Pr.3 = (10000 x 1) / 100 | 100 | SH-080058 — Pr.1/Pr.2/Pr.3/Pr.4 |
-| mm, 10000 pulse/mm | 10000 | 10 | 10 | pulses/mm = (Pr.2 x Pr.4) / Pr.3 = (10000 x 10) / 10 | 10000 | SH-080058 — Pr.1/Pr.2/Pr.3/Pr.4 |
-| degree (Pr.1 = 2), 27.78 pulse/degree | 10000 | 360 | 1 | pulses/degree = (Pr.2 x Pr.4) / Pr.3 = (10000 x 1) / 360 | 27.78 | SH-080058 — Pr.1/Pr.2/Pr.3/Pr.4 |
+| mm, 100 pulse/mm | 500 | 50000 | 1 | pulses/mm = Pr.2 × 10000 / (Pr.3 × Pr.4) = 500 × 10000 / 50000 = 100 | 100 | SH-080058 §5.2.1 p.5-18–5-19 |
+| mm, 1000 pulse/mm | 10000 | 10000 | 10 | pulses/mm = Pr.2 × 10000 / (Pr.3 × Pr.4) = 10000 × 10000 / (10000 × 10) | 1000 | SH-080058 §5.2.1 p.5-18–5-19 |
+| degree (Pr.1 = 2), 27.78 pulse/degree | 10000 | 36000 | 1000 | pulses/degree = Pr.2 × 100000 / (Pr.3 × Pr.4) = 10000 × 100000 / (36000 × 1000) | 27.78 | SH-080058 §5.2.1 p.5-18–5-19 |
 
-Số trong bảng trên lấy nguyên từ dữ liệu của site, nguồn SH-080058. Khi trao đổi với người vận hành, luôn nói rõ đơn vị đang dùng.
+Ba bộ giá trị trên đều nằm trong dải Pr.2 1…65535, Pr.3 1…65535 và Pr.4 ∈ {1, 10, 100, 1000}. Tự tính lại theo công thức trước khi nạp. Khi trao đổi với người vận hành, luôn nói rõ đơn vị đang dùng.
 
 ## 5. Hai đường ghi thông số
 

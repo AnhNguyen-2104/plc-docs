@@ -33,6 +33,8 @@ Công thức:
 pulse/mm = ( số xung mỗi vòng × hệ số nhân đơn vị ) / quãng đường mỗi vòng
 ```
 
+Với QD75, quãng đường mỗi vòng phải quy về mm thật trước khi chia: Pr.3 là số nguyên đếm theo 0,1 µm, nên `AL = Pr.3 × 0,0001 × Pr.4` (xem [Thông số QD75D4](/q/qd75/parameters)).
+
 ### Ví dụ minh hoạ, không phải số liệu module
 
 Giả sử (các số dưới đây chỉ để minh hoạ phép tính, không phải thông số của bất kỳ module nào):

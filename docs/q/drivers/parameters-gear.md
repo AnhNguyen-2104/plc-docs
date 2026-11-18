@@ -21,10 +21,10 @@ Tỉ số truyền (bánh răng điện tử) quyết định một xung lệnh 
 
 Địa chỉ buffer memory của bốn thông số này ở trục 1 là 0, 1, 2, 3; trục 2 cộng 150, trục 3 cộng 300, trục 4 cộng 450. Vùng thông số cơ bản là 0–15 (trục 1), 150–165 (trục 2)… theo SH-080058 §7.1.2 p.7-5 và Appendix 13 p. Appendix-150. `Pr.5` (kiểu xung ra) nằm ở địa chỉ 4 với trục 1 (SH-080058 §5.2.1 p.5-21). Vùng 1500–1550 là control data (`Cd.`), không phải thông số (SH-080058 §7.1.2 p.7-5).
 
-Công thức dùng trong cẩm nang, với `Pr.3` tính bằng mm:
+Manual định nghĩa `Movement amount per pulse = Al / Ap`, trong đó `Al` là Pr.3 đếm theo LSB của Pr.1 và `AL = Al × Pr.4` (SH-080058 §5.2.1 p.5-19). Đảo lại để ra số xung trên một đơn vị:
 
 ```text
-pulse/mm = (Pr.2 × Pr.4) / Pr.3
+pulse/mm = Pr.2 × 10000 / (Pr.3 × Pr.4)
 ```
 
 - `Pr.2` là số xung cấp cho một vòng động cơ, phải khớp với số xung mà driver nhận trong một vòng (SH-080058 §5.2.1 p.5-19).
@@ -39,9 +39,9 @@ Mục tiêu 100 xung/mm, tức 500 xung cho một vòng 5 mm.
 | --- | --- | --- | --- |
 | QD75D4 | Pr.1 | 0 | Đơn vị mm (SH-080058 §5.2.1 p.5-18) |
 | QD75D4 | Pr.2 | 500 | Số xung lệnh mỗi vòng |
-| QD75D4 | Pr.3 | 5 (mm) | 5000,0 µm khi nhập ngoại vi, 50000 khi ghi bằng TO (SH-080058 §5.2.1 p.5-19) |
+| QD75D4 | Pr.3 | 50000 | 5 mm ghi theo 0,1 µm (5000,0 µm nếu nhập ngoại vi) (SH-080058 §5.2.1 p.5-19) |
 | QD75D4 | Pr.4 | 1 | Hệ số 1 |
-| QD75D4 | Kết quả | 100 pulse/mm | (500 × 1) / 5 = 100 |
+| QD75D4 | Kết quả | 100 pulse/mm | 500 × 10000 / (50000 × 1) = 100 |
 
 Phía MR-J4-A phải nhận 500 xung lệnh cho một vòng. Encoder của MR-J4-A là 4194304 xung/vòng (SH-030143-C §7.3.1 p.7-93), nên tỉ số bánh răng điện tử:
 

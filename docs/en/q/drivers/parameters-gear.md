@@ -21,10 +21,10 @@ The gear ratio (electronic gear) determines how far the machine moves per comman
 
 The buffer memory addresses of these four parameters are 0, 1, 2, 3 on axis 1; axis 2 adds 150, axis 3 adds 300, axis 4 adds 450. The basic parameter area is 0–15 (axis 1), 150–165 (axis 2)… per SH-080058 §7.1.2 p.7-5 and Appendix 13 p. Appendix-150. `Pr.5` (output pulse form) is at address 4 for axis 1 (SH-080058 §5.2.1 p.5-21). The area 1500–1550 is control data (`Cd.`), not parameters (SH-080058 §7.1.2 p.7-5).
 
-Formula used in the manual, with `Pr.3` in mm:
+The manual defines `Movement amount per pulse = Al / Ap`, where `Al` is Pr.3 counted in Pr.1 LSBs and `AL = Al × Pr.4` (SH-080058 §5.2.1 p.5-19). Inverting it gives pulses per unit:
 
 ```text
-pulse/mm = (Pr.2 × Pr.4) / Pr.3
+pulse/mm = Pr.2 × 10000 / (Pr.3 × Pr.4)
 ```
 
 - `Pr.2` is the number of pulses per motor revolution and must match the number of pulses the driver accepts per revolution (SH-080058 §5.2.1 p.5-19).
@@ -39,9 +39,9 @@ Target 100 pulse/mm, i.e. 500 pulses per 5 mm revolution.
 | --- | --- | --- | --- |
 | QD75D4 | Pr.1 | 0 | Unit mm (SH-080058 §5.2.1 p.5-18) |
 | QD75D4 | Pr.2 | 500 | Command pulses per revolution |
-| QD75D4 | Pr.3 | 5 (mm) | 5000.0 µm when entered from a peripheral, 50000 when written with TO (SH-080058 §5.2.1 p.5-19) |
+| QD75D4 | Pr.3 | 50000 | 5 mm written in 0.1 µm (5000.0 µm when entered from a peripheral) (SH-080058 §5.2.1 p.5-19) |
 | QD75D4 | Pr.4 | 1 | Factor 1 |
-| QD75D4 | Result | 100 pulse/mm | (500 × 1) / 5 = 100 |
+| QD75D4 | Result | 100 pulse/mm | 500 × 10000 / (50000 × 1) = 100 |
 
 The MR-J4-A side must accept 500 command pulses per revolution. The MR-J4-A encoder is 4194304 pulse/rev (SH-030143-C §7.3.1 p.7-93), so the electronic gear ratio is:
 

@@ -633,27 +633,27 @@ export const unitExamples: {
 }[] = [
   {
     label: { vi: 'mm, 100 xung/mm (pulse/mm)', en: 'mm, 100 pulse/mm' },
-    pr2: '10000',
-    pr3: '100',
+    pr2: '500',
+    pr3: '50000',
     pr4: '1',
     formula: {
-      vi: 'pulses/mm = (Pr.2 × Pr.4) / Pr.3 = (10000 × 1) / 100',
-      en: 'pulses/mm = (Pr.2 x Pr.4) / Pr.3 = (10000 x 1) / 100'
+      vi: 'pulses/mm = Pr.2 × 10000 / (Pr.3 × Pr.4) = 500 × 10000 / (50000 × 1)',
+      en: 'pulses/mm = Pr.2 x 10000 / (Pr.3 x Pr.4) = 500 x 10000 / (50000 x 1)'
     },
     pulsesPerMm: { vi: '100', en: '100' },
-    src: 'SH-080058 — Pr.1/Pr.2/Pr.3/Pr.4'
+    src: 'SH-080058 §5.2.1 p.5-18–5-19'
   },
   {
-    label: { vi: 'mm, 10000 xung/mm (pulse/mm)', en: 'mm, 10000 pulse/mm' },
+    label: { vi: 'mm, 1000 xung/mm (pulse/mm)', en: 'mm, 1000 pulse/mm' },
     pr2: '10000',
-    pr3: '10',
+    pr3: '10000',
     pr4: '10',
     formula: {
-      vi: 'pulses/mm = (Pr.2 × Pr.4) / Pr.3 = (10000 × 10) / 10',
-      en: 'pulses/mm = (Pr.2 x Pr.4) / Pr.3 = (10000 x 10) / 10'
+      vi: 'pulses/mm = Pr.2 × 10000 / (Pr.3 × Pr.4) = 10000 × 10000 / (10000 × 10)',
+      en: 'pulses/mm = Pr.2 x 10000 / (Pr.3 x Pr.4) = 10000 x 10000 / (10000 x 10)'
     },
-    pulsesPerMm: { vi: '10000', en: '10000' },
-    src: 'SH-080058 — Pr.1/Pr.2/Pr.3/Pr.4'
+    pulsesPerMm: { vi: '1000', en: '1000' },
+    src: 'SH-080058 §5.2.1 p.5-18–5-19'
   },
   {
     label: {
@@ -661,13 +661,13 @@ export const unitExamples: {
       en: 'degree (Pr.1 = 2), 27.78 pulse/degree'
     },
     pr2: '10000',
-    pr3: '360',
-    pr4: '1',
+    pr3: '36000',
+    pr4: '1000',
     formula: {
-      vi: 'pulses/degree = (Pr.2 × Pr.4) / Pr.3 = (10000 × 1) / 360',
-      en: 'pulses/degree = (Pr.2 x Pr.4) / Pr.3 = (10000 x 1) / 360'
+      vi: 'pulses/degree = Pr.2 × 100000 / (Pr.3 × Pr.4) = 10000 × 100000 / (36000 × 1000)',
+      en: 'pulses/degree = Pr.2 x 100000 / (Pr.3 x Pr.4) = 10000 x 100000 / (36000 x 1000)'
     },
     pulsesPerMm: { vi: '27,78', en: '27.78' },
-    src: 'SH-080058 — Pr.1/Pr.2/Pr.3/Pr.4'
+    src: 'SH-080058 §5.2.1 p.5-18–5-19'
   }
 ]
