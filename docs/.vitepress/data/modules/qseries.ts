@@ -362,8 +362,8 @@ export const qModules: QModule[] = [
       en: '25 Mbps optical loop'
     },
     manual: { doc: 'sh080049', page: '1.2' },
-    page: '/q/modules/',
-    status: 'documented'
+    page: '',
+    status: 'planned'
   },
   {
     id: 'qd75m1',

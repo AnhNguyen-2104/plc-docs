@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { qModules, type QKind, type QModule } from '../data/modules/qseries'
+
 const { lang } = useData()
 const isVi = computed(() => lang.value !== 'en')
 
@@ -54,12 +55,11 @@ function isDocumented(module: QModule): boolean {
             <th>{{ isVi ? 'Model' : 'Model' }}</th>
             <th>{{ isVi ? 'Vai trò' : 'Role' }}</th>
             <th>{{ isVi ? 'Điểm chính' : 'Key spec' }}</th>
-            <th>{{ isVi ? 'Trang' : 'Page' }}</th>
           </tr>
         </thead>
         <tbody v-for="group in groups" :key="group.kind">
-          <tr class="module-matrix-kind">
-            <th :colspan="4" scope="colgroup">{{ group.label }}</th>
+          <tr class="matrix-group">
+            <th :colspan="3" scope="colgroup">{{ group.label }}</th>
           </tr>
           <tr
             v-for="module in group.rows"
@@ -67,17 +67,16 @@ function isDocumented(module: QModule): boolean {
             :class="{ 'module-matrix-planned': !isDocumented(module) }"
           >
             <th scope="row" class="module-matrix-model">
-              <a v-if="isDocumented(module)" :href="withBase(module.page)">{{ module.model }}</a>
-              <span v-else>{{ module.model }}</span>
-              <span v-if="!isDocumented(module)" class="module-matrix-badge">
+              <a v-if="isDocumented(module)" class="matrix-model-link" :href="withBase(module.page)">
+                {{ module.model }}
+              </a>
+              <span v-else class="matrix-model-text">{{ module.model }}</span>
+              <span v-if="!isDocumented(module)" class="matrix-badge">
                 {{ isVi ? 'dự kiến' : 'planned' }}
               </span>
             </th>
             <td>{{ cell(module.role) }}</td>
             <td>{{ cell(module.keySpec) }}</td>
-            <td class="module-matrix-page">
-              <a :href="withBase(module.page)">{{ module.page }}</a>
-            </td>
           </tr>
         </tbody>
       </table>
@@ -86,8 +85,8 @@ function isDocumented(module: QModule): boolean {
     <p class="module-matrix-note">
       {{
         isVi
-          ? 'Số liệu lấy từ manual SH-080483, SH-080042, SH-080055, SH-080054, SH-080036 và các manual mạng; dòng "dự kiến" là module chưa xác minh được từ manual trên đĩa.'
-          : 'Values come from SH-080483, SH-080042, SH-080055, SH-080054, SH-080036 and the network manuals; "planned" rows are modules that could not be verified from the manuals on disk.'
+          ? 'Tên model liên kết tới trang chi tiết. Số liệu lấy từ manual SH-080483, SH-080042, SH-080055, SH-080054, SH-080036 và các manual mạng; dòng "dự kiến" là module chưa xác minh được từ manual trên đĩa.'
+          : 'The model name links to the detail page. Values come from SH-080483, SH-080042, SH-080055, SH-080054, SH-080036 and the network manuals; "planned" rows are modules that could not be verified from the manuals on disk.'
       }}
     </p>
   </div>
@@ -124,9 +123,10 @@ function isDocumented(module: QModule): boolean {
   white-space: nowrap;
 }
 
-.module-matrix-kind th {
-  background: var(--vp-c-bg-alt);
-  color: var(--vp-c-text-2);
+.matrix-group th {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  font-weight: 600;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -137,13 +137,13 @@ function isDocumented(module: QModule): boolean {
   color: var(--vp-c-text-1);
 }
 
-.module-matrix-model a {
+.matrix-model-link {
   color: var(--vp-c-brand-1);
   font-weight: 600;
   text-decoration: none;
 }
 
-.module-matrix-model a:hover {
+.matrix-model-link:hover {
   text-decoration: underline;
 }
 
@@ -151,32 +151,15 @@ function isDocumented(module: QModule): boolean {
   color: var(--vp-c-text-2);
 }
 
-.module-matrix-planned .module-matrix-model a {
-  color: var(--vp-c-text-2);
-}
-
-.module-matrix-badge {
+.matrix-badge {
   display: inline-block;
-  margin-left: 0.375rem;
+  margin-left: 0.5rem;
   padding: 0 0.375rem;
   border-radius: 999px;
   background: var(--vp-c-warning-1);
   color: var(--vp-c-bg-soft);
   font-size: 11px;
   font-weight: 600;
-}
-
-.module-matrix-page {
-  white-space: nowrap;
-}
-
-.module-matrix-page a {
-  color: var(--vp-c-brand-1);
-  text-decoration: none;
-}
-
-.module-matrix-page a:hover {
-  text-decoration: underline;
 }
 
 .module-matrix-intro,
