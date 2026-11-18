@@ -30,6 +30,8 @@ The ASDA-B2 accepts differential command pulses via `PULSE/PULSE` and `SIGN/SIGN
 | 14 | COM− | Common point of the input group | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 | 17 | VDD | Internal 24 V, 500 mA maximum | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 
+<WiringDiagram variant="delta-b2" />
+
 ## 2. Wiring to the QD75D4
 
 - The QD75D4 `PULSE F+/F−` pair goes to 43/41; the `PULSE R+/R−` pair goes to 39/37. Do not swap the pair and do not connect one wire of the pair to 0 V.

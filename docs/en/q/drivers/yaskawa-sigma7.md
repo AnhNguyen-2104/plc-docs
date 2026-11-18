@@ -30,6 +30,8 @@ The Sigma-7 SGD7S analog/pulse version (200 V) accepts differential command puls
 | 1, 2, 6, 10 | SG | Signal common | <SourceRef doc="sgd7s" page="4-38" /> |
 | 3, 13, 18 | PL1 / PL2 / PL3 | Internal 12 V for open collector | <SourceRef doc="sgd7s" page="4-37" /> |
 
+<WiringDiagram variant="yaskawa-sigma7" />
+
 ## 2. Wiring to the QD75D4
 
 - QD75D4 `PULSE F+/F−` goes to 7/8; `PULSE R+/R−` goes to 11/12. This is a differential pair and must not be connected to a 24 V opto input.

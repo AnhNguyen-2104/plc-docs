@@ -30,6 +30,8 @@ ASDA-B2 nhận xung lệnh vi sai qua `PULSE/PULSE` và `SIGN/SIGN`, có thêm c
 | 14 | COM− | Điểm chung nhóm ngõ vào | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 | 17 | VDD | 24 V nội, tối đa 500 mA | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 
+<WiringDiagram variant="delta-b2" />
+
 ## 2. Đấu với QD75D4
 
 - Cặp `PULSE F+/F−` của QD75D4 đi vào 43/41; cặp `PULSE R+/R−` đi vào 39/37. Không đảo cặp và không nối một dây của cặp xuống 0 V.

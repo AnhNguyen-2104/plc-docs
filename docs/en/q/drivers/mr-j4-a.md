@@ -57,6 +57,8 @@ Four mandatory notes:
 
 The wiring example in SH-080058 §3.4.1 p.3-24 is drawn for the MR-J3-A (`PULSE F+/F−` → `PP/PG`, `PULSE R+/R−` → `NP/NG`). The MR-J4-A manual at hand does **not** state that the MR-J3-A and MR-J4-A are pin-compatible; this page therefore uses only the MR-J4-A CN1 table and does not infer from the MR-J3-A.
 
+<WiringDiagram variant="mr-j4-a" />
+
 ## 2. Servo-ON from the PLC
 
 Servo-ON is the `SON` input at **CN1-15** (SH-030143-C §2.2 p.2-17, §2.3 p.2-22). It must be driven by a transistor output of the PLC and must not be connected to the QD75D4.

@@ -9,6 +9,33 @@ export default defineConfig({
   cleanUrls: true,
   ignoreDeadLinks: false,
   lastUpdated: true,
+  markdown: {
+    config(md) {
+      md.core.ruler.after('inline', 'task-lists', (state) => {
+        const tokens = state.tokens
+        for (let i = 0; i < tokens.length; i++) {
+          if (tokens[i].type !== 'inline') continue
+          const parent = tokens[i - 1]
+          if (!parent || parent.type !== 'paragraph_open') continue
+          const listItem = tokens[i - 2]
+          if (!listItem || listItem.type !== 'list_item_open') continue
+          const m = /^\[([ xX])\]\s+/.exec(tokens[i].content)
+          if (!m) continue
+          tokens[i].content = tokens[i].content.slice(m[0].length)
+          const children = tokens[i].children ?? []
+          if (children[0] && children[0].type === 'text') {
+            children[0].content = children[0].content.replace(/^\[([ xX])\]\s+/, '')
+          }
+          const checked = m[1].toLowerCase() === 'x'
+          const box = new state.Token('html_inline', '', 0)
+          box.content = `<span class="task-box${checked ? ' task-box-checked' : ''}" aria-hidden="true"></span>`
+          tokens[i].children = [box, ...children]
+          listItem.attrJoin('class', 'task-item')
+        }
+        return true
+      })
+    }
+  },
   locales: {
     root: {
       label: 'Tiếng Việt',

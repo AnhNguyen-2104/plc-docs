@@ -36,9 +36,9 @@ With the QD75D4, each axis has its own terminal block. Pairing A+/A− and B+/B�
 
 ## 3. Reference diagram
 
-<img :src="$withBase('/img/qd75/wiring.svg')" width="720" alt="QD75D4 wiring diagram — pending image">
+<WiringDiagram variant="generic" />
 
-The figure illustrates how the differential pairs and the common point are connected; it does not replace the pin tables in the manual.
+Schematic: differential pulses, READY, SON from the PLC, ALM back to the PLC.
 
 ## 4. Checklist before power-up
 

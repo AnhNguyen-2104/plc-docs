@@ -33,6 +33,8 @@ The MINAS A6 accepts differential command pulses via `PULSH1/PULSH2` and `SIGNH1
 
 The supply that lists `GND` uses pin 1, but pin 1 is also listed for `OPC1`; this page does not print the `GND` row in order to avoid an incorrect assertion. Re-read the original pin table for the exact model before wiring the common point.
 
+<WiringDiagram variant="panasonic-minas-a6" />
+
 ## 2. Wiring to the QD75D4
 
 - QD75D4 `PULSE F+/F−` goes to 44/45; `PULSE R+/R−` goes to 46/47. Use the H group only when a line driver is required; the opto group 1/3/5/6 is a different mode and needs the correct `OPC` supply.

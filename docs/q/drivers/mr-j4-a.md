@@ -57,6 +57,8 @@ Bốn lưu ý bắt buộc:
 
 Ví dụ nối trong SH-080058 §3.4.1 p.3-24 vẽ theo MR-J3-A (`PULSE F+/F−` → `PP/PG`, `PULSE R+/R−` → `NP/NG`). Manual MR-J4-A trong tay **không** nêu rằng MR-J3-A và MR-J4-A giống nhau về chân; vì vậy trang này chỉ dùng bảng CN1 của MR-J4-A, không suy ra từ MR-J3-A.
 
+<WiringDiagram variant="mr-j4-a" />
+
 ## 2. Servo-ON từ PLC
 
 Servo-ON là ngõ vào `SON` tại **CN1-15** (SH-030143-C §2.2 p.2-17, §2.3 p.2-22). Nó phải do một ngõ ra transistor của PLC điều khiển, không nối vào QD75D4.

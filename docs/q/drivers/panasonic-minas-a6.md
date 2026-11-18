@@ -33,6 +33,8 @@ MINAS A6 nhận xung lệnh vi sai qua `PULSH1/PULSH2` và `SIGNH1/SIGNH2` (line
 
 Nguồn cung cấp ghi điểm `GND` là chân 1, nhưng chân 1 cũng được ghi cho `OPC1`; trang này không in hàng `GND` để tránh khẳng định sai. Đọc lại bảng chân gốc của đúng model trước khi đấu điểm chung.
 
+<WiringDiagram variant="panasonic-minas-a6" />
+
 ## 2. Đấu với QD75D4
 
 - `PULSE F+/F−` của QD75D4 vào 44/45; `PULSE R+/R−` vào 46/47. Chỉ dùng nhóm H khi cần line driver; nhóm opto 1/3/5/6 là chế độ khác và cần nguồn `OPC` đúng.

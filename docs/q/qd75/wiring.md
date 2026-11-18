@@ -36,9 +36,9 @@ Với QD75D4, mỗi trục có bộ đầu cực riêng. Việc ghép A+/A− v�
 
 ## 3. Sơ đồ tham chiếu
 
-<img :src="$withBase('/img/qd75/wiring.svg')" width="720" alt="Sơ đồ đấu dây QD75D4 — chờ ảnh">
+<WiringDiagram variant="generic" />
 
-Hình minh hoạ cách ghép cặp vi sai và điểm chung; chưa thay thế bảng chân trong manual.
+Sơ đồ nguyên lý: xung vi sai, READY, SON từ PLC, ALM về PLC.
 
 ## 4. Checklist trước khi cấp điện
 

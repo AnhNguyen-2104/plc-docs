@@ -30,6 +30,8 @@ Sigma-7 SGD7S bản analog/pulse (200 V) nhận xung lệnh vi sai qua `PULS//PU
 | 1, 2, 6, 10 | SG | Điểm chung tín hiệu | <SourceRef doc="sgd7s" page="4-38" /> |
 | 3, 13, 18 | PL1 / PL2 / PL3 | 12 V nội cho open collector | <SourceRef doc="sgd7s" page="4-37" /> |
 
+<WiringDiagram variant="yaskawa-sigma7" />
+
 ## 2. Đấu với QD75D4
 
 - `PULSE F+/F−` của QD75D4 vào 7/8; `PULSE R+/R−` vào 11/12. Đây là cặp vi sai, không đấu vào ngõ opto 24 V.

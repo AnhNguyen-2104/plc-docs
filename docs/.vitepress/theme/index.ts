@@ -6,6 +6,7 @@ import CodeTabs from './CodeTabs.vue'
 import VerifiedOn from './VerifiedOn.vue'
 import FamilyMatrix from './FamilyMatrix.vue'
 import SourceRef from './SourceRef.vue'
+import WiringDiagram from './WiringDiagram.vue'
 import './custom.css'
 
 export default {
@@ -17,7 +18,8 @@ export default {
     app.component('VerifiedOn', VerifiedOn)
     app.component('FamilyMatrix', FamilyMatrix)
     app.component('SourceRef', SourceRef)
+    app.component('WiringDiagram', WiringDiagram)
   }
 } satisfies Theme
 
-export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef }
+export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef, WiringDiagram }
