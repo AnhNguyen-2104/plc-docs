@@ -39,6 +39,8 @@ With the QD75D4, each axis has its own terminal block. Each F+/F− and R+/R− 
 
 <WiringDiagram variant="generic" />
 
+<PinMapDiagram variant="generic" />
+
 Schematic: differential pulses, READY, SON from the PLC, ALM back to the PLC.
 
 ## 4. Checklist before power-up

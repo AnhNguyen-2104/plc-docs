@@ -59,13 +59,7 @@ The wiring example in SH-080058 §3.4.1 p.3-24 is drawn for the MR-J3-A (`PULSE 
 
 <WiringDiagram variant="mr-j4-a" />
 
-<DriverPhoto
-  src="/img/drivers/mr-j4-a.jpg"
-  alt="QD75D4 to Mitsubishi MR-J4-A wiring diagram (CN1)"
-  caption="QD75D4 to Mitsubishi MR-J4-A via CN1 (50P): differential pulses 1A15/1A16 into PP 10/PG 11, 1A17/1A18 into NP 35/NG 36."
-  source="plc247.com"
-  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-mr-j4-a-tutorial"
-/>
+<PinMapDiagram variant="mr-j4-a" />
 
 ## 2. Servo-ON from the PLC
 
@@ -83,7 +77,7 @@ Servo-ON is the `SON` input at **CN1-15** (SH-030143-C §2.2 p.2-17, §2.3 p.2-2
 | INP (In-position) | 24 | ON when the pulse deviation is within the in-position range | SH-030143-C §2.3 <SourceRef doc="sh030143" page="2-31" /> |
 | DOCOM | 46, 47 | Common point of the output group | SH-030143-C §2.2 <SourceRef doc="sh030143" page="2-17" /> |
 
-Wiring for the MR-J4 sinking output: `RD` (CN1-49) → `READY` 1A11, `RDYCOM` 1A12 → **+24 V**, `DOCOM` 46/47 → 0 V; loop +24 V → RDYCOM → READY photocoupler → RD 49 → DOCOM → 0 V. `ALM` (CN1-48) → a PLC input for interlocking and fault display. The plc247 drawing wires `RDYCOM` to `DICOM` 20/21; the MR-J4-A CN1 table reserves `DICOM` 20/21 for the input group and `DOCOM` 46/47 for the output group (§2.2 p.2-17; the internal connection diagram §2.5 p.2-40–2-41 draws `RD` 49 in the `DOCOM` group), so this page keeps `DOCOM` and does not follow that drawing.
+Wiring for the MR-J4 sinking output: `RD` (CN1-49) → `READY` 1A11, `RDYCOM` 1A12 → **+24 V**, `DOCOM` 46/47 → 0 V; loop +24 V → RDYCOM → READY photocoupler → RD 49 → DOCOM → 0 V. `ALM` (CN1-48) → a PLC input for interlocking and fault display. The MR-J4-A CN1 table reserves `DICOM` 20/21 for the input group and `DOCOM` 46/47 for the output group (§2.2 p.2-17; the internal connection diagram §2.5 p.2-40–2-41 draws `RD` 49 in the `DOCOM` group), so this page keeps `DOCOM`.
 
 ## 4. 24 V supply
 

@@ -34,13 +34,7 @@ The ASDA-B2 accepts differential command pulses via `PULSE/PULSE` and `SIGN/SIGN
 
 <WiringDiagram variant="delta-b2" />
 
-<DriverPhoto
-  src="/img/drivers/delta-b2.jpg"
-  alt="QD75D4 to Delta ASDA-B2 wiring diagram (CN1)"
-  caption="QD75D4 to Delta ASDA-B2 via CN1 (44P): differential pulse pair into 43/41, direction pair into 39/37; READY 1A11 from DO1+ (7), RDYCOM 1A12 to COM+ (11), DO1− (6) to 0 V."
-  source="plc247.com"
-  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-delta-b2-tutorial"
-/>
+<PinMapDiagram variant="delta-b2" />
 
 ## 2. Wiring to the QD75D4
 

@@ -167,8 +167,8 @@ const legendItems = computed<string[]>(() => {
         : ['READY 1A11 ← DO1+ 7 (SRDY), DO1− 6 → 0 V', 'RDYCOM 1A12 → COM+ 11 (+24 V), same supply as the I/O group'])
     : variant.value === 'mr-j4-a'
       ? (isVi.value
-          ? ['READY 1A11 ← RD 49, DOCOM 46/47 → 0 V', 'RDYCOM 1A12 → +24 V; bản vẽ plc247 nối RDYCOM vào DICOM 20/21']
-          : ['READY 1A11 ← RD 49, DOCOM 46/47 → 0 V', 'RDYCOM 1A12 → +24 V; the plc247 drawing wires RDYCOM to DICOM 20/21'])
+          ? ['READY 1A11 ← RD 49, DOCOM 46/47 → 0 V', 'RDYCOM 1A12 → +24 V; DOCOM 46/47 là chung của nhóm ngõ ra']
+          : ['READY 1A11 ← RD 49, DOCOM 46/47 → 0 V', 'RDYCOM 1A12 → +24 V; DOCOM 46/47 is the output-group common'])
       : []
   const readyLines2 = variant.value === 'yaskawa-sigma7'
     ? (isVi.value

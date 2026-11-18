@@ -25,13 +25,7 @@ The DM542 is a stepper driver that accepts pulse + direction pulses through the 
 
 <WiringDiagram variant="stepper-dm542" />
 
-<DriverPhoto
-  src="/img/drivers/stepper-dm542.jpg"
-  alt="QD75D4 to DM542 stepper driver wiring diagram (P1)"
-  caption="QD75D4 to DM542 stepper driver: PUL+/PUL−, DIR+/DIR− and ENA+/ENA− on terminal block P1; a stepper motor is pictured."
-  source="plc247.com"
-  sourceUrl="https://plc247.com/mitsubishi-qd75d4-step-motor-control-tutorial"
-/>
+<PinMapDiagram variant="stepper-dm542" />
 
 ## 2. Wiring to the QD75D4
 

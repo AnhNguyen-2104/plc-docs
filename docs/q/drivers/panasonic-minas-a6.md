@@ -35,17 +35,12 @@ Nguồn cung cấp ghi điểm `GND` là chân 1, nhưng chân 1 cũng được 
 
 <WiringDiagram variant="panasonic-minas-a6" />
 
-<DriverPhoto
-  src="/img/drivers/panasonic-minas-a6.jpg"
-  alt="Sơ đồ đấu dây QD75D4 với Panasonic MINAS A6 (X4/CN1)"
-  caption="QD75D4 nối Panasonic MINAS A6 (MADLN05SE) qua X4 (50P) theo nhóm opto: PULS1 3/PULS2 4, SIGN1 5/SIGN2 6."
-  source="plc247.com"
-  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-panasonic-minas-a6-a5-tutorial"
-/>
+<PinMapDiagram variant="panasonic-minas-a6" />
 
 ## 2. Đấu với QD75D4
 
-- `PULSE F+/F−` của QD75D4 vào 44/45; `PULSE R+/R−` vào 46/47. Chỉ dùng nhóm H khi cần line driver; nhóm opto 1/3/5/6 là chế độ khác và cần nguồn `OPC` đúng.
+- Cách đấu khuyến nghị: dùng **nhóm H (line driver)** — `PULSH1` 44/`PULSH2` 45 cho cặp `PULSE F+/F−` và `SIGNH1` 46/`SIGNH2` 47 cho cặp `PULSE R+/R−` của QD75D4. Đây là cặp vi sai đi thẳng, không cần thêm trở hạn dòng.
+- Nhóm opto (`PULS1` 3/`PULS2` 4, `SIGN1` 5/`SIGN2` 6) chỉ là phương án thay thế cho ngõ open-collector; khi đó phải cấp `OPC1` 1 và `OPC2` 2 theo manual, không dùng đồng thời với nhóm H.
 - `SRV-ON` chân 29 lấy từ ngõ ra transistor của PLC, không lấy từ QD75D4.
 - `ALM` 36/37 và `INP` 38/39 là ngõ ra số, đưa về PLC qua `SO-COM` 41.
 - `SI-COM` 7 phải được cấp từ nguồn cách ly 12–24 V, **không** lấy từ nguồn phanh.

@@ -25,13 +25,7 @@ DM542 là driver step nhận xung kiểu pulse + direction qua khối đầu c�
 
 <WiringDiagram variant="stepper-dm542" />
 
-<DriverPhoto
-  src="/img/drivers/stepper-dm542.jpg"
-  alt="Sơ đồ đấu dây QD75D4 với driver step DM542 (P1)"
-  caption="QD75D4 nối driver step DM542: PUL+/PUL−, DIR+/DIR− và ENA+/ENA− trên khối đầu cực P1; ảnh kèm động cơ step."
-  source="plc247.com"
-  sourceUrl="https://plc247.com/mitsubishi-qd75d4-step-motor-control-tutorial"
-/>
+<PinMapDiagram variant="stepper-dm542" />
 
 ## 2. Đấu với QD75D4
 

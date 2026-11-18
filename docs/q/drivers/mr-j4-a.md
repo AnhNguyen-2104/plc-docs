@@ -59,13 +59,7 @@ Ví dụ nối trong SH-080058 §3.4.1 p.3-24 vẽ theo MR-J3-A (`PULSE F+/F−`
 
 <WiringDiagram variant="mr-j4-a" />
 
-<DriverPhoto
-  src="/img/drivers/mr-j4-a.jpg"
-  alt="Sơ đồ đấu dây QD75D4 với Mitsubishi MR-J4-A (CN1)"
-  caption="QD75D4 nối Mitsubishi MR-J4-A qua CN1 (50P): xung vi sai 1A15/1A16 vào PP 10/PG 11, 1A17/1A18 vào NP 35/NG 36."
-  source="plc247.com"
-  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-mr-j4-a-tutorial"
-/>
+<PinMapDiagram variant="mr-j4-a" />
 
 ## 2. Servo-ON từ PLC
 
@@ -83,7 +77,7 @@ Servo-ON là ngõ vào `SON` tại **CN1-15** (SH-030143-C §2.2 p.2-17, §2.3 p
 | INP (In-position) | 24 | ON khi số xung lệch nằm trong dải in-position | §2.3 <SourceRef doc="sh030143" page="2-31" /> |
 | DOCOM | 46, 47 | Điểm chung của nhóm ngõ ra | §2.2 <SourceRef doc="sh030143" page="2-17" /> |
 
-Cách đấu theo ngõ ra kiểu sink của MR-J4: `RD` (CN1-49) → `READY` 1A11, `RDYCOM` 1A12 → **+24 V**, `DOCOM` 46/47 → 0 V; vòng +24 V → RDYCOM → photocoupler READY → RD 49 → DOCOM → 0 V. `ALM` (CN1-48) → một ngõ vào PLC để liên động và hiển thị lỗi. Bản vẽ plc247 nối `RDYCOM` vào `DICOM` 20/21; bảng CN1 của MR-J4-A dành `DICOM` 20/21 cho nhóm ngõ vào và `DOCOM` 46/47 cho nhóm ngõ ra (§2.2 p.2-17; sơ đồ đấu nối nội bộ §2.5 p.2-40–2-41 vẽ `RD` 49 trong nhóm `DOCOM`), nên trang này giữ `DOCOM` và không theo bản vẽ.
+Cách đấu theo ngõ ra kiểu sink của MR-J4: `RD` (CN1-49) → `READY` 1A11, `RDYCOM` 1A12 → **+24 V**, `DOCOM` 46/47 → 0 V; vòng +24 V → RDYCOM → photocoupler READY → RD 49 → DOCOM → 0 V. `ALM` (CN1-48) → một ngõ vào PLC để liên động và hiển thị lỗi. Bảng CN1 của MR-J4-A dành `DICOM` 20/21 cho nhóm ngõ vào và `DOCOM` 46/47 cho nhóm ngõ ra (§2.2 p.2-17; sơ đồ đấu nối nội bộ §2.5 p.2-40–2-41 vẽ `RD` 49 trong nhóm `DOCOM`), nên trang này giữ `DOCOM`.
 
 ## 4. Nguồn 24 V
 

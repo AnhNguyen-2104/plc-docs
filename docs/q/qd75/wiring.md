@@ -39,6 +39,8 @@ Với QD75D4, mỗi trục có bộ đầu cực riêng. Mỗi cặp F+/F− và
 
 <WiringDiagram variant="generic" />
 
+<PinMapDiagram variant="generic" />
+
 Sơ đồ nguyên lý: xung vi sai, READY, SON từ PLC, ALM về PLC.
 
 ## 4. Checklist trước khi cấp điện

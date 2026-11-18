@@ -33,17 +33,11 @@ The Sigma-7 SGD7S analog/pulse version (200 V) accepts differential command puls
 
 <WiringDiagram variant="yaskawa-sigma7" />
 
-<DriverPhoto
-  src="/img/drivers/yaskawa-sigma7.jpg"
-  alt="QD75D4 to Yaskawa SGD7S Sigma-7 wiring diagram (CN1)"
-  caption="QD75D4 to Yaskawa SGD7S Sigma-7 via CN1 (50P): differential pulse pair into PULS 7//PULS 8, direction pair into SIGN 11//SIGN 12."
-  source="plc247.com"
-  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-yaskawa-sigma-7-tutorial"
-/>
+<PinMapDiagram variant="yaskawa-sigma7" />
 
 ## 2. Wiring to the QD75D4
-- `READY` 1A11 ← `S-RDY+` 29, `RDYCOM` 1A12 ← `S-RDY−` 30: an isolated output pair that feeds the READY photocoupler directly, **not** +24 V. Pins 29/30 come from the QD75D ↔ Yaskawa connection example in SH-080058 (Appendix 8.1); the SGD7S CN1 table has not been cross-checked, so treat this as unverified.
 
+- `READY` 1A11 ← `S-RDY+` 29, `RDYCOM` 1A12 ← `S-RDY−` 30: an isolated output pair that feeds the READY photocoupler directly, **not** +24 V. Pins 29/30 come from the QD75D ↔ Yaskawa connection example in SH-080058 (Appendix 8.1); the SGD7S CN1 table has not been cross-checked, so treat this as unverified.
 
 - QD75D4 `PULSE F+/F−` goes to 7/8; `PULSE R+/R−` goes to 11/12. This is a differential pair and must not be connected to a 24 V opto input.
 - `/S-ON` pin 40 is the servo-ON input and comes from a PLC transistor output; the QD75D4 has no servo-ON output.

@@ -35,17 +35,12 @@ The supply that lists `GND` uses pin 1, but pin 1 is also listed for `OPC1`; thi
 
 <WiringDiagram variant="panasonic-minas-a6" />
 
-<DriverPhoto
-  src="/img/drivers/panasonic-minas-a6.jpg"
-  alt="QD75D4 to Panasonic MINAS A6 wiring diagram (X4/CN1)"
-  caption="QD75D4 to Panasonic MINAS A6 (MADLN05SE) via X4 (50P), opto group: PULS1 3/PULS2 4, SIGN1 5/SIGN2 6."
-  source="plc247.com"
-  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-panasonic-minas-a6-a5-tutorial"
-/>
+<PinMapDiagram variant="panasonic-minas-a6" />
 
 ## 2. Wiring to the QD75D4
 
-- QD75D4 `PULSE F+/F−` goes to 44/45; `PULSE R+/R−` goes to 46/47. Use the H group only when a line driver is required; the opto group 1/3/5/6 is a different mode and needs the correct `OPC` supply.
+- Recommended connection: use the **H (line-driver) group** — `PULSH1` 44/`PULSH2` 45 for the QD75D4 `PULSE F+/F−` pair and `SIGNH1` 46/`SIGNH2` 47 for the `PULSE R+/R−` pair. These are differential inputs wired straight through, with no series resistor needed.
+- The opto group (`PULS1` 3/`PULS2` 4, `SIGN1` 5/`SIGN2` 6) is only the alternative for open-collector use; it needs `OPC1` 1 and `OPC2` 2 supplied per the manual and must not be used at the same time as the H group.
 - `SRV-ON` pin 29 comes from a PLC transistor output, not from the QD75D4.
 - `ALM` 36/37 and `INP` 38/39 are digital outputs, returned to the PLC via `SO-COM` 41.
 - `SI-COM` 7 must be supplied from an isolated 12–24 V source, **not** from the brake supply.
