@@ -14,21 +14,21 @@ The Sigma-7 SGD7S analog/pulse version (200 V) accepts differential command puls
 
 | Pin | Signal | Note | Source |
 | --- | --- | --- | --- |
-| 7 | PULS | Command pulse (+), paired with 8 | SIEP S800001 26O p.4-35…4-38 |
-| 8 | /PULS | Command pulse (−), paired with 7 | SIEP S800001 26O p.4-35…4-38 |
-| 11 | SIGN | Direction (+), paired with 12 | SIEP S800001 26O p.4-35…4-38 |
-| 12 | /SIGN | Direction (−), paired with 11 | SIEP S800001 26O p.4-35…4-38 |
-| 15 | CLR | Clear position deviation (+), paired with 14 | SIEP S800001 26O p.4-35…4-38 |
-| 14 | /CLR | Clear position deviation (−), paired with 15 | SIEP S800001 26O p.4-35…4-38 |
-| 40 | /S-ON (/SI0) | Servo-ON, driven by the PLC | SIEP S800001 26O p.4-35…4-38 |
-| 31 | ALM+ | Fault output (+), OFF when there is a fault | SIEP S800001 26O p.4-35…4-38 |
-| 32 | ALM− | Fault output (−) | SIEP S800001 26O p.4-35…4-38 |
-| 25 | /COIN (/SO1+) | Positioning complete (+) | SIEP S800001 26O p.4-35…4-38 |
-| 26 | /COIN (−) | Positioning complete (−) | SIEP S800001 26O p.4-35…4-38 |
-| 44 | /ALM-RST (/SI4) | Fault reset | SIEP S800001 26O p.4-35…4-38 |
-| 47 | +24VIN | 24 V supply for the input group | SIEP S800001 26O p.4-35…4-38 |
-| 1, 2, 6, 10 | SG | Signal common | SIEP S800001 26O p.4-35…4-38 |
-| 3, 13, 18 | PL1 / PL2 / PL3 | Internal 12 V for open collector | SIEP S800001 26O p.4-35…4-38 |
+| 7 | PULS | Command pulse (+), paired with 8 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 8 | /PULS | Command pulse (−), paired with 7 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 11 | SIGN | Direction (+), paired with 12 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 12 | /SIGN | Direction (−), paired with 11 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 15 | CLR | Clear position deviation (+), paired with 14 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 14 | /CLR | Clear position deviation (−), paired with 15 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 40 | /S-ON (/SI0) | Servo-ON, driven by the PLC | <SourceRef doc="sgd7s" page="4-35" /> |
+| 31 | ALM+ | Fault output (+), OFF when there is a fault | <SourceRef doc="sgd7s" page="4-37" /> |
+| 32 | ALM− | Fault output (−) | <SourceRef doc="sgd7s" page="4-37" /> |
+| 25 | /COIN (/SO1+) | Positioning complete (+) | <SourceRef doc="sgd7s" page="4-37" /> |
+| 26 | /COIN (−) | Positioning complete (−) | <SourceRef doc="sgd7s" page="4-37" /> |
+| 44 | /ALM-RST (/SI4) | Fault reset | <SourceRef doc="sgd7s" page="4-35" /> |
+| 47 | +24VIN | 24 V supply for the input group | <SourceRef doc="sgd7s" page="4-35" /> |
+| 1, 2, 6, 10 | SG | Signal common | <SourceRef doc="sgd7s" page="4-38" /> |
+| 3, 13, 18 | PL1 / PL2 / PL3 | Internal 12 V for open collector | <SourceRef doc="sgd7s" page="4-37" /> |
 
 ## 2. Wiring to the QD75D4
 

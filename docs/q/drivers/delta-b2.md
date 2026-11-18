@@ -14,21 +14,21 @@ ASDA-B2 nhận xung lệnh vi sai qua `PULSE/PULSE` và `SIGN/SIGN`, có thêm c
 
 | Chân | Tín hiệu | Ghi chú | Nguồn |
 | --- | --- | --- | --- |
-| 43 | PULSE (+) | Xung lệnh, cặp với 41 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 41 | /PULSE (−) | Xung lệnh, cặp với 43 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 39 | SIGN (+) | Chiều, cặp với 37 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 37 | /SIGN (−) | Chiều, cặp với 39 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 38 | HPULSE | Ngõ xung 5 V vi sai tốc độ cao | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 36 | /HPULSE | Cặp với 38, chỉ 5 V vi sai | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 42 | HSIGN | Chiều 5 V vi sai tốc độ cao | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 40 | /HSIGN | Cặp với 42, chỉ 5 V vi sai | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 35 | PULL HI | Kéo lên `VDD` khi dùng ngõ open-collector | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 9 | SON (DI1) | Servo-ON, do PLC điều khiển | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 28 | ALRM (+) | Ngõ ra báo lỗi, cặp với 27 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 27 | ALRM (−) | Cặp với 28 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 11 | COM+ | Điểm chung nhóm ngõ vào | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 14 | COM− | Điểm chung nhóm ngõ vào | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| 17 | VDD | 24 V nội, tối đa 500 mA | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 43 | PULSE (+) | Xung lệnh, cặp với 41 | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 41 | /PULSE (−) | Xung lệnh, cặp với 43 | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 39 | SIGN (+) | Chiều, cặp với 37 | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 37 | /SIGN (−) | Chiều, cặp với 39 | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 38 | HPULSE | Ngõ xung 5 V vi sai tốc độ cao | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 36 | /HPULSE | Cặp với 38, chỉ 5 V vi sai | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 42 | HSIGN | Chiều 5 V vi sai tốc độ cao | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 40 | /HSIGN | Cặp với 42, chỉ 5 V vi sai | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 35 | PULL HI | Kéo lên `VDD` khi dùng ngõ open-collector | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 9 | SON (DI1) | Servo-ON, do PLC điều khiển | <SourceRef doc="asda-b2" page="3-22" /> <em>[secondary]</em> |
+| 28 | ALRM (+) | Ngõ ra báo lỗi, cặp với 27 | <SourceRef doc="asda-b2" page="3-21" /> <em>[secondary]</em> |
+| 27 | ALRM (−) | Cặp với 28 | <SourceRef doc="asda-b2" page="3-21" /> <em>[secondary]</em> |
+| 11 | COM+ | Điểm chung nhóm ngõ vào | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 14 | COM− | Điểm chung nhóm ngõ vào | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 17 | VDD | 24 V nội, tối đa 500 mA | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 
 ## 2. Đấu với QD75D4
 

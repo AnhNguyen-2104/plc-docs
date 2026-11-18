@@ -14,22 +14,22 @@ The MINAS A6 accepts differential command pulses via `PULSH1/PULSH2` and `SIGNH1
 
 | Pin | Signal | Note | Source |
 | --- | --- | --- | --- |
-| 44 | PULSH1 | Differential command pulse (+), paired with 45 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
-| 45 | PULSH2 | Differential command pulse (−), paired with 44 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
-| 46 | SIGNH1 | Differential direction (+), paired with 47 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
-| 47 | SIGNH2 | Differential direction (−), paired with 46 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
-| 3 | PULS1 | Opto-branch command pulse | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
-| 4 | PULS2 | Opto-branch command pulse | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
-| 1 | OPC1 | Common supply of opto branch 1 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
-| 5 | SIGN1 | Opto-branch direction | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
-| 6 | SIGN2 | Opto-branch direction | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
-| 2 | OPC2 | Common supply of opto branch 2 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 44 | PULSH1 | Differential command pulse (+), paired with 45 | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
+| 45 | PULSH2 | Differential command pulse (−), paired with 44 | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
+| 46 | SIGNH1 | Differential direction (+), paired with 47 | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
+| 47 | SIGNH2 | Differential direction (−), paired with 46 | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
+| 3 | PULS1 | Opto-branch command pulse | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
+| 4 | PULS2 | Opto-branch command pulse | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
+| 1 | OPC1 | Common supply of opto branch 1 | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
+| 5 | SIGN1 | Opto-branch direction | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
+| 6 | SIGN2 | Opto-branch direction | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
+| 2 | OPC2 | Common supply of opto branch 2 | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
 | 29 | SRV-ON (SI6) | Servo-ON, driven by the PLC | <SourceRef doc="minas-a6" page="SX-DSV03031 p.16" text="SX-DSV03031 p.16" /> <em>[secondary]</em> |
 | 36 / 37 | ALM (SO3) | Fault output: 36 (−), 37 (+) | <SourceRef doc="minas-a6" page="SX-DSV03031 p.19" text="SX-DSV03031 p.19" /> <em>[secondary]</em> |
 | 38 / 39 | INP (SO4) | Positioning complete | <SourceRef doc="minas-a6" page="SX-DSV03031" text="SX-DSV03031" /> <em>[secondary]</em> |
 | 31 | A-CLR (SI8) | Fault reset | <SourceRef doc="minas-a6" page="SX-DSV03031" text="SX-DSV03031" /> <em>[secondary]</em> |
-| 7 | SI-COM | Common point of the digital input group | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
-| 41 | SO-COM | Common point of the digital output group | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 7 | SI-COM | Common point of the digital input group | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
+| 41 | SO-COM | Common point of the digital output group | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> |
 
 The supply that lists `GND` uses pin 1, but pin 1 is also listed for `OPC1`; this page does not print the `GND` row in order to avoid an incorrect assertion. Re-read the original pin table for the exact model before wiring the common point.
 

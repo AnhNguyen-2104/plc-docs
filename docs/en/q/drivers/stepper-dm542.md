@@ -14,14 +14,14 @@ The DM542 is a stepper driver that accepts pulse + direction pulses through the 
 
 | Terminal | Signal | Note | Source |
 | --- | --- | --- | --- |
-| P1 | PUL+ | Step pulse (+), paired with PUL− | DM542 Rev 3.0 p.3 `[secondary]` |
-| P1 | PUL− | Step pulse (−), paired with PUL+ | DM542 Rev 3.0 p.3 `[secondary]` |
-| P1 | DIR+ | Direction (+), paired with DIR− | DM542 Rev 3.0 p.3 `[secondary]` |
-| P1 | DIR− | Direction (−), paired with DIR+ | DM542 Rev 3.0 p.3 `[secondary]` |
-| P1 | ENA+ | Enable (+), paired with ENA− | DM542 Rev 3.0 p.3 `[secondary]` |
-| P1 | ENA− | Enable (−), paired with ENA+ | DM542 Rev 3.0 p.3 `[secondary]` |
-| P2 | ALM | Fault output | DM542 Rev 3.0 p.4 `[secondary]` |
-| P2 | BR | Brake control | DM542 Rev 3.0 p.4 `[secondary]` |
+| P1 | PUL+ | Step pulse (+), paired with PUL− | <SourceRef doc="dm542" page="3" /> <em>[secondary]</em> |
+| P1 | PUL− | Step pulse (−), paired with PUL+ | <SourceRef doc="dm542" page="3" /> <em>[secondary]</em> |
+| P1 | DIR+ | Direction (+), paired with DIR− | <SourceRef doc="dm542" page="3" /> <em>[secondary]</em> |
+| P1 | DIR− | Direction (−), paired with DIR+ | <SourceRef doc="dm542" page="3" /> <em>[secondary]</em> |
+| P1 | ENA+ | Enable (+), paired with ENA− | <SourceRef doc="dm542" page="3" /> <em>[secondary]</em> |
+| P1 | ENA− | Enable (−), paired with ENA+ | <SourceRef doc="dm542" page="3" /> <em>[secondary]</em> |
+| P2 | ALM | Fault output | <SourceRef doc="dm542" page="4" /> <em>[secondary]</em> |
+| P2 | BR | Brake control | <SourceRef doc="dm542" page="4" /> <em>[secondary]</em> |
 
 ## 2. Wiring to the QD75D4
 

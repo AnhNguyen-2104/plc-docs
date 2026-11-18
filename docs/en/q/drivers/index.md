@@ -58,11 +58,11 @@ Three points to remember when reading the table:
 
 | Maker | Series | Pulse input | Control connector | Pin table source |
 | --- | --- | --- | --- | --- |
-| Mitsubishi Electric | MR-J4-A | Differential (line driver); pulse form selected by PA13: PULSE/SIGN, CW/CCW, A/B | CN1 | SH-030143-C §2.2 p.2-17 |
-| Delta Electronics | ASDA-B2 | Line driver 500 kpps; open collector 200 kpps | CN1 | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| Yaskawa | Sigma-7 SGD7S (analog/pulse, 200 V) | Line driver 4 Mpps (sign+pulse, CW+CCW); 1 Mpps (2-phase); open collector 200 kpps | CN1 | SIEP S800001 26O p.4-35…4-38 |
-| Panasonic | MINAS A6 | Line driver 8 Mpps; opto branch 500 kpps (line driver) / 200 kpps (open collector) | Control connector — connector name: see SX-DSV03025 p.45 | SX-DSV03025 p.45; SX-DSV03031 (functional) |
-| Leadshine | DM542 | Optically isolated, accepts 4.5–5 V or 24 V; always pulse + direction | P1 terminal block (not CN1) | DM542 Rev 3.0 p.3 `[secondary]` |
+| Mitsubishi Electric | MR-J4-A | Differential (line driver); pulse form selected by PA13: PULSE/SIGN, CW/CCW, A/B | CN1 | §2.2 <SourceRef doc="sh030143" page="2-17" /> |
+| Delta Electronics | ASDA-B2 | Line driver 500 kpps; open collector 200 kpps | CN1 | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| Yaskawa | Sigma-7 SGD7S (analog/pulse, 200 V) | Line driver 4 Mpps (sign+pulse, CW+CCW); 1 Mpps (2-phase); open collector 200 kpps | CN1 | <SourceRef doc="sgd7s" page="4-35" /> |
+| Panasonic | MINAS A6 | Line driver 8 Mpps; opto branch 500 kpps (line driver) / 200 kpps (open collector) | Control connector — connector name: see <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" />; <SourceRef doc="minas-a6" page="SX-DSV03031" text="SX-DSV03031" /> |
+| Leadshine | DM542 | Optically isolated, accepts 4.5–5 V or 24 V; always pulse + direction | P1 terminal block (not CN1) | <SourceRef doc="dm542" page="3" /> <em>[secondary]</em> |
 
 `[secondary]` means the pin table comes from a redistributed PDF, not the manufacturer's original release; cross-check it before wiring a real machine.
 

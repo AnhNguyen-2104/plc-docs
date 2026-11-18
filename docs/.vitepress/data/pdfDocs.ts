@@ -31,7 +31,9 @@ export const pdfDocs: Record<string, PdfDoc> = {
       '5-59': 163,
       '5-60': 164,
       '5-70': 174,
+      '5-71': 175,
       '7-5': 289,
+      'Appendix-150': 866,
       'A-19': 21
     }
   },
@@ -42,12 +44,16 @@ export const pdfDocs: Record<string, PdfDoc> = {
     map: {
       '1-1': 18,
       '2-14': 43,
+      '2-16': 45,
       '2-17': 46,
       '2-18': 47,
+      '2-19': 48,
       '2-22': 51,
       '2-23': 52,
+      '2-30': 59,
       '2-31': 60,
       '7-19': 326,
+      '7-21': 328,
       '7-23': 330,
       '7-67': 374,
       '7-93': 400
@@ -56,25 +62,41 @@ export const pdfDocs: Record<string, PdfDoc> = {
   'asda-b2': {
     key: 'asda-b2',
     title: 'Delta ASDA-B2 — User Manual',
-    url: 'https://deltaacdrives.com/Delta-ASDA-B2-User-Manual.pdf',
-    map: {}
+    url: 'https://files.deltaacdrives.com/Delta-ASDA-B2-User-Manual.pdf',
+    map: {
+      '3-18': 61,
+      '3-19': 62,
+      '3-20': 63,
+      '3-21': 64,
+      '3-22': 65
+    }
   },
   sgd7s: {
     key: 'sgd7s',
     title: 'Yaskawa Sigma-7 SGD7S — SIEP S800001 26O',
     url: 'https://sigma7.eu/wp-content/uploads/Verst%C3%A4rker/AdditionalRessources/Manual_SGD7S-xxx-A00A-xxxxxxx-Analog_200V.pdf',
-    map: {}
+    map: {
+      '4-35': 128,
+      '4-36': 129,
+      '4-37': 130,
+      '4-38': 131
+    }
   },
   'minas-a6': {
     key: 'minas-a6',
     title: 'Panasonic MINAS A6 — SX-DSV03031',
     url: 'https://mediap.industry.panasonic.eu/assets/download-files/import/mn_minas_a6_all_types_reference_pidsx_en.pdf',
-    map: {}
+    map: {
+      '45': 48
+    }
   },
   dm542: {
     key: 'dm542',
     title: 'Leadshine DM542 — Rev 3.0',
     url: 'https://www.oyostepper.com/images/upload/File/Leadshine%20DM542%20Stepper%20Motor%20Driver%20User%20Manual.pdf',
-    map: {}
+    map: {
+      '3': 6,
+      '4': 7
+    }
   }
 }

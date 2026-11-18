@@ -43,10 +43,10 @@ Manual used on this page: `SH(NA)030143ENG-C` (revision C), cover titled `MR-J4-
 
 | QD75D4 | QD75D4 signal | CN1 | MR-J4-A signal | Source |
 | --- | --- | --- | --- | --- |
-| 1A15 | PULSE F+ | 10 | PP | SH-080058 §3.4.1 p.3-24; SH-030143-C §2.2 p.2-17 |
-| 1A16 | PULSE F− | 11 | PG | SH-080058 §3.4.1 p.3-24; SH-030143-C §2.2 p.2-17 |
-| 1A17 | PULSE R+ | 35 | NP | SH-080058 §3.4.1 p.3-24; SH-030143-C §2.2 p.2-17 |
-| 1A18 | PULSE R− | 36 | NG | SH-080058 §3.4.1 p.3-24; SH-030143-C §2.2 p.2-17 |
+| 1A15 | PULSE F+ | 10 | PP | §3.4.1 <SourceRef doc="sh080058" page="3-24" />; §2.2 <SourceRef doc="sh030143" page="2-17" /> |
+| 1A16 | PULSE F− | 11 | PG | §3.4.1 <SourceRef doc="sh080058" page="3-24" />; §2.2 <SourceRef doc="sh030143" page="2-17" /> |
+| 1A17 | PULSE R+ | 35 | NP | §3.4.1 <SourceRef doc="sh080058" page="3-24" />; §2.2 <SourceRef doc="sh030143" page="2-17" /> |
+| 1A18 | PULSE R− | 36 | NG | §3.4.1 <SourceRef doc="sh080058" page="3-24" />; §2.2 <SourceRef doc="sh030143" page="2-17" /> |
 
 Four mandatory notes:
 
@@ -68,10 +68,10 @@ Servo-ON is the `SON` input at **CN1-15** (SH-030143-C §2.2 p.2-17, §2.3 p.2-2
 
 | Signal | CN1 | Meaning | Source |
 | --- | --- | --- | --- |
-| RD (Ready) | 49 | ON when servo-ON and the driver is ready | SH-030143-C §2.3 p.2-31 |
-| ALM (Malfunction) | 48 | ON when normal, OFF when there is an alarm | SH-030143-C §2.3 p.2-31 |
-| INP (In-position) | 24 | ON when the pulse deviation is within the in-position range | SH-030143-C §2.3 p.2-31 |
-| DOCOM | 46, 47 | Common point of the output group | SH-030143-C §2.2 p.2-17 |
+| RD (Ready) | 49 | ON when servo-ON and the driver is ready | SH-030143-C §2.3 <SourceRef doc="sh030143" page="2-31" /> |
+| ALM (Malfunction) | 48 | ON when normal, OFF when there is an alarm | SH-030143-C §2.3 <SourceRef doc="sh030143" page="2-31" /> |
+| INP (In-position) | 24 | ON when the pulse deviation is within the in-position range | SH-030143-C §2.3 <SourceRef doc="sh030143" page="2-31" /> |
+| DOCOM | 46, 47 | Common point of the output group | SH-030143-C §2.2 <SourceRef doc="sh030143" page="2-17" /> |
 
 Suggested wiring: `RD` (CN1-49) → the `READY` 1A11 pin of the QD75D4, and `RDYCOM` 1A12 → the corresponding supply rail; `ALM` (CN1-48) → a PLC input for interlocking and fault display. This is a designer's wiring decision, not wording from the manual: SH-080058 only defines 1A11 as a "drive unit READY" input (§3.4.3 p.3-27), while the MR-J4-A manual only defines RD as a ready output (§2.3 p.2-31).
 

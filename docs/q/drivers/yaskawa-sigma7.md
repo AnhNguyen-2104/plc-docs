@@ -14,21 +14,21 @@ Sigma-7 SGD7S bản analog/pulse (200 V) nhận xung lệnh vi sai qua `PULS//PU
 
 | Chân | Tín hiệu | Ghi chú | Nguồn |
 | --- | --- | --- | --- |
-| 7 | PULS | Xung lệnh (+), cặp với 8 | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 8 | /PULS | Xung lệnh (−), cặp với 7 | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 11 | SIGN | Chiều (+), cặp với 12 | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 12 | /SIGN | Chiều (−), cặp với 11 | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 15 | CLR | Xóa lệch vị trí (+), cặp với 14 | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 14 | /CLR | Xóa lệch vị trí (−), cặp với 15 | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 40 | /S-ON (/SI0) | Servo-ON, do PLC điều khiển | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 31 | ALM+ | Ngõ ra báo lỗi (+), OFF khi có lỗi | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 32 | ALM− | Ngõ ra báo lỗi (−) | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 25 | /COIN (/SO1+) | Hoàn tất định vị (+) | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 26 | /COIN (−) | Hoàn tất định vị (−) | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 44 | /ALM-RST (/SI4) | Reset lỗi | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 47 | +24VIN | Nguồn 24 V cho nhóm ngõ vào | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 1, 2, 6, 10 | SG | Điểm chung tín hiệu | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| 3, 13, 18 | PL1 / PL2 / PL3 | 12 V nội cho open collector | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
+| 7 | PULS | Xung lệnh (+), cặp với 8 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 8 | /PULS | Xung lệnh (−), cặp với 7 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 11 | SIGN | Chiều (+), cặp với 12 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 12 | /SIGN | Chiều (−), cặp với 11 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 15 | CLR | Xóa lệch vị trí (+), cặp với 14 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 14 | /CLR | Xóa lệch vị trí (−), cặp với 15 | <SourceRef doc="sgd7s" page="4-36" /> |
+| 40 | /S-ON (/SI0) | Servo-ON, do PLC điều khiển | <SourceRef doc="sgd7s" page="4-35" /> |
+| 31 | ALM+ | Ngõ ra báo lỗi (+), OFF khi có lỗi | <SourceRef doc="sgd7s" page="4-37" /> |
+| 32 | ALM− | Ngõ ra báo lỗi (−) | <SourceRef doc="sgd7s" page="4-37" /> |
+| 25 | /COIN (/SO1+) | Hoàn tất định vị (+) | <SourceRef doc="sgd7s" page="4-37" /> |
+| 26 | /COIN (−) | Hoàn tất định vị (−) | <SourceRef doc="sgd7s" page="4-37" /> |
+| 44 | /ALM-RST (/SI4) | Reset lỗi | <SourceRef doc="sgd7s" page="4-35" /> |
+| 47 | +24VIN | Nguồn 24 V cho nhóm ngõ vào | <SourceRef doc="sgd7s" page="4-35" /> |
+| 1, 2, 6, 10 | SG | Điểm chung tín hiệu | <SourceRef doc="sgd7s" page="4-38" /> |
+| 3, 13, 18 | PL1 / PL2 / PL3 | 12 V nội cho open collector | <SourceRef doc="sgd7s" page="4-37" /> |
 
 ## 2. Đấu với QD75D4
 

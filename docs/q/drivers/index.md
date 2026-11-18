@@ -59,9 +59,9 @@ Ba điểm cần nhớ khi đọc bảng:
 | Hãng | Dòng | Ngõ vào xung | Đầu nối điều khiển | Nguồn bảng chân |
 | --- | --- | --- | --- | --- |
 | Mitsubishi Electric | MR-J4-A | Vi sai (line driver); chọn dạng xung bằng PA13: PULSE/SIGN, CW/CCW, A/B | CN1 | §2.2 <SourceRef doc="sh030143" page="2-17" /> |
-| Delta Electronics | ASDA-B2 | Line driver 500 kpps; open collector 200 kpps | CN1 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
-| Yaskawa | Sigma-7 SGD7S (analog/pulse, 200 V) | Line driver 4 Mpps (sign+pulse, CW+CCW); 1 Mpps (2-phase); open collector 200 kpps | CN1 | <SourceRef doc="sgd7s" page="4-35…4-38" /> |
-| Panasonic | MINAS A6 | Line driver 8 Mpps; nhánh opto 500 kpps (line driver) / 200 kpps (open collector) | Đầu nối điều khiển — tên đầu nối: tra SX-DSV03025 p.45 | SX-DSV03025 p.45; SX-DSV03031 (functional) |
+| Delta Electronics | ASDA-B2 | Line driver 500 kpps; open collector 200 kpps | CN1 | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| Yaskawa | Sigma-7 SGD7S (analog/pulse, 200 V) | Line driver 4 Mpps (sign+pulse, CW+CCW); 1 Mpps (2-phase); open collector 200 kpps | CN1 | <SourceRef doc="sgd7s" page="4-35" /> |
+| Panasonic | MINAS A6 | Line driver 8 Mpps; nhánh opto 500 kpps (line driver) / 200 kpps (open collector) | Đầu nối điều khiển — tên đầu nối: tra <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" /> | <SourceRef doc="minas-a6" page="45" text="SX-DSV03025 p.45" />; <SourceRef doc="minas-a6" page="SX-DSV03031" text="SX-DSV03031" /> |
 | Leadshine | DM542 | Quang cách, nhận 4,5–5 V hoặc 24 V; luôn là pulse + direction | Khối đầu cực P1 (không phải CN1) | <SourceRef doc="dm542" page="3" /> <em>[secondary]</em> |
 
 `[secondary]` nghĩa là bảng chân lấy từ bản PDF lưu hành lại, không phải bản phát hành gốc của hãng; đối chiếu lại trước khi đấu máy thật.

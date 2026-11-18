@@ -14,21 +14,21 @@ The ASDA-B2 accepts differential command pulses via `PULSE/PULSE` and `SIGN/SIGN
 
 | Pin | Signal | Note | Source |
 | --- | --- | --- | --- |
-| 43 | PULSE (+) | Command pulse, paired with 41 | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 41 | /PULSE (−) | Command pulse, paired with 43 | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 39 | SIGN (+) | Direction, paired with 37 | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 37 | /SIGN (−) | Direction, paired with 39 | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 38 | HPULSE | High-speed 5 V differential pulse input | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 36 | /HPULSE | Paired with 38, 5 V differential only | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 42 | HSIGN | High-speed 5 V differential direction | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 40 | /HSIGN | Paired with 42, 5 V differential only | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 35 | PULL HI | Pull-up to `VDD` when using open-collector inputs | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 9 | SON (DI1) | Servo-ON, driven by the PLC | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 28 | ALRM (+) | Fault output, paired with 27 | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 27 | ALRM (−) | Paired with 28 | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 11 | COM+ | Common point of the input group | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 14 | COM− | Common point of the input group | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| 17 | VDD | Internal 24 V, 500 mA maximum | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
+| 43 | PULSE (+) | Command pulse, paired with 41 | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 41 | /PULSE (−) | Command pulse, paired with 43 | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 39 | SIGN (+) | Direction, paired with 37 | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 37 | /SIGN (−) | Direction, paired with 39 | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 38 | HPULSE | High-speed 5 V differential pulse input | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 36 | /HPULSE | Paired with 38, 5 V differential only | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 42 | HSIGN | High-speed 5 V differential direction | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 40 | /HSIGN | Paired with 42, 5 V differential only | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 35 | PULL HI | Pull-up to `VDD` when using open-collector inputs | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 9 | SON (DI1) | Servo-ON, driven by the PLC | <SourceRef doc="asda-b2" page="3-22" /> <em>[secondary]</em> |
+| 28 | ALRM (+) | Fault output, paired with 27 | <SourceRef doc="asda-b2" page="3-21" /> <em>[secondary]</em> |
+| 27 | ALRM (−) | Paired with 28 | <SourceRef doc="asda-b2" page="3-21" /> <em>[secondary]</em> |
+| 11 | COM+ | Common point of the input group | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 14 | COM− | Common point of the input group | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 17 | VDD | Internal 24 V, 500 mA maximum | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 
 ## 2. Wiring to the QD75D4
 
