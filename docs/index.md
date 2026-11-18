@@ -1,5 +1,6 @@
 ---
 layout: home
+titleTemplate: false
 title: PLC Handbook
 family: common
 status: draft

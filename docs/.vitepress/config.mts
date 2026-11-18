@@ -2,6 +2,9 @@ import { defineConfig } from 'vitepress'
 import { sidebar } from './sidebar'
 
 export default defineConfig({
+  title: 'PLC Handbook',
+  titleTemplate: ':title | PLC Handbook',
+  description: 'Cẩm nang lập trình PLC — MELSEC Q, module vị trí QD75D4, song ngữ Việt/Anh.',
   base: process.env.BASE ?? '/',
   cleanUrls: true,
   ignoreDeadLinks: false,
