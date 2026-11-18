@@ -12,27 +12,29 @@ const tabs = [
   {
     label: 'IL — TO',
     lang: 'il',
-    code: `(* Ghi thông số đơn vị khi Y0 còn OFF.
-   Địa chỉ <Pr.x> tra SH-080058, chương thông số. *)
+    code: `(* QD75D4 trục 1. Địa chỉ buffer memory ở dạng thập phân:
+   Pr.1 = G0, Pr.2 = G1, Pr.3 = G2, Pr.4 = G3, Pr.5 = G4.
+   Nguồn: SH-080058 §7.1.2 p.7-5; Appendix 13 p. Appendix-150.
+   Pr.3 ghi bằng 0,1 µm: 5 mm = 50000 (SH-080058 §5.2.1 p.5-19). *)
 LD   M8000
-TO   U0\\G<Pr1>  K<giá trị Pr.1>  K1
-TO   U0\\G<Pr2>  K<giá trị Pr.2>  K1
-TO   U0\\G<Pr3>  K<giá trị Pr.3>  K1
-TO   U0\\G<Pr4>  K<giá trị Pr.4>  K1
+TO   U0\\G0  K0      K1   (* Pr.1: đơn vị mm *)
+TO   U0\\G1  K500    K1   (* Pr.2: 500 pulse/vòng *)
+TO   U0\\G2  K50000  K1   (* Pr.3: 5 mm, ghi bằng 0,1 µm *)
+TO   U0\\G3  K1      K1   (* Pr.4: hệ số 1 *)
 
 (* Đọc lại để xác nhận. *)
 LD   M8000
-FROM U0\\G<Pr2>  D200  K1
-FROM U0\\G<Pr3>  D201  K1`
+FROM U0\\G2  D200  K1
+FROM U0\\G3  D201  K1`
   },
   {
     label: 'IL — truy cập trực tiếp',
     lang: 'il',
     code: `(* Cùng nội dung, dùng U<base>\\G<addr> trực tiếp. *)
 LD   M8000
-MOV  K<giá trị Pr.2>  U0\\G<Pr2>
-MOV  K<giá trị Pr.3>  U0\\G<Pr3>
-MOV  K<giá trị Pr.4>  U0\\G<Pr4>`
+MOV  K500    U0\\G1
+MOV  K50000  U0\\G2
+MOV  K1      U0\\G3`
   }
 ]
 </script>
@@ -87,7 +89,7 @@ Số trong bảng trên lấy nguyên từ dữ liệu của site, nguồn SH-08
 
 ### (a) Đường chính — ladder ghi buffer memory
 
-Dùng `TO` hoặc truy cập trực tiếp `U<base>\G<addr>`. Địa chỉ buffer của từng Pr. tra bảng trong SH-080058; trong ví dụ, `<Pr1>`…`<Pr4>` là chỗ giữ chỗ cho địa chỉ đó. Trong GX Works2, nạp xuống CPU bằng `Online → Write to PLC` và theo dõi trực tiếp bằng `Monitor → Device/Buffer Memory Batch Monitor`.
+Dùng `TO` hoặc truy cập trực tiếp `U<base>\G<addr>`. Vùng thông số cơ bản của trục 1 là địa chỉ thập phân 0–15: Pr.1 = 0, Pr.2 = 1, Pr.3 = 2, Pr.4 = 3, Pr.5 = 4; trục 2, 3, 4 cộng thêm 150 cho mỗi trục (SH-080058 §7.1.2 p.7-5; Appendix 13 p. Appendix-150). Trong GX Works2, nạp xuống CPU bằng `Online → Write to PLC` và theo dõi trực tiếp bằng `Monitor → Device/Buffer Memory Batch Monitor`.
 
 <CodeTabs :tabs="tabs" />
 

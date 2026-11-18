@@ -12,27 +12,29 @@ const tabs = [
   {
     label: 'IL — TO',
     lang: 'il',
-    code: `(* Write unit parameters while Y0 is still OFF.
-   For address <Pr.x> consult SH-080058, parameters chapter. *)
+    code: `(* QD75D4 axis 1. Buffer memory addresses in decimal:
+   Pr.1 = G0, Pr.2 = G1, Pr.3 = G2, Pr.4 = G3, Pr.5 = G4.
+   Source: SH-080058 §7.1.2 p.7-5; Appendix 13 p. Appendix-150.
+   Pr.3 is written in 0.1 µm: 5 mm = 50000 (SH-080058 §5.2.1 p.5-19). *)
 LD   M8000
-TO   U0\\G<Pr1>  K<Pr.1 value>  K1
-TO   U0\\G<Pr2>  K<Pr.2 value>  K1
-TO   U0\\G<Pr3>  K<Pr.3 value>  K1
-TO   U0\\G<Pr4>  K<Pr.4 value>  K1
+TO   U0\\G0  K0      K1   (* Pr.1: mm unit *)
+TO   U0\\G1  K500    K1   (* Pr.2: 500 pulses/rev *)
+TO   U0\\G2  K50000  K1   (* Pr.3: 5 mm, written in 0.1 µm *)
+TO   U0\\G3  K1      K1   (* Pr.4: factor 1 *)
 
 (* Read back to confirm. *)
 LD   M8000
-FROM U0\\G<Pr2>  D200  K1
-FROM U0\\G<Pr3>  D201  K1`
+FROM U0\\G2  D200  K1
+FROM U0\\G3  D201  K1`
   },
   {
     label: 'IL — direct access',
     lang: 'il',
     code: `(* Same content, using U<base>\\G<addr> directly. *)
 LD   M8000
-MOV  K<Pr.2 value>  U0\\G<Pr2>
-MOV  K<Pr.3 value>  U0\\G<Pr3>
-MOV  K<Pr.4 value>  U0\\G<Pr4>`
+MOV  K500    U0\\G1
+MOV  K50000  U0\\G2
+MOV  K1      U0\\G3`
   }
 ]
 </script>
@@ -87,7 +89,7 @@ The numbers in the table above are taken verbatim from the site data, source SH-
 
 ### (a) Main path — ladder writing buffer memory
 
-Use `TO` or direct access `U<base>\G<addr>`. For the buffer address of each Pr., consult the tables in SH-080058; in the example, `<Pr1>`…`<Pr4>` are placeholders for those addresses.
+Use `TO` or direct access `U<base>\G<addr>`. The axis-1 basic parameter area is decimal address 0–15: Pr.1 = 0, Pr.2 = 1, Pr.3 = 2, Pr.4 = 3, Pr.5 = 4; axes 2, 3 and 4 add 150 per axis (SH-080058 §7.1.2 p.7-5; Appendix 13 p. Appendix-150).
 
 <CodeTabs :tabs="tabs" />
 

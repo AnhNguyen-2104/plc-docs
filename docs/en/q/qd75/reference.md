@@ -71,11 +71,11 @@ Set the ratio on **one side** only: either QD75D4 `Pr.2`–`Pr.4`, or the driver
 | Mitsubishi MR-J4-A | `PA13` — selects the command pulse form (PULSE/SIGN, CW/CCW, A/B), must match QD75D4 `Pr.5` | SH-030143-C §2.2 p.2-17; logic cross-check §7.2.1 p.7-23 |
 | Mitsubishi MR-J4-A | `PA06` (CMX) / `PA07` (CDV) — electronic gear | SH-030143-C §7.1.1 p.7-19 |
 | Delta ASDA-B2 | Input pulse form: per the ASDA-B2 User Manual, parameter chapter — this page does not record the parameter number for this item | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| Delta ASDA-B2 | Electronic gear pair `P1-44` / `P1-45` (catalogue requirement; page not cross-checked) | /en/q/drivers/parameters-gear — page not cross-checked |
+| Delta ASDA-B2 | Electronic gear pair `P1-44` / `P1-45` (catalogue requirement; page not cross-checked) | ASDA-B2 User Manual, ch. 3 (p.3-18…3-22) — parameter page not cross-checked |
 | Yaskawa Sigma-7 SGD7S | Reference pulse form: per SIEP S800001 26O, parameter chapter — this page does not record the parameter number for this item | SIEP S800001 26O p.4-35…4-38 |
-| Yaskawa Sigma-7 SGD7S | `Pn20E` / `Pn210` — drive-side electronic gear | /en/q/drivers/parameters-gear `[secondary]` |
+| Yaskawa Sigma-7 SGD7S | `Pn20E` / `Pn210` — drive-side electronic gear | SIEP S800001 26O p.4-35…4-38 `[secondary]` — parameter page not cross-checked |
 | Panasonic MINAS A6 | Command pulse input mode: per SX-DSV03031, `Pr0.0x` chapter — this page does not record the parameter number for this item | SX-DSV03031 |
-| Panasonic MINAS A6 | `Pr0.08` — command pulses per revolution (catalogue requirement; page not cross-checked) | /en/q/drivers/parameters-gear — page not cross-checked |
+| Panasonic MINAS A6 | `Pr0.08` — command pulses per revolution (catalogue requirement; page not cross-checked) | SX-DSV03031 ch. Pr0.0x — parameter page not cross-checked |
 | Leadshine DM542 | Microstep DIP switch group — page not cross-checked | DM542 Rev 3.0, DIP switch section — page not cross-checked |
 
 `[secondary]` means the figures come from a redistributed PDF and have not been cross-checked with the manufacturer's original release.

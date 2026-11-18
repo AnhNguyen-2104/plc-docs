@@ -71,11 +71,11 @@ Chỉ đặt tỉ lệ ở **một phía**: hoặc QD75D4 `Pr.2`–`Pr.4`, hoặ
 | Mitsubishi MR-J4-A | `PA13` — chọn dạng xung lệnh (PULSE/SIGN, CW/CCW, A/B), phải khớp `Pr.5` của QD75D4 | SH-030143-C §2.2 p.2-17; đối chiếu logic §7.2.1 p.7-23 |
 | Mitsubishi MR-J4-A | `PA06` (CMX) / `PA07` (CDV) — bánh răng điện tử (electronic gear) | SH-030143-C §7.1.1 p.7-19 |
 | Delta ASDA-B2 | Dạng xung ngõ vào: theo ASDA-B2 User Manual, chương thông số — trang nội bộ chưa ghi số tham số cho mục này | ASDA-B2 User Manual p.3-18…3-22 `[secondary]` |
-| Delta ASDA-B2 | Cặp bánh răng điện tử `P1-44` / `P1-45` (danh mục yêu cầu; chưa đối chiếu trang) | /q/drivers/parameters-gear — chưa đối chiếu trang |
+| Delta ASDA-B2 | Cặp bánh răng điện tử `P1-44` / `P1-45` (danh mục yêu cầu; chưa đối chiếu trang) | ASDA-B2 User Manual, ch. 3 (p.3-18…3-22) — chưa đối chiếu trang tham số |
 | Yaskawa Sigma-7 SGD7S | Dạng xung tham chiếu: theo SIEP S800001 26O, chương thông số — trang nội bộ chưa ghi số tham số cho mục này | SIEP S800001 26O p.4-35…4-38 |
-| Yaskawa Sigma-7 SGD7S | `Pn20E` / `Pn210` — bánh răng điện tử phía drive | /q/drivers/parameters-gear `[secondary]` |
+| Yaskawa Sigma-7 SGD7S | `Pn20E` / `Pn210` — bánh răng điện tử phía drive | SIEP S800001 26O p.4-35…4-38 `[secondary]` — chưa đối chiếu trang tham số |
 | Panasonic MINAS A6 | Chế độ ngõ vào xung lệnh: theo SX-DSV03031, chương `Pr0.0x` — trang nội bộ chưa ghi số tham số cho mục này | SX-DSV03031 |
-| Panasonic MINAS A6 | `Pr0.08` — xung lệnh mỗi vòng (danh mục yêu cầu; chưa đối chiếu trang) | /q/drivers/parameters-gear — chưa đối chiếu trang |
+| Panasonic MINAS A6 | `Pr0.08` — xung lệnh mỗi vòng (danh mục yêu cầu; chưa đối chiếu trang) | SX-DSV03031 ch. Pr0.0x — chưa đối chiếu trang tham số |
 | Leadshine DM542 | Nhóm DIP switch vi bước (microstep) — chưa đối chiếu trang | DM542 Rev 3.0, mục DIP switch — chưa đối chiếu trang |
 
 `[secondary]` nghĩa là số liệu lấy từ bản PDF lưu hành lại, chưa đối chiếu bản phát hành gốc của hãng.
