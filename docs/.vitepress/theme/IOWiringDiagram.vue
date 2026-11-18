@@ -2,11 +2,24 @@
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 
-type Variant = 'input-sink' | 'input-source' | 'output-relay' | 'output-transistor'
+type Variant =
+  | 'input-sink'
+  | 'input-source'
+  | 'output-relay'
+  | 'output-transistor'
+  | 'encoder-differential'
+  | 'analog-shielded'
 
 const props = defineProps<{ variant: Variant; module?: string }>()
 
-const VARIANTS: Variant[] = ['input-sink', 'input-source', 'output-relay', 'output-transistor']
+const VARIANTS: Variant[] = [
+  'input-sink',
+  'input-source',
+  'output-relay',
+  'output-transistor',
+  'encoder-differential',
+  'analog-shielded'
+]
 
 const { lang } = useData()
 const isVi = computed(() => lang.value !== 'en')
@@ -19,26 +32,46 @@ const DEFAULT_MODULE: Record<Variant, string> = {
   'input-sink': 'QX40',
   'input-source': 'QX80',
   'output-relay': 'QY10',
-  'output-transistor': 'QY40P'
+  'output-transistor': 'QY40P',
+  'encoder-differential': 'QD62',
+  'analog-shielded': 'Q64AD'
 }
 
 const model = computed(() => props.module ?? DEFAULT_MODULE[variant.value])
 const isSinkInput = computed(() => variant.value === 'input-sink')
 const isInput = computed(() => variant.value === 'input-sink' || variant.value === 'input-source')
 const isRelay = computed(() => variant.value === 'output-relay')
+const isEncoder = computed(() => variant.value === 'encoder-differential')
+const isAnalog = computed(() => variant.value === 'analog-shielded')
 
 const TITLES: Record<Variant, { vi: string; en: string }> = {
   'input-sink': { vi: 'Ngõ vào DC, common dương (NPN)', en: 'DC input, positive common (NPN)' },
   'input-source': { vi: 'Ngõ vào DC, common âm (PNP)', en: 'DC input, negative common (PNP)' },
   'output-relay': { vi: 'Ngõ ra rơ-le (tiếp điểm)', en: 'Relay (contact) output' },
-  'output-transistor': { vi: 'Ngõ ra transistor, kiểu sink', en: 'Transistor output, sink type' }
+  'output-transistor': { vi: 'Ngõ ra transistor, kiểu sink', en: 'Transistor output, sink type' },
+  'encoder-differential': {
+    vi: 'Encoder vi sai A/B/Z (line driver)',
+    en: 'Differential A/B/Z encoder (line driver)'
+  },
+  'analog-shielded': {
+    vi: 'Ngõ vào tương tự, cáp đôi xoắn có vỏ bọc',
+    en: 'Analog input, shielded twisted pair'
+  }
 }
 
 const SUBTITLES: Record<Variant, { vi: string; en: string }> = {
   'input-sink': { vi: '16 DI · common dương · 24 VDC · ~4 mA', en: '16 DI · positive common · 24 VDC · ~4 mA' },
   'input-source': { vi: '16 DI · common âm · 24 VDC · ~4 mA', en: '16 DI · negative common · 24 VDC · ~4 mA' },
   'output-relay': { vi: '16 DO · rơ-le · 2 A/điểm · 8 A/common', en: '16 DO · relay · 2 A/point · 8 A/common' },
-  'output-transistor': { vi: '16 DO · sink · 0,1 A/điểm · 1,6 A/common', en: '16 DO · sink · 0.1 A/point · 1.6 A/common' }
+  'output-transistor': { vi: '16 DO · sink · 0,1 A/điểm · 1,6 A/common', en: '16 DO · sink · 0.1 A/point · 1.6 A/common' },
+  'encoder-differential': {
+    vi: 'CH1 · A+/A− · B+/B− · Z+/Z− · 5 V vi sai',
+    en: 'CH1 · A+/A− · B+/B− · Z+/Z− · 5 V differential'
+  },
+  'analog-shielded': {
+    vi: 'CH1 · V+ / V− · A.G. · 4 kênh, 16 điểm',
+    en: 'CH1 · V+ / V− · A.G. · 4 channels, 16 points'
+  }
 }
 
 const subtitle = computed(() =>
@@ -70,29 +103,88 @@ const contactTitle = computed(() => (isVi.value ? 'tiếp điểm' : 'contact'))
 const photoTitle = computed(() => (isVi.value ? 'bộ ghép quang' : 'photocoupler'))
 const pathTitle = computed(() => (isVi.value ? 'Chiều dòng khi ON' : 'Current path when ON'))
 
-const internalLabel = computed(() =>
-  isInput.value
-    ? isVi.value
+const internalLabel = computed(() => {
+  if (isInput.value) {
+    return isVi.value
       ? 'Trong module: photocoupler (LED + transistor)'
       : 'Inside the module: photocoupler (LED + transistor)'
-    : isRelay.value
-      ? isVi.value
-        ? 'Trong module: cuộn hút + tiếp điểm cách ly'
-        : 'Inside the module: coil + isolated contact'
-      : isVi.value
-        ? 'Trong module: photocoupler + transistor ngõ ra'
-        : 'Inside the module: photocoupler + output transistor'
+  }
+  if (isRelay.value) {
+    return isVi.value
+      ? 'Trong module: cuộn hút + tiếp điểm cách ly'
+      : 'Inside the module: coil + isolated contact'
+  }
+  if (isEncoder.value) {
+    return isVi.value
+      ? 'Trong module: bộ thu đường dây RS-422-A (QD62D) hoặc photocoupler 24 V (QD62)'
+      : 'Inside the module: RS-422-A line receiver (QD62D) or 24 V photocoupler (QD62)'
+  }
+  if (isAnalog.value) {
+    return isVi.value
+      ? 'Trong module: cách ly quang giữa ngõ vào và nguồn PLC'
+      : 'Inside the module: photocoupler isolation between input and PLC supply'
+  }
+  return isVi.value
+    ? 'Trong module: photocoupler + transistor ngõ ra'
+    : 'Inside the module: photocoupler + output transistor'
+})
+
+const pinZLabel = computed(() => (isVi.value ? 'không có cực' : 'no terminal'))
+const encoderBoxTitle = computed(() => (isVi.value ? 'ENCODER' : 'ENCODER'))
+const encoderBoxSub = computed(() => 'line driver · RS-422')
+const sourceBoxTitle = computed(() => (isVi.value ? 'NGUỒN TÍN HIỆU' : 'SIGNAL SOURCE'))
+const sourceBoxSub = computed(() => '±10 V · CH1')
+const sourcePins = computed(() => 'V+ / V− / 0 V')
+const ncCurrentLabel = computed(() => (isVi.value ? 'NC · dòng' : 'NC · current'))
+const agNote = computed(() =>
+  isVi.value ? 'A.G. = mốc chung mọi kênh' : 'A.G. = common reference'
 )
+const encoderNote = computed(() =>
+  isVi.value
+    ? 'Vỏ cáp nối đất một điểm phía encoder (SH-080036 §4.4.1 p.4-5).'
+    : 'Cable screen earthed at one point on the encoder side (SH-080036 §4.4.1 p.4-5).'
+)
+const analogNote = computed(() =>
+  isVi.value
+    ? 'Vỏ nối đất một điểm phía PLC; A.G. không nối đất lần hai (SH-080055 §4.4.1 p.4-5).'
+    : 'Screen earthed at one point on the PLC side; A.G. is not earthed a second time (SH-080055 §4.4.1 p.4-5).'
+)
+
+const legendThird = computed(() => {
+  const vi: Record<Variant, string> = {
+    'input-sink': 'Điểm chung (COM) nối +24 V; cảm biến NPN kéo X về 0 V.',
+    'input-source': 'Điểm chung (COM) nối 0 V; cảm biến PNP đẩy dòng vào X.',
+    'output-relay':
+      'Tiếp điểm rơ-le không có cực tính — tải có thể nối phía +24 V hoặc 0 V, miễn là trong định mức.',
+    'output-transistor': 'Điểm chung (COM) nối 0 V; tải nối giữa +24 V và Y.',
+    'encoder-differential':
+      'Ba cặp vi sai A+/A−, B+/B−, Z+/Z− đi trong cáp đôi xoắn có vỏ bọc; vỏ nối đất một điểm phía encoder.',
+    'analog-shielded':
+      'Cặp V+/V− đi trong cáp đôi xoắn có vỏ bọc; vỏ nối đất một điểm phía PLC; A.G. là mốc chung cho mọi kênh.'
+  }
+  const en: Record<Variant, string> = {
+    'input-sink': 'COM ties to +24 V; the NPN sensor pulls X to 0 V.',
+    'input-source': 'COM ties to 0 V; the PNP sensor sources current into X.',
+    'output-relay':
+      'Relay contacts are polarity-free — the load may sit on either rail within rating.',
+    'output-transistor': 'COM ties to 0 V; the load sits between +24 V and Y.',
+    'encoder-differential':
+      'The three differential pairs A+/A−, B+/B−, Z+/Z− run in one shielded twisted-pair cable; the screen is earthed at one point on the encoder side.',
+    'analog-shielded':
+      'The V+/V− pair runs in a shielded twisted-pair cable; the screen is earthed at one point on the PLC side; A.G. is the common reference for all channels.'
+  }
+  return isVi.value ? vi[variant.value] : en[variant.value]
+})
 
 const notes = computed<string[]>(() => {
   const common = isVi.value
     ? [
-        `Điểm chung (COM) nối ${comRail.value}; điện áp 24 VDC đặt lên mạch qua tải hoặc qua cảm biến.`,
+        legendThird.value,
         'Đường nét đứt là chiều dòng điện khi ngõ vào/ngõ ra đang ON.',
         'Sơ đồ là logic, không phải bản vẽ lắp đặt; luôn đối chiếu sơ đồ chân của đúng model.'
       ]
     : [
-        `The common (COM) connects to ${comRail.value}; 24 VDC is applied across the circuit through the load or the sensor.`,
+        legendThird.value,
         'The dashed path is the current direction while the input/output is ON.',
         'The drawing is logical, not an installation drawing; always cross-check the pinout of the exact model.'
       ]
@@ -133,6 +225,28 @@ const notes = computed<string[]>(() => {
       : [
           'The sink output pulls the load negative side to 0 V; the load positive side goes to +24 V.',
           'Inductive loads (valve, relay) need a diode across the coil, cathode to +24 V.'
+        ],
+    'encoder-differential': isVi.value
+      ? [
+          'QD62 là loại DC input; cặp vi sai A+/A−, B+/B−, Z+/Z− là đặc trưng của QD62D (line receiver RS-422-A).',
+          'Encoder hở collector 24 V đấu vào cực ngõ vào 24 V của QD62, không đấu vào cặp vi sai.',
+          'Với ngõ vào 1 pha, manual yêu cầu luôn đấu xung vào phía pha A.'
+        ]
+      : [
+          'The QD62 is a DC-input module; the differential pairs A+/A−, B+/B−, Z+/Z− belong to the QD62D (RS-422-A line receiver).',
+          'A 24 V open-collector encoder lands on the 24 V input terminals of the QD62, never on the differential pair.',
+          'For 1-phase input the manual requires the pulse to be wired on the phase A side.'
+        ],
+    'analog-shielded': isVi.value
+      ? [
+          'CH1 dùng hai cực V+ và V−; nếu đo dòng phải nối thêm V+ với I+.',
+          'A.G. là một cực duy nhất dùng chung cho mọi kênh (cực 17) và bình thường không cần đấu dây.',
+          'Vỏ bọc chỉ nối đất tại một điểm; kênh không dùng phải nối tắt V+ với V−.'
+        ]
+      : [
+          'CH1 uses the V+ and V− terminals; for a current input, V+ is also tied to I+.',
+          'A.G. is a single terminal shared by every channel (terminal 17) and normally needs no wiring.',
+          'The screen is earthed at one point only; an unused channel must have V+ shorted to V−.'
         ]
   }
 
@@ -145,15 +259,17 @@ const sourceLine = computed(() => {
     'input-sink': 'SH-080042 §2.4 p.2-4; SH-080483 §4.8.2 p.111',
     'input-source': 'SH-080042 §2.18 p.2-24; SH-080483 §4.8.2 p.111',
     'output-relay': 'SH-080042 §3.1 p.3-1, §1.2.2 p.1-5',
-    'output-transistor': 'SH-080042 §3.5 p.3-7, §1.2.2 p.1-5'
+    'output-transistor': 'SH-080042 §3.5 p.3-7, §1.2.2 p.1-5',
+    'encoder-differential': 'SH-080036 §3.5 p.3-14, §3.6 p.3-15, §4.4.1 p.4-5, §4.4.2 p.4-6',
+    'analog-shielded': 'SH-080055 §4.3 p.4-4, §4.4.1 p.4-5, §4.4.2 p.4-6'
   }
   return `${prefix} ${map[variant.value]}`
 })
 
 const sourceLong = computed(() =>
   isVi.value
-    ? 'Nguồn: SH-080483 §4.8 p.105–118 (đấu dây nguồn, tiếp địa), §7.2.1 p.212–216 (nguồn module); SH-080042 §1.2.1–§1.2.2 p.1-1–1-7 (mạch vào/ra, diode, cầu chì), §2.4 p.2-4 (QX40), §2.18 p.2-24 (QX80), §3.1 p.3-1 (QY10), §3.3 p.3-4 (QY18A), §3.5 p.3-7 (QY40P).'
-    : 'Sources: SH-080483 §4.8 p.105–118 (power wiring, grounding), §7.2.1 p.212–216 (module supply); SH-080042 §1.2.1–§1.2.2 p.1-1–1-7 (input/output circuits, diodes, fuses), §2.4 p.2-4 (QX40), §2.18 p.2-24 (QX80), §3.1 p.3-1 (QY10), §3.3 p.3-4 (QY18A), §3.5 p.3-7 (QY40P).'
+    ? 'Nguồn: SH-080483 §4.8 p.105–118 (đấu dây nguồn, tiếp địa), §7.2.1 p.212–216 (nguồn module); SH-080042 §1.2.1–§1.2.2 p.1-1–1-7 (mạch vào/ra, diode, cầu chì), §2.4 p.2-4 (QX40), §2.18 p.2-24 (QX80), §3.1 p.3-1 (QY10), §3.3 p.3-4 (QY18A), §3.5 p.3-7 (QY40P); SH-080036 §3.5 p.3-14 (bảng cực QD62), §3.6 p.3-15 (encoder), §4.4.1 p.4-5 (chống nhiễu), §4.4.2 p.4-6 (ví dụ đấu dây); SH-080055 §4.3 p.4-4 (bảng cực), §4.4.1 p.4-5 (một điểm nối đất), §4.4.2 p.4-6 (A.G., kênh không dùng).'
+    : 'Sources: SH-080483 §4.8 p.105–118 (power wiring, grounding), §7.2.1 p.212–216 (module supply); SH-080042 §1.2.1–§1.2.2 p.1-1–1-7 (input/output circuits, diodes, fuses), §2.4 p.2-4 (QX40), §2.18 p.2-24 (QX80), §3.1 p.3-1 (QY10), §3.3 p.3-4 (QY18A), §3.5 p.3-7 (QY40P); SH-080036 §3.5 p.3-14 (QD62 terminal table), §3.6 p.3-15 (encoders), §4.4.1 p.4-5 (noise measures), §4.4.2 p.4-6 (wiring example); SH-080055 §4.3 p.4-4 (terminal table), §4.4.1 p.4-5 (one-point earthing), §4.4.2 p.4-6 (A.G., unused channel).'
 )
 </script>
 
@@ -172,16 +288,18 @@ const sourceLong = computed(() =>
       <text x="24" y="26" font-size="13" font-weight="700" fill="var(--vp-c-text-1)">{{ title }}</text>
       <text x="24" y="44" font-size="10" fill="var(--vp-c-text-2)">{{ subtitle }}</text>
 
-      <!-- supply rails -->
-      <line x1="240" y1="40" x2="820" y2="40" stroke="var(--vp-c-danger-1)" stroke-width="2" />
-      <line x1="240" y1="360" x2="820" y2="360" stroke="var(--vp-c-text-2)" stroke-width="2" />
-      <text x="826" y="44" font-size="10" fill="var(--vp-c-danger-1)">+24 V</text>
-      <text x="826" y="364" font-size="10" fill="var(--vp-c-text-2)">0 V</text>
+      <!-- supply rails (24 V variants only) -->
+      <g v-if="!isEncoder && !isAnalog">
+        <line x1="240" y1="40" x2="820" y2="40" stroke="var(--vp-c-danger-1)" stroke-width="2" />
+        <line x1="240" y1="360" x2="820" y2="360" stroke="var(--vp-c-text-2)" stroke-width="2" />
+        <text x="826" y="44" font-size="10" fill="var(--vp-c-danger-1)">+24 V</text>
+        <text x="826" y="364" font-size="10" fill="var(--vp-c-text-2)">0 V</text>
+      </g>
 
       <!-- module frame -->
       <rect x="20" y="60" width="260" height="240" rx="8" fill="var(--vp-c-bg-soft)" stroke="var(--vp-c-divider)" />
-      <circle cx="280" cy="100" r="4" fill="var(--vp-c-text-2)" />
-      <circle cx="280" cy="200" r="4" fill="var(--vp-c-text-2)" />
+      <circle v-if="!isEncoder && !isAnalog" cx="280" cy="100" r="4" fill="var(--vp-c-text-2)" />
+      <circle v-if="!isEncoder && !isAnalog" cx="280" cy="200" r="4" fill="var(--vp-c-text-2)" />
 
       <!-- ================= INPUTS ================= -->
       <g v-if="isInput">
@@ -305,7 +423,7 @@ const sourceLong = computed(() =>
       </g>
 
       <!-- ================= TRANSISTOR OUTPUT ================= -->
-      <g v-else>
+      <g v-else-if="!isEncoder && !isAnalog">
         <text x="34" y="84" font-size="13" font-weight="700" fill="var(--vp-c-text-1)">{{ model }}</text>
         <text x="34" y="100" font-size="9" fill="var(--vp-c-text-2)">{{ subtitle }}</text>
         <text x="286" y="96" font-size="9" fill="var(--vp-c-text-1)">12/24 VDC</text>
@@ -362,6 +480,109 @@ const sourceLong = computed(() =>
         <circle cx="320" cy="360" r="3" fill="var(--vp-c-text-2)" />
 
         <text x="400" y="196" font-size="9" fill="var(--vp-c-text-2)">0.1 A/point · 1.6 A/common</text>
+      </g>
+
+      <!-- ================= ENCODER DIFFERENTIAL ================= -->
+      <g v-else-if="isEncoder">
+        <text x="34" y="84" font-size="13" font-weight="700" fill="var(--vp-c-text-1)">{{ model }}</text>
+        <text x="34" y="100" font-size="9" fill="var(--vp-c-text-2)">{{ subtitle }}</text>
+
+        <text x="274" y="113" text-anchor="end" font-size="9" fill="var(--vp-c-text-1)">A+ · A20</text>
+        <text x="274" y="143" text-anchor="end" font-size="9" fill="var(--vp-c-text-1)">A− · B20</text>
+        <text x="274" y="173" text-anchor="end" font-size="9" fill="var(--vp-c-text-1)">B+ · A19</text>
+        <text x="274" y="203" text-anchor="end" font-size="9" fill="var(--vp-c-text-1)">B− · B19</text>
+        <text x="274" y="233" text-anchor="end" font-size="9" fill="var(--vp-c-text-2)">Z+ · không có cực</text>
+        <text x="274" y="263" text-anchor="end" font-size="9" fill="var(--vp-c-text-2)">Z− · không có cực</text>
+
+        <circle cx="280" cy="110" r="4" fill="var(--vp-c-text-2)" />
+        <circle cx="280" cy="140" r="4" fill="var(--vp-c-text-2)" />
+        <circle cx="280" cy="170" r="4" fill="var(--vp-c-text-2)" />
+        <circle cx="280" cy="200" r="4" fill="var(--vp-c-text-2)" />
+
+        <line x1="280" y1="110" x2="600" y2="110" stroke="var(--vp-c-brand-1)" stroke-width="1.6" />
+        <line x1="280" y1="140" x2="600" y2="140" stroke="var(--vp-c-brand-1)" stroke-width="1.6" />
+        <line x1="280" y1="170" x2="600" y2="170" stroke="var(--vp-c-brand-1)" stroke-width="1.6" />
+        <line x1="280" y1="200" x2="600" y2="200" stroke="var(--vp-c-brand-1)" stroke-width="1.6" />
+        <line x1="280" y1="230" x2="430" y2="230" stroke="var(--vp-c-text-2)" stroke-width="1.4" stroke-dasharray="5 4" />
+        <line x1="280" y1="260" x2="430" y2="260" stroke="var(--vp-c-text-2)" stroke-width="1.4" stroke-dasharray="5 4" />
+        <rect x="430" y="218" width="44" height="54" rx="4" fill="var(--vp-c-bg-soft)" stroke="var(--vp-c-text-2)" />
+        <text x="452" y="241" text-anchor="middle" font-size="8.5" fill="var(--vp-c-text-2)">NC</text>
+        <text x="452" y="258" text-anchor="middle" font-size="7.5" fill="var(--vp-c-text-2)">Z</text>
+
+        <!-- pair markers -->
+        <path d="M440 106 L446 114" stroke="var(--vp-c-text-2)" stroke-width="1" />
+        <path d="M440 136 L446 144" stroke="var(--vp-c-text-2)" stroke-width="1" />
+        <path d="M440 166 L446 174" stroke="var(--vp-c-text-2)" stroke-width="1" />
+        <path d="M440 196 L446 204" stroke="var(--vp-c-text-2)" stroke-width="1" />
+
+        <!-- shield bracket, earthed at encoder side -->
+        <path d="M500 96 V214" stroke="var(--vp-c-text-2)" stroke-width="1" stroke-dasharray="4 3" fill="none" />
+        <line x1="500" y1="214" x2="500" y2="240" stroke="var(--vp-c-success-1)" stroke-width="1.4" />
+        <line x1="488" y1="240" x2="512" y2="240" stroke="var(--vp-c-success-1)" stroke-width="1.6" />
+        <line x1="492" y1="246" x2="508" y2="246" stroke="var(--vp-c-success-1)" stroke-width="1.4" />
+        <line x1="496" y1="252" x2="504" y2="252" stroke="var(--vp-c-success-1)" stroke-width="1.2" />
+
+        <rect x="600" y="86" width="200" height="200" rx="6" fill="var(--vp-c-bg-soft)" stroke="var(--vp-c-divider)" />
+        <text x="700" y="112" text-anchor="middle" font-size="11" font-weight="700" fill="var(--vp-c-text-1)">{{ encoderBoxTitle }}</text>
+        <text x="700" y="128" text-anchor="middle" font-size="8.5" fill="var(--vp-c-text-2)">{{ encoderBoxSub }}</text>
+        <text x="610" y="113" font-size="8.5" fill="var(--vp-c-text-2)">A+</text>
+        <text x="610" y="143" font-size="8.5" fill="var(--vp-c-text-2)">A−</text>
+        <text x="610" y="173" font-size="8.5" fill="var(--vp-c-text-2)">B+</text>
+        <text x="610" y="203" font-size="8.5" fill="var(--vp-c-text-2)">B−</text>
+        <text x="610" y="233" font-size="8.5" fill="var(--vp-c-text-2)">Z+</text>
+        <text x="610" y="263" font-size="8.5" fill="var(--vp-c-text-2)">Z−</text>
+
+        <text x="34" y="292" font-size="8.5" fill="var(--vp-c-text-2)">{{ encoderNote }}</text>
+      </g>
+
+      <!-- ================= ANALOG SHIELDED ================= -->
+      <g v-else>
+        <text x="34" y="84" font-size="13" font-weight="700" fill="var(--vp-c-text-1)">{{ model }}</text>
+        <text x="34" y="100" font-size="9" fill="var(--vp-c-text-2)">{{ subtitle }}</text>
+
+        <text x="274" y="123" text-anchor="end" font-size="9" fill="var(--vp-c-text-1)">V+ · 1</text>
+        <text x="274" y="153" text-anchor="end" font-size="9" fill="var(--vp-c-text-1)">V− · 2</text>
+        <text x="274" y="183" text-anchor="end" font-size="9" fill="var(--vp-c-text-2)">I+ · 3</text>
+        <text x="274" y="213" text-anchor="end" font-size="9" fill="var(--vp-c-text-2)">A.G. · 17</text>
+        <text x="274" y="243" text-anchor="end" font-size="9" fill="var(--vp-c-text-2)">FG · 18</text>
+
+        <circle cx="280" cy="120" r="4" fill="var(--vp-c-text-2)" />
+        <circle cx="280" cy="150" r="4" fill="var(--vp-c-text-2)" />
+        <circle cx="280" cy="180" r="4" fill="var(--vp-c-text-2)" />
+        <circle cx="280" cy="210" r="4" fill="var(--vp-c-text-2)" />
+        <circle cx="280" cy="240" r="4" fill="var(--vp-c-text-2)" />
+
+        <!-- twisted pair -->
+        <path d="M280 120 H360 L380 150 L400 120 L420 150 L440 120 H560" stroke="var(--vp-c-success-1)" stroke-width="1.6" fill="none" />
+        <path d="M280 150 H360 L380 120 L400 150 L420 120 L440 150 H560" stroke="var(--vp-c-success-1)" stroke-width="1.6" fill="none" />
+
+        <!-- shield envelope, earthed at PLC side only -->
+        <path d="M350 106 V164 H550 V106" stroke="var(--vp-c-text-2)" stroke-width="1" stroke-dasharray="4 3" fill="none" />
+        <line x1="350" y1="164" x2="350" y2="186" stroke="var(--vp-c-success-1)" stroke-width="1.4" />
+        <line x1="338" y1="186" x2="362" y2="186" stroke="var(--vp-c-success-1)" stroke-width="1.6" />
+        <line x1="342" y1="192" x2="358" y2="192" stroke="var(--vp-c-success-1)" stroke-width="1.4" />
+        <line x1="346" y1="198" x2="354" y2="198" stroke="var(--vp-c-success-1)" stroke-width="1.2" />
+
+        <line x1="280" y1="180" x2="330" y2="180" stroke="var(--vp-c-text-2)" stroke-width="1.4" stroke-dasharray="5 4" />
+        <text x="336" y="183" font-size="8" fill="var(--vp-c-text-2)">{{ ncCurrentLabel }}</text>
+
+        <line x1="280" y1="210" x2="330" y2="210" stroke="var(--vp-c-text-2)" stroke-width="1.4" />
+        <path d="M330 210 V236" stroke="var(--vp-c-text-2)" stroke-width="1.4" />
+        <path d="M322 236 H338 M325 242 H335 M328 248 H332" stroke="var(--vp-c-text-2)" stroke-width="1.2" fill="none" />
+        <text x="344" y="240" font-size="8" fill="var(--vp-c-text-2)">{{ agNote }}</text>
+
+        <line x1="280" y1="240" x2="330" y2="240" stroke="var(--vp-c-success-1)" stroke-width="1.4" />
+        <path d="M330 240 V266" stroke="var(--vp-c-success-1)" stroke-width="1.4" />
+        <path d="M322 266 H338 M325 272 H335 M328 278 H332" stroke="var(--vp-c-success-1)" stroke-width="1.2" fill="none" />
+
+        <rect x="560" y="86" width="240" height="116" rx="6" fill="var(--vp-c-bg-soft)" stroke="var(--vp-c-divider)" />
+        <text x="680" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="var(--vp-c-text-1)">SIGNAL SOURCE</text>
+        <text x="680" y="134" text-anchor="middle" font-size="8.5" fill="var(--vp-c-text-2)">±10 V · CH1</text>
+        <text x="680" y="158" text-anchor="middle" font-size="8.5" fill="var(--vp-c-text-2)">V+ / V− / 0 V</text>
+        <text x="570" y="123" font-size="8.5" fill="var(--vp-c-text-2)">V+</text>
+        <text x="570" y="153" font-size="8.5" fill="var(--vp-c-text-2)">V−</text>
+
+        <text x="34" y="292" font-size="8.5" fill="var(--vp-c-text-2)">{{ analogNote }}</text>
       </g>
 
       <text x="34" y="318" font-size="8.5" fill="var(--vp-c-text-2)">{{ internalLabel }}</text>

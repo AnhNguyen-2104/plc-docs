@@ -71,9 +71,7 @@ function isDocumented(module: QModule): boolean {
                 {{ module.model }}
               </a>
               <span v-else class="matrix-model-text">{{ module.model }}</span>
-              <span v-if="!isDocumented(module)" class="matrix-badge">
-                {{ isVi ? 'dự kiến' : 'planned' }}
-              </span>
+              <span v-if="!isDocumented(module)" class="matrix-badge">{{ isVi ? ' (dự kiến)' : ' (planned)' }}</span>
             </th>
             <td>{{ cell(module.role) }}</td>
             <td>{{ cell(module.keySpec) }}</td>
