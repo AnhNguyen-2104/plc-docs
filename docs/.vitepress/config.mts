@@ -10,8 +10,19 @@ export default defineConfig({
   ignoreDeadLinks: false,
   lastUpdated: true,
   locales: {
-    root: { label: 'Tiếng Việt', lang: 'vi' },
-    en:   { label: 'English',   lang: 'en', link: '/en/' }
+    root: {
+      label: 'Tiếng Việt',
+      lang: 'vi',
+      title: 'PLC Handbook',
+      description: 'Cẩm nang lập trình PLC — MELSEC Q, module vị trí QD75D4, song ngữ Việt/Anh.'
+    },
+    en: {
+      label: 'English',
+      lang: 'en',
+      link: '/en/',
+      title: 'PLC Handbook',
+      description: 'A PLC programming handbook — MELSEC Q, QD75D4 positioning module, bilingual Vietnamese/English.'
+    }
   },
   themeConfig: {
     search: {

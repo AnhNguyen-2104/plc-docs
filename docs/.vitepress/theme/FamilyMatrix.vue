@@ -60,7 +60,7 @@ function levelClass(level: string): string {
       <span class="matrix-cell matrix-partial">~</span>
       {{ isVi ? 'một phần' : 'partial' }}
       <span class="matrix-cell matrix-no">✘</span>
-      {{ isVi ? 'không' : 'no' }}
+      {{ isVi ? 'không hỗ trợ' : 'not supported' }}
       <span class="matrix-cell matrix-planned">{{ plannedTag }}</span>
       {{ isVi ? 'chưa đánh giá' : 'not assessed' }}
     </p>
