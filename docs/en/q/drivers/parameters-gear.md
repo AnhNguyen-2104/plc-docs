@@ -55,11 +55,11 @@ This ratio is within the permitted range `1/865 < CMX/CDV < 271471` and both val
 
 | Driver | Parameter / item | Function | Cross-check status |
 | --- | --- | --- | --- |
-| Mitsubishi MR-J4-A | `PA06` (CMX), `PA07` (CDV); `PA21` selects the mode | Electronic gear numerator/denominator | Cross-checked with SH-030143-C §7.1.1 p.7-19, §7.3.1 p.7-93 |
-| Delta ASDA-B2 | Electronic gear parameter pair (the catalogue requires P1-44/P1-45 to be noted) | Gear ratio numerator/denominator | Page not cross-checked; open the parameter chapter of the ASDA-B2 User Manual |
-| Yaskawa Sigma-7 SGD7S | `Pn20E` / `Pn210` `[secondary]` | Drive-side electronic gear | Numbers from the source article; open the parameter chapter of SIEP S800001 26O to confirm, including `Pn211` if present |
-| Panasonic MINAS A6 | `Pr0.08` / `Pr0.09` / `Pr0.10` (per the catalogue requirement) | Command pulses per revolution and numerator/denominator | Page not cross-checked; open the `Pr0.0x` parameter chapter of SX-DSV03031 |
-| Leadshine DM542 | Microstep DIP switch group | Select the number of microsteps per revolution | Page not cross-checked; open the DIP switch section of DM542 Rev 3.0 |
+| Mitsubishi MR-J4-A | `PA06` (CMX), `PA07` (CDV); `PA21` selects the mode | Electronic gear numerator/denominator | Cross-checked with SH-030143-C §7.1.1 <SourceRef doc="sh030143" page="7-19" />, §7.3.1 <SourceRef doc="sh030143" page="7-93" /> |
+| Delta ASDA-B2 | Electronic gear parameter pair (the catalogue requires P1-44/P1-45 to be noted) | Gear ratio numerator/denominator | Page not cross-checked; <SourceRef doc="asda-b2" page="ASDA-B2 User Manual" text="ASDA-B2 User Manual" /> |
+| Yaskawa Sigma-7 SGD7S | `Pn20E` / `Pn210` `[secondary]` | Drive-side electronic gear | Numbers from the source article; open the parameter chapter of <SourceRef doc="sgd7s" page="SIEP S800001 26O" text="SIEP S800001 26O" /> to confirm, including `Pn211` if present |
+| Panasonic MINAS A6 | `Pr0.08` / `Pr0.09` / `Pr0.10` (per the catalogue requirement) | Command pulses per revolution and numerator/denominator | Page not cross-checked; open the `Pr0.0x` parameter chapter of <SourceRef doc="minas-a6" page="SX-DSV03031" text="SX-DSV03031" /> |
+| Leadshine DM542 | Microstep DIP switch group | Select the number of microsteps per revolution | Page not cross-checked; open the DIP switch section of <SourceRef doc="dm542" page="DM542 Rev 3.0" text="DM542 Rev 3.0" /> |
 
 With the MR-J4-A, set `MR Configurator2 → Parameter → Pr.PA06` (CMX) and `MR Configurator2 → Parameter → Pr.PA07` (CDV); `Pr.PA21` selects the electronic gear mode.
 

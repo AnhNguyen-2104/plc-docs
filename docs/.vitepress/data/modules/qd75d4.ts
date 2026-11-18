@@ -355,7 +355,7 @@ export type Signal = {
 
 export const xySignals: Signal[] = [
   {
-    axis: { vi: 'tất cả (all)', en: 'all' },
+    axis: { vi: 'tất cả', en: 'all' },
     x: 'X0',
     y: '—',
     name: { vi: 'QD75 READY', en: 'QD75 READY' },
@@ -366,7 +366,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: 'tất cả (all)', en: 'all' },
+    axis: { vi: 'tất cả', en: 'all' },
     x: 'X1',
     y: '—',
     name: { vi: 'Cờ đồng bộ (Synchronization flag)', en: 'Synchronization flag' },
@@ -377,7 +377,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: 'tất cả (all)', en: 'all' },
+    axis: { vi: 'tất cả', en: 'all' },
     x: '—',
     y: 'Y0',
     name: { vi: 'PLC READY', en: 'PLC READY' },
@@ -388,7 +388,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: '1–4', en: '1-4' },
+    axis: { vi: '1–4', en: '1–4' },
     x: 'X4–X7',
     y: '—',
     name: { vi: 'Mã M ON (M code ON)', en: 'M code ON' },
@@ -399,7 +399,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: '1–4', en: '1-4' },
+    axis: { vi: '1–4', en: '1–4' },
     x: 'X8–XB',
     y: '—',
     name: { vi: 'Phát hiện lỗi (Error detection)', en: 'Error detection' },
@@ -410,7 +410,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: '1–4', en: '1-4' },
+    axis: { vi: '1–4', en: '1–4' },
     x: 'XC–XF',
     y: '—',
     name: { vi: 'BUSY', en: 'BUSY' },
@@ -421,7 +421,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: '1–4', en: '1-4' },
+    axis: { vi: '1–4', en: '1–4' },
     x: 'X10–X13',
     y: '—',
     name: { vi: 'Khởi động hoàn tất (Start complete)', en: 'Start complete' },
@@ -432,7 +432,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: '1–4', en: '1-4' },
+    axis: { vi: '1–4', en: '1–4' },
     x: 'X14–X17',
     y: '—',
     name: { vi: 'Định vị hoàn tất (Positioning complete)', en: 'Positioning complete' },
@@ -443,7 +443,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: '1–4', en: '1-4' },
+    axis: { vi: '1–4', en: '1–4' },
     x: '—',
     y: 'Y4–Y7',
     name: { vi: 'Dừng trục (Axis stop)', en: 'Axis stop' },
@@ -454,7 +454,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: '1–4', en: '1-4' },
+    axis: { vi: '1–4', en: '1–4' },
     x: '—',
     y: 'Y8 / YA / YC / YE',
     name: { vi: 'Khởi động JOG chạy thuận (Forward run JOG start)', en: 'Forward run JOG start' },
@@ -465,7 +465,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: '1–4', en: '1-4' },
+    axis: { vi: '1–4', en: '1–4' },
     x: '—',
     y: 'Y9 / YB / YD / YF',
     name: { vi: 'Khởi động JOG chạy ngược (Reverse run JOG start)', en: 'Reverse run JOG start' },
@@ -476,7 +476,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: '1–4', en: '1-4' },
+    axis: { vi: '1–4', en: '1–4' },
     x: '—',
     y: 'Y10–Y13',
     name: { vi: 'Khởi động định vị (Positioning start)', en: 'Positioning start' },
@@ -487,7 +487,7 @@ export const xySignals: Signal[] = [
     src: 'SH-080058 §3.3.1 p.3-16'
   },
   {
-    axis: { vi: '1–4', en: '1-4' },
+    axis: { vi: '1–4', en: '1–4' },
     x: '—',
     y: 'Y14–Y17',
     name: { vi: 'Cờ cấm thực thi (Execution prohibition flag)', en: 'Execution prohibition flag' },

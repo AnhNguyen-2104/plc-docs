@@ -55,11 +55,11 @@ Tỉ số này nằm trong dải cho phép `1/865 < CMX/CDV < 271471` và hai gi
 
 | Driver | Tham số / hiện vật | Chức năng | Trạng thái đối chiếu |
 | --- | --- | --- | --- |
-| Mitsubishi MR-J4-A | `PA06` (CMX), `PA07` (CDV); `PA21` chọn chế độ | Tử/mẫu bánh răng điện tử | Đã đối chiếu SH-030143-C §7.1.1 p.7-19, §7.3.1 p.7-93 |
-| Delta ASDA-B2 | Cặp tham số bánh răng điện tử (danh mục yêu cầu ghi P1-44/P1-45) | Tử/mẫu tỉ số truyền | Chưa đối chiếu trang; mở chương thông số của ASDA-B2 User Manual |
-| Yaskawa Sigma-7 SGD7S | `Pn20E` / `Pn210` `[secondary]` | Bánh răng điện tử phía drive | Số theo bài viết nguồn; mở chương thông số của SIEP S800001 26O để xác nhận, kể cả `Pn211` nếu có |
-| Panasonic MINAS A6 | `Pr0.08` / `Pr0.09` / `Pr0.10` (theo danh mục yêu cầu) | Xung lệnh mỗi vòng và tử/mẫu | Chưa đối chiếu trang; mở chương tham số `Pr0.0x` của SX-DSV03031 |
-| Leadshine DM542 | Nhóm DIP switch vi bước | Chọn số vi bước mỗi vòng | Chưa đối chiếu trang; mở mục DIP switch trong DM542 Rev 3.0 |
+| Mitsubishi MR-J4-A | `PA06` (CMX), `PA07` (CDV); `PA21` chọn chế độ | Tử/mẫu bánh răng điện tử | Đã đối chiếu SH-030143-C §7.1.1 <SourceRef doc="sh030143" page="7-19" />, §7.3.1 <SourceRef doc="sh030143" page="7-93" /> |
+| Delta ASDA-B2 | Cặp tham số bánh răng điện tử (danh mục yêu cầu ghi P1-44/P1-45) | Tử/mẫu tỉ số truyền | Chưa đối chiếu trang; <SourceRef doc="asda-b2" page="ASDA-B2 User Manual" text="ASDA-B2 User Manual" /> |
+| Yaskawa Sigma-7 SGD7S | `Pn20E` / `Pn210` `[secondary]` | Bánh răng điện tử phía drive | Số theo bài viết nguồn; mở chương thông số của <SourceRef doc="sgd7s" page="SIEP S800001 26O" text="SIEP S800001 26O" /> để xác nhận, kể cả `Pn211` nếu có |
+| Panasonic MINAS A6 | `Pr0.08` / `Pr0.09` / `Pr0.10` (theo danh mục yêu cầu) | Xung lệnh mỗi vòng và tử/mẫu | Chưa đối chiếu trang; mở chương tham số `Pr0.0x` của <SourceRef doc="minas-a6" page="SX-DSV03031" text="SX-DSV03031" /> |
+| Leadshine DM542 | Nhóm DIP switch vi bước | Chọn số vi bước mỗi vòng | Chưa đối chiếu trang; mở mục DIP switch trong <SourceRef doc="dm542" page="DM542 Rev 3.0" text="DM542 Rev 3.0" /> |
 
 Với MR-J4-A, đặt `MR Configurator2 → Parameter → Pr.PA06` (CMX) và `MR Configurator2 → Parameter → Pr.PA07` (CDV); `Pr.PA21` chọn chế độ bánh răng điện tử.
 

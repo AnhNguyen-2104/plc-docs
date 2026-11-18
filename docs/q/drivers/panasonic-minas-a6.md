@@ -14,22 +14,22 @@ MINAS A6 nhận xung lệnh vi sai qua `PULSH1/PULSH2` và `SIGNH1/SIGNH2` (line
 
 | Chân | Tín hiệu | Ghi chú | Nguồn |
 | --- | --- | --- | --- |
-| 44 | PULSH1 | Xung lệnh vi sai (+), cặp với 45 | SX-DSV03025 p.45 |
-| 45 | PULSH2 | Xung lệnh vi sai (−), cặp với 44 | SX-DSV03025 p.45 |
-| 46 | SIGNH1 | Chiều vi sai (+), cặp với 47 | SX-DSV03025 p.45 |
-| 47 | SIGNH2 | Chiều vi sai (−), cặp với 46 | SX-DSV03025 p.45 |
-| 3 | PULS1 | Xung lệnh nhánh opto | SX-DSV03025 p.45 |
-| 4 | PULS2 | Xung lệnh nhánh opto | SX-DSV03025 p.45 |
-| 1 | OPC1 | Nguồn chung nhánh opto 1 | SX-DSV03025 p.45 |
-| 5 | SIGN1 | Chiều nhánh opto | SX-DSV03025 p.45 |
-| 6 | SIGN2 | Chiều nhánh opto | SX-DSV03025 p.45 |
-| 2 | OPC2 | Nguồn chung nhánh opto 2 | SX-DSV03025 p.45 |
-| 29 | SRV-ON (SI6) | Servo-ON, do PLC điều khiển | SX-DSV03031 p.16 `[secondary]` |
-| 36 / 37 | ALM (SO3) | Báo lỗi: 36 (−), 37 (+) | SX-DSV03031 p.19 `[secondary]` |
-| 38 / 39 | INP (SO4) | Hoàn tất định vị | SX-DSV03031 `[secondary]` |
-| 31 | A-CLR (SI8) | Reset lỗi | SX-DSV03031 `[secondary]` |
-| 7 | SI-COM | Điểm chung nhóm ngõ vào số | SX-DSV03025 p.45 |
-| 41 | SO-COM | Điểm chung nhóm ngõ ra số | SX-DSV03025 p.45 |
+| 44 | PULSH1 | Xung lệnh vi sai (+), cặp với 45 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 45 | PULSH2 | Xung lệnh vi sai (−), cặp với 44 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 46 | SIGNH1 | Chiều vi sai (+), cặp với 47 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 47 | SIGNH2 | Chiều vi sai (−), cặp với 46 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 3 | PULS1 | Xung lệnh nhánh opto | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 4 | PULS2 | Xung lệnh nhánh opto | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 1 | OPC1 | Nguồn chung nhánh opto 1 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 5 | SIGN1 | Chiều nhánh opto | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 6 | SIGN2 | Chiều nhánh opto | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 2 | OPC2 | Nguồn chung nhánh opto 2 | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 29 | SRV-ON (SI6) | Servo-ON, do PLC điều khiển | <SourceRef doc="minas-a6" page="SX-DSV03031 p.16" text="SX-DSV03031 p.16" /> <em>[secondary]</em> |
+| 36 / 37 | ALM (SO3) | Báo lỗi: 36 (−), 37 (+) | <SourceRef doc="minas-a6" page="SX-DSV03031 p.19" text="SX-DSV03031 p.19" /> <em>[secondary]</em> |
+| 38 / 39 | INP (SO4) | Hoàn tất định vị | <SourceRef doc="minas-a6" page="SX-DSV03031" text="SX-DSV03031" /> <em>[secondary]</em> |
+| 31 | A-CLR (SI8) | Reset lỗi | <SourceRef doc="minas-a6" page="SX-DSV03031" text="SX-DSV03031" /> <em>[secondary]</em> |
+| 7 | SI-COM | Điểm chung nhóm ngõ vào số | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
+| 41 | SO-COM | Điểm chung nhóm ngõ ra số | <SourceRef doc="minas-a6" page="SX-DSV03025 p.45" text="SX-DSV03025 p.45" /> |
 
 Nguồn cung cấp ghi điểm `GND` là chân 1, nhưng chân 1 cũng được ghi cho `OPC1`; trang này không in hàng `GND` để tránh khẳng định sai. Đọc lại bảng chân gốc của đúng model trước khi đấu điểm chung.
 
