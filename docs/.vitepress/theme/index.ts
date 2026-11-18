@@ -8,6 +8,7 @@ import FamilyMatrix from './FamilyMatrix.vue'
 import SourceRef from './SourceRef.vue'
 import WiringDiagram from './WiringDiagram.vue'
 import LadderDiagram from './LadderDiagram.vue'
+import DriverPhoto from './DriverPhoto.vue'
 import './custom.css'
 
 export default {
@@ -21,7 +22,8 @@ export default {
     app.component('SourceRef', SourceRef)
     app.component('WiringDiagram', WiringDiagram)
     app.component('LadderDiagram', LadderDiagram)
+    app.component('DriverPhoto', DriverPhoto)
   }
 } satisfies Theme
 
-export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef, WiringDiagram, LadderDiagram }
+export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef, WiringDiagram, LadderDiagram, DriverPhoto }

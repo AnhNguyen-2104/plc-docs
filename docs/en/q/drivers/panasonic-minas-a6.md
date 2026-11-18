@@ -35,6 +35,14 @@ The supply that lists `GND` uses pin 1, but pin 1 is also listed for `OPC1`; thi
 
 <WiringDiagram variant="panasonic-minas-a6" />
 
+<DriverPhoto
+  src="/img/drivers/panasonic-minas-a6.jpg"
+  alt="QD75D4 to Panasonic MINAS A6 wiring diagram (X4/CN1)"
+  caption="QD75D4 to Panasonic MINAS A6 (MADLN05SE) via X4 (50P), opto group: PULS1 3/PULS2 4, SIGN1 5/SIGN2 6."
+  source="plc247.com"
+  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-panasonic-minas-a6-a5-tutorial"
+/>
+
 ## 2. Wiring to the QD75D4
 
 - QD75D4 `PULSE F+/F−` goes to 44/45; `PULSE R+/R−` goes to 46/47. Use the H group only when a line driver is required; the opto group 1/3/5/6 is a different mode and needs the correct `OPC` supply.

@@ -32,6 +32,14 @@ ASDA-B2 nhận xung lệnh vi sai qua `PULSE/PULSE` và `SIGN/SIGN`, có thêm c
 
 <WiringDiagram variant="delta-b2" />
 
+<DriverPhoto
+  src="/img/drivers/delta-b2.jpg"
+  alt="Sơ đồ đấu dây QD75D4 với Delta ASDA-B2 (CN1)"
+  caption="QD75D4 nối Delta ASDA-B2 qua CN1 (44P): cặp xung vi sai vào 43/41, cặp chiều vào 39/37; READY 1A11 lấy từ DO1+ (7), RDYCOM 1A12 lên COM+ (11), DO1− (6) xuống 0 V."
+  source="plc247.com"
+  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-delta-b2-tutorial"
+/>
+
 ## 2. Đấu với QD75D4
 
 - Cặp `PULSE F+/F−` của QD75D4 đi vào 43/41; cặp `PULSE R+/R−` đi vào 39/37. Không đảo cặp và không nối một dây của cặp xuống 0 V.

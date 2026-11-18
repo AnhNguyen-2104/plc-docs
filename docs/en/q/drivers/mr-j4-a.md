@@ -59,6 +59,14 @@ The wiring example in SH-080058 §3.4.1 p.3-24 is drawn for the MR-J3-A (`PULSE 
 
 <WiringDiagram variant="mr-j4-a" />
 
+<DriverPhoto
+  src="/img/drivers/mr-j4-a.jpg"
+  alt="QD75D4 to Mitsubishi MR-J4-A wiring diagram (CN1)"
+  caption="QD75D4 to Mitsubishi MR-J4-A via CN1 (50P): differential pulses 1A15/1A16 into PP 10/PG 11, 1A17/1A18 into NP 35/NG 36."
+  source="plc247.com"
+  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-mr-j4-a-tutorial"
+/>
+
 ## 2. Servo-ON from the PLC
 
 Servo-ON is the `SON` input at **CN1-15** (SH-030143-C §2.2 p.2-17, §2.3 p.2-22). It must be driven by a transistor output of the PLC and must not be connected to the QD75D4.

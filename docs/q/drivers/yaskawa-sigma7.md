@@ -32,6 +32,14 @@ Sigma-7 SGD7S bản analog/pulse (200 V) nhận xung lệnh vi sai qua `PULS//PU
 
 <WiringDiagram variant="yaskawa-sigma7" />
 
+<DriverPhoto
+  src="/img/drivers/yaskawa-sigma7.jpg"
+  alt="Sơ đồ đấu dây QD75D4 với Yaskawa SGD7S Sigma-7 (CN1)"
+  caption="QD75D4 nối Yaskawa SGD7S Sigma-7 qua CN1 (50P): cặp xung vi sai vào PULS 7//PULS 8, cặp chiều vào SIGN 11//SIGN 12."
+  source="plc247.com"
+  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-yaskawa-sigma-7-tutorial"
+/>
+
 ## 2. Đấu với QD75D4
 
 - `PULSE F+/F−` của QD75D4 vào 7/8; `PULSE R+/R−` vào 11/12. Đây là cặp vi sai, không đấu vào ngõ opto 24 V.

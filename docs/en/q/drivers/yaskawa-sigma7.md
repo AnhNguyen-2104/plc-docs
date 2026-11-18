@@ -32,6 +32,14 @@ The Sigma-7 SGD7S analog/pulse version (200 V) accepts differential command puls
 
 <WiringDiagram variant="yaskawa-sigma7" />
 
+<DriverPhoto
+  src="/img/drivers/yaskawa-sigma7.jpg"
+  alt="QD75D4 to Yaskawa SGD7S Sigma-7 wiring diagram (CN1)"
+  caption="QD75D4 to Yaskawa SGD7S Sigma-7 via CN1 (50P): differential pulse pair into PULS 7//PULS 8, direction pair into SIGN 11//SIGN 12."
+  source="plc247.com"
+  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-yaskawa-sigma-7-tutorial"
+/>
+
 ## 2. Wiring to the QD75D4
 
 - QD75D4 `PULSE F+/F−` goes to 7/8; `PULSE R+/R−` goes to 11/12. This is a differential pair and must not be connected to a 24 V opto input.

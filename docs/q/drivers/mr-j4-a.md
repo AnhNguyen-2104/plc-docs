@@ -59,6 +59,14 @@ Ví dụ nối trong SH-080058 §3.4.1 p.3-24 vẽ theo MR-J3-A (`PULSE F+/F−`
 
 <WiringDiagram variant="mr-j4-a" />
 
+<DriverPhoto
+  src="/img/drivers/mr-j4-a.jpg"
+  alt="Sơ đồ đấu dây QD75D4 với Mitsubishi MR-J4-A (CN1)"
+  caption="QD75D4 nối Mitsubishi MR-J4-A qua CN1 (50P): xung vi sai 1A15/1A16 vào PP 10/PG 11, 1A17/1A18 vào NP 35/NG 36."
+  source="plc247.com"
+  sourceUrl="https://plc247.com/mitsubishi-qd75d4-servo-control-mr-j4-a-tutorial"
+/>
+
 ## 2. Servo-ON từ PLC
 
 Servo-ON là ngõ vào `SON` tại **CN1-15** (SH-030143-C §2.2 p.2-17, §2.3 p.2-22). Nó phải do một ngõ ra transistor của PLC điều khiển, không nối vào QD75D4.
