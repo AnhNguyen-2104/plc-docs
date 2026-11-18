@@ -25,7 +25,7 @@ const pdfPage = computed(() => {
   return docDef.value.map[props.page]
 })
 const hasPage = computed(() => pdfPage.value !== undefined && docUrl.value !== '')
-const displayText = computed(() => props.text ?? `${props.doc}${props.page ? ` ${props.page}` : ''}`)
+const displayText = computed(() => props.text ?? (docDef.value?.short ? `${docDef.value.short}${props.page ? ` ${props.page}` : ''}` : `${props.doc}${props.page ? ` ${props.page}` : ''}`))
 
 const isOpen = computed(() => activeId.value === instanceId)
 const iframeLoaded = ref(false)

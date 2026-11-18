@@ -2,12 +2,14 @@ export type PdfDoc = {
   key: string
   title: string
   url: string
+  short?: string
   map: Record<string, number>
 }
 
 export const pdfDocs: Record<string, PdfDoc> = {
   sh080058: {
     key: 'sh080058',
+    short: 'SH-080058',
     title: 'Mitsubishi SH-080058 — QD75 positioning module',
     url: 'https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080058/sh080058v.pdf',
     map: {
@@ -39,6 +41,7 @@ export const pdfDocs: Record<string, PdfDoc> = {
   },
   sh030143: {
     key: 'sh030143',
+    short: 'SH-030143',
     title: 'Mitsubishi SH-030143ENG-D — MR-J4-_A_-RJ positioning mode',
     url: 'https://dl.mitsubishielectric.com/dl/fa/document/manual/servo/sh030143/sh030143d.pdf',
     map: {
@@ -61,6 +64,7 @@ export const pdfDocs: Record<string, PdfDoc> = {
   },
   'asda-b2': {
     key: 'asda-b2',
+    short: 'ASDA-B2',
     title: 'Delta ASDA-B2 — User Manual',
     url: 'https://files.deltaacdrives.com/Delta-ASDA-B2-User-Manual.pdf',
     map: {
@@ -73,6 +77,7 @@ export const pdfDocs: Record<string, PdfDoc> = {
   },
   sgd7s: {
     key: 'sgd7s',
+    short: 'SIEP 26O',
     title: 'Yaskawa Sigma-7 SGD7S — SIEP S800001 26O',
     url: 'https://sigma7.eu/wp-content/uploads/Verst%C3%A4rker/AdditionalRessources/Manual_SGD7S-xxx-A00A-xxxxxxx-Analog_200V.pdf',
     map: {
@@ -84,6 +89,7 @@ export const pdfDocs: Record<string, PdfDoc> = {
   },
   'minas-a6': {
     key: 'minas-a6',
+    short: 'SX-DSV03025',
     title: 'Panasonic MINAS A6 — SX-DSV03031',
     url: 'https://mediap.industry.panasonic.eu/assets/download-files/import/mn_minas_a6_all_types_reference_pidsx_en.pdf',
     map: {
@@ -92,6 +98,7 @@ export const pdfDocs: Record<string, PdfDoc> = {
   },
   dm542: {
     key: 'dm542',
+    short: 'DM542',
     title: 'Leadshine DM542 — Rev 3.0',
     url: 'https://www.oyostepper.com/images/upload/File/Leadshine%20DM542%20Stepper%20Motor%20Driver%20User%20Manual.pdf',
     map: {
