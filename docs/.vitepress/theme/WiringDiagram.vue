@@ -176,22 +176,39 @@ const legendItems = computed<string[]>(() => {
         'ALM → PLC input for interlocking',
         'E-stop cuts power independently of the PLC'
       ]
-  const readyLines = variant.value === 'delta-b2'
-    ? (isVi.value
+  if (variant.value === 'delta-b2') {
+    items.splice(
+      pulse.length,
+      2,
+      ...(isVi.value
         ? ['READY 1A11 ← DO1+ 7 (SRDY), DO1− 6 → 0 V', 'RDYCOM 1A12 → COM+ 11 (+24 V), chung nguồn nhóm I/O']
         : ['READY 1A11 ← DO1+ 7 (SRDY), DO1− 6 → 0 V', 'RDYCOM 1A12 → COM+ 11 (+24 V), same supply as the I/O group'])
-    : variant.value === 'mr-j4-a'
-      ? (isVi.value
-          ? ['READY 1A11 ← RD 49, DOCOM 46/47 → 0 V', 'RDYCOM 1A12 → +24 V; DOCOM 46/47 là chung của nhóm ngõ ra']
-          : ['READY 1A11 ← RD 49, DOCOM 46/47 → 0 V', 'RDYCOM 1A12 → +24 V; DOCOM 46/47 is the output-group common'])
-      : []
-  const readyLines2 = variant.value === 'yaskawa-sigma7'
-    ? (isVi.value
+    )
+  } else if (variant.value === 'mr-j4-a') {
+    items.splice(
+      pulse.length,
+      2,
+      ...(isVi.value
+        ? ['READY 1A11 ← RD 49, DOCOM 46/47 → 0 V', 'RDYCOM 1A12 → +24 V; DOCOM 46/47 là chung của nhóm ngõ ra']
+        : ['READY 1A11 ← RD 49, DOCOM 46/47 → 0 V', 'RDYCOM 1A12 → +24 V; DOCOM 46/47 is the output-group common'])
+    )
+  } else if (variant.value === 'yaskawa-sigma7') {
+    items.splice(
+      pulse.length,
+      2,
+      ...(isVi.value
         ? ['READY 1A11 ← ngõ ra S-RDY(+) của drive', 'RDYCOM 1A12 ← S-RDY(−): cặp cách ly, không phải +24 V']
         : ['READY 1A11 ← drive S-RDY(+) output', 'RDYCOM 1A12 ← S-RDY(−): isolated pair, not +24 V'])
-    : []
-  if (readyLines2.length) items.splice(pulse.length, 2, ...readyLines2)
-  if (readyLines.length) items.splice(pulse.length, 2, ...readyLines)
+    )
+  } else if (variant.value === 'panasonic-minas-a6' || variant.value === 'stepper-dm542') {
+    items.splice(
+      pulse.length,
+      2,
+      isVi.value
+        ? 'READY 1A11 / RDYCOM 1A12: không đấu trong ví dụ này (drive không có ngõ sẵn sàng trong bảng chân)'
+        : 'READY 1A11 / RDYCOM 1A12: not wired in this example (no ready output in the pin table)'
+    )
+  }
   if (variant.value === 'mr-j4-a') {
     items.push(
       isVi.value
