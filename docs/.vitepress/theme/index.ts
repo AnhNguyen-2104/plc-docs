@@ -5,6 +5,7 @@ import ParamTable from './ParamTable.vue'
 import CodeTabs from './CodeTabs.vue'
 import VerifiedOn from './VerifiedOn.vue'
 import FamilyMatrix from './FamilyMatrix.vue'
+import SourceRef from './SourceRef.vue'
 import './custom.css'
 
 export default {
@@ -15,7 +16,8 @@ export default {
     app.component('CodeTabs', CodeTabs)
     app.component('VerifiedOn', VerifiedOn)
     app.component('FamilyMatrix', FamilyMatrix)
+    app.component('SourceRef', SourceRef)
   }
 } satisfies Theme
 
-export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix }
+export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef }

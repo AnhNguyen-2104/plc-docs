@@ -14,18 +14,18 @@ QD75D4 không dùng component `ParamTable` cho bảng tín hiệu vì cấu trú
 
 | Trục | X | Y | Tên | Mô tả | Nguồn |
 | --- | --- | --- | --- | --- | --- |
-| - | X0 | Y0 | QD75 READY / PLC READY | X0 is ON when the module is ready; Y0 is the CPU-side PLC READY command to the QD75. | SH-080058 §3.3.1 p.3-16 |
-| - | X1 | - | Synchronization flag | ON when the QD75 buffer memory is accessible (interlock for sequence program access). | SH-080058 §3.3.1 p.3-16 |
-| 1 to 4 | X4 to X7 | - | M code ON | Axis 1 to 4 M code output signal. | SH-080058 §3.3.1 p.3-16 |
-| 1 to 4 | X8 to XB | - | Error detection | Axis 1 to 4 error detection signal. | SH-080058 §3.3.1 p.3-16 |
-| 1 to 4 | XC to XF | - | BUSY | Axis 1 to 4 BUSY (operating) signal. | SH-080058 §3.3.1 p.3-16 |
-| 1 to 4 | X10 to X13 | - | Start complete | Axis 1 to 4 start complete signal. | SH-080058 §3.3.1 p.3-16 |
-| 1 to 4 | X14 to X17 | - | Positioning complete | Axis 1 to 4 positioning complete signal. | SH-080058 §3.3.1 p.3-16 |
-| 1 to 4 | - | Y4 to Y7 | Axis stop | Axis 1 to 4 stop command from the CPU module. | SH-080058 §3.3.1 p.3-16 |
-| 1 to 4 | - | Y8 / YA / YC / YE | Forward run JOG start | Forward run JOG start command, axis 1 to 4. | SH-080058 §3.3.1 p.3-16 |
-| 1 to 4 | - | Y9 / YB / YD / YF | Reverse run JOG start | Reverse run JOG start command, axis 1 to 4. | SH-080058 §3.3.1 p.3-16 |
-| 1 to 4 | - | Y10 to Y13 | Positioning start | Axis 1 to 4 positioning start command. | SH-080058 §3.3.1 p.3-16 |
-| 1 to 4 | - | Y14 to Y17 | Execution prohibition flag | Axis 1 to 4 execution prohibition flag. | SH-080058 §3.3.1 p.3-16 |
+| - | X0 | Y0 | QD75 READY / PLC READY | X0 bật khi module sẵn sàng; Y0 là lệnh PLC READY từ phía CPU gửi tới QD75. | <SourceRef doc="sh080058" page="3-16" /> |
+| - | X1 | - | Cờ đồng bộ (Synchronization flag) | Bật khi buffer memory của QD75 truy cập được (điều kiện liên động cho chương trình tuần tự). | <SourceRef doc="sh080058" page="3-16" /> |
+| 1–4 | X4–X7 | - | Mã M ON (M code ON) | Tín hiệu xuất mã M theo từng trục 1–4. | <SourceRef doc="sh080058" page="3-16" /> |
+| 1–4 | X8–XB | - | Phát hiện lỗi (Error detection) | Tín hiệu phát hiện lỗi theo từng trục 1–4. | <SourceRef doc="sh080058" page="3-16" /> |
+| 1–4 | XC–XF | - | BUSY | Tín hiệu BUSY (đang vận hành) theo từng trục 1–4. | <SourceRef doc="sh080058" page="3-16" /> |
+| 1–4 | X10–X13 | - | Khởi động hoàn tất (Start complete) | Tín hiệu khởi động hoàn tất theo từng trục 1–4. | <SourceRef doc="sh080058" page="3-16" /> |
+| 1–4 | X14–X17 | - | Định vị hoàn tất (Positioning complete) | Tín hiệu định vị hoàn tất theo từng trục 1–4. | <SourceRef doc="sh080058" page="3-16" /> |
+| 1–4 | - | Y4–Y7 | Dừng trục (Axis stop) | Lệnh dừng trục 1–4 từ CPU. | <SourceRef doc="sh080058" page="3-16" /> |
+| 1–4 | - | Y8 / YA / YC / YE | Khởi động JOG chạy thuận (Forward run JOG start) | Lệnh khởi động JOG chạy thuận, trục 1–4. | <SourceRef doc="sh080058" page="3-16" /> |
+| 1–4 | - | Y9 / YB / YD / YF | Khởi động JOG chạy ngược (Reverse run JOG start) | Lệnh khởi động JOG chạy ngược, trục 1–4. | <SourceRef doc="sh080058" page="3-16" /> |
+| 1–4 | - | Y10–Y13 | Khởi động định vị (Positioning start) | Lệnh khởi động định vị trục 1–4. | <SourceRef doc="sh080058" page="3-16" /> |
+| 1–4 | - | Y14–Y17 | Cờ cấm thực thi (Execution prohibition flag) | Cờ cấm thực thi trục 1–4. | <SourceRef doc="sh080058" page="3-16" /> |
 
 Địa chỉ lấy từ bảng I/O của SH-080058 §3.3.1 (p.3-16); khi đấu dây vẫn đối chiếu bản manual đúng model (QD75D4 vs QD75D4N).
 
@@ -40,7 +40,7 @@ Thứ tự bắt buộc: bật Y0 trước, chờ X0, rồi mới ghi/đọc d�
 
 ## 2. Cờ đồng bộ và thời điểm làm mới
 
-- **X1 — Synchronization flag:** bật khi buffer memory của QD75 truy cập được. Dùng X1 làm điều kiện cho mọi lệnh đọc/ghi buffer memory trong chương trình tuần tự, tránh truy cập khi module chưa sẵn sàng.
+- **X1 — cờ đồng bộ (Synchronization flag):** bật khi buffer memory của QD75 truy cập được. Dùng X1 làm điều kiện cho mọi lệnh đọc/ghi buffer memory trong chương trình tuần tự, tránh truy cập khi module chưa sẵn sàng.
 - Một số thông số chỉ có hiệu lực sau khi Y0 chuyển từ OFF sang ON sau khi cấp điện hoặc reset CPU (ví dụ Pr.5, §5.2.1 p.5-20). Vì vậy trình tự chuẩn là: ghi thông số khi Y0 đang OFF, sau đó bật Y0 để module chốt giá trị.
 - Sau khi ghi thông số bằng `TO`, cần đọc lại để xác nhận trước khi phát lệnh chạy.
 
@@ -61,3 +61,4 @@ Tên tín hiệu, ý nghĩa và thời điểm làm mới chính xác tra SH-080
 - [Ladder và khởi động](/q/qd75/ladder)
 - [Thông số QD75D4](/q/qd75/parameters)
 - [Xử lý sự cố](/q/qd75/troubleshooting)
+- [Tra cứu cấu hình nhanh](/q/qd75/reference)

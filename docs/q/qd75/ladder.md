@@ -101,6 +101,10 @@ Nguyên tắc:
 - Lệnh chạy phải qua điều kiện chung, không bỏ qua bằng cờ phụ.
 - E-stop vẫn phải tác động trực tiếp mạch động lực, độc lập với ladder này.
 
+## 5. Ghi xuống PLC và theo dõi
+
+Sau khi viết chương trình trong GX Works2, nạp xuống CPU bằng `Online → Write to PLC`. Để theo dõi buffer memory và các ngõ X/Y, mở `Monitor → Device/Buffer Memory Batch Monitor`. Chỉ dùng `Tool → Initialize/Format PLC Memory` khi thực sự cần xoá bộ nhớ CPU và đã có bản sao lưu.
+
 ## Đọc tiếp
 
 - [Tín hiệu X/Y](/q/qd75/io-signals)

@@ -1,0 +1,51 @@
+---
+title: Delta ASDA-B2
+family: q
+module: qd75-drivers
+status: draft
+source: SH-080058
+---
+
+# Delta ASDA-B2
+
+ASDA-B2 nhận xung lệnh vi sai qua `PULSE/PULSE` và `SIGN/SIGN`, có thêm cặp `HPULSE/HSIGN` cho nguồn xung 5 V vi sai tốc độ cao. Driver đạt 500 kpps với line driver và 200 kpps với open collector. Trước khi đấu phải chốt ba điểm: dùng ngõ vi sai hay opto 24 V, kiểu sink hay source của PLC, và chỉ dùng một nguồn 24 V — không cấp đồng thời `VDD` nội với nguồn ngoài.
+
+## 1. Bảng chân
+
+| Chân | Tín hiệu | Ghi chú | Nguồn |
+| --- | --- | --- | --- |
+| 43 | PULSE (+) | Xung lệnh, cặp với 41 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 41 | /PULSE (−) | Xung lệnh, cặp với 43 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 39 | SIGN (+) | Chiều, cặp với 37 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 37 | /SIGN (−) | Chiều, cặp với 39 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 38 | HPULSE | Ngõ xung 5 V vi sai tốc độ cao | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 36 | /HPULSE | Cặp với 38, chỉ 5 V vi sai | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 42 | HSIGN | Chiều 5 V vi sai tốc độ cao | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 40 | /HSIGN | Cặp với 42, chỉ 5 V vi sai | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 35 | PULL HI | Kéo lên `VDD` khi dùng ngõ open-collector | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 9 | SON (DI1) | Servo-ON, do PLC điều khiển | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 28 | ALRM (+) | Ngõ ra báo lỗi, cặp với 27 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 27 | ALRM (−) | Cặp với 28 | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 11 | COM+ | Điểm chung nhóm ngõ vào | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 14 | COM− | Điểm chung nhóm ngõ vào | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+| 17 | VDD | 24 V nội, tối đa 500 mA | <SourceRef doc="asda-b2" page="3-18…3-22" /> <em>[secondary]</em> |
+
+## 2. Đấu với QD75D4
+
+- Cặp `PULSE F+/F−` của QD75D4 đi vào 43/41; cặp `PULSE R+/R−` đi vào 39/37. Không đảo cặp và không nối một dây của cặp xuống 0 V.
+- Nếu dùng ngõ open-collector thay vì line driver, phải nối `PULL HI` 35 tới `VDD` 17 theo manual; đây là chế độ khác, không phải chế độ vi sai.
+- Không cấp `VDD` 17 từ nguồn ngoài đồng thời với nguồn 12–24 V bên ngoài; chọn một nguồn cho mỗi nhóm.
+- Ngõ vào số quang cách: ON 15–24 V, dòng > 3 mA; OFF < 5 V, dòng < 0,5 mA; trở khoảng 4,7 kΩ. Driver hỗ trợ cả sink và source.
+- ALRM là ngõ ra dạng cặp 28/27, đưa về PLC để liên động; SON (DI1, chân 9) lấy từ ngõ ra transistor của PLC, không lấy từ QD75D4.
+
+## 3. Kiểm tra trước khi cấp điện
+
+- Đã chọn đúng chế độ xung của driver và khớp với QD75D4 `Pr.5`.
+- Đã đo thông mạch từng cặp 43/41 và 39/37.
+- Đã xác nhận chỉ có một nguồn 24 V cho nhóm ngõ vào.
+- Đã kiểm tra chiều quay bằng chạy thử không tải.
+
+## Đọc tiếp
+
+- [Tổng quan đấu dây driver](/q/drivers/)
+- [Thông số & tỉ số truyền](/q/drivers/parameters-gear)

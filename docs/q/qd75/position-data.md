@@ -60,3 +60,4 @@ Chi tiết địa chỉ buffer memory cho từng trường tra SH-080058 — ch�
 - [Thông số QD75D4](/q/qd75/parameters)
 - [Ladder và khởi động](/q/qd75/ladder)
 - [Chạy thử](/q/qd75/commissioning)
+- [Tra cứu cấu hình nhanh](/q/qd75/reference)

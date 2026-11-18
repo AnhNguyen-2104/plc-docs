@@ -7,13 +7,18 @@ source: SH-080058
 ---
 
 <script setup>
+import { useData } from 'vitepress'
 import { qd75Specs } from '../../.vitepress/data/modules/qd75d4.ts'
+const { lang } = useData()
+const pick = (value) => (typeof value === 'string' ? value : value[lang.value] ?? value.vi)
 const specRows = [
-  { no: 'Trục', name: 'Số trục điều khiển', range: String(qd75Specs.axes), src: qd75Specs.src },
-  { no: 'Ngõ ra', name: 'Kiểu ngõ ra xung', range: qd75Specs.outputType, src: qd75Specs.src },
-  { no: 'Điểm', name: 'Số điểm dữ liệu vị trí mỗi trục', range: String(qd75Specs.pointsPerAxis), src: qd75Specs.src }
+  { no: 'Trục', name: 'Số trục điều khiển (Number of controlled axes)', range: String(qd75Specs.axes), src: qd75Specs.src },
+  { no: 'Ngõ ra', name: 'Kiểu ngõ ra xung (Pulse output type)', range: pick(qd75Specs.outputType), src: qd75Specs.src },
+  { no: 'Điểm', name: 'Số điểm dữ liệu vị trí mỗi trục (Position data points per axis)', range: String(qd75Specs.pointsPerAxis), src: qd75Specs.src }
 ]
+
 </script>
+
 
 # QD75D4 — module vị trí 4 trục
 

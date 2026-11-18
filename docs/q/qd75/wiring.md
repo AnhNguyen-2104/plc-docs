@@ -56,3 +56,4 @@ Hình minh hoạ cách ghép cặp vi sai và điểm chung; chưa thay thế b�
 
 - [Tín hiệu X/Y của QD75D4](/q/qd75/io-signals)
 - [Chạy thử QD75D4](/q/qd75/commissioning)
+- [Đấu dây driver servo/step (MR-J4-A, ASDA-B2, Sigma-7, MINAS A6, DM542)](/q/drivers/)

@@ -87,7 +87,7 @@ Số trong bảng trên lấy nguyên từ dữ liệu của site, nguồn SH-08
 
 ### (a) Đường chính — ladder ghi buffer memory
 
-Dùng `TO` hoặc truy cập trực tiếp `U<base>\G<addr>`. Địa chỉ buffer của từng Pr. tra bảng trong SH-080058; trong ví dụ, `<Pr1>`…`<Pr4>` là chỗ giữ chỗ cho địa chỉ đó.
+Dùng `TO` hoặc truy cập trực tiếp `U<base>\G<addr>`. Địa chỉ buffer của từng Pr. tra bảng trong SH-080058; trong ví dụ, `<Pr1>`…`<Pr4>` là chỗ giữ chỗ cho địa chỉ đó. Trong GX Works2, nạp xuống CPU bằng `Online → Write to PLC` và theo dõi trực tiếp bằng `Monitor → Device/Buffer Memory Batch Monitor`.
 
 <CodeTabs :tabs="tabs" />
 
@@ -95,7 +95,7 @@ Dùng `TO` hoặc truy cập trực tiếp `U<base>\G<addr>`. Địa chỉ buffe
 
 ### (b) Đường công cụ — GX Configurator-QP (tuỳ chọn)
 
-Nếu có GX Configurator-QP, có thể khai báo thông số trong giao diện và tải xuống module. Đây là đường tuỳ chọn: nội dung cuối cùng vẫn nằm ở buffer memory, và vẫn phải kiểm tra bằng cách đọc lại.
+Nếu có GX Configurator-QP, có thể khai báo thông số trong giao diện và tải xuống module. Mở GX Configurator-QP từ GX Works2 (nhãn menu: tra bản GX Works2 đang dùng), khai báo trong mục `Parameter` rồi tải xuống. Đây là đường tuỳ chọn: nội dung cuối cùng vẫn nằm ở buffer memory, và vẫn phải kiểm tra bằng cách đọc lại.
 
 ## 6. Cảnh báo khi ghi thông số
 
@@ -110,3 +110,4 @@ Nếu có GX Configurator-QP, có thể khai báo thông số trong giao diện 
 - [Dữ liệu vị trí (Da.)](/q/qd75/position-data)
 - [Tín hiệu X/Y](/q/qd75/io-signals)
 - [Ladder và khởi động](/q/qd75/ladder)
+- [Tra cứu cấu hình nhanh](/q/qd75/reference)
