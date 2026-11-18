@@ -96,6 +96,10 @@ const ariaLabel = computed(() =>
     : 'Complete MELSEC Q system diagram: an eight-position Q38B base with Q61P supply, Q03UDV CPU, I/O and motion modules, field devices, a 24 VDC supply and the power rails.'
 )
 
+const baseTitle = computed(() =>
+  isVi.value ? 'Base unit Q38B' : 'Q38B base unit'
+)
+
 const baseSub = computed(() =>
   isVi.value ? 'Vị trí 0–7 · cấu hình tham chiếu' : 'Positions 0–7 · reference configuration'
 )
