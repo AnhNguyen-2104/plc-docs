@@ -49,5 +49,39 @@ export const modules: ModuleDef[] = [
       { slug: 'stepper-dm542', title: { vi: 'Driver step DM542', en: 'DM542 step driver' } },
       { slug: 'parameters-gear', title: { vi: 'Thông số & tỉ số truyền', en: 'Parameters & gear ratio' } }
     ]
+  },
+  {
+    id: 'q-system',
+    familyId: 'q',
+    slug: 'system',
+    name: {
+      vi: 'Hệ thống & nguồn',
+      en: 'System & power'
+    },
+    pages: [
+      { slug: '', title: { vi: 'Tổng thể hệ thống', en: 'System overview' } },
+      { slug: 'io-wiring', title: { vi: 'Đấu dây vào/ra', en: 'I/O wiring' } },
+      { slug: 'power-and-base', title: { vi: 'Nguồn và base', en: 'Power and base' } }
+    ]
+  },
+  {
+    id: 'q-modules',
+    familyId: 'q',
+    slug: 'modules',
+    name: {
+      vi: 'Danh mục module',
+      en: 'Module catalogue'
+    },
+    pages: [
+      { slug: '', title: { vi: 'Tổng quan danh mục', en: 'Catalogue overview' } },
+      { slug: 'cpu', title: { vi: 'CPU', en: 'CPU' } },
+      { slug: 'io', title: { vi: 'Vào/ra số', en: 'Digital I/O' } },
+      { slug: 'analog', title: { vi: 'Tương tự', en: 'Analog' } },
+      { slug: 'counter', title: { vi: 'Đếm xung', en: 'Counter' } },
+      { slug: 'serial', title: { vi: 'Nối tiếp', en: 'Serial' } },
+      { slug: 'ethernet', title: { vi: 'Ethernet', en: 'Ethernet' } },
+      { slug: 'cc-link', title: { vi: 'CC-Link', en: 'CC-Link' } },
+      { slug: 'motion', title: { vi: 'Chuyển động', en: 'Motion' } }
+    ]
   }
 ]

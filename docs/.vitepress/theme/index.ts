@@ -9,6 +9,8 @@ import SourceRef from './SourceRef.vue'
 import WiringDiagram from './WiringDiagram.vue'
 import LadderDiagram from './LadderDiagram.vue'
 import PinMapDiagram from './PinMapDiagram.vue'
+import ModuleMatrix from './ModuleMatrix.vue'
+import ModuleBlockDiagram from './ModuleBlockDiagram.vue'
 import './custom.css'
 
 export default {
@@ -23,6 +25,8 @@ export default {
     app.component('WiringDiagram', WiringDiagram)
     app.component('LadderDiagram', LadderDiagram)
     app.component('PinMapDiagram', PinMapDiagram)
+    app.component('ModuleMatrix', ModuleMatrix)
+    app.component('ModuleBlockDiagram', ModuleBlockDiagram)
   }
 } satisfies Theme
-export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef, WiringDiagram, LadderDiagram, PinMapDiagram }
+export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef, WiringDiagram, LadderDiagram, PinMapDiagram, ModuleMatrix, ModuleBlockDiagram }

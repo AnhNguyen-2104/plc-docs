@@ -106,5 +106,132 @@ export const pdfDocs: Record<string, PdfDoc> = {
       '3': 6,
       '4': 7
     }
+  },
+
+  sh080483: {
+    key: 'sh080483',
+    short: 'SH-080483',
+    title: 'Mitsubishi SH-080483ENG-BC \u2014 QCPU User\u2019s Manual (Hardware Design, Maintenance and Inspection)',
+    url: 'https://www.mitsubishielectric.com/dl/fa/document/manual/plc/sh080483eng/sh080483engbc.pdf',
+    map: {
+      '1.1': 28,
+      '1.1.3': 29,
+      '1.1.4': 30,
+      '6.1.3': 132,
+      '6.1.3-udh': 142,
+      '6.1.3-udv': 145,
+      '7.2.1': 214,
+      '8.3': 249
+    }
+  },
+  sh080042: {
+    key: 'sh080042',
+    short: 'SH-080042',
+    title: 'Mitsubishi SH-080042ENG-AH \u2014 I/O Module Type Building Block User\u2019s Manual',
+    url: 'https://www.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf',
+    map: {
+      '2.4': 42,
+      '3.5': 81
+    }
+  },
+  sh080055: {
+    key: 'sh080055',
+    short: 'SH-080055',
+    title: 'Mitsubishi SH-080055U \u2014 Analog-Digital Converter Module (Q64AD/Q68AD)',
+    url: 'https://www.mitsubishielectric.com/dl/fa/document/manual/plc/sh080055/sh080055u.pdf',
+    map: {
+      '3.1': 27,
+      '3.1-conv': 28,
+      '3.4.1': 44,
+      '4.3': 63,
+      '6.1.2': 111
+    }
+  },
+  sh080054: {
+    key: 'sh080054',
+    short: 'SH-080054',
+    title: 'Mitsubishi SH-080054V \u2014 Digital-Analog Converter Module (Q62DA/Q68DA)',
+    url: 'https://www.mitsubishielectric.com/dl/fa/document/manual/plc/sh080054/sh080054v.pdf',
+    map: {
+      '3.1.2': 29,
+      '3.4.1': 47,
+      '4.3': 65
+    }
+  },
+  sh080036: {
+    key: 'sh080036',
+    short: 'SH-080036',
+    title: 'Mitsubishi SH-080036Q \u2014 High-Speed Counter Module (QD62/QD62E/QD64)',
+    url: 'https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080036/sh080036q.pdf',
+    map: {
+      '3.1': 25,
+      '3.1.2': 26,
+      '3.5': 36,
+      '5.1.3': 61
+    }
+  },
+  sh080006: {
+    key: 'sh080006',
+    short: 'SH-080006',
+    title: 'Mitsubishi SH-080006W \u2014 Serial Communication Module User\u2019s Manual (Basic)',
+    url: 'https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080006/sh080006w.pdf',
+    map: {
+      '3.1': 62,
+      '3.3': 68
+    }
+  },
+  sh080009: {
+    key: 'sh080009',
+    short: 'SH-080009',
+    title: 'Mitsubishi SH-080009Y \u2014 Ethernet Interface Module User\u2019s Manual (Basic)',
+    url: 'https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080009/sh080009y.pdf',
+    map: {
+      '3.2': 28
+    }
+  },
+  sh080016: {
+    key: 'sh080016',
+    short: 'SH-080016',
+    title: 'Mitsubishi SH-080016E \u2014 CC-Link System Master/Local Module (QJ61BT11)',
+    url: 'https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080016/sh080016e.pdf',
+    map: {
+      '3.1': 38
+    }
+  },
+  sh080049: {
+    key: 'sh080049',
+    short: 'SH-080049',
+    title: 'Mitsubishi SH-080049T \u2014 MELSECNET/H Network System Reference Manual (PLC to PLC)',
+    url: 'https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080049/sh080049t.pdf',
+    map: {
+      '1.2': 25
+    }
+  },
+  ib0300062: {
+    key: 'ib0300062',
+    short: 'IB-0300062',
+    title: 'Mitsubishi IB-0300062C \u2014 QD75M Positioning Module User\u2019s Manual',
+    url: 'https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/ib0300062/ib0300062c.pdf',
+    map: {
+      '3.1': 55
+    }
+  },
+  ib0300185: {
+    key: 'ib0300185',
+    short: 'IB-0300185',
+    title: 'Mitsubishi IB-0300185K \u2014 QD77MS Simple Motion Module User\u2019s Manual',
+    url: 'https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/ib0300185/ib0300185k.pdf',
+    map: {
+      '3.1': 74
+    }
+  },
+  sh080807: {
+    key: 'sh080807',
+    short: 'SH-080807',
+    title: 'Mitsubishi SH-080807ENG-AF \u2014 QnUCPU User\u2019s Manual (Function Explanation, Program Fundamentals)',
+    url: 'https://www.mitsubishielectric.com/dl/fa/document/manual/plc/sh080807eng/sh080807engaf.pdf',
+    map: {
+      '2.4': 69
+    }
   }
 }
