@@ -109,16 +109,27 @@ function crossPath(y: number) {
   return `M574 ${y - 4} L586 ${y + 4} M586 ${y - 4} L574 ${y + 4}`
 }
 
+const BOX_TITLES: Record<Variant, string> = {
+  generic: 'Driver servo (CN1)',
+  'stepper-dm542': 'DM542 (P1)',
+  'mr-j4-a': 'MR-J4-A (CN1)',
+  'delta-b2': 'ASDA-B2 (CN1)',
+  'yaskawa-sigma7': 'SGD7S (CN1)',
+  'panasonic-minas-a6': 'MINAS A6'
+}
+
+const boxTitle = computed(() => BOX_TITLES[variant.value])
+
 const title = computed(() =>
   isVi.value
-    ? `QD75D4 → ${variant.value} (trục ${axisNo.value})`
-    : `QD75D4 → ${variant.value} (axis ${axisNo.value})`
+    ? `QD75D4 → ${boxTitle.value}, trục ${axisNo.value}`
+    : `QD75D4 → ${boxTitle.value}, axis ${axisNo.value}`
 )
 
 const ariaLabel = computed(() =>
   isVi.value
-    ? `Sơ đồ đấu dây QD75D4 trục ${axisNo.value} tới driver ${variant.value}`
-    : `Wiring diagram from QD75D4 axis ${axisNo.value} to the ${variant.value} driver`
+    ? `Sơ đồ đấu dây QD75D4 trục ${axisNo.value} tới ${boxTitle.value}`
+    : `Wiring diagram from QD75D4 axis ${axisNo.value} to ${boxTitle.value}`
 )
 
 const legendItems = computed<string[]>(() => {
@@ -221,7 +232,7 @@ const legendItems = computed<string[]>(() => {
 
         <text x="355" y="88" font-size="15" font-weight="700" fill="var(--vp-c-text-1)">QD75D4</text>
 
-        <text x="655" y="88" font-size="15" font-weight="700" fill="var(--vp-c-text-1)">{{ variant }}</text>
+        <text x="655" y="88" font-size="15" font-weight="700" fill="var(--vp-c-text-1)">{{ boxTitle }}</text>
 
         <template v-for="(pin, index) in pins" :key="`label-${index}`">
           <text x="515" :y="rowY(index) + 4" text-anchor="end" fill="var(--vp-c-text-2)">{{ pin.q }}</text>

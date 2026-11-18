@@ -18,12 +18,13 @@ QD75D4 dùng ngõ ra vi sai (differential) cho xung điều khiển. Mỗi trụ
 
 | Nhóm | Tín hiệu | Hướng | Ghi chú |
 | --- | --- | --- | --- |
-| Xung lệnh | PULSE A+, A− | QD75 → driver | Cặp vi sai, phải đi cùng cặp |
-| Xung lệnh | PULSE B+, B− | QD75 → driver | Cặp vi sai, lệch pha so với A |
-| Tham chiếu | COM (theo trục) | QD75 → driver | Điểm chung của cặp vi sai |
+| Xung lệnh | PULSE F+, F− | QD75 → driver | F = tiến, R = lùi; cặp vi sai, phải đi cùng cặp (SH-080058 §3.4.3 p.3-26) |
+| Xung lệnh | PULSE R+, R− | QD75 → driver | F = tiến, R = lùi; cặp vi sai, đảo chiều (SH-080058 §3.4.3 p.3-26) |
+| READY / điểm chung | 1A11 READY, 1A12 RDYCOM | driver → QD75 | Cần cho vòng READY (SH-080058 §3.4.3 p.3-27) |
+| Tín hiệu zero | 1A9 PG05, 1A10 PG0COM | driver → QD75 | Chỉ dùng cho tín hiệu zero khi OPR (§3.4.3 p.3-26) |
 | Cho phép/trạng thái | Tín hiệu trao đổi với driver | hai chiều | Tuỳ driver; tra bảng chân của cả hai thiết bị |
 
-Với QD75D4, mỗi trục có bộ đầu cực riêng. Việc ghép A+/A− và B+/B− thành cặp là bắt buộc để driver nhận đúng xung vi sai.
+Với QD75D4, mỗi trục có bộ đầu cực riêng. Mỗi cặp F+/F− và R+/R− là cặp vi sai và phải đi cùng cặp.
 
 ## 2. Nguyên tắc đi dây
 
@@ -43,8 +44,8 @@ Sơ đồ nguyên lý: xung vi sai, READY, SON từ PLC, ALM về PLC.
 ## 4. Checklist trước khi cấp điện
 
 - [ ] Đã cắt nguồn trong suốt quá trình đấu dây.
-- [ ] Đúng cặp A+/A−, B+/B−, không đảo giữa các trục.
-- [ ] COM nối đúng driver tương ứng từng trục.
+- [ ] Đúng cặp F+/F−, R+/R−, không đảo giữa các trục.
+- [ ] READY (1A11) và RDYCOM (1A12) nối đúng driver tương ứng từng trục.
 - [ ] Không quá 2 dây trên một điểm đầu cực.
 - [ ] Dây xung tách khỏi dây động lực.
 - [ ] Vỏ bọc nối đất một đầu, đúng quy định tủ.
