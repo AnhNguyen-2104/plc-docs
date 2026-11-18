@@ -77,9 +77,9 @@ Không phát lệnh chạy trước khi X0 bật. Sau khi ghi thông số, cần
 
 <CodeTabs :tabs="tabs" />
 
-<img :src="$withBase('/img/qd75/ladder-example.svg')" width="720" alt="Ladder — chờ ảnh">
+<LadderDiagram />
 
-Hình minh hoạ cấu trúc chương trình mẫu; chưa phải chương trình đã kiểm chứng trên phần cứng.
+Bốn rung: ghi Pr.1–Pr.5, bật Y0/chờ X0, đọc lại và cho phép chạy.
 
 ## 4. Liên động an toàn
 

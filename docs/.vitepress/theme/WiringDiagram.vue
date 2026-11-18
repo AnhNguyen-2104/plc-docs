@@ -132,6 +132,16 @@ const ariaLabel = computed(() =>
     : `Wiring diagram from QD75D4 axis ${axisNo.value} to ${boxTitle.value}`
 )
 
+const estopLabel = computed(() =>
+  isVi.value ? 'E-stop cắt động lực độc lập PLC' : 'E-stop cuts power independently of the PLC'
+)
+
+const sourceLabel = computed(() =>
+  isVi.value
+    ? 'Nguồn chân: SH-080058 §3.4.2 p.3-25, §3.4.3 p.3-26–3-27; chân driver theo manual hãng.'
+    : 'Pin sources: SH-080058 §3.4.2 p.3-25, §3.4.3 p.3-26–3-27; drive pins per the manufacturer manual.'
+)
+
 const legendItems = computed<string[]>(() => {
   const items = isVi.value
     ? [
@@ -252,14 +262,14 @@ const legendItems = computed<string[]>(() => {
       <g class="wiring-legend-g">
         <line x1="20" y1="400" x2="60" y2="400" stroke="var(--vp-c-warning-1)" stroke-width="1.5" stroke-dasharray="4 3" />
         <text x="70" y="404" fill="var(--vp-c-text-2)">SON: PLC → drive</text>
-        <text x="20" y="424" fill="var(--vp-c-text-2)">E-stop cắt động lực độc lập PLC</text>
+        <text x="20" y="424" fill="var(--vp-c-text-2)">{{ estopLabel }}</text>
       </g>
     </svg>
     <figcaption class="wiring-legend">
       <ul>
         <li v-for="(item, index) in legendItems" :key="`legend-${index}`">{{ item }}</li>
       </ul>
-      <p class="wiring-source">Nguồn chân: SH-080058 §3.4.2 p.3-25, §3.4.3 p.3-26–3-27; chân driver theo manual hãng.</p>
+      <p class="wiring-source">{{ sourceLabel }}</p>
     </figcaption>
   </figure>
 </template>

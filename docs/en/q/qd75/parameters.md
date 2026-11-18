@@ -21,6 +21,7 @@ TO   U0\\G0  K0      K1   (* Pr.1: mm unit *)
 TO   U0\\G1  K500    K1   (* Pr.2: 500 pulses/rev *)
 TO   U0\\G2  K50000  K1   (* Pr.3: 5 mm, written in 0.1 µm *)
 TO   U0\\G3  K1      K1   (* Pr.4: factor 1 *)
+TO   U0\\G4  K0      K1   (* Pr.5: PULSE/SIGN *)
 
 (* Read back to confirm. *)
 LD   M8000

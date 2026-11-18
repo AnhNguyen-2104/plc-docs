@@ -21,6 +21,7 @@ TO   U0\\G0  K0      K1   (* Pr.1: đơn vị mm *)
 TO   U0\\G1  K500    K1   (* Pr.2: 500 pulse/vòng *)
 TO   U0\\G2  K50000  K1   (* Pr.3: 5 mm, ghi bằng 0,1 µm *)
 TO   U0\\G3  K1      K1   (* Pr.4: hệ số 1 *)
+TO   U0\\G4  K0      K1   (* Pr.5: PULSE/SIGN *)
 
 (* Đọc lại để xác nhận. *)
 LD   M8000

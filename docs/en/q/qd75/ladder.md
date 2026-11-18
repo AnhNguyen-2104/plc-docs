@@ -77,9 +77,9 @@ Do not issue a run command before X0 turns on. After writing parameters, a refre
 
 <CodeTabs :tabs="tabs" />
 
-<img :src="$withBase('/img/qd75/ladder-example.svg')" width="720" alt="Ladder — pending image">
+<LadderDiagram />
 
-The figure illustrates the structure of a sample program; it is not yet a program verified on hardware.
+Four rungs: write Pr.1–Pr.5, turn on Y0/wait for X0, read back and enable the run.
 
 ## 4. Safety interlocks
 
