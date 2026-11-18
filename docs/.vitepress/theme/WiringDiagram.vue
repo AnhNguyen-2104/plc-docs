@@ -35,7 +35,8 @@ const pins = computed<Pin[]>(() => {
         { q: `${a}A17 PULSE R+`, d: 'NP 35' },
         { q: `${a}A18 PULSE R−`, d: 'NG 36' },
         { q: `${a}A11 READY`, d: 'RD 49' },
-        { q: `${a}A12 RDYCOM`, d: 'DOCOM 46/47' },
+        { q: `${a}A12 RDYCOM`, d: '+24 V' },
+        { q: '0 V', d: 'DOCOM 46/47' },
         { q: 'PLC output', d: 'SON 15' },
         { q: 'drive output', d: 'ALM 48 → PLC' }
       ]
@@ -45,11 +46,11 @@ const pins = computed<Pin[]>(() => {
         { q: `${a}A16 PULSE F−`, d: '/PULSE 41' },
         { q: `${a}A17 PULSE R+`, d: 'SIGN 39' },
         { q: `${a}A18 PULSE R−`, d: '/SIGN 37' },
-        { q: `${a}A11 READY`, d: '—' },
+        { q: `${a}A11 READY`, d: 'DO1+ 7' },
+        { q: `${a}A12 RDYCOM`, d: 'COM+ 11 (+24 V)' },
+        { q: '0 V', d: 'DO1− 6 / COM− 14' },
         { q: 'PLC output', d: 'SON 9' },
-        { q: 'drive output', d: 'ALRM 28/27 → PLC' },
-        { q: `${a}A12 RDYCOM`, d: 'COM− 14' },
-        { q: '+24 V', d: 'COM+ 11' }
+        { q: 'drive output', d: 'ALRM 28/27 → PLC' }
       ]
     case 'yaskawa-sigma7':
       return [
@@ -146,20 +147,36 @@ const legendItems = computed<string[]>(() => {
   const items = isVi.value
     ? [
         'PULSE F+/F− → PP/PG, PULSE R+/R− → NP/NG — cặp vi sai, không tách',
-        'READY 1A11 ← RD (drive sẵn sàng)',
-        'RDYCOM 1A12 → DOCOM (common ngõ ra của drive), không phải DICOM',
+        'READY 1A11 ← ngõ ra sẵn sàng của drive (kiểu sink)',
+        'RDYCOM 1A12 ← +24 V của nguồn nhóm ngõ vào, không phải DICOM',
         'SON ← ngõ ra transistor của PLC, không phải QD75D4',
         'ALM → ngõ vào PLC để liên động',
         'E-stop cắt động lực độc lập với PLC'
       ]
     : [
         'PULSE F+/F− → PP/PG, PULSE R+/R− → NP/NG — differential pairs, do not split',
-        'READY 1A11 ← RD (drive ready)',
-        'RDYCOM 1A12 → DOCOM (drive output common), not DICOM',
+        'READY 1A11 ← drive ready output (sinking type)',
+        'RDYCOM 1A12 ← +24 V of the input-group supply, not DICOM',
         'SON ← PLC transistor output, not QD75D4',
         'ALM → PLC input for interlocking',
         'E-stop cuts power independently of the PLC'
       ]
+  const readyLines = variant.value === 'delta-b2'
+    ? (isVi.value
+        ? ['READY 1A11 ← DO1+ 7 (SRDY), DO1− 6 → 0 V', 'RDYCOM 1A12 → COM+ 11 (+24 V), chung nguồn nhóm I/O']
+        : ['READY 1A11 ← DO1+ 7 (SRDY), DO1− 6 → 0 V', 'RDYCOM 1A12 → COM+ 11 (+24 V), same supply as the I/O group'])
+    : variant.value === 'mr-j4-a'
+      ? (isVi.value
+          ? ['READY 1A11 ← RD 49, DOCOM 46/47 → 0 V', 'RDYCOM 1A12 → +24 V; bản vẽ plc247 nối RDYCOM vào DICOM 20/21']
+          : ['READY 1A11 ← RD 49, DOCOM 46/47 → 0 V', 'RDYCOM 1A12 → +24 V; the plc247 drawing wires RDYCOM to DICOM 20/21'])
+      : []
+  const readyLines2 = variant.value === 'yaskawa-sigma7'
+    ? (isVi.value
+        ? ['READY 1A11 ← ngõ ra S-RDY(+) của drive', 'RDYCOM 1A12 ← S-RDY(−): cặp cách ly, không phải +24 V']
+        : ['READY 1A11 ← drive S-RDY(+) output', 'RDYCOM 1A12 ← S-RDY(−): isolated pair, not +24 V'])
+    : []
+  if (readyLines2.length) items.splice(1, 2, ...readyLines2)
+  if (readyLines.length) items.splice(1, 2, ...readyLines)
   if (variant.value === 'mr-j4-a') {
     items.push(
       isVi.value

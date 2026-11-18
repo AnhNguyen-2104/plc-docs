@@ -23,6 +23,8 @@ ASDA-B2 nhận xung lệnh vi sai qua `PULSE/PULSE` và `SIGN/SIGN`, có thêm c
 | 42 | HSIGN | Chiều 5 V vi sai tốc độ cao | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 | 40 | /HSIGN | Cặp với 42, chỉ 5 V vi sai | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 | 35 | PULL HI | Kéo lên `VDD` khi dùng ngõ open-collector | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 7 | DO1+ | Ngõ ra `SRDY` mặc định, cặp với 6 | <SourceRef doc="asda-b2" page="3-18" /> <SourceRef doc="asda-b2" page="3-26" /> <em>[secondary]</em> |
+| 6 | DO1− | Cặp với 7, cực âm của ngõ ra `SRDY` | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 | 9 | SON (DI1) | Servo-ON, do PLC điều khiển | <SourceRef doc="asda-b2" page="3-22" /> <em>[secondary]</em> |
 | 28 | ALRM (+) | Ngõ ra báo lỗi, cặp với 27 | <SourceRef doc="asda-b2" page="3-21" /> <em>[secondary]</em> |
 | 27 | ALRM (−) | Cặp với 28 | <SourceRef doc="asda-b2" page="3-21" /> <em>[secondary]</em> |
@@ -41,6 +43,8 @@ ASDA-B2 nhận xung lệnh vi sai qua `PULSE/PULSE` và `SIGN/SIGN`, có thêm c
 />
 
 ## 2. Đấu với QD75D4
+
+- READY: `READY` 1A11 lấy từ `DO1+` 7 (`SRDY`), `RDYCOM` 1A12 lên `+24 V` ở `COM+` 11, `DO1−` 6 và `COM−` 14 về 0 V. Vòng: +24 V → RDYCOM (1A12) → photocoupler READY → 1A11 → DO1+ (7) → transistor ngõ ra → DO1− (6) → 0 V. QD75D4 chỉ định nghĩa RDYCOM là "chung cho tín hiệu READY" (SH-080058 §3.4.3) và READY là ngõ photocoupler 24 VDC/4,7 kΩ (§3.4.1); manual không ấn định RDYCOM ở +24 V hay 0 V, nên cực tính do ngõ ra của drive quyết định — `DO1` của ASDA-B2 là ngõ ra kiểu sink nên RDYCOM phải ở +24 V.
 
 - Cặp `PULSE F+/F−` của QD75D4 đi vào 43/41; cặp `PULSE R+/R−` đi vào 39/37. Không đảo cặp và không nối một dây của cặp xuống 0 V.
 - Nếu dùng ngõ open-collector thay vì line driver, phải nối `PULL HI` 35 tới `VDD` 17 theo manual; đây là chế độ khác, không phải chế độ vi sai.

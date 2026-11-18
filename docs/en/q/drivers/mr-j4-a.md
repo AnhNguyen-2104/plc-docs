@@ -83,7 +83,7 @@ Servo-ON is the `SON` input at **CN1-15** (SH-030143-C §2.2 p.2-17, §2.3 p.2-2
 | INP (In-position) | 24 | ON when the pulse deviation is within the in-position range | SH-030143-C §2.3 <SourceRef doc="sh030143" page="2-31" /> |
 | DOCOM | 46, 47 | Common point of the output group | SH-030143-C §2.2 <SourceRef doc="sh030143" page="2-17" /> |
 
-Suggested wiring: `RD` (CN1-49) → the `READY` 1A11 pin of the QD75D4, and `RDYCOM` 1A12 → the corresponding supply rail; `ALM` (CN1-48) → a PLC input for interlocking and fault display. This is a designer's wiring decision, not wording from the manual: SH-080058 only defines 1A11 as a "drive unit READY" input (§3.4.3 p.3-27), while the MR-J4-A manual only defines RD as a ready output (§2.3 p.2-31).
+Wiring for the MR-J4 sinking output: `RD` (CN1-49) → `READY` 1A11, `RDYCOM` 1A12 → **+24 V**, `DOCOM` 46/47 → 0 V; loop +24 V → RDYCOM → READY photocoupler → RD 49 → DOCOM → 0 V. `ALM` (CN1-48) → a PLC input for interlocking and fault display. The plc247 drawing wires `RDYCOM` to `DICOM` 20/21; the MR-J4-A CN1 table reserves `DICOM` 20/21 for the input group and `DOCOM` 46/47 for the output group (§2.2 p.2-17; the internal connection diagram §2.5 p.2-40–2-41 draws `RD` 49 in the `DOCOM` group), so this page keeps `DOCOM` and does not follow that drawing.
 
 ## 4. 24 V supply
 

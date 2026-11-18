@@ -25,12 +25,17 @@ Sigma-7 SGD7S bản analog/pulse (200 V) nhận xung lệnh vi sai qua `PULS//PU
 | 32 | ALM− | Ngõ ra báo lỗi (−) | <SourceRef doc="sgd7s" page="4-37" /> |
 | 25 | /COIN (/SO1+) | Hoàn tất định vị (+) | <SourceRef doc="sgd7s" page="4-37" /> |
 | 26 | /COIN (−) | Hoàn tất định vị (−) | <SourceRef doc="sgd7s" page="4-37" /> |
+| 29 / 30 | S-RDY+ / S-RDY− | Ngõ ra sẵn sàng dạng cặp, theo ví dụ kết nối của QD75D với Yaskawa | <SourceRef doc="sh080058" page="Appendix-8.1" /> <em>[secondary — ví dụ kết nối, chưa đối chiếu bảng CN1 của Sigma-7]</em> |
 | 44 | /ALM-RST (/SI4) | Reset lỗi | <SourceRef doc="sgd7s" page="4-35" /> |
 | 47 | +24VIN | Nguồn 24 V cho nhóm ngõ vào | <SourceRef doc="sgd7s" page="4-35" /> |
 | 1, 2, 6, 10 | SG | Điểm chung tín hiệu | <SourceRef doc="sgd7s" page="4-38" /> |
 | 3, 13, 18 | PL1 / PL2 / PL3 | 12 V nội cho open collector | <SourceRef doc="sgd7s" page="4-37" /> |
 
 <WiringDiagram variant="yaskawa-sigma7" />
+
+## 2. Đấu với QD75D4
+
+- `READY` 1A11 ← `S-RDY+` 29, `RDYCOM` 1A12 ← `S-RDY−` 30: đây là cặp ngõ ra cách ly đi thẳng vào photocoupler READY, **không** phải +24 V. Chân 29/30 lấy từ ví dụ kết nối QD75D ↔ Yaskawa trong SH-080058 (Phụ lục 8.1); bảng CN1 của SGD7S chưa được đối chiếu nên coi là chưa xác minh.
 
 <DriverPhoto
   src="/img/drivers/yaskawa-sigma7.jpg"

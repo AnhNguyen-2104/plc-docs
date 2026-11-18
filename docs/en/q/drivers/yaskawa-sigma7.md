@@ -26,6 +26,7 @@ The Sigma-7 SGD7S analog/pulse version (200 V) accepts differential command puls
 | 25 | /COIN (/SO1+) | Positioning complete (+) | <SourceRef doc="sgd7s" page="4-37" /> |
 | 26 | /COIN (−) | Positioning complete (−) | <SourceRef doc="sgd7s" page="4-37" /> |
 | 44 | /ALM-RST (/SI4) | Fault reset | <SourceRef doc="sgd7s" page="4-35" /> |
+| 29 / 30 | S-RDY+ / S-RDY− | Ready output pair, per the QD75D-to-Yaskawa connection example | <SourceRef doc="sh080058" page="Appendix-8.1" /> <em>[secondary — connection example, not cross-checked against the Sigma-7 CN1 table]</em> |
 | 47 | +24VIN | 24 V supply for the input group | <SourceRef doc="sgd7s" page="4-35" /> |
 | 1, 2, 6, 10 | SG | Signal common | <SourceRef doc="sgd7s" page="4-38" /> |
 | 3, 13, 18 | PL1 / PL2 / PL3 | Internal 12 V for open collector | <SourceRef doc="sgd7s" page="4-37" /> |
@@ -41,6 +42,8 @@ The Sigma-7 SGD7S analog/pulse version (200 V) accepts differential command puls
 />
 
 ## 2. Wiring to the QD75D4
+- `READY` 1A11 ← `S-RDY+` 29, `RDYCOM` 1A12 ← `S-RDY−` 30: an isolated output pair that feeds the READY photocoupler directly, **not** +24 V. Pins 29/30 come from the QD75D ↔ Yaskawa connection example in SH-080058 (Appendix 8.1); the SGD7S CN1 table has not been cross-checked, so treat this as unverified.
+
 
 - QD75D4 `PULSE F+/F−` goes to 7/8; `PULSE R+/R−` goes to 11/12. This is a differential pair and must not be connected to a 24 V opto input.
 - `/S-ON` pin 40 is the servo-ON input and comes from a PLC transistor output; the QD75D4 has no servo-ON output.

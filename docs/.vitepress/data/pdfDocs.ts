@@ -72,7 +72,8 @@ export const pdfDocs: Record<string, PdfDoc> = {
       '3-19': 62,
       '3-20': 63,
       '3-21': 64,
-      '3-22': 65
+      '3-22': 65,
+      '3-26': 69
     }
   },
   sgd7s: {

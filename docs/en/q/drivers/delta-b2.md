@@ -23,6 +23,8 @@ The ASDA-B2 accepts differential command pulses via `PULSE/PULSE` and `SIGN/SIGN
 | 42 | HSIGN | High-speed 5 V differential direction | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 | 40 | /HSIGN | Paired with 42, 5 V differential only | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 | 35 | PULL HI | Pull-up to `VDD` when using open-collector inputs | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
+| 7 | DO1+ | Default `SRDY` output, paired with 6 | <SourceRef doc="asda-b2" page="3-18" /> <SourceRef doc="asda-b2" page="3-26" /> <em>[secondary]</em> |
+| 6 | DO1− | Paired with 7, negative side of the `SRDY` output | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 | 9 | SON (DI1) | Servo-ON, driven by the PLC | <SourceRef doc="asda-b2" page="3-22" /> <em>[secondary]</em> |
 | 28 | ALRM (+) | Fault output, paired with 27 | <SourceRef doc="asda-b2" page="3-21" /> <em>[secondary]</em> |
 | 27 | ALRM (−) | Paired with 28 | <SourceRef doc="asda-b2" page="3-21" /> <em>[secondary]</em> |
@@ -41,6 +43,8 @@ The ASDA-B2 accepts differential command pulses via `PULSE/PULSE` and `SIGN/SIGN
 />
 
 ## 2. Wiring to the QD75D4
+
+- READY: `READY` 1A11 comes from `DO1+` 7 (`SRDY`), `RDYCOM` 1A12 goes to `+24 V` at `COM+` 11, `DO1−` 6 and `COM−` 14 go to 0 V. Loop: +24 V → RDYCOM (1A12) → READY photocoupler → 1A11 → DO1+ (7) → output transistor → DO1− (6) → 0 V. The QD75D4 manual only defines RDYCOM as "common for the drive READY signal" (SH-080058 §3.4.3) and READY as a 24 VDC/4.7 kΩ photocoupler input (§3.4.1); it does not fix RDYCOM at +24 V or 0 V, so the polarity is set by the drive output — `DO1` of the ASDA-B2 is a sinking output, hence RDYCOM sits at +24 V.
 
 - The QD75D4 `PULSE F+/F−` pair goes to 43/41; the `PULSE R+/R−` pair goes to 39/37. Do not swap the pair and do not connect one wire of the pair to 0 V.
 - If an open-collector input is used instead of the line driver, `PULL HI` 35 must be connected to `VDD` 17 per the manual; this is a different mode, not differential mode.

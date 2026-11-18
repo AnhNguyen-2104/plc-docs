@@ -83,7 +83,7 @@ Servo-ON là ngõ vào `SON` tại **CN1-15** (SH-030143-C §2.2 p.2-17, §2.3 p
 | INP (In-position) | 24 | ON khi số xung lệch nằm trong dải in-position | §2.3 <SourceRef doc="sh030143" page="2-31" /> |
 | DOCOM | 46, 47 | Điểm chung của nhóm ngõ ra | §2.2 <SourceRef doc="sh030143" page="2-17" /> |
 
-Cách đấu đề xuất: `RD` (CN1-49) → chân `READY` 1A11 của QD75D4, và `RDYCOM` 1A12 → cực nguồn tương ứng; `ALM` (CN1-48) → một ngõ vào PLC để liên động và hiển thị lỗi. Đây là quyết định đấu dây của người thiết kế, không phải câu chữ của manual: SH-080058 chỉ định nghĩa 1A11 là ngõ vào "drive unit READY" (§3.4.3 p.3-27), còn manual MR-J4-A chỉ định nghĩa RD là ngõ ra báo sẵn sàng (§2.3 p.2-31).
+Cách đấu theo ngõ ra kiểu sink của MR-J4: `RD` (CN1-49) → `READY` 1A11, `RDYCOM` 1A12 → **+24 V**, `DOCOM` 46/47 → 0 V; vòng +24 V → RDYCOM → photocoupler READY → RD 49 → DOCOM → 0 V. `ALM` (CN1-48) → một ngõ vào PLC để liên động và hiển thị lỗi. Bản vẽ plc247 nối `RDYCOM` vào `DICOM` 20/21; bảng CN1 của MR-J4-A dành `DICOM` 20/21 cho nhóm ngõ vào và `DOCOM` 46/47 cho nhóm ngõ ra (§2.2 p.2-17; sơ đồ đấu nối nội bộ §2.5 p.2-40–2-41 vẽ `RD` 49 trong nhóm `DOCOM`), nên trang này giữ `DOCOM` và không theo bản vẽ.
 
 ## 4. Nguồn 24 V
 
