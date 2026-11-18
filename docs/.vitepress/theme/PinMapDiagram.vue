@@ -54,7 +54,7 @@ function buildRows(v: Variant, a: string): Row[] {
         { q: `${a}A17 (PULSE R+)`, d: 'SIGN 39', kind: 'pulse' },
         { q: `${a}A18 (PULSE R−)`, d: '/SIGN 37', kind: 'pulse' },
         { q: `${a}A11 (READY)`, d: 'DO1+ 7', kind: 'status' },
-        { q: `${a}A12 (RDYCOM)`, d: 'COM+ 11', kind: 'common', rail: 'p24' },
+        { q: `${a}A12 (RDYCOM)`, d: 'COM+ 11 (+24 V)', kind: 'common', rail: 'p24' },
         { q: '0 V', d: 'DO1− 6 / COM− 14', kind: 'zero', rail: '0v' },
         { q: 'PLC output', d: 'SON 9', kind: 'plc' },
         { q: 'drive output', d: 'ALRM 28/27 → PLC', kind: 'status' }

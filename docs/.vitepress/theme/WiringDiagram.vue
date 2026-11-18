@@ -143,10 +143,25 @@ const sourceLabel = computed(() =>
     : 'Pin sources: SH-080058 §3.4.2 p.3-25, §3.4.3 p.3-26–3-27; drive pins per the manufacturer manual.'
 )
 
+const pulseLegend = computed(() => {
+  const p = pins.value.slice(0, 4)
+  if (p.length < 4) return []
+  const pair = (a: Pin, b: Pin) => `${a.q} → ${a.d}, ${b.q} → ${b.d}`
+  return [
+    isVi.value
+      ? `Cặp 1: ${pair(p[0], p[1])} — vi sai, không tách`
+      : `Pair 1: ${pair(p[0], p[1])} — differential, do not split`,
+    isVi.value
+      ? `Cặp 2: ${pair(p[2], p[3])} — vi sai, không tách`
+      : `Pair 2: ${pair(p[2], p[3])} — differential, do not split`
+  ]
+})
+
 const legendItems = computed<string[]>(() => {
+  const pulse = pulseLegend.value
   const items = isVi.value
     ? [
-        'PULSE F+/F− → PP/PG, PULSE R+/R− → NP/NG — cặp vi sai, không tách',
+        ...pulse,
         'READY 1A11 ← ngõ ra sẵn sàng của drive (kiểu sink)',
         'RDYCOM 1A12 ← +24 V của nguồn nhóm ngõ vào, không phải DICOM',
         'SON ← ngõ ra transistor của PLC, không phải QD75D4',
@@ -154,7 +169,7 @@ const legendItems = computed<string[]>(() => {
         'E-stop cắt động lực độc lập với PLC'
       ]
     : [
-        'PULSE F+/F− → PP/PG, PULSE R+/R− → NP/NG — differential pairs, do not split',
+        ...pulse,
         'READY 1A11 ← drive ready output (sinking type)',
         'RDYCOM 1A12 ← +24 V of the input-group supply, not DICOM',
         'SON ← PLC transistor output, not QD75D4',
@@ -175,8 +190,8 @@ const legendItems = computed<string[]>(() => {
         ? ['READY 1A11 ← ngõ ra S-RDY(+) của drive', 'RDYCOM 1A12 ← S-RDY(−): cặp cách ly, không phải +24 V']
         : ['READY 1A11 ← drive S-RDY(+) output', 'RDYCOM 1A12 ← S-RDY(−): isolated pair, not +24 V'])
     : []
-  if (readyLines2.length) items.splice(1, 2, ...readyLines2)
-  if (readyLines.length) items.splice(1, 2, ...readyLines)
+  if (readyLines2.length) items.splice(pulse.length, 2, ...readyLines2)
+  if (readyLines.length) items.splice(pulse.length, 2, ...readyLines)
   if (variant.value === 'mr-j4-a') {
     items.push(
       isVi.value
