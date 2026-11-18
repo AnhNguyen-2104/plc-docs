@@ -72,7 +72,7 @@ Out of scope:
 - [X/Y signals](/en/q/qd75/io-signals) — READY handshake, axis flags, refresh timing.
 - [Parameters (Pr.)](/en/q/qd75/parameters) — units, pulses/revolution, travel/revolution, magnification, two parameter write paths.
 - [Position data (Da.)](/en/q/qd75/position-data) — ten data fields, three control systems, 600-point limit.
-- [Origin point return (OPR)](/en/q/qd75/opr) — four methods and the sequence.
+- [Origin point return (OPR)](/en/q/qd75/opr) — the OPR methods (Pr.43 codes) and the sequence.
 - [Ladder](/en/q/qd75/ladder) — buffer memory access, startup sequence, safety interlocks.
 - [Commissioning](/en/q/qd75/commissioning) — procedure from power-up to loaded operation.
 - [Troubleshooting](/en/q/qd75/troubleshooting) — indicators, error groups, how to look up error codes.

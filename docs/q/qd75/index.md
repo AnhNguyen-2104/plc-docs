@@ -72,7 +72,7 @@ Ngoài phạm vi:
 - [Tín hiệu X/Y](/q/qd75/io-signals) — bắt tay READY, cờ trục, thời điểm làm mới.
 - [Thông số (Pr.)](/q/qd75/parameters) — đơn vị, xung/vòng, quãng đường/vòng, hệ số nhân, hai đường ghi thông số.
 - [Dữ liệu vị trí (Da.)](/q/qd75/position-data) — mười trường dữ liệu, ba hệ điều khiển, giới hạn 600 điểm.
-- [Về gốc toạ độ (OPR)](/q/qd75/opr) — bốn phương pháp và trình tự.
+- [Về gốc toạ độ (OPR)](/q/qd75/opr) — các phương pháp OPR (mã Pr.43) và trình tự.
 - [Ladder](/q/qd75/ladder) — truy cập buffer memory, trình tự khởi động, liên động an toàn.
 - [Chạy thử](/q/qd75/commissioning) — quy trình từ cấp điện tới chạy có tải.
 - [Xử lý sự cố](/q/qd75/troubleshooting) — chỉ báo, nhóm lỗi, cách tra mã lỗi.
