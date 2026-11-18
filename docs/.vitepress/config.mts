@@ -41,36 +41,34 @@ export default defineConfig({
       label: 'Tiếng Việt',
       lang: 'vi',
       title: 'PLC Handbook',
-      description: 'Cẩm nang lập trình PLC — MELSEC Q, module vị trí QD75D4, song ngữ Việt/Anh.'
+      description: 'Cẩm nang lập trình PLC — MELSEC Q, module vị trí QD75D4, song ngữ Việt/Anh.',
+      themeConfig: {
+        nav: [{ text: 'MELSEC Q', link: '/q/' }, { text: 'So sánh dòng PLC', link: '/compare/' }],
+        sidebar: sidebar('vi'),
+        outline: { label: 'Trong trang này', level: [2, 3] },
+        docFooter: { prev: 'Trước', next: 'Sau' },
+        returnToTopLabel: 'Lên đầu'
+      }
     },
     en: {
       label: 'English',
       lang: 'en',
       link: '/en/',
       title: 'PLC Handbook',
-      description: 'A PLC programming handbook — MELSEC Q, QD75D4 positioning module, bilingual Vietnamese/English.'
+      description: 'A PLC programming handbook — MELSEC Q, QD75D4 positioning module, bilingual Vietnamese/English.',
+      themeConfig: {
+        nav: [{ text: 'MELSEC Q', link: '/en/q/' }, { text: 'PLC comparison', link: '/en/compare/' }],
+        sidebar: sidebar('en'),
+        outline: { label: 'On this page', level: [2, 3] },
+        docFooter: { prev: 'Previous', next: 'Next' },
+        returnToTopLabel: 'Return to top'
+      }
     }
   },
   themeConfig: {
     search: {
       provider: 'local',
       options: { locales: { root: { translations: { button: { buttonText: 'Tìm kiếm', buttonAriaLabel: 'Tìm kiếm' } } } } }
-    },
-    locales: {
-      root: {
-        label: 'Tiếng Việt',
-        nav: [{ text: 'MELSEC Q', link: '/q/' }, { text: 'So sánh dòng PLC', link: '/compare/' }],
-        sidebar: sidebar('vi'),
-        outline: { label: 'Trong trang này', level: [2, 3] },
-        docFooter: { prev: 'Trước', next: 'Sau' },
-        returnToTopLabel: 'Lên đầu'
-      },
-      en: {
-        label: 'English',
-        nav: [{ text: 'MELSEC Q', link: '/en/q/' }, { text: 'PLC comparison', link: '/en/compare/' }],
-        sidebar: sidebar('en'),
-        outline: { label: 'On this page', level: [2, 3] }
-      }
     }
   }
 })
