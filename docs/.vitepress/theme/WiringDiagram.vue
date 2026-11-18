@@ -84,7 +84,7 @@ const pins = computed<Pin[]>(() => {
       return [
         ...pulse,
         { q: `${a}A11 READY`, d: 'RD' },
-        { q: `${a}A12 RDYCOM`, d: 'COM' },
+        { q: `${a}A12 RDYCOM`, d: 'DOCOM' },
         { q: 'PLC output', d: 'SON' },
         { q: 'drive output', d: 'ALM → PLC' }
       ]
