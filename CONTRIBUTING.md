@@ -13,7 +13,7 @@
 2. Tạo `docs/<id>/index.md` và `docs/en/<id>/index.md`, frontmatter có `family: <id>`.
 3. (Tuỳ chọn) Thêm `docs/.vitepress/data/modules/<id>-*.ts` cho số liệu module, mọi dòng có `src`.
 4. Thêm `ModuleDef` vào `docs/.vitepress/data/modules.ts` — sidebar tự sinh, không sửa tay.
-5. Bổ sung khoá hỗ trợ trong `docs/.vitepress/data/capabilities.ts` (chỉ dùng family id đã có).
+5. Thêm family id mới vào map `support` của **mọi** entry đã có trong `docs/.vitepress/data/capabilities.ts` (chỉ dùng family id đã có trong `families.ts`). Thiếu khoá giờ render thành "dự kiến/planned" (chưa đánh giá) chứ không còn là ✘, nên bỏ sót sẽ âm thầm đánh dấu dòng PLC mới là chưa đánh giá trên `/compare/`; chỉ thêm ô khi đã có nguồn.
 6. Chạy `npm run check && npm run build`, sửa hết lỗi rồi đổi `status` sang `active`.
 
 Chủ đề dùng chung cho nhiều dòng PLC đặt trong `docs/concepts/`.

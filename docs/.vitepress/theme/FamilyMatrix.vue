@@ -46,9 +46,9 @@ function levelClass(level: string): string {
             <td
               v-for="family in orderedFamilies"
               :key="family.id"
-              :class="levelClass(cap.support[family.id] ?? 'no')"
+              :class="levelClass(cap.support[family.id] ?? 'planned')"
             >
-              {{ mark(cap.support[family.id] ?? 'no') }}
+              {{ mark(cap.support[family.id] ?? 'planned') }}
             </td>
           </tr>
         </tbody>
