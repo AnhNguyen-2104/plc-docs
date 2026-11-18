@@ -79,7 +79,7 @@ Do not issue a run command before X0 turns on. After writing parameters, a refre
 
 <LadderDiagram />
 
-Four rungs: write Pr.1–Pr.5, turn on Y0/wait for X0, read back and enable the run.
+Five rungs: write Pr.1–Pr.5, turn on Y0/wait for X0, read back and enable the run.
 
 ## 4. Safety interlocks
 

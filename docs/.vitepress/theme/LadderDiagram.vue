@@ -13,8 +13,8 @@ const title = computed(() =>
 
 const ariaLabel = computed(() =>
   isVi.value
-    ? 'Sơ đồ thang bốn rung: ghi Pr.1 tới Pr.5, bật Y0, chờ X0, đọc lại và cho phép chạy'
-    : 'Four-rung ladder: write Pr.1 to Pr.5, turn on Y0, wait for X0, read back and enable the run'
+    ? 'Sơ đồ thang năm rung: ghi Pr.1 tới Pr.5, bật Y0, chờ X0, đọc lại và cho phép chạy'
+    : 'Five-rung ladder: write Pr.1 to Pr.5, turn on Y0, wait for X0, read back and enable the run'
 )
 
 const unitLabel = computed(() => (isVi.value ? 'Pr.1 = đơn vị mm' : 'Pr.1 = unit mm'))

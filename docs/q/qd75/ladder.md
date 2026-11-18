@@ -79,7 +79,7 @@ Không phát lệnh chạy trước khi X0 bật. Sau khi ghi thông số, cần
 
 <LadderDiagram />
 
-Bốn rung: ghi Pr.1–Pr.5, bật Y0/chờ X0, đọc lại và cho phép chạy.
+Năm nhánh: ghi Pr.1–Pr.5, bật Y0/chờ X0, đọc lại và cho phép chạy.
 
 ## 4. Liên động an toàn
 
