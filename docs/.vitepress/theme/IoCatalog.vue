@@ -3,18 +3,21 @@ import { computed } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { qModules, type QModule } from '../data/modules/qseries'
 
-const { lang } = useData()
+const { lang, page } = useData()
 const isVi = computed(() => lang.value !== 'en')
+
+const current = computed(() => {
+  let rel = page.value.relativePath.replace(/\.md$/, '')
+  if (rel.endsWith('/index')) rel = rel.slice(0, -'/index'.length)
+  if (lang.value !== 'vi' && rel.startsWith(`${lang.value}/`)) {
+    rel = rel.slice(lang.value.length + 1)
+  }
+  return `/${rel}`
+})
 
 type Kind = 'input' | 'output' | 'combined'
 
 const props = defineProps<{ kind: Kind }>()
-
-const LABEL: Record<Kind, { vi: string; en: string }> = {
-  input: { vi: 'Ngõ vào số', en: 'Digital inputs' },
-  output: { vi: 'Ngõ ra số', en: 'Digital outputs' },
-  combined: { vi: 'Kết hợp vào/ra', en: 'Combined I/O' }
-}
 
 const NOUN: Record<Kind, { vi: string; en: string }> = {
   input: { vi: 'vào số', en: 'digital input' },
@@ -23,7 +26,6 @@ const NOUN: Record<Kind, { vi: string; en: string }> = {
 }
 
 const rows = computed(() => qModules.filter((module) => module.kind === props.kind))
-const title = computed(() => LABEL[props.kind][isVi.value ? 'vi' : 'en'])
 const summary = computed(() =>
   isVi.value
     ? `${rows.value.length} module ${NOUN[props.kind].vi} trong danh mục`
@@ -36,6 +38,10 @@ function cell(value: { vi: string; en: string } | string): string {
 
 function isDocumented(module: QModule): boolean {
   return module.status === 'documented'
+}
+
+function isCurrent(module: QModule): boolean {
+  return module.page === current.value
 }
 
 function points(module: QModule): string {
@@ -61,16 +67,17 @@ function points(module: QModule): string {
           </tr>
         </thead>
         <tbody>
-          <tr class="io-catalog-group">
-            <th :colspan="4" scope="colgroup">{{ title }}</th>
-          </tr>
           <tr
             v-for="module in rows"
             :key="module.id"
             :class="{ 'io-catalog-planned': !isDocumented(module) }"
           >
             <th scope="row" class="io-catalog-model">
-              <a v-if="isDocumented(module)" class="io-catalog-link" :href="withBase(module.page)">
+              <a
+                v-if="isDocumented(module) && !isCurrent(module)"
+                class="io-catalog-link"
+                :href="withBase(module.page)"
+              >
                 {{ module.model }}
               </a>
               <span v-else>{{ module.model }}</span>
@@ -115,15 +122,6 @@ function points(module: QModule): string {
   background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-1);
   white-space: nowrap;
-}
-
-.io-catalog-group th {
-  background: var(--vp-c-bg-soft);
-  color: var(--vp-c-text-1);
-  font-weight: 600;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
 .io-catalog-model {
