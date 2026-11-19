@@ -20,11 +20,17 @@ QD75D4 dùng ngõ ra vi sai (differential) cho xung điều khiển. Mỗi trụ
 | --- | --- | --- | --- |
 | Xung lệnh | PULSE F+, F− | QD75 → driver | F = tiến, R = lùi; cặp vi sai, phải đi cùng cặp (SH-080058 §3.4.3 p.3-26) |
 | Xung lệnh | PULSE R+, R− | QD75 → driver | F = tiến, R = lùi; cặp vi sai, đảo chiều (SH-080058 §3.4.3 p.3-26) |
+| Ngõ vào chức năng | DOG, FLS, RLS, STOP, CHG | driver/công tắc → QD75 | 1A3 DOG (gốc), 1A1 FLS, 1A2 RLS, 1A4 STOP, 1A5 CHG (SH-080058 §3.4.4 p.3-28) |
+| Ngõ vào chức năng | COM (chung nhóm vào) | — | 1A6, 1A7 — chung cho cả nhóm ngõ vào chức năng (SH-080058 §3.4.4 p.3-28) |
+| Ngõ vào chức năng | CLEAR, CLEAR COM | QD75 → driver | 1A13, 1A14 — chỉ đấu khi cần xoá lệch vị trí (SH-080058 §3.4.3 p.3-27) |
 | Xung lệnh | PULSE COM (`*2`) | QD75 → driver | Chung của cặp vi sai, nối 0 V/đất; manual in ký hiệu `*2`, không phải số đầu cực (SH-080058 §3.4.3 p.3-26) |
-| Xoá lệch | 1A13 CLEAR, 1A14 CLEAR COM | QD75 → driver | Chỉ dùng khi cần xoá lệch vị trí; để trống nếu không dùng (SH-080058 §3.4.3 p.3-27) |
 | READY / điểm chung | 1A11 READY, 1A12 RDYCOM | driver → QD75 | Cần cho vòng READY (SH-080058 §3.4.3 p.3-27) |
 | Tín hiệu zero | 1A9 PG05, 1A10 PG0COM | driver → QD75 | Chỉ dùng cho tín hiệu zero khi OPR (§3.4.3 p.3-26) |
 | Cho phép/trạng thái | Tín hiệu trao đổi với driver | hai chiều | Tuỳ driver; tra bảng chân của cả hai thiết bị |
+
+FLS/RLS là giới hạn phần mềm của QD75 — không đấu thì phải vô hiệu bằng thông số (Pr.13/Pr.14 và các tham số giới hạn liên quan), tuyệt đối không để hở dây rồi coi là đã an toàn. DOG chỉ cần khi OPR kiểu dùng dog; STOP và CHG dùng cho dừng khẩn/chuyển mạch tốc độ, đấu theo yêu cầu của máy.
+
+Ký hiệu *2: số đầu cực đổi theo trục — trục 1 dùng 1Axx, trục 2 dùng 1Bxx, trục 3 dùng 2Axx, trục 4 dùng 2Bxx; các số trên bảng là của trục 1.
 
 Với QD75D4, mỗi trục có bộ đầu cực riêng. Mỗi cặp F+/F− và R+/R− là cặp vi sai và phải đi cùng cặp. Các đầu cực 1A19/1B19/1A20/1B20 là ngõ vào PULSER (manual pulse generator), không phải chung của cặp xung lệnh.
 

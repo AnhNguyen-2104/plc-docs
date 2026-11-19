@@ -20,11 +20,17 @@ The QD75D4 uses differential outputs for the control pulses. Each axis requires 
 | --- | --- | --- | --- |
 | Command pulse | PULSE F+, F− | QD75 → driver | F = forward, R = reverse; differential pair, must be routed as a pair (SH-080058 §3.4.3 p.3-26) |
 | Command pulse | PULSE R+, R− | QD75 → driver | F = forward, R = reverse; differential pair, reverse direction (SH-080058 §3.4.3 p.3-26) |
+| Functional input | DOG, FLS, RLS, STOP, CHG | driver/switch → QD75 | 1A3 DOG (home), 1A1 FLS, 1A2 RLS, 1A4 STOP, 1A5 CHG (SH-080058 §3.4.4 p.3-28) |
+| Functional input | COM (input-group common) | — | 1A6, 1A7 — common for the whole functional-input group (SH-080058 §3.4.4 p.3-28) |
+| Functional input | CLEAR, CLEAR COM | QD75 → driver | 1A13, 1A14 — wire only when position deviation must be cleared (SH-080058 §3.4.3 p.3-27) |
 | Command pulse | PULSE COM (`*2`) | QD75 → driver | Common of the differential pair, tied to 0 V/earth; the manual prints a `*2` marker, not a terminal number (SH-080058 §3.4.3 p.3-26) |
-| Deviation clear | 1A13 CLEAR, 1A14 CLEAR COM | QD75 → driver | Only for clearing position deviation; leave unconnected if unused (SH-080058 §3.4.3 p.3-27) |
 | READY / common | 1A11 READY, 1A12 RDYCOM | driver → QD75 | Required for the READY loop (SH-080058 §3.4.3 p.3-27) |
 | Zero signal | 1A9 PG05, 1A10 PG0COM | driver → QD75 | Used only for the zero signal during OPR (§3.4.3 p.3-26) |
 | Enable/status | Signals exchanged with the driver | bidirectional | Depends on the driver; consult the pin tables of both devices |
+
+FLS/RLS are the QD75 software limits — if they are not wired you must disable them in parameters (Pr.13/Pr.14 and the related limit parameters); leaving the wires open is not "safe". DOG is required only for dog-type OPR; STOP and CHG are for emergency stop / speed switching and are wired per machine requirements.
+
+The *2 marker: terminal numbers change per axis — axis 1 uses 1Axx, axis 2 uses 1Bxx, axis 3 uses 2Axx, axis 4 uses 2Bxx; the numbers in this table are for axis 1.
 
 With the QD75D4, each axis has its own terminal block. Each F+/F− and R+/R− pair is a differential pair and must be routed together. Terminals 1A19/1B19/1A20/1B20 are the PULSER (manual pulse generator) input, not the command-pulse common.
 

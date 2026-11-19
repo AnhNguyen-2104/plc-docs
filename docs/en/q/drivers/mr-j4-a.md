@@ -62,11 +62,15 @@ The wiring example in SH-080058 §3.4.1 p.3-24 is drawn for the MR-J3-A (`PULSE 
 <ManualFigure
   src="/img/manual/mrj4-cn1-wiring.jpg"
   alt="MR-J4-A internal CN1 connection diagram: DICOM 20/21 input group, DOCOM 46/47 output group and RD 49"
-  caption="CN1 internal connection (24 V DC I/O circuits): DICOM, DOCOM 46/47, CPO…RD 49 — §2.5 figure for MR-J4-_A_-RJ 100 W or more"
+  caption="CN1 internal wiring (24 V DC I/O circuit)"
   doc="SH-030143-C"
   section="§2.5"
   page="2-40"
 />
+
+Applies to MR-J4-_A_-RJ 100 W and above.
+
+The manual figure shows DOCOM 46/47 tied to +24 V (source logic); the pin table on this page uses sink logic (DOCOM → 0 V) — pick one and wire the complete loop, never mix.
 
 ## 2. Servo-ON from the PLC
 
