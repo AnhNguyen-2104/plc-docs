@@ -75,7 +75,9 @@ export const modules: ModuleDef[] = [
     pages: [
       { slug: '', title: { vi: 'Tổng quan danh mục', en: 'Catalogue overview' } },
       { slug: 'cpu', title: { vi: 'CPU', en: 'CPU' } },
-      { slug: 'io', title: { vi: 'Vào/ra số', en: 'Digital I/O' } },
+      { slug: 'input', title: { vi: 'Vào số', en: 'Digital inputs' } },
+      { slug: 'output', title: { vi: 'Ra số', en: 'Digital outputs' } },
+      { slug: 'io', title: { vi: 'Kết hợp vào/ra', en: 'Combined I/O' } },
       { slug: 'analog', title: { vi: 'Tương tự', en: 'Analog' } },
       { slug: 'counter', title: { vi: 'Đếm xung', en: 'Counter' } },
       { slug: 'serial', title: { vi: 'Nối tiếp', en: 'Serial' } },

@@ -10,7 +10,7 @@ source: SH-080483, SH-080042, SH-080055, SH-080054, SH-080036
 
 <ModuleMatrix />
 
-This catalogue collects the Q-series modules this handbook can describe directly from the manufacturer manuals stored on disk, grouped by function: CPU, power supply, base unit, digital I/O, analog, counter, network and motion. Each row gives one key fact worth memorising, with its unit; the model name links to the page that covers the module. A row tagged "planned" is a module whose values could not be verified from the on-disk manuals, so only its qualitative role is kept.
+This catalogue collects the Q-series modules this handbook can describe directly from the manufacturer manuals stored on disk, grouped by function: CPU, power supply, base unit, digital inputs, digital outputs, combined I/O, analog, counter, network and motion. Each row gives one key fact worth memorising, with its unit; the model name links to the page that covers the module. A row tagged "planned" is a module whose values could not be verified from the on-disk manuals, so only its qualitative role is kept.
 
 ## Adding a module
 

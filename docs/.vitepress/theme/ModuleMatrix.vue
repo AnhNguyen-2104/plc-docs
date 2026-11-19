@@ -6,13 +6,15 @@ import { qModules, type QKind, type QModule } from '../data/modules/qseries'
 const { lang } = useData()
 const isVi = computed(() => lang.value !== 'en')
 
-const KINDS: QKind[] = ['cpu', 'power', 'base', 'io', 'analog', 'counter', 'network', 'motion']
+const KINDS: QKind[] = ['cpu', 'power', 'base', 'input', 'output', 'combined', 'analog', 'counter', 'network', 'motion']
 
 const kindLabel: Record<QKind, { vi: string; en: string }> = {
   cpu: { vi: 'CPU', en: 'CPU' },
   power: { vi: 'Nguồn', en: 'Power supply' },
   base: { vi: 'Base', en: 'Base unit' },
-  io: { vi: 'Vào/ra số', en: 'Digital I/O' },
+  input: { vi: 'Ngõ vào số', en: 'Digital inputs' },
+  output: { vi: 'Ngõ ra số', en: 'Digital outputs' },
+  combined: { vi: 'Kết hợp vào/ra', en: 'Combined I/O' },
   analog: { vi: 'Tương tự', en: 'Analog' },
   counter: { vi: 'Đếm xung', en: 'Counter' },
   network: { vi: 'Truyền thông', en: 'Network' },

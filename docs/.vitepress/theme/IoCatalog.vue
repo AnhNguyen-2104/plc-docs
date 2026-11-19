@@ -6,22 +6,29 @@ import { qModules, type QModule } from '../data/modules/qseries'
 const { lang } = useData()
 const isVi = computed(() => lang.value !== 'en')
 
-const COMBINED = new Set(['qh42p', 'qx41y41p', 'qx48y57'])
+type Kind = 'input' | 'output' | 'combined'
 
-const ioModules = computed(() => qModules.filter((module) => module.kind === 'io'))
+const props = defineProps<{ kind: Kind }>()
 
-type Section = { key: 'input' | 'output' | 'combined'; label: string; rows: QModule[] }
+const LABEL: Record<Kind, { vi: string; en: string }> = {
+  input: { vi: 'Ngõ vào số', en: 'Digital inputs' },
+  output: { vi: 'Ngõ ra số', en: 'Digital outputs' },
+  combined: { vi: 'Kết hợp vào/ra', en: 'Combined I/O' }
+}
 
-const sections = computed<Section[]>(() => {
-  const inputs = ioModules.value.filter((m) => !COMBINED.has(m.id) && /^Q[XI]/.test(m.model))
-  const outputs = ioModules.value.filter((m) => /^QY/.test(m.model))
-  const combined = ioModules.value.filter((m) => COMBINED.has(m.id))
-  return [
-    { key: 'input', label: isVi.value ? 'Ngõ vào' : 'Input', rows: inputs },
-    { key: 'output', label: isVi.value ? 'Ngõ ra' : 'Output', rows: outputs },
-    { key: 'combined', label: isVi.value ? 'Kết hợp' : 'Combined', rows: combined }
-  ]
-})
+const NOUN: Record<Kind, { vi: string; en: string }> = {
+  input: { vi: 'vào số', en: 'digital input' },
+  output: { vi: 'ra số', en: 'digital output' },
+  combined: { vi: 'kết hợp vào/ra', en: 'combined I/O' }
+}
+
+const rows = computed(() => qModules.filter((module) => module.kind === props.kind))
+const title = computed(() => LABEL[props.kind][isVi.value ? 'vi' : 'en'])
+const summary = computed(() =>
+  isVi.value
+    ? `${rows.value.length} module ${NOUN[props.kind].vi} trong danh mục`
+    : `${rows.value.length} ${NOUN[props.kind].en} modules catalogued`
+)
 
 function cell(value: { vi: string; en: string } | string): string {
   return typeof value === 'string' ? value : value[isVi.value ? 'vi' : 'en']
@@ -41,13 +48,7 @@ function points(module: QModule): string {
 
 <template>
   <div class="io-catalog">
-    <p class="io-catalog-intro">
-      {{
-        isVi
-          ? `${ioModules.length} module vào/ra số trong danh mục`
-          : `${ioModules.length} digital I/O modules catalogued`
-      }}
-    </p>
+    <p class="io-catalog-intro">{{ summary }}</p>
 
     <div class="io-catalog-wrap">
       <table class="io-catalog-table">
@@ -59,12 +60,12 @@ function points(module: QModule): string {
             <th>{{ isVi ? 'Ghi chú' : 'Note' }}</th>
           </tr>
         </thead>
-        <tbody v-for="section in sections" :key="section.key">
+        <tbody>
           <tr class="io-catalog-group">
-            <th :colspan="4" scope="colgroup">{{ section.label }}</th>
+            <th :colspan="4" scope="colgroup">{{ title }}</th>
           </tr>
           <tr
-            v-for="module in section.rows"
+            v-for="module in rows"
             :key="module.id"
             :class="{ 'io-catalog-planned': !isDocumented(module) }"
           >
