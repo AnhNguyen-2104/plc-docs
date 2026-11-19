@@ -50,7 +50,13 @@ The QX40 terminal block runs TB1–TB16 for X0–XF, TB17 is `COM` shared by all
 
 Because it is a positive common module, `COM` is tied to **+24 V** and each switch connects its X point to **0 V**; reversing the polarity will not turn the input on. The circuit drawings are on the [I/O wiring](/en/q/system/io-wiring) page.
 
-## 2. QX40 specifications
+## 2. Catalogue of 46 digital I/O modules
+
+<IoCatalog />
+
+Models marked "planned" are documented in the manual but a verifiable single spec could not be extracted; every other row's spec carries its manual page in the registry.
+
+## 3. QX40 specifications
 
 | Item | Value | Source |
 | --- | --- | --- |
@@ -65,7 +71,7 @@ Because it is a positive common module, `COM` is tied to **+24 V** and each swit
 | Occupied I/O points | 16 points (16-point input assignment) | SH-080042 §2.4 p.2-4 |
 | 5 VDC current consumption | 50 mA (TYP., all points ON) | SH-080042 §2.4 p.2-4 |
 
-## 3. QY40P pin layout
+## 4. QY40P pin layout
 
 <ModuleBlockDiagram
   model="QY40P"
@@ -104,7 +110,7 @@ Because it is a positive common module, `COM` is tied to **+24 V** and each swit
 
 QY40P groups all 16 points on a single `COM` (TB18); it has no `COM0`/`COM1` split like some 32/64-point modules. For a sink output, the load sits between `+12/24 V` (TB17) and the Y point, and `COM` returns to 0 V.
 
-## 4. QY40P specifications
+## 5. QY40P specifications
 
 | Item | Value | Source |
 | --- | --- | --- |
@@ -121,7 +127,7 @@ QY40P groups all 16 points on a single `COM` (TB18); it has no `COM0`/`COM1` spl
 
 The 0.1 mA leakage figure matters with small loads: it can hold a low-power 24 V relay from releasing promptly or at all, so check it against the load manufacturer's release current.
 
-## 5. Sources
+## 6. Sources
 
 - QX40: <SourceRef doc="sh080042" page="2.4" />, which also contains the terminal block table.
 - QY40P: <SourceRef doc="sh080042" page="3.5" />.

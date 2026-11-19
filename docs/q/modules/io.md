@@ -50,7 +50,13 @@ Khối đấu dây QX40 đi theo thứ tự TB1–TB16 cho X0–XF, TB17 là `CO
 
 Vì là common dương, `COM` được nối về **+24 V** và công tắc nối từng điểm X về **0 V**; đấu ngược cực sẽ không bật được điểm vào. Sơ đồ mạch chi tiết nằm ở [Đấu dây vào/ra](/q/system/io-wiring).
 
-## 2. Thông số QX40
+## 2. Danh mục 46 module vào/ra
+
+<IoCatalog />
+
+Các model ghi "dự kiến" là model có trong manual nhưng chưa trích được một thông số đơn lẻ kiểm chứng được; mọi dòng còn lại đều mang số trang manual trong danh mục.
+
+## 3. Thông số QX40
 
 | Hạng mục | Giá trị | Nguồn |
 | --- | --- | --- |
@@ -65,7 +71,7 @@ Vì là common dương, `COM` được nối về **+24 V** và công tắc nố
 | Số điểm chiếm dụng | 16 điểm (khai báo 16-point input) | SH-080042 §2.4 p.2-4 |
 | Dòng tiêu thụ 5 VDC | 50 mA (TYP., toàn bộ điểm ON) | SH-080042 §2.4 p.2-4 |
 
-## 3. Sơ đồ chân QY40P
+## 4. Sơ đồ chân QY40P
 
 <ModuleBlockDiagram
   model="QY40P"
@@ -104,7 +110,7 @@ Vì là common dương, `COM` được nối về **+24 V** và công tắc nố
 
 QY40P gom 16 điểm vào một cực `COM` duy nhất (TB18); module không có `COM0`/`COM1` chia nhóm như một số module 32/64 điểm. Với kiểu sink, tải đấu giữa `+12/24 V` (TB17) và từng điểm Y, còn `COM` về 0 V.
 
-## 4. Thông số QY40P
+## 5. Thông số QY40P
 
 | Hạng mục | Giá trị | Nguồn |
 | --- | --- | --- |
@@ -121,7 +127,7 @@ QY40P gom 16 điểm vào một cực `COM` duy nhất (TB18); module không có
 
 Dòng rò 0,1 mA là con số cần nhớ khi đóng tải nhỏ: nó đủ để giữ rơ le 24 V công suất bé ở trạng thái nhả chậm hoặc không nhả, nên với tải nhạy phải kiểm tra cùng nhà sản xuất tải.
 
-## 5. Nguồn
+## 6. Nguồn
 
 - QX40: <SourceRef doc="sh080042" page="2.4" />, terminal block và thông số trong cùng mục.
 - QY40P: <SourceRef doc="sh080042" page="3.5" />.
