@@ -28,7 +28,23 @@ Ngõ vào và ngõ ra của MELSEC Q đều cách ly bằng photocoupler hoặc 
 
 <IOWiringDiagram variant="output-transistor" module="QY40P" />
 
-## 2. Chọn sink hay source
+## 2. Encoder vi sai
+
+QD62 là module đếm xung DC input 24 V; các cặp vi sai A+/A−, B+/B− thuộc bảng cực của QD62D (line receiver RS-422-A, AM26C32), và manual không dành cực nào cho pha Z. Với QD62, encoder hở collector 24 V đấu vào cực ngõ vào 24 V; encoder line driver 5 V đấu đúng cặp vi sai và đi trong cáp đôi xoắn có vỏ bọc.
+
+<IOWiringDiagram variant="encoder-differential" module="QD62D" />
+
+QD62D không có cực Z, nên cặp Z+/Z− không xuất hiện trong sơ đồ. Với QD62 (24 V DC input), encoder hở collector đấu theo sơ đồ ngõ vào common dương ở mục 1. Theo manual, với ngõ vào 1 pha phải luôn đấu xung vào phía pha A; dây tín hiệu đặt cách dây động lực ít nhất 150 mm và vỏ bọc nối đất một điểm phía encoder (SH-080036 §3.5 p.3-14, §3.6 p.3-15, §4.4.1 p.4-5, §4.4.2 p.4-6).
+
+## 3. Ngõ vào tương tự
+
+Kênh 1 của Q64AD dùng hai cực `V+` (cực 1) và `V−` (cực 2); nếu đấu dòng thì nối thêm `V+` với `I+` (cực 3). Cặp dây tín hiệu phải là cáp đôi xoắn có vỏ bọc, và vỏ chỉ nối đất tại một điểm phía PLC.
+
+<IOWiringDiagram variant="analog-shielded" module="Q64AD" />
+
+`A.G.` (cực 17) là một cực duy nhất dùng chung làm mốc cho mọi kênh và bình thường không cần đấu dây, nên tuyệt đối không nối đất lần thứ hai; kênh không dùng phải nối tắt `V+` với `V−` để tránh giá trị số nhảy (SH-080055 §4.3 p.4-4, §4.4.1 p.4-5, §4.4.2 p.4-6).
+
+## 4. Chọn sink hay source
 
 | Module | Kiểu common | Cảm biến phù hợp | `COM` nối | Đường dòng khi ON | Nguồn |
 | --- | --- | --- | --- | --- | --- |
@@ -38,7 +54,7 @@ Ngõ vào và ngõ ra của MELSEC Q đều cách ly bằng photocoupler hoặc 
 
 Quy tắc thực dụng: tên module đã ghi kiểu common. QX40 là "positive common", nên `COM` **phải** là `+24 V`; QX80 là "negative common", nên `COM` **phải** là `0 V`. Không suy ra từ màu dây hay thói quen của hãng cảm biến.
 
-## 3. Thông số ngõ vào
+## 5. Thông số ngõ vào
 
 | Thông số | QX40 (common dương) | QX80 (common âm) | Nguồn |
 | --- | --- | --- | --- |
@@ -52,7 +68,7 @@ Quy tắc thực dụng: tên module đã ghi kiểu common. QX40 là "positive 
 
 Điện áp 24 VDC ghi trong bảng là điện áp định mức của module; nguồn thực tế vẫn phải nằm trong dải +20/−15% tại điểm đấu dây, sau khi trừ sụt áp trên dây.
 
-## 4. Thông số ngõ ra
+## 6. Thông số ngõ ra
 
 | Thông số | QY10 (rơ-le) | QY40P (transistor sink) | Nguồn |
 | --- | --- | --- | --- |
@@ -72,7 +88,7 @@ QY18A là biến thể 8 điểm, các điểm độc lập, 2 A/điểm và 8 A
 
 > **Lưu ý về định mức 0,5 A/điểm.** Manual QY40P trên đĩa ghi 0,1 A/điểm và 1,6 A/common, không có định mức 0,5 A/điểm cho QY40P. Con số 0,5 A/điểm thuộc ngõ ra coincidence của QD62 (12/24 VDC, 0,5 A/điểm, 2 A/common — SH-080036 §3.1 p.3-2), không phải module ngõ ra transistor.
 
-## 5. Danh mục kiểm tra khi đấu dây
+## 7. Danh mục kiểm tra khi đấu dây
 
 - [ ] Xác định đúng kiểu common của module trước khi đấu `COM`: QX40 → `+24 V`, QX80 → `0 V`.
 - [ ] Đo điện áp nguồn 24 VDC tại điểm đấu dây, nằm trong dải +20/−15% của 24 V.

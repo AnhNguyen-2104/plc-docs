@@ -28,7 +28,23 @@ MELSEC Q inputs and outputs are both isolated — by a photocoupler or a relay c
 
 <IOWiringDiagram variant="output-transistor" module="QY40P" />
 
-## 2. Sink or source
+## 2. Differential encoder
+
+The QD62 is a 24 V DC-input counter module; the differential pairs A+/A−, B+/B− belong to the QD62D terminal table (RS-422-A line receiver, AM26C32), and the manual assigns no terminal to a Z phase. On a QD62 a 24 V open-collector encoder lands on the 24 V input terminals; a 5 V line-driver encoder uses the differential pairs and runs in a shielded twisted-pair cable.
+
+<IOWiringDiagram variant="encoder-differential" module="QD62D" />
+
+The QD62D has no Z terminal, so the Z+/Z− pair does not appear in the drawing. On a QD62 (24 V DC input) an open-collector encoder follows the positive-common input diagram in section 1. The manual requires 1-phase input to be wired on the phase A side; signal cable stays at least 150 mm from power lines and the screen is earthed at one point on the encoder side (SH-080036 §3.5 p.3-14, §3.6 p.3-15, §4.4.1 p.4-5, §4.4.2 p.4-6).
+
+## 3. Analog input
+
+Channel 1 of the Q64AD uses `V+` (terminal 1) and `V−` (terminal 2); for a current input `V+` is also tied to `I+` (terminal 3). The signal pair must be a shielded twisted-pair cable, and the screen is earthed at one point on the PLC side only.
+
+<IOWiringDiagram variant="analog-shielded" module="Q64AD" />
+
+`A.G.` (terminal 17) is a single terminal shared as the reference for every channel and normally needs no wiring, so it must never be earthed a second time; an unused channel must have `V+` shorted to `V−` to stop the digital value drifting (SH-080055 §4.3 p.4-4, §4.4.1 p.4-5, §4.4.2 p.4-6).
+
+## 4. Sink or source
 
 | Module | Common type | Matching sensor | `COM` connects to | Current path when ON | Source |
 | --- | --- | --- | --- | --- | --- |
@@ -38,7 +54,7 @@ MELSEC Q inputs and outputs are both isolated — by a photocoupler or a relay c
 
 A practical rule: the module name states the common type. The QX40 is "positive common", so `COM` **must** be `+24 V`; the QX80 is "negative common", so `COM` **must** be `0 V`. Do not infer it from wire colour or from a sensor vendor's habit.
 
-## 3. Input specifications
+## 5. Input specifications
 
 | Item | QX40 (positive common) | QX80 (negative common) | Source |
 | --- | --- | --- | --- |
@@ -52,7 +68,7 @@ A practical rule: the module name states the common type. The QX40 is "positive 
 
 The 24 VDC in the table is the module's rated voltage; the actual supply must still stay within +20/−15% at the terminal, after cable drop.
 
-## 4. Output specifications
+## 6. Output specifications
 
 | Item | QY10 (relay) | QY40P (sink transistor) | Source |
 | --- | --- | --- | --- |
@@ -72,7 +88,7 @@ The QY18A is an 8-point variant with independent points, 2 A per point and 8 A f
 
 > **Note on the 0.5 A/point rating.** The QY40P manual on disk states 0.1 A/point and 1.6 A/common; it gives no 0.5 A/point rating for the QY40P. The 0.5 A/point figure belongs to the QD62 coincidence output (12/24 VDC, 0.5 A/point, 2 A/common — SH-080036 §3.1 p.3-2), not to a transistor output module.
 
-## 5. Wiring checklist
+## 7. Wiring checklist
 
 - [ ] Confirm the module's common type before wiring `COM`: QX40 → `+24 V`, QX80 → `0 V`.
 - [ ] Measure the 24 VDC supply at the terminal; it must stay within +20/−15% of 24 V.
