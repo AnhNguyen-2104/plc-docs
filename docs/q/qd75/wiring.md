@@ -20,11 +20,13 @@ QD75D4 dùng ngõ ra vi sai (differential) cho xung điều khiển. Mỗi trụ
 | --- | --- | --- | --- |
 | Xung lệnh | PULSE F+, F− | QD75 → driver | F = tiến, R = lùi; cặp vi sai, phải đi cùng cặp (SH-080058 §3.4.3 p.3-26) |
 | Xung lệnh | PULSE R+, R− | QD75 → driver | F = tiến, R = lùi; cặp vi sai, đảo chiều (SH-080058 §3.4.3 p.3-26) |
+| Xung lệnh | PULSE COM (`*2`) | QD75 → driver | Chung của cặp vi sai, nối 0 V/đất; manual in ký hiệu `*2`, không phải số đầu cực (SH-080058 §3.4.3 p.3-26) |
+| Xoá lệch | 1A13 CLEAR, 1A14 CLEAR COM | QD75 → driver | Chỉ dùng khi cần xoá lệch vị trí; để trống nếu không dùng (SH-080058 §3.4.3 p.3-27) |
 | READY / điểm chung | 1A11 READY, 1A12 RDYCOM | driver → QD75 | Cần cho vòng READY (SH-080058 §3.4.3 p.3-27) |
 | Tín hiệu zero | 1A9 PG05, 1A10 PG0COM | driver → QD75 | Chỉ dùng cho tín hiệu zero khi OPR (§3.4.3 p.3-26) |
 | Cho phép/trạng thái | Tín hiệu trao đổi với driver | hai chiều | Tuỳ driver; tra bảng chân của cả hai thiết bị |
 
-Với QD75D4, mỗi trục có bộ đầu cực riêng. Mỗi cặp F+/F− và R+/R− là cặp vi sai và phải đi cùng cặp.
+Với QD75D4, mỗi trục có bộ đầu cực riêng. Mỗi cặp F+/F− và R+/R− là cặp vi sai và phải đi cùng cặp. Các đầu cực 1A19/1B19/1A20/1B20 là ngõ vào PULSER (manual pulse generator), không phải chung của cặp xung lệnh.
 
 ## 2. Nguyên tắc đi dây
 
