@@ -1,14 +1,14 @@
 ---
-title: Module vào/ra số QX40 và QY40P
+title: Module vào/ra số MELSEC Q (46 model)
 family: q
 module: q-series
 status: draft
 source: SH-080042, SH-080483
 ---
 
-# Module vào/ra số QX40 và QY40P
+# Module vào/ra số MELSEC Q (46 model)
 
-QX40 và QY40P là cặp module số 16 điểm gắn trên base MELSEC Q. QX40 nhận 24 VDC kiểu common dương, còn QY40P xuất 12–24 VDC bằng transistor kiểu sink. Cả hai chiếm 16 điểm I/O trên base và nối ra bằng khối đấu dây 18 điểm.
+Trang này lập danh mục 46 module vào/ra số được tài liệu hoá trong SH-080042, mỗi model một thông số kiểm chứng được kèm số trang manual tương ứng. QX40 và QY40P được giữ lại làm cặp module tham chiếu để đi sâu sơ đồ chân và thông số đầy đủ; các model còn lại dùng bảng danh mục phía dưới.
 
 ## 1. Sơ đồ chân QX40
 
@@ -54,7 +54,7 @@ Vì là common dương, `COM` được nối về **+24 V** và công tắc nố
 
 <IoCatalog />
 
-Các model ghi "dự kiến" là model có trong manual nhưng chưa trích được một thông số đơn lẻ kiểm chứng được; mọi dòng còn lại đều mang số trang manual trong danh mục.
+Mọi dòng trong danh mục đều mang số trang manual; một model chỉ bị đánh dấu "dự kiến" nếu không trích được một thông số đơn lẻ kiểm chứng được (hiện tại không có).
 
 ## 3. Thông số QX40
 

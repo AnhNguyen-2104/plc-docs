@@ -1,14 +1,14 @@
 ---
-title: QX40 and QY40P digital I/O modules
+title: MELSEC Q digital I/O modules (46 models)
 family: q
 module: q-series
 status: draft
 source: SH-080042, SH-080483
 ---
 
-# QX40 and QY40P digital I/O modules
+# MELSEC Q digital I/O modules (46 models)
 
-QX40 and QY40P are a 16-point digital pair mounted on a MELSEC Q base. QX40 sinks 24 VDC inputs with positive common, while QY40P drives 12–24 VDC loads with sink-type transistors. Both occupy 16 I/O points on the base and terminate on an 18-point terminal block.
+This page catalogues the 46 digital I/O modules documented in SH-080042, one verified spec per model with its manual page. QX40 and QY40P are kept as the reference pair for the pin-layout and full-spec deep dives; the other models are covered by the catalogue table below.
 
 ## 1. QX40 pin layout
 
@@ -54,7 +54,7 @@ Because it is a positive common module, `COM` is tied to **+24 V** and each swit
 
 <IoCatalog />
 
-Models marked "planned" are documented in the manual but a verifiable single spec could not be extracted; every other row's spec carries its manual page in the registry.
+Every row in the catalogue carries its manual page; a model would only be marked "planned" if a single verifiable spec could not be extracted (currently none).
 
 ## 3. QX40 specifications
 
