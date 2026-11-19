@@ -22,7 +22,7 @@ QD75D4 dùng ngõ ra vi sai (differential) cho xung điều khiển. Mỗi trụ
 | Xung lệnh | PULSE R+, R− | QD75 → driver | F = tiến, R = lùi; cặp vi sai, đảo chiều (SH-080058 §3.4.3 p.3-26) |
 | Ngõ vào chức năng | DOG, FLS, RLS, STOP, CHG | driver/công tắc → QD75 | 1A3 DOG (gốc), 1A1 FLS, 1A2 RLS, 1A4 STOP, 1A5 CHG (SH-080058 §3.4.4 p.3-28) |
 | Ngõ vào chức năng | COM (chung nhóm vào) | — | 1A6, 1A7 — chung cho cả nhóm ngõ vào chức năng (SH-080058 §3.4.4 p.3-28) |
-| Ngõ vào chức năng | CLEAR, CLEAR COM | QD75 → driver | 1A13, 1A14 — chỉ đấu khi cần xoá lệch vị trí (SH-080058 §3.4.3 p.3-27) |
+| Xoá lệch | CLEAR, CLEAR COM | QD75 → driver | 1A13, 1A14 — chỉ đấu khi cần xoá lệch vị trí (SH-080058 §3.4.3 p.3-27) |
 | Xung lệnh | PULSE COM (`*2`) | QD75 → driver | Chung của cặp vi sai, nối 0 V/đất; manual in ký hiệu `*2`, không phải số đầu cực (SH-080058 §3.4.3 p.3-26) |
 | READY / điểm chung | 1A11 READY, 1A12 RDYCOM | driver → QD75 | Cần cho vòng READY (SH-080058 §3.4.3 p.3-27) |
 | Tín hiệu zero | 1A9 PG05, 1A10 PG0COM | driver → QD75 | Chỉ dùng cho tín hiệu zero khi OPR (§3.4.3 p.3-26) |
