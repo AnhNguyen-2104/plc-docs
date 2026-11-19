@@ -60,6 +60,28 @@ Sources: QD77MS4 — IB-0300185 §3.1 p.3-2 and p.3-3; QD75M1 — IB-0300062 §3
 
 Convention: `inputs` are CPU-to-module signals, `outputs` are module-to-CPU signals. Device numbers per IB-0300185 §3.3.1 p.3-17 with the module at head address `0H`.
 
+The manufacturer's SSCNET signal path between the QD77MS and the servo amplifier:
+
+<ManualFigure
+  src="/img/manual/qd77ms-sscnet.jpg"
+  alt="QD77MS signals over SSCNET to the servo amplifier, with encoder and external inputs"
+  caption="QD77MS signal path over SSCNET — official figure IB-0300185 §1.1.6"
+  doc="IB-0300185"
+  section="§1.1.6"
+  page="1-20"
+/>
+
+Daisy-chaining SSCNET cables from the QD75M to MR-H-BN/MR-J2-B amplifiers, with the termination connector:
+
+<ManualFigure
+  src="/img/manual/qd75m-sscnet.jpg"
+  alt="SSCNET cable daisy-chain from QD75M to MR-H-BN and MR-J2-B servo amplifiers with termination connector"
+  caption="QD75M → servo amplifier SSCNET cable — official figure IB-0300062 Appendix 3"
+  doc="IB-0300062"
+  section="Appendix 3"
+  page="App-29"
+/>
+
 ## 4. What changes in the wiring
 
 | Item | QD75D4 (pulse) | QD75M1 / QD77MS4 (SSCNET) |

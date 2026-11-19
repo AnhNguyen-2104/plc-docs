@@ -14,17 +14,65 @@ MELSEC Q inputs and outputs are both isolated — by a photocoupler or a relay c
 
 **Positive-common input (NPN).** `COM` goes to `+24 V`; the NPN sensor pulls input `X` down to `0 V`. Current flows from the supply into the module and out through the sensor.
 
+The manufacturer's figure for the QX40 input circuit: photocoupler, series resistor, and a positive `COM` tied to `+24 V`.
+
+<ManualFigure
+  src="/img/manual/qx40-input-circuit.jpg"
+  alt="QX40 positive-common input circuit: photocoupler, 4.7 kΩ resistor and 24 VDC"
+  caption="QX40 input circuit: photocoupler, positive common — official figure SH-080042 §2.4"
+  doc="SH-080042"
+  section="§2.4"
+  page="2-4"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
+
 <IOWiringDiagram variant="input-sink" module="QX40" />
 
 **Negative-common input (PNP).** `COM` goes to `0 V`; the PNP sensor sources current into `X`. The current direction is the reverse of the case above.
+
+The manufacturer's figure for the QX80 input circuit: the same photocoupler, but `COM` ties to `0 V` (negative common).
+
+<ManualFigure
+  src="/img/manual/qx80-input-circuit.jpg"
+  alt="QX80 negative-common input circuit: photocoupler with COM at 0 V"
+  caption="QX80 input circuit: photocoupler, negative common — official figure SH-080042 §2.18"
+  doc="SH-080042"
+  section="§2.18"
+  page="2-24"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
 
 <IOWiringDiagram variant="input-source" module="QX80" />
 
 **Relay output.** A dry contact switches the load; the fuse and surge suppressor are external parts.
 
+The manufacturer's figure for the QY10 relay output circuit: contact, load and the external surge suppressor.
+
+<ManualFigure
+  src="/img/manual/qy10-output-circuit.jpg"
+  alt="QY10 relay output circuit: contact, AC load and surge suppressor"
+  caption="QY10 output circuit: relay contact, load — official figure SH-080042 §3.1"
+  doc="SH-080042"
+  section="§3.1"
+  page="3-1"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
+
 <IOWiringDiagram variant="output-relay" module="QY10" />
 
 **Sink-type transistor output.** The load sits between `+24 V` and `Y`; the transistor pulls `Y` down to `COM` (0 V). Inductive loads need a diode across the coil.
+
+The manufacturer's figure for the QY40P transistor output circuit: sink transistor, zener diode and external fuse.
+
+<ManualFigure
+  src="/img/manual/qy40p-output-circuit.jpg"
+  alt="QY40P sink transistor output circuit: zener, load and fuse"
+  caption="QY40P output circuit: sink transistor, zener — official figure SH-080042 §3.5"
+  doc="SH-080042"
+  section="§3.5"
+  page="3-7"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
 
 <IOWiringDiagram variant="output-transistor" module="QY40P" />
 

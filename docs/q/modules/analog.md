@@ -26,6 +26,18 @@ Q64AD là module chuyển tương tự → số 4 kênh, Q62DA là module chuy�
 
 Mỗi kênh dùng chung một cặp chân cho cả áp và dòng: `V+`/`V−` khi đo áp, `I+`/`V−` khi đo dòng. `SLD` nối vào vỏ bọc cặp xoắn phía module, còn đầu kia của vỏ bọc nối đất một điểm phía cảm biến. `A.G.` là mốc 0 V của toàn bộ đầu vào tương tự, không nối chung với `FG` trong tủ.
 
+Sơ đồ đấu dây vào tương tự chính thức của Q64AD (`V+`/`V−`, `I+`, `A.G.`, cặp dây có vỏ bọc):
+
+<ManualFigure
+  src="/img/manual/q64ad-wiring.jpg"
+  alt="Đấu dây Q64AD: V+, V−, I+, A.G., SLD, cặp xoắn có vỏ bọc"
+  caption="Đấu dây vào tương tự Q64AD — hình chính thức SH-080055 §4.4.2"
+  doc="SH-080055"
+  section="§4.4.2"
+  page="4-6"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080055/sh080055u.pdf"
+/>
+
 ## 2. Q64AD — thông số
 
 | Hạng mục | Giá trị | Nguồn |
@@ -62,6 +74,18 @@ Mỗi kênh dùng chung một cặp chân cho cả áp và dòng: `V+`/`V−` kh
 | 18 | `FG` | Đất khung | SH-080054 §4.3 p.4-5 |
 
 Khác với Q64AD, Q62DA không có chân `SLD`/`A.G.` riêng: vỏ bọc cặp xoắn nối về `FG`, và dây trả tín hiệu nối vào `COM` của từng kênh. Nguồn phụ 24 VDC (chân 16/17) là nguồn cách ly cho tầng ra, phải có mặt thì tín hiệu dòng mới đạt được dải 0–20 mA ở tải lớn.
+
+Sơ đồ đấu dây ra tương tự chính thức của Q62DA, cho cả ngõ ra áp và ngõ ra dòng:
+
+<ManualFigure
+  src="/img/manual/q62da-wiring.jpg"
+  alt="Đấu dây Q62DA: ngõ ra áp V+/COM và ngõ ra dòng I+/COM, tải và FG"
+  caption="Đấu dây ra tương tự Q62DA: áp và dòng — hình chính thức SH-080054 §4.4.2"
+  doc="SH-080054"
+  section="§4.4.2"
+  page="4-7"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080054/sh080054v.pdf"
+/>
 
 ## 4. Q62DA — thông số
 

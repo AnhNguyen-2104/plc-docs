@@ -50,6 +50,18 @@ Sơ đồ trên mô tả trường hợp CH2 RS-422/485 **4 dây**. Với 2 dây
 
 ## 3. Chân CH1 RS-232 (D-sub 9)
 
+Sơ đồ chân D-sub 9 phía module do hãng công bố:
+
+<ManualFigure
+  src="/img/manual/serial-dsub9.jpg"
+  alt="Sơ đồ chân D-sub 9 chân của QJ71C24N: CD, RD, SD, ER, SG, DR, RS, CS, CI"
+  caption="Sơ đồ chân D-sub 9 (CH1 RS-232) — hình chính thức SH-080006 §3.2.1"
+  doc="SH-080006"
+  section="§3.2.1"
+  page="3-3"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080006/sh080006w.pdf"
+/>
+
 Đầu nối là D-sub 9 chân **cái**, kiểu bắt vít, ren M2.6 — SH-080006 §3.2.1 (3) p.3-4.
 
 | Chân | Ký hiệu | Tên đầy đủ | Hướng (so với module) | Chức năng |
@@ -81,6 +93,18 @@ Khi dùng chế độ bán song công, `RS` nối vào một trong `CS`/`DR`/`CD
 
 Bố trí đầu cực và nguyên tắc nối cặp `nnA`/`nnB` theo SH-080006 §4.4.2 (1) p.4-8. Với RS-485 2 dây, echo back của bản -R4 có thể bật/tắt để module không nhận lại dữ liệu chính nó vừa phát — SH-080006 §3.3.4 p.3-12. Cách gộp `SDA`+`RDA` và `SDB`+`RDB` là suy ra từ chức năng echo back và hình tương ứng đầu cực; hình nối 2 dây cụ thể trong manual là ảnh, chưa đọc được bằng text: **chưa xác minh**.
 
+Hình nối 1:1 RS-422 bốn dây giữa module và thiết bị ngoài, kèm điện trở kết thúc:
+
+<ManualFigure
+  src="/img/manual/serial-rs485-4wire.jpg"
+  alt="Nối RS-422/485 bốn dây: SDA, SDB, RDA, RDB, SG, FG và điện trở kết thúc R"
+  caption="Nối 1:1 bốn dây RS-422/485 — hình chính thức SH-080006 §4.4.2"
+  doc="SH-080006"
+  section="§4.4.2"
+  page="4-10"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080006/sh080006w.pdf"
+/>
+
 Điện trở kết thúc đi kèm module:
 
 | Kiểu truyền | Điện trở | Công suất | Nối tại |
@@ -89,6 +113,18 @@ Bố trí đầu cực và nguyên tắc nối cặp `nnA`/`nnB` theo SH-080006 
 | RS-485 | 110 Ω | 1/2 W | Hai trạm ở hai đầu tuyến |
 
 SH-080006 §4.4.2 (1)(c) p.4-9. Không lắp điện trở ở trạm giữa; nếu đầu kia là bộ chuyển RS-232/RS-422 thì điện trở phải đặt tại bộ chuyển — cùng mục, POINT p.4-10.
+
+Cách phân biệt và lắp điện trở kết thúc 330 Ω / 110 Ω đúng chiều:
+
+<ManualFigure
+  src="/img/manual/serial-termination.jpg"
+  alt="Điện trở kết thúc 330 Ω và 110 Ω với mã màu, cách cắm đúng chiều vào khối đầu cực"
+  caption="Điện trở kết thúc 330 Ω/110 Ω và cách cắm — hình chính thức SH-080006 §4.4.2"
+  doc="SH-080006"
+  section="§4.4.2"
+  page="4-9"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080006/sh080006w.pdf"
+/>
 
 ## 5. Công tắc cài đặt
 

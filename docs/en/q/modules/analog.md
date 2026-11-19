@@ -26,6 +26,18 @@ Q64AD is a four-channel analog-to-digital module; Q62DA is a two-channel digital
 
 Each channel shares one pair of terminals for both voltage and current: `V+`/`V−` for voltage, `I+`/`V−` for current. `SLD` takes the twisted-pair shield at the module end, while the other end of the shield is grounded at a single point near the sensor. `A.G.` is the 0 V reference of all analog inputs and is not tied to `FG` inside the cabinet.
 
+The manufacturer's Q64AD analog input wiring (`V+`/`V−`, `I+`, `A.G.`, shielded twisted pair):
+
+<ManualFigure
+  src="/img/manual/q64ad-wiring.jpg"
+  alt="Q64AD wiring: V+, V−, I+, A.G., SLD and shielded twisted pair"
+  caption="Q64AD analog input wiring — official figure SH-080055 §4.4.2"
+  doc="SH-080055"
+  section="§4.4.2"
+  page="4-6"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080055/sh080055u.pdf"
+/>
+
 ## 2. Q64AD — specifications
 
 | Item | Value | Source |
@@ -62,6 +74,18 @@ Accuracy is ±0.1 % at 25 ± 5 °C and ±0.3 % over 0–55 °C per section 1.1 a
 | 18 | `FG` | Frame ground | SH-080054 §4.3 p.4-5 |
 
 Unlike Q64AD, Q62DA has no `SLD`/`A.G.` terminals: the twisted-pair shield returns to `FG`, and the signal return goes to each channel's `COM`. The auxiliary 24 VDC supply (terminals 16/17) feeds the isolated output stage and must be present for the current output to reach 0–20 mA into a large load.
+
+The manufacturer's Q62DA analog output wiring, covering both voltage and current outputs:
+
+<ManualFigure
+  src="/img/manual/q62da-wiring.jpg"
+  alt="Q62DA wiring: voltage output V+/COM and current output I+/COM, load and FG"
+  caption="Q62DA analog output wiring: voltage and current — official figure SH-080054 §4.4.2"
+  doc="SH-080054"
+  section="§4.4.2"
+  page="4-7"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080054/sh080054v.pdf"
+/>
 
 ## 4. Q62DA — specifications
 

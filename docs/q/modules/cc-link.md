@@ -56,6 +56,18 @@ Với hệ thống chỉ dùng module Ver.1.00, chiều dài tổng ngắn hơn:
 
 ## 2. Sơ đồ khối
 
+Hình dạng module và vị trí công tắc/đầu cực theo hãng:
+
+<ManualFigure
+  src="/img/manual/cclink-module.jpg"
+  alt="Mặt module QJ61BT11: đèn LED, công tắc số trạm, công tắc MODE và khối đầu cực"
+  caption="Mặt module QJ61BT11: LED, công tắc số trạm, MODE và khối đầu cực — hình chính thức SH-080016 §7.3"
+  doc="SH-080016"
+  section="§7.3"
+  page="7-4"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080016/sh080016e.pdf"
+/>
+
 <ModuleBlockDiagram
   model="QJ61BT11N"
   connector="CC-Link terminal block"
@@ -68,6 +80,18 @@ Sơ đồ minh hoạ master ở giữa tuyến với hai trạm remote. Master *
 ## 3. Đầu cực và quy tắc tuyến
 
 Khối đầu cực 2 mảnh, thứ tự từ trái sang phải — SH-080016 §7.3 p.7-6:
+
+Thứ tự đầu cực trên khối 2 mảnh, nhìn từ mặt module:
+
+<ManualFigure
+  src="/img/manual/cclink-terminal.jpg"
+  alt="Khối đầu cực CC-Link: NC, DA, DB, NC, SLD, DG, FG"
+  caption="Khối đầu cực CC-Link: NC–DA–DB–NC–SLD–DG–FG — hình chính thức SH-080016 §7.3"
+  doc="SH-080016"
+  section="§7.3"
+  page="7-6"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080016/sh080016e.pdf"
+/>
 
 | Đầu cực | Chức năng |
 | --- | --- |
@@ -90,6 +114,18 @@ Quy tắc:
 - Nối vỏ chống nhiễu vào `SLD` từng module và nối đất **hai đầu** bằng `FG` kiểu D — SH-080016 §7.5 POINT p.7-9.
 
 Nhánh T chỉ dùng cho 156 kbps và 625 kbps; 10 M/5 M/2,5 Mbps không cho phép — SH-080016 §7.6.2 p.7-12.
+
+Sơ đồ nối tuyến chính thức: master nằm giữa, điện trở kết thúc ở cả hai đầu, dây `DA`/`DB`/`DG`/`SLD`/`FG`.
+
+<ManualFigure
+  src="/img/manual/cclink-wiring.jpg"
+  alt="Sơ đồ nối CC-Link: master ở giữa, hai trạm remote hai đầu, điện trở kết thúc"
+  caption="Nối tuyến CC-Link: master ở giữa, điện trở kết thúc hai đầu — hình chính thức SH-080016 §7.5"
+  doc="SH-080016"
+  section="§7.5"
+  page="7-9"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080016/sh080016e.pdf"
+/>
 
 ## 4. Công tắc cài đặt
 

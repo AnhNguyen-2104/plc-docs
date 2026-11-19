@@ -77,6 +77,18 @@ For an AC supply, the supply capacity should be **at least twice** the power con
 
 ## 4. Grounding and noise
 
+The manufacturer's single power supply wiring diagram: `L`/`N`, `FG`/`LG`, fuse and earth on the Q38B main base unit.
+
+<ManualFigure
+  src="/img/manual/qcpu-power-wiring.jpg"
+  alt="Single power supply wiring: 100–240 VAC into L/N, FG/LG earthed, Q38B and extension base"
+  caption="Single power supply wiring: L/N 100–240 VAC, FG/LG and earth — official figure SH-080483 §4.8.1"
+  doc="SH-080483"
+  section="§4.8.1"
+  page="107"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080483/sh080483bc.pdf"
+/>
+
 - Use a dedicated earth wire with a ground resistance of **100 Ω or less**; when no dedicated earth is available use shared grounding pattern (2), **never** the common grounding pattern (3) (SH-080483 §4.8.4 p.118).
 - Use an earth cable as thick as possible (up to **2 mm²**) and place the earth point as close to the PLC as possible to shorten the cable (SH-080483 §4.8.4 p.118).
 - Connect `LG` and `FG` together and earth them; leaving them open makes the PLC susceptible to noise, and `LG` carries half the input voltage (SH-080483 §4.8.1 p.110).

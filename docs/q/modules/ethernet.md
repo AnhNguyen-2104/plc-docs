@@ -44,7 +44,31 @@ Trang này mô tả thông số, đấu nối, cài đặt IP/cổng và các l�
 
 Tầng vật lý: cáp thẳng tới hub/switch; nối trực tiếp PC–module cần cáp chéo hoặc cổng tự đảo cực, vì giao diện cố định MDI — SH-080009 §3.2 p.29.
 
+Ví dụ cấu hình mạng của hãng: trạm của mình, trạm khác, router và Internet:
+
+<ManualFigure
+  src="/img/manual/ethernet-config.jpg"
+  alt="Cấu hình mạng Ethernet: trạm QJ71E71-100, trạm khác, router và Internet"
+  caption="Cấu hình mạng Ethernet với E71 — hình chính thức SH-080009 §1"
+  doc="SH-080009"
+  section="§1"
+  page="20"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080009/sh080009y.pdf"
+/>
+
 ## 2. Sơ đồ khối và LED
+
+Mặt module, cổng RJ45 và vị trí LED theo hãng:
+
+<ManualFigure
+  src="/img/manual/ethernet-module.jpg"
+  alt="Mặt module QJ71E71-100: LED, cổng RJ45, cổng 10BASE5/10BASE2 và tem số sê-ri"
+  caption="Mặt module QJ71E71-100: LED và các cổng — hình chính thức SH-080009 §2"
+  doc="SH-080009"
+  section="§2"
+  page="27"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080009/sh080009y.pdf"
+/>
 
 <ModuleBlockDiagram
   model="QJ71E71-100"

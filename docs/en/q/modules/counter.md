@@ -71,6 +71,30 @@ QD62/QD62E have **no dedicated Z input**. The module exposes phase A, phase B, a
 
 Each channel has **three separate input pairs for 24 V, 12 V and 5 V**. Wire exactly one pair to match the encoder's pulse level; the wrong pair loses pulses or damages the input. The QD62D replaces these three pairs with RS-422-A differential inputs (5 V line driver) and does not share this pinout.
 
+The manufacturer's 24 V open-collector encoder wiring (`+24 V`, `0 V`, phases A/B, `ABCOM`):
+
+<ManualFigure
+  src="/img/manual/qd62-wiring.jpg"
+  alt="24 V open-collector encoder wired to QD62: 24 V supply, phase A, phase B, ABCOM"
+  caption="24 V open-collector encoder to QD62 — official figure SH-080036 §4.4.2"
+  doc="SH-080036"
+  section="§4.4.2"
+  page="4-6"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080036/sh080036q.pdf"
+/>
+
+The line-driver encoder wiring (AM26LS31 equivalent) through the differential pairs:
+
+<ManualFigure
+  src="/img/manual/qd62-line-driver.jpg"
+  alt="Line-driver encoder wired to QD62 through the A+/A− and B+/B− differential pairs"
+  caption="Line-driver encoder to QD62 — official figure SH-080036 §4.4.2"
+  doc="SH-080036"
+  section="§4.4.2"
+  page="4-8"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080036/sh080036q.pdf"
+/>
+
 ## 4. QD62/QD62E specifications
 
 | Item | Value | Source |

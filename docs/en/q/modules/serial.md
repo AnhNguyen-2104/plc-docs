@@ -50,6 +50,18 @@ The diagram above shows the CH2 RS-422/485 **4-wire** case. With 2-wire (RS-485)
 
 ## 3. CH1 RS-232 pins (D-sub 9)
 
+The manufacturer's D-sub 9 pin layout on the module side:
+
+<ManualFigure
+  src="/img/manual/serial-dsub9.jpg"
+  alt="QJ71C24N D-sub 9 pin layout: CD, RD, SD, ER, SG, DR, RS, CS, CI"
+  caption="D-sub 9 pin layout (CH1 RS-232) — official figure SH-080006 §3.2.1"
+  doc="SH-080006"
+  section="§3.2.1"
+  page="3-3"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080006/sh080006w.pdf"
+/>
+
 The connector is a 9-pin D-sub **female**, screw type, M2.6 thread — SH-080006 §3.2.1 (3) p.3-4.
 
 | Pin | Signal | Full name | Direction (module side) | Function |
@@ -81,6 +93,18 @@ For half-duplex operation, `RS` is connected to one of the external device's `CS
 
 Terminal layout and the `nnA`/`nnB` pairing rule per SH-080006 §4.4.2 (1) p.4-8. With 2-wire RS-485, the -R4 echo-back function can be enabled or disabled so the module does not receive data it has just transmitted — SH-080006 §3.3.4 p.3-12. Tying `SDA`+`RDA` and `SDB`+`RDB` is inferred from the echo-back function and the terminal diagram; the 2-wire connection drawing itself is a raster figure in the manual and was not readable as text, so it is **not verified**.
 
+The 1:1 four-wire RS-422 connection between the module and an external device, with the terminating resistor:
+
+<ManualFigure
+  src="/img/manual/serial-rs485-4wire.jpg"
+  alt="Four-wire RS-422/485 connection: SDA, SDB, RDA, RDB, SG, FG and terminating resistor R"
+  caption="1:1 four-wire RS-422/485 connection — official figure SH-080006 §4.4.2"
+  doc="SH-080006"
+  section="§4.4.2"
+  page="4-10"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080006/sh080006w.pdf"
+/>
+
 Terminating resistors supplied with the module:
 
 | Transmission type | Resistor | Rating | Fitted at |
@@ -89,6 +113,18 @@ Terminating resistors supplied with the module:
 | RS-485 | 110 Ω | 1/2 W | The two stations at both ends of the circuit |
 
 SH-080006 §4.4.2 (1)(c) p.4-9. Do not fit resistors at intermediate stations; if the far end is an RS-232/RS-422 converter, the resistor must be fitted at the converter — same section, POINT p.4-10.
+
+How to tell the 330 Ω / 110 Ω terminating resistors apart and insert them the right way:
+
+<ManualFigure
+  src="/img/manual/serial-termination.jpg"
+  alt="330 Ω and 110 Ω terminating resistors with colour codes and correct insertion"
+  caption="Terminating resistors 330 Ω/110 Ω and correct insertion — official figure SH-080006 §4.4.2"
+  doc="SH-080006"
+  section="§4.4.2"
+  page="4-9"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080006/sh080006w.pdf"
+/>
 
 ## 5. Switch settings
 

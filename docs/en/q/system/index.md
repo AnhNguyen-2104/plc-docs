@@ -31,6 +31,18 @@ The "Source" column names the document and page for every figure; no value is in
 
 The diagram numbers 0–7 for the eight positions in use in the reference configuration (supply, CPU and six I/O modules). The manual states the Q38B has 8 I/O positions, not counting the supply and CPU positions, so a real rack still has 2 I/O positions free (SH-080483 §8.3 p.249).
 
+The manufacturer's Q38B main base unit nomenclature: module connector (1), base cover (2), module connector (3), module fixing screw hole (4), installation hole (5), DIN rail adapter hole (6), and the I/O0–I/O11 slot order.
+
+<ManualFigure
+  src="/img/manual/qsb-base.jpg"
+  alt="Q38B main base unit: I/O0 to I/O11 slots, CPU, POWER and mounting holes"
+  caption="Q38B main base unit: I/O0–I/O11 slot order and mounting points — official figure SH-080483 §8.1"
+  doc="SH-080483"
+  section="§8.1"
+  page="239"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080483/sh080483bc.pdf"
+/>
+
 ## 2. Signal paths
 
 - **AC → Q61P → internal 5 V.** 100–240 VAC enters the L/N terminals of the Q61P; the module produces 5 VDC for the base bus and every module on it. The rack total on 5 V must stay below the 6 A rating (SH-080483 §7.2.1 p.212, §7.2.3 p.231).

@@ -76,6 +76,18 @@ Với nguồn xoay chiều, công suất nguồn cấp nên **lớn hơn ít nh�
 
 ## 4. Nối đất và chống nhiễu
 
+
+Sơ đồ đấu dây nguồn chính thức của hãng cho hệ một nguồn: `L`/`N`, `FG`/`LG`, cầu chì và tiếp đất trên base chính Q38B.
+
+<ManualFigure
+  src="/img/manual/qcpu-power-wiring.jpg"
+  alt="Sơ đồ đấu dây nguồn một hệ thống: 100–240 VAC vào L/N, FG/LG nối đất, Q38B và base mở rộng"
+  caption="Đấu dây nguồn một hệ thống: L/N 100–240 VAC, FG/LG và tiếp đất — sơ đồ chính thức SH-080483 §4.8.1"
+  doc="SH-080483"
+  section="§4.8.1"
+  page="107"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080483/sh080483bc.pdf"
+/>
 - Dùng dây nối đất riêng, điện trở đất **≤100 Ω**; nếu không có đất riêng thì dùng nối đất chung hình (2), **không** dùng nối đất chung hình (3) kiểu "common grounding" (SH-080483 §4.8.4 p.118).
 - Dây đất to tối đa **2 mm²**, đưa điểm nối đất càng gần PLC càng tốt để rút ngắn dây (SH-080483 §4.8.4 p.118).
 - Nối `LG` và `FG` rồi nối đất; nếu để hở, PLC dễ bị nhiễu. `LG` mang một nửa điện áp vào (SH-080483 §4.8.1 p.110).

@@ -44,7 +44,31 @@ This page covers specifications, wiring, IP/port settings and the open/close/sen
 
 Physical layer: straight-through cable to a hub/switch; connecting a PC directly to the module needs a crossover cable or an auto-MDI port, because the interface is fixed to MDI — SH-080009 §3.2 p.29.
 
+The manufacturer's network configuration example: own station, another station, router and the Internet:
+
+<ManualFigure
+  src="/img/manual/ethernet-config.jpg"
+  alt="Ethernet network configuration: QJ71E71-100 station, another station, router and Internet"
+  caption="Ethernet network configuration with the E71 — official figure SH-080009 §1"
+  doc="SH-080009"
+  section="§1"
+  page="20"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080009/sh080009y.pdf"
+/>
+
 ## 2. Block diagram and LEDs
+
+The manufacturer's module front, RJ45 port and LED locations:
+
+<ManualFigure
+  src="/img/manual/ethernet-module.jpg"
+  alt="QJ71E71-100 module front: LEDs, RJ45 port, 10BASE5/10BASE2 ports and serial number plate"
+  caption="QJ71E71-100 module front: LEDs and ports — official figure SH-080009 §2"
+  doc="SH-080009"
+  section="§2"
+  page="27"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080009/sh080009y.pdf"
+/>
 
 <ModuleBlockDiagram
   model="QJ71E71-100"

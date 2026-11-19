@@ -71,6 +71,30 @@ QD62/QD62E **không có ngõ Z riêng**. Module chỉ có pha A, pha B, ngõ pre
 
 Mỗi kênh có **ba cặp chân vào riêng cho 24 V, 12 V và 5 V**. Chỉ đấu đúng một cặp theo mức xung của encoder; đấu nhầm cặp sẽ làm mất xung hoặc hỏng ngõ vào. Bản QD62D thay ba cặp này bằng ngõ vi sai RS-422-A (5 V line driver), không dùng chung sơ đồ chân với QD62/QD62E.
 
+Sơ đồ nối encoder hở collector 24 V chính thức của hãng (`+24 V`, `0 V`, pha A/B, `ABCOM`):
+
+<ManualFigure
+  src="/img/manual/qd62-wiring.jpg"
+  alt="Nối encoder hở collector 24 V với QD62: nguồn 24 V, pha A, pha B, ABCOM"
+  caption="Nối encoder hở collector 24 V với QD62 — hình chính thức SH-080036 §4.4.2"
+  doc="SH-080036"
+  section="§4.4.2"
+  page="4-6"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080036/sh080036q.pdf"
+/>
+
+Sơ đồ nối encoder line driver (tương đương AM26LS31) qua cặp vi sai:
+
+<ManualFigure
+  src="/img/manual/qd62-line-driver.jpg"
+  alt="Nối encoder line driver với QD62: các cặp vi sai A+/A−, B+/B−"
+  caption="Nối encoder line driver với QD62 — hình chính thức SH-080036 §4.4.2"
+  doc="SH-080036"
+  section="§4.4.2"
+  page="4-8"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080036/sh080036q.pdf"
+/>
+
 ## 4. Thông số QD62/QD62E
 
 | Hạng mục | Giá trị | Nguồn |

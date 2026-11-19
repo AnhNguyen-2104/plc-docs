@@ -35,6 +35,18 @@ Q00UJCPU là module liền nguồn và base chính, nên không cần Q61P/Q62P 
 
 Với Q03UDV, cổng Ethernet 100/10 Mbps cho phép nạp chương trình và giám sát qua mạng mà không cần cáp USB; số kết nối đồng thời tối đa là 16 cho socket/MELSOFT/MC protocol và 1 cho FTP (SH-080483 §6.1.3 p.143). Q06UDH không có Ethernet tích hợp: muốn lên mạng phải gắn QJ71E71-100 hoặc module tương đương.
 
+Hình CPU Universal model (Q02U/Q03UD/Q04UDH…) với vị trí cổng, pin pin, đèn LED và nắp pin:
+
+<ManualFigure
+  src="/img/manual/qcpu-module.jpg"
+  alt="Mặt CPU Universal model Q: cổng USB/RS-232, đèn RUN/ERR, nắp pin và các công tắc"
+  caption="Mặt CPU Universal model Q: cổng, LED và nắp pin — hình chính thức SH-080483 §6.1.3"
+  doc="SH-080483"
+  section="§6.1.3"
+  page="138"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080483/sh080483bc.pdf"
+/>
+
 ## 3. Thời gian quét
 
 Thời gian quét (scan time) là tổng của bốn phần: xử lý khởi tạo, refresh I/O, thực thi chương trình và xử lý END (SH-080807 §2.4 p.67). Xử lý khởi tạo chỉ chạy một lần sau khi cấp điện hoặc reset, nên không nằm trong chu kỳ quét lặp lại; ba phần còn lại lặp theo từng vòng.

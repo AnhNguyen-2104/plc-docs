@@ -39,6 +39,30 @@ Trang này lập danh mục 46 module vào/ra số được tài liệu hoá tro
   :outputs="[]"
 />
 
+Sơ đồ chính thức của hãng cho mạch vào QX40:
+
+<ManualFigure
+  src="/img/manual/qx40-input-circuit.jpg"
+  alt="Mạch vào QX40 common dương: photocoupler, điện trở 4,7 kΩ"
+  caption="Mạch vào QX40: photocoupler, COM dương — sơ đồ chính thức SH-080042 §2.4"
+  doc="SH-080042"
+  section="§2.4"
+  page="2-4"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
+
+Bảng khối đấu dây TB1–TB18 do hãng công bố:
+
+<ManualFigure
+  src="/img/manual/qx40-terminals.jpg"
+  alt="Bảng khối đấu dây QX40: TB1 đến TB18, X0 đến XF và COM"
+  caption="Khối đấu dây QX40: TB1–TB16 cho X0–XF, TB17 là COM — bảng chính thức SH-080042 §2.4"
+  doc="SH-080042"
+  section="§2.4"
+  page="2-4"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
+
 Khối đấu dây QX40 đi theo thứ tự TB1–TB16 cho X0–XF, TB17 là `COM` chung cho cả 16 điểm, TB18 để trống. Số hiệu X/Y của MELSEC Q dùng hệ hex, nên sau X9 là XA và điểm cuối của module 16 điểm là XF.
 
 | Chân | Tín hiệu | Chức năng | Nguồn |
@@ -100,6 +124,30 @@ Mọi dòng trong danh mục đều mang số trang manual; một model chỉ b�
     { signal: 'YE', pin: 'TB15', device: 'Rơ le / van / đèn 15' },
     { signal: 'YF', pin: 'TB16', device: 'Rơ le / van / đèn 16' }
   ]"
+/>
+
+Sơ đồ chính thức của hãng cho mạch ra transistor QY40P:
+
+<ManualFigure
+  src="/img/manual/qy40p-output-circuit.jpg"
+  alt="Mạch ra transistor QY40P kiểu sink: diode zener, tải và cầu chì"
+  caption="Mạch ra QY40P: transistor sink, zener — sơ đồ chính thức SH-080042 §3.5"
+  doc="SH-080042"
+  section="§3.5"
+  page="3-7"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
+
+Bảng khối đấu dây TB1–TB18 của QY40P:
+
+<ManualFigure
+  src="/img/manual/qy40p-terminals.jpg"
+  alt="Bảng khối đấu dây QY40P: TB1 đến TB18, Y0 đến YF, TB17 12/24 VDC và TB18 COM"
+  caption="Khối đấu dây QY40P: TB1–TB16 cho Y0–YF, TB17 12/24 VDC, TB18 COM — bảng chính thức SH-080042 §3.5"
+  doc="SH-080042"
+  section="§3.5"
+  page="3-7"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
 />
 
 | Chân | Tín hiệu | Chức năng | Nguồn |

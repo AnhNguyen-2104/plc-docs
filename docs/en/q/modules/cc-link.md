@@ -56,6 +56,18 @@ For a system using only Ver.1.00 modules the overall length is shorter: 600 m at
 
 ## 2. Block diagram
 
+The manufacturer's module appearance and switch/terminal locations:
+
+<ManualFigure
+  src="/img/manual/cclink-module.jpg"
+  alt="QJ61BT11 module front: LEDs, station number switches, MODE switch and terminal block"
+  caption="QJ61BT11 module front: LEDs, station switches, MODE and terminal block — official figure SH-080016 §7.3"
+  doc="SH-080016"
+  section="§7.3"
+  page="7-4"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080016/sh080016e.pdf"
+/>
+
 <ModuleBlockDiagram
   model="QJ61BT11N"
   connector="CC-Link terminal block"
@@ -68,6 +80,18 @@ The diagram shows a master in the middle of the line with two remote stations. T
 ## 3. Terminals and bus rules
 
 The terminal block is a two-piece type; order from left to right — SH-080016 §7.3 p.7-6:
+
+Terminal order on the two-piece block, seen from the module front:
+
+<ManualFigure
+  src="/img/manual/cclink-terminal.jpg"
+  alt="CC-Link terminal block: NC, DA, DB, NC, SLD, DG, FG"
+  caption="CC-Link terminal block: NC–DA–DB–NC–SLD–DG–FG — official figure SH-080016 §7.3"
+  doc="SH-080016"
+  section="§7.3"
+  page="7-6"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080016/sh080016e.pdf"
+/>
 
 | Terminal | Function |
 | --- | --- |
@@ -90,6 +114,18 @@ Rules:
 - Connect the shield to `SLD` at every module and ground both ends through `FG` with D-class grounding — SH-080016 §7.5 POINT p.7-9.
 
 T-branching is allowed only at 156 kbps and 625 kbps; 10 M/5 M/2.5 Mbps do not permit it — SH-080016 §7.6.2 p.7-12.
+
+The manufacturer's bus wiring diagram: master in the middle, terminating resistors at both ends, `DA`/`DB`/`DG`/`SLD`/`FG` wires.
+
+<ManualFigure
+  src="/img/manual/cclink-wiring.jpg"
+  alt="CC-Link bus wiring: master in the middle, remote stations at both ends, terminating resistors"
+  caption="CC-Link bus wiring: master in the middle, resistors at both ends — official figure SH-080016 §7.5"
+  doc="SH-080016"
+  section="§7.5"
+  page="7-9"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080016/sh080016e.pdf"
+/>
 
 ## 4. Switch settings
 

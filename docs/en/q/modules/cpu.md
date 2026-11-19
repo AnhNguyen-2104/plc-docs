@@ -35,6 +35,18 @@ Q00UJCPU combines the power supply and main base in one unit, so no Q61P/Q62P or
 
 On Q03UDV the 100/10 Mbps Ethernet port carries program transfer and monitoring without a USB cable; the CPU allows 16 simultaneous socket/MELSOFT/MC-protocol connections plus 1 FTP connection (SH-080483 §6.1.3 p.143). Q06UDH has no built-in Ethernet: networking needs a QJ71E71-100 or equivalent module.
 
+The Universal model QCPU front (Q02U/Q03UD/Q04UDH…) showing the ports, pins, LEDs and battery cover:
+
+<ManualFigure
+  src="/img/manual/qcpu-module.jpg"
+  alt="Universal model Q CPU front: USB/RS-232 ports, RUN/ERR LEDs, battery cover and switches"
+  caption="Universal model Q CPU front: ports, LEDs and battery cover — official figure SH-080483 §6.1.3"
+  doc="SH-080483"
+  section="§6.1.3"
+  page="138"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080483/sh080483bc.pdf"
+/>
+
 ## 3. Scan time
 
 Scan time is the sum of four parts: initial processing, I/O refresh, program execution and END processing (SH-080807 §2.4 p.67). Initial processing runs once after power-up or reset and is not part of the repeating scan; the other three parts repeat every cycle.

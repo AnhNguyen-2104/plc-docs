@@ -31,6 +31,18 @@ Cột "Nguồn" chỉ rõ tài liệu và trang của từng con số; không c�
 
 Sơ đồ đánh số 0–7 cho tám vị trí đang dùng của cấu hình tham chiếu (nguồn, CPU và sáu module I/O). Manual ghi Q38B có 8 vị trí I/O, chưa kể vị trí nguồn và CPU, nên một rack thực còn 2 vị trí I/O trống (SH-080483 §8.3 p.249).
 
+Danh pháp base chính Q38B theo hãng: khe cắm module (1), nắp base (2), connector module (3), lỗ vít cố định module (4), lỗ lắp đặt (5), lỗ adapter DIN (6), cùng thứ tự khe I/O0–I/O11.
+
+<ManualFigure
+  src="/img/manual/qsb-base.jpg"
+  alt="Hình dạng base chính Q38B: các khe I/O0 đến I/O11, CPU, POWER và các lỗ lắp đặt"
+  caption="Base chính Q38B: thứ tự khe I/O0–I/O11 và các vị trí lắp đặt — hình chính thức SH-080483 §8.1"
+  doc="SH-080483"
+  section="§8.1"
+  page="239"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080483/sh080483bc.pdf"
+/>
+
 ## 2. Đường tín hiệu
 
 - **AC → Q61P → 5 V nội bộ.** Điện áp 100–240 VAC vào cực L/N của Q61P; module tạo ra 5 VDC cấp cho bus của base và mọi module gắn trên đó. Dòng 5 V của cả rack phải nằm dưới định mức 6 A (SH-080483 §7.2.1 p.212, §7.2.3 p.231).

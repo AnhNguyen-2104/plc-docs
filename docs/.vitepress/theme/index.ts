@@ -13,6 +13,7 @@ import ModuleMatrix from './ModuleMatrix.vue'
 import ModuleBlockDiagram from './ModuleBlockDiagram.vue'
 import SystemDiagram from './SystemDiagram.vue'
 import IOWiringDiagram from './IOWiringDiagram.vue'
+import ManualFigure from './ManualFigure.vue'
 import IoCatalog from './IoCatalog.vue'
 import './custom.css'
 
@@ -32,7 +33,8 @@ export default {
     app.component('ModuleBlockDiagram', ModuleBlockDiagram)
     app.component('SystemDiagram', SystemDiagram)
     app.component('IOWiringDiagram', IOWiringDiagram)
+    app.component('ManualFigure', ManualFigure)
     app.component('IoCatalog', IoCatalog)
   }
 } satisfies Theme
-export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef, WiringDiagram, LadderDiagram, PinMapDiagram, ModuleMatrix, ModuleBlockDiagram, SystemDiagram, IOWiringDiagram, IoCatalog }
+export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef, WiringDiagram, LadderDiagram, PinMapDiagram, ModuleMatrix, ModuleBlockDiagram, SystemDiagram, IOWiringDiagram, ManualFigure, IoCatalog }

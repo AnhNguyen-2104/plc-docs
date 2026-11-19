@@ -43,7 +43,43 @@ With the QD75D4, each axis has its own terminal block. Each F+/F− and R+/R− 
 
 Schematic: differential pulses, READY, SON from the PLC, ALM back to the PLC.
 
-## 4. Checklist before power-up
+The manufacturer's connector pin layout for the QD75D4 (four axes AX1–AX4, left and right connector) — cross-check pin numbers before crimping:
+
+<ManualFigure
+  src="/img/manual/qd75-wiring.jpg"
+  alt="QD75D4 external device connector pin layout, axes AX1 to AX4"
+  caption="QD75D4 external device connector pin layout: four axes, left and right connector"
+  doc="SH-080058"
+  section="§3.4.2"
+  page="3-25"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080058/sh080058v.pdf"
+/>
+
+## 4. Manufacturer input/output circuits
+
+The input and differential output circuits inside the module, as drawn in the original manual; use them to check current direction and resistor placement before wiring outside:
+
+<ManualFigure
+  src="/img/manual/qd75-input-circuit.jpg"
+  alt="QD75 input circuit: photocoupler, resistor and the DOG, FLS, RLS, STOP, CHG signals"
+  caption="Input circuit: photocoupler and series resistor for DOG, FLS, RLS, STOP, CHG, PULSER"
+  doc="SH-080058"
+  section="§3.4.4"
+  page="3-28"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080058/sh080058v.pdf"
+/>
+
+<ManualFigure
+  src="/img/manual/qd75-output-circuit.jpg"
+  alt="QD75D differential output circuit: PULSE F, PULSE R, CLEAR and their pairs"
+  caption="Differential output circuit: PULSE F+/F−, PULSE R+/R−, CLEAR — QD75D version"
+  doc="SH-080058"
+  section="§3.4.4"
+  page="3-30"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080058/sh080058v.pdf"
+/>
+
+## 5. Checklist before power-up
 
 - [ ] Power was cut throughout the wiring process.
 - [ ] Correct F+/F−, R+/R− pairing, with no swapping between axes.

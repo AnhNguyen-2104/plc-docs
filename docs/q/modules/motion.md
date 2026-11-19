@@ -60,6 +60,28 @@ Nguồn: QD77MS4 — IB-0300185 §3.1 p.3-2 và p.3-3; QD75M1 — IB-0300062 §3
 
 Quy ước: `inputs` là tín hiệu CPU gửi vào module, `outputs` là tín hiệu module trả về CPU. Số thiết bị theo IB-0300185 §3.3.1 p.3-17 với module ở địa chỉ đầu `0H`.
 
+Sơ đồ truyền tín hiệu qua SSCNET giữa QD77MS và servo amplifier theo hãng:
+
+<ManualFigure
+  src="/img/manual/qd77ms-sscnet.jpg"
+  alt="Truyền tín hiệu QD77MS qua SSCNET tới servo amplifier, kèm encoder và tín hiệu ngoài"
+  caption="Truyền tín hiệu QD77MS qua SSCNET — hình chính thức IB-0300185 §1.1.6"
+  doc="IB-0300185"
+  section="§1.1.6"
+  page="1-20"
+/>
+
+Cách nối cáp SSCNET nối tiếp QD75M với các amplifier MR-H-BN/MR-J2-B và connector kết thúc:
+
+<ManualFigure
+  src="/img/manual/qd75m-sscnet.jpg"
+  alt="Nối cáp SSCNET QD75M với các servo amplifier MR-H-BN, MR-J2-B và connector kết thúc"
+  caption="Nối cáp SSCNET QD75M → servo amplifier — hình chính thức IB-0300062 Phụ lục 3"
+  doc="IB-0300062"
+  section="Phụ lục 3"
+  page="App-29"
+/>
+
 ## 4. Điều gì đổi ở phần đấu dây
 
 | Hạng mục | QD75D4 (xung) | QD75M1 / QD77MS4 (SSCNET) |

@@ -14,17 +14,65 @@ Ngõ vào và ngõ ra của MELSEC Q đều cách ly bằng photocoupler hoặc 
 
 **Ngõ vào common dương (NPN).** `COM` nối `+24 V`; cảm biến NPN kéo ngõ vào `X` về `0 V`. Dòng đi từ nguồn vào module rồi ra cảm biến.
 
+Sơ đồ chính thức của hãng cho mạch vào QX40: photocoupler, trở hạn dòng và `COM` dương nối `+24 V`.
+
+<ManualFigure
+  src="/img/manual/qx40-input-circuit.jpg"
+  alt="Mạch vào QX40 common dương: photocoupler, điện trở 4,7 kΩ và 24 VDC"
+  caption="Mạch vào QX40: photocoupler, COM dương — sơ đồ chính thức SH-080042 §2.4"
+  doc="SH-080042"
+  section="§2.4"
+  page="2-4"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
+
 <IOWiringDiagram variant="input-sink" module="QX40" />
 
 **Ngõ vào common âm (PNP).** `COM` nối `0 V`; cảm biến PNP đẩy dòng vào `X`. Chiều dòng ngược lại trường hợp trên.
+
+Sơ đồ chính thức của hãng cho mạch vào QX80: cùng photocoupler nhưng `COM` nối `0 V` (common âm).
+
+<ManualFigure
+  src="/img/manual/qx80-input-circuit.jpg"
+  alt="Mạch vào QX80 common âm: photocoupler và COM nối 0 V"
+  caption="Mạch vào QX80: photocoupler, COM âm — sơ đồ chính thức SH-080042 §2.18"
+  doc="SH-080042"
+  section="§2.18"
+  page="2-24"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
 
 <IOWiringDiagram variant="input-source" module="QX80" />
 
 **Ngõ ra rơ-le.** Tiếp điểm khô đóng cắt tải; cầu chì và bộ triệt xung là linh kiện ngoài module.
 
+Sơ đồ chính thức của hãng cho mạch ra rơ-le QY10: tiếp điểm, tải và bộ triệt xung ngoài.
+
+<ManualFigure
+  src="/img/manual/qy10-output-circuit.jpg"
+  alt="Mạch ra rơ-le QY10: tiếp điểm, tải xoay chiều và bộ triệt xung"
+  caption="Mạch ra QY10: tiếp điểm rơ-le, tải — sơ đồ chính thức SH-080042 §3.1"
+  doc="SH-080042"
+  section="§3.1"
+  page="3-1"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
+
 <IOWiringDiagram variant="output-relay" module="QY10" />
 
 **Ngõ ra transistor kiểu sink.** Tải nối giữa `+24 V` và `Y`; transistor kéo `Y` về `COM` (0 V). Tải cảm cần diode song song.
+
+Sơ đồ chính thức của hãng cho mạch ra transistor QY40P: transistor sink, diode zener và cầu chì ngoài.
+
+<ManualFigure
+  src="/img/manual/qy40p-output-circuit.jpg"
+  alt="Mạch ra transistor QY40P kiểu sink: zener, tải và cầu chì"
+  caption="Mạch ra QY40P: transistor sink, zener — sơ đồ chính thức SH-080042 §3.5"
+  doc="SH-080042"
+  section="§3.5"
+  page="3-7"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
 
 <IOWiringDiagram variant="output-transistor" module="QY40P" />
 

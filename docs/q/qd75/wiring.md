@@ -43,7 +43,43 @@ Với QD75D4, mỗi trục có bộ đầu cực riêng. Mỗi cặp F+/F− và
 
 Sơ đồ nguyên lý: xung vi sai, READY, SON từ PLC, ALM về PLC.
 
-## 4. Checklist trước khi cấp điện
+Bố trí chân chính thức của hãng cho connector ngoại vi QD75D4 (bốn trục AX1–AX4, hai connector trái/phải) — đối chiếu số chân trước khi bấm dây:
+
+<ManualFigure
+  src="/img/manual/qd75-wiring.jpg"
+  alt="Bố trí chân connector ngoại vi QD75D4, bốn trục AX1 đến AX4"
+  caption="Bố trí chân connector ngoại vi QD75D4: bốn trục, connector trái và phải"
+  doc="SH-080058"
+  section="§3.4.2"
+  page="3-25"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080058/sh080058v.pdf"
+/>
+
+## 4. Sơ đồ mạch vào/ra của hãng
+
+Mạch vào và mạch ra vi sai bên trong module, vẽ theo đúng tài liệu gốc; dùng để kiểm tra chiều dòng và vị trí điện trở trước khi đấu dây ngoài:
+
+<ManualFigure
+  src="/img/manual/qd75-input-circuit.jpg"
+  alt="Mạch vào QD75: photocoupler, điện trở và các tín hiệu DOG, FLS, RLS, STOP, CHG"
+  caption="Mạch vào: photocoupler và trở hạn dòng cho DOG, FLS, RLS, STOP, CHG, PULSER"
+  doc="SH-080058"
+  section="§3.4.4"
+  page="3-28"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080058/sh080058v.pdf"
+/>
+
+<ManualFigure
+  src="/img/manual/qd75-output-circuit.jpg"
+  alt="Mạch ra vi sai QD75D: PULSE F, PULSE R, CLEAR và các cặp dấu"
+  caption="Mạch ra vi sai: PULSE F+/F−, PULSE R+/R−, CLEAR — bản QD75D"
+  doc="SH-080058"
+  section="§3.4.4"
+  page="3-30"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080058/sh080058v.pdf"
+/>
+
+## 5. Checklist trước khi cấp điện
 
 - [ ] Đã cắt nguồn trong suốt quá trình đấu dây.
 - [ ] Đúng cặp F+/F−, R+/R−, không đảo giữa các trục.
