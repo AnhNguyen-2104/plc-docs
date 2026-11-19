@@ -7,7 +7,7 @@ source: SH-080058
 
 # MELSEC Q — module vị trí
 
-Họ QD75 là các module vị trí gắn trên base MELSEC Q, phát xung tới driver servo/step. Trang này là điểm vào cho toàn bộ tài liệu QD75 của cẩm nang.
+Họ Q gồm khung hệ thống, base/nguồn, module vào/ra và các module vị trí như QD75 gắn trên base MELSEC Q, phát xung tới driver servo/step. Trang này là điểm vào cho tài liệu dòng Q của cẩm nang: hệ thống, module và định vị.
 
 ## 1. Các model QD75
 
@@ -48,6 +48,15 @@ Khác biệt cốt lõi nằm ở kiểu truyền lệnh tới driver và khả 
 - [Ladder](/q/qd75/ladder) — buffer memory, trình tự khởi động, liên động an toàn.
 - [Chạy thử](/q/qd75/commissioning) — quy trình từ cấp điện tới chạy có tải.
 - [Xử lý sự cố](/q/qd75/troubleshooting) — chỉ báo, nhóm lỗi, cách tra mã lỗi.
+
+## Hệ thống & module
+
+Bắt đầu từ khung hệ thống rồi tới module; các trang QD75 ở trên vẫn giữ nguyên.
+
+- [Tổng thể hệ thống](/q/system/) — rack, base, nguồn, đường tín hiệu.
+- [Đấu dây vào/ra (X/Y)](/q/system/io-wiring) — sáu kiểu đấu dây, kèm hình manual.
+- [Nguồn và base unit](/q/system/power-and-base) — Q61P…Q64P, Q33B…Q312B.
+- [Danh mục module](/q/modules/) — 70 module Q-series, gồm 46 module vào/ra số.
 
 ## Đọc tiếp
 

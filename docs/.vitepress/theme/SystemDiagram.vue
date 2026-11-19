@@ -134,8 +134,8 @@ const legend = computed(() => [
 
 const note = computed(() =>
   isVi.value
-    ? 'Nguồn số liệu: SH-080483 §7.2.1 p.212–216, §8.3 p.249, §6.2.5 p.190; SH-080042 §2.4 p.2-4, §3.5 p.3-7; SH-080058 §3.1 p.3-5; SH-080036 §3.1 p.3-2; SH-080055 §3.1.1 p.3-1; SH-080009 §3.2 p.29. Sơ đồ là logic; Q61P không có ngõ ra 24 V nên nhóm I/O dùng nguồn 24 VDC ngoài.'
-    : 'Data sources: SH-080483 §7.2.1 p.212–216, §8.3 p.249, §6.2.5 p.190; SH-080042 §2.4 p.2-4, §3.5 p.3-7; SH-080058 §3.1 p.3-5; SH-080036 §3.1 p.3-2; SH-080055 §3.1.1 p.3-1; SH-080009 §3.2 p.29. The drawing is logical; Q61P has no 24 V output, so the I/O group uses an external 24 VDC supply.'
+    ? 'Nguồn: SH-080483 §7.2.1. Sơ đồ là logic; Q61P không có ngõ ra 24 V nên nhóm I/O dùng nguồn 24 VDC ngoài.'
+    : 'Source: SH-080483 §7.2.1. The drawing is logical; Q61P has no 24 V output, so the I/O group uses an external 24 VDC supply.'
 )
 
 const neutralNote = computed(() =>

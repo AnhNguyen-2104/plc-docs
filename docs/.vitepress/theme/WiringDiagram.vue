@@ -139,8 +139,8 @@ const estopLabel = computed(() =>
 
 const sourceLabel = computed(() =>
   isVi.value
-    ? 'Nguồn chân: SH-080058 §3.4.2 p.3-25, §3.4.3 p.3-26–3-27; chân driver theo manual hãng.'
-    : 'Pin sources: SH-080058 §3.4.2 p.3-25, §3.4.3 p.3-26–3-27; drive pins per the manufacturer manual.'
+    ? 'Nguồn: SH-080058 §3.4.2–3.4.3'
+    : 'Source: SH-080058 §3.4.2–3.4.3'
 )
 
 const pulseLegend = computed(() => {
