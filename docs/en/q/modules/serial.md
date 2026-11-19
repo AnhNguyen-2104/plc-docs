@@ -44,7 +44,7 @@ The manufacturer's D-sub 9 pin layout on the module side:
 <ManualFigure
   src="/img/manual/serial-dsub9.jpg"
   alt="QJ71C24N D-sub 9 pin layout: CD, RD, SD, ER, SG, DR, RS, CS, CI"
-  caption="D-sub 9 pin layout (CH1 RS-232) — official figure SH-080006 §3.2.1"
+  caption="D-sub 9 pin layout (CH1 RS-232)"
   doc="SH-080006"
   section="§3.2.1"
   page="3-3"
@@ -87,7 +87,7 @@ The 1:1 four-wire RS-422 connection between the module and an external device, w
 <ManualFigure
   src="/img/manual/serial-rs485-4wire.jpg"
   alt="Four-wire RS-422/485 connection: SDA, SDB, RDA, RDB, SG, FG and terminating resistor R"
-  caption="1:1 four-wire RS-422/485 connection — official figure SH-080006 §4.4.2"
+  caption="1:1 four-wire RS-422/485 connection"
   doc="SH-080006"
   section="§4.4.2"
   page="4-10"
@@ -108,7 +108,7 @@ How to tell the 330 Ω / 110 Ω terminating resistors apart and insert them the 
 <ManualFigure
   src="/img/manual/serial-termination.jpg"
   alt="330 Ω and 110 Ω terminating resistors with colour codes and correct insertion"
-  caption="Terminating resistors 330 Ω/110 Ω and correct insertion — official figure SH-080006 §4.4.2"
+  caption="Terminating resistors 330 Ω/110 Ω and correct insertion"
   doc="SH-080006"
   section="§4.4.2"
   page="4-9"

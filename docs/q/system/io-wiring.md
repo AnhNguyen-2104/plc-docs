@@ -19,7 +19,7 @@ Sơ đồ chính thức của hãng cho mạch vào QX40: photocoupler, trở h�
 <ManualFigure
   src="/img/manual/qx40-input-circuit.jpg"
   alt="Mạch vào QX40 common dương: photocoupler, điện trở 4,7 kΩ và 24 VDC"
-  caption="Mạch vào QX40: photocoupler, COM dương — sơ đồ chính thức SH-080042 §2.4"
+  caption="Mạch vào QX40: photocoupler, COM dương"
   doc="SH-080042"
   section="§2.4"
   page="2-4"
@@ -33,7 +33,7 @@ Sơ đồ chính thức của hãng cho mạch vào QX80: cùng photocoupler nh�
 <ManualFigure
   src="/img/manual/qx80-input-circuit.jpg"
   alt="Mạch vào QX80 common âm: photocoupler và COM nối 0 V"
-  caption="Mạch vào QX80: photocoupler, COM âm — sơ đồ chính thức SH-080042 §2.18"
+  caption="Mạch vào QX80: photocoupler, COM âm"
   doc="SH-080042"
   section="§2.18"
   page="2-24"
@@ -47,7 +47,7 @@ Sơ đồ chính thức của hãng cho mạch ra rơ-le QY10: tiếp điểm, t
 <ManualFigure
   src="/img/manual/qy10-output-circuit.jpg"
   alt="Mạch ra rơ-le QY10: tiếp điểm, tải xoay chiều và bộ triệt xung"
-  caption="Mạch ra QY10: tiếp điểm rơ-le, tải — sơ đồ chính thức SH-080042 §3.1"
+  caption="Mạch ra QY10: tiếp điểm rơ-le, tải"
   doc="SH-080042"
   section="§3.1"
   page="3-1"
@@ -61,7 +61,7 @@ Sơ đồ chính thức của hãng cho mạch ra transistor QY40P: transistor s
 <ManualFigure
   src="/img/manual/qy40p-output-circuit.jpg"
   alt="Mạch ra transistor QY40P kiểu sink: zener, tải và cầu chì"
-  caption="Mạch ra QY40P: transistor sink, zener — sơ đồ chính thức SH-080042 §3.5"
+  caption="Mạch ra QY40P: transistor sink, zener"
   doc="SH-080042"
   section="§3.5"
   page="3-7"
@@ -75,7 +75,7 @@ QD62 là module đếm xung DC input 24 V; các cặp vi sai A+/A−, B+/B− th
 <ManualFigure
   src="/img/manual/qd62-line-driver.jpg"
   alt="Nối encoder line driver với QD62: các cặp vi sai A+/A−, B+/B−"
-  caption="Nối encoder line driver với QD62: các cặp vi sai A+/A−, B+/B− — hình chính thức SH-080036 §4.4.2"
+  caption="Nối encoder line driver với QD62: các cặp vi sai A+/A−, B+/B−"
   doc="SH-080036"
   section="§4.4.2"
   page="4-8"
@@ -91,7 +91,7 @@ Kênh 1 của Q64AD dùng hai cực `V+` (cực 1) và `V−` (cực 2); nếu �
 <ManualFigure
   src="/img/manual/q64ad-wiring.jpg"
   alt="Đấu dây Q64AD: V+, V−, I+, A.G., SLD, cặp xoắn có vỏ bọc"
-  caption="Đấu dây vào tương tự Q64AD: V+/V−, I+, A.G., cặp xoắn có vỏ bọc — hình chính thức SH-080055 §4.4.2"
+  caption="Đấu dây vào tương tự Q64AD: V+/V−, I+, A.G., cặp xoắn có vỏ bọc"
   doc="SH-080055"
   section="§4.4.2"
   page="4-6"

@@ -31,9 +31,7 @@ const link = computed(() => (isVi.value ? 'Tài liệu gốc' : 'Original manual
     <img :src="imgSrc" :alt="alt" loading="lazy" decoding="async" />
     <figcaption>
       <span class="manual-figure__caption">{{ caption }}</span>
-      <span class="manual-figure__credit">
-        {{ credit }}<template v-if="pdfUrl"> — <a :href="pdfUrl" target="_blank" rel="noopener">{{ link }}</a></template>
-      </span>
+      <span class="manual-figure__credit"> {{ credit }}<template v-if="pdfUrl"> — <a :href="pdfUrl" target="_blank" rel="noopener">{{ link }}</a></template></span>
     </figcaption>
   </figure>
 </template>
@@ -65,5 +63,7 @@ const link = computed(() => (isVi.value ? 'Tài liệu gốc' : 'Original manual
 
 .manual-figure__credit {
   display: block;
+  margin-top: 2px;
+  font-size: 12px;
 }
 </style>

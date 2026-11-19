@@ -31,7 +31,7 @@ Sơ đồ đấu dây vào tương tự chính thức của Q64AD (`V+`/`V−`, 
 <ManualFigure
   src="/img/manual/q64ad-wiring.jpg"
   alt="Đấu dây Q64AD: V+, V−, I+, A.G., SLD, cặp xoắn có vỏ bọc"
-  caption="Đấu dây vào tương tự Q64AD — hình chính thức SH-080055 §4.4.2"
+  caption="Đấu dây vào tương tự Q64AD"
   doc="SH-080055"
   section="§4.4.2"
   page="4-6"
@@ -80,7 +80,7 @@ Sơ đồ đấu dây ra tương tự chính thức của Q62DA, cho cả ngõ r
 <ManualFigure
   src="/img/manual/q62da-wiring.jpg"
   alt="Đấu dây Q62DA: ngõ ra áp V+/COM và ngõ ra dòng I+/COM, tải và FG"
-  caption="Đấu dây ra tương tự Q62DA: áp và dòng — hình chính thức SH-080054 §4.4.2"
+  caption="Đấu dây ra tương tự Q62DA: áp và dòng"
   doc="SH-080054"
   section="§4.4.2"
   page="4-7"

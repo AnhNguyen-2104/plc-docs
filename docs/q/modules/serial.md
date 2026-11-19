@@ -44,7 +44,7 @@ Sơ đồ chân D-sub 9 phía module do hãng công bố:
 <ManualFigure
   src="/img/manual/serial-dsub9.jpg"
   alt="Sơ đồ chân D-sub 9 chân của QJ71C24N: CD, RD, SD, ER, SG, DR, RS, CS, CI"
-  caption="Sơ đồ chân D-sub 9 (CH1 RS-232) — hình chính thức SH-080006 §3.2.1"
+  caption="Sơ đồ chân D-sub 9 (CH1 RS-232)"
   doc="SH-080006"
   section="§3.2.1"
   page="3-3"
@@ -87,7 +87,7 @@ Hình nối 1:1 RS-422 bốn dây giữa module và thiết bị ngoài, kèm đ
 <ManualFigure
   src="/img/manual/serial-rs485-4wire.jpg"
   alt="Nối RS-422/485 bốn dây: SDA, SDB, RDA, RDB, SG, FG và điện trở kết thúc R"
-  caption="Nối 1:1 bốn dây RS-422/485 — hình chính thức SH-080006 §4.4.2"
+  caption="Nối 1:1 bốn dây RS-422/485"
   doc="SH-080006"
   section="§4.4.2"
   page="4-10"
@@ -108,7 +108,7 @@ Cách phân biệt và lắp điện trở kết thúc 330 Ω / 110 Ω đúng ch
 <ManualFigure
   src="/img/manual/serial-termination.jpg"
   alt="Điện trở kết thúc 330 Ω và 110 Ω với mã màu, cách cắm đúng chiều vào khối đầu cực"
-  caption="Điện trở kết thúc 330 Ω/110 Ω và cách cắm — hình chính thức SH-080006 §4.4.2"
+  caption="Điện trở kết thúc 330 Ω/110 Ω và cách cắm"
   doc="SH-080006"
   section="§4.4.2"
   page="4-9"

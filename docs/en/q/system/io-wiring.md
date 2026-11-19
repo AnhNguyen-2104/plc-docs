@@ -19,7 +19,7 @@ The manufacturer's figure for the QX40 input circuit: photocoupler, series resis
 <ManualFigure
   src="/img/manual/qx40-input-circuit.jpg"
   alt="QX40 positive-common input circuit: photocoupler, 4.7 kΩ resistor and 24 VDC"
-  caption="QX40 input circuit: photocoupler, positive common — official figure SH-080042 §2.4"
+  caption="QX40 input circuit: photocoupler, positive common"
   doc="SH-080042"
   section="§2.4"
   page="2-4"
@@ -33,7 +33,7 @@ The manufacturer's figure for the QX80 input circuit: the same photocoupler, but
 <ManualFigure
   src="/img/manual/qx80-input-circuit.jpg"
   alt="QX80 negative-common input circuit: photocoupler with COM at 0 V"
-  caption="QX80 input circuit: photocoupler, negative common — official figure SH-080042 §2.18"
+  caption="QX80 input circuit: photocoupler, negative common"
   doc="SH-080042"
   section="§2.18"
   page="2-24"
@@ -47,7 +47,7 @@ The manufacturer's figure for the QY10 relay output circuit: contact, load and t
 <ManualFigure
   src="/img/manual/qy10-output-circuit.jpg"
   alt="QY10 relay output circuit: contact, AC load and surge suppressor"
-  caption="QY10 output circuit: relay contact, load — official figure SH-080042 §3.1"
+  caption="QY10 output circuit: relay contact, load"
   doc="SH-080042"
   section="§3.1"
   page="3-1"
@@ -61,7 +61,7 @@ The manufacturer's figure for the QY40P transistor output circuit: sink transist
 <ManualFigure
   src="/img/manual/qy40p-output-circuit.jpg"
   alt="QY40P sink transistor output circuit: zener, load and fuse"
-  caption="QY40P output circuit: sink transistor, zener — official figure SH-080042 §3.5"
+  caption="QY40P output circuit: sink transistor, zener"
   doc="SH-080042"
   section="§3.5"
   page="3-7"
@@ -75,7 +75,7 @@ The QD62 is a 24 V DC-input counter module; the differential pairs A+/A−, B+/B
 <ManualFigure
   src="/img/manual/qd62-line-driver.jpg"
   alt="Line-driver encoder wired to QD62 through the A+/A− and B+/B− differential pairs"
-  caption="Line-driver encoder to QD62: A+/A− and B+/B− differential pairs — official figure SH-080036 §4.4.2"
+  caption="Line-driver encoder to QD62: A+/A− and B+/B− differential pairs"
   doc="SH-080036"
   section="§4.4.2"
   page="4-8"
@@ -91,7 +91,7 @@ Channel 1 of the Q64AD uses `V+` (terminal 1) and `V−` (terminal 2); for a cur
 <ManualFigure
   src="/img/manual/q64ad-wiring.jpg"
   alt="Q64AD wiring: V+, V−, I+, A.G., SLD and shielded twisted pair"
-  caption="Q64AD analog input wiring: V+/V−, I+, A.G., shielded twisted pair — official figure SH-080055 §4.4.2"
+  caption="Q64AD analog input wiring: V+/V−, I+, A.G., shielded twisted pair"
   doc="SH-080055"
   section="§4.4.2"
   page="4-6"

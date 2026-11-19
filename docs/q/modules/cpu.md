@@ -40,7 +40,7 @@ Hình CPU Universal model (Q02U/Q03UD/Q04UDH…) với vị trí cổng, pin pin
 <ManualFigure
   src="/img/manual/qcpu-module.jpg"
   alt="Mặt CPU Universal model Q: cổng USB/RS-232, đèn RUN/ERR, nắp pin và các công tắc"
-  caption="Mặt CPU Universal model Q: cổng, LED và nắp pin — hình chính thức SH-080483 §6.1.3"
+  caption="Mặt CPU Universal model Q: cổng, LED và nắp pin"
   doc="SH-080483"
   section="§6.1.3"
   page="138"

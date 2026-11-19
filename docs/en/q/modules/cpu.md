@@ -40,7 +40,7 @@ The Universal model QCPU front (Q02U/Q03UD/Q04UDH…) showing the ports, pins, L
 <ManualFigure
   src="/img/manual/qcpu-module.jpg"
   alt="Universal model Q CPU front: USB/RS-232 ports, RUN/ERR LEDs, battery cover and switches"
-  caption="Universal model Q CPU front: ports, LEDs and battery cover — official figure SH-080483 §6.1.3"
+  caption="Universal model Q CPU front: ports, LEDs and battery cover"
   doc="SH-080483"
   section="§6.1.3"
   page="138"

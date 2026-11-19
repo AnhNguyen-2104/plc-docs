@@ -49,7 +49,7 @@ The manufacturer's network configuration example: own station, another station, 
 <ManualFigure
   src="/img/manual/ethernet-config.jpg"
   alt="Ethernet network configuration: QJ71E71-100 station, another station, router and Internet"
-  caption="Ethernet network configuration with the E71 — official figure SH-080009 §1"
+  caption="Ethernet network configuration with the E71"
   doc="SH-080009"
   section="§1"
   page="20"
@@ -63,7 +63,7 @@ The manufacturer's module front, RJ45 port and LED locations:
 <ManualFigure
   src="/img/manual/ethernet-module.jpg"
   alt="QJ71E71-100 module front: LEDs, RJ45 port, 10BASE5/10BASE2 ports and serial number plate"
-  caption="QJ71E71-100 module front: LEDs and ports — official figure SH-080009 §2"
+  caption="QJ71E71-100 module front: LEDs and ports"
   doc="SH-080009"
   section="§2"
   page="27"

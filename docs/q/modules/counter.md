@@ -54,7 +54,7 @@ Sơ đồ nối encoder hở collector 24 V chính thức của hãng (`+24 V`, 
 <ManualFigure
   src="/img/manual/qd62-wiring.jpg"
   alt="Nối encoder hở collector 24 V với QD62: nguồn 24 V, pha A, pha B, ABCOM"
-  caption="Nối encoder hở collector 24 V với QD62 — hình chính thức SH-080036 §4.4.2"
+  caption="Nối encoder hở collector 24 V với QD62"
   doc="SH-080036"
   section="§4.4.2"
   page="4-6"
@@ -66,7 +66,7 @@ Sơ đồ nối encoder line driver (tương đương AM26LS31) qua cặp vi sai
 <ManualFigure
   src="/img/manual/qd62-line-driver.jpg"
   alt="Nối encoder line driver với QD62: các cặp vi sai A+/A−, B+/B−"
-  caption="Nối encoder line driver với QD62 — hình chính thức SH-080036 §4.4.2"
+  caption="Nối encoder line driver với QD62"
   doc="SH-080036"
   section="§4.4.2"
   page="4-8"

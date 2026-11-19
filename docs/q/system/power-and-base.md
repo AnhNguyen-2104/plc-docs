@@ -82,7 +82,7 @@ Sơ đồ đấu dây nguồn chính thức của hãng cho hệ một nguồn: 
 <ManualFigure
   src="/img/manual/qcpu-power-wiring.jpg"
   alt="Sơ đồ đấu dây nguồn một hệ thống: 100–240 VAC vào L/N, FG/LG nối đất, Q38B và base mở rộng"
-  caption="Đấu dây nguồn một hệ thống: L/N 100–240 VAC, FG/LG và tiếp đất — sơ đồ chính thức SH-080483 §4.8.1"
+  caption="Đấu dây nguồn một hệ thống: L/N 100–240 VAC, FG/LG và tiếp đất"
   doc="SH-080483"
   section="§4.8.1"
   page="107"

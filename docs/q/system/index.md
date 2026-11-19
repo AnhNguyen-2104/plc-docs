@@ -36,7 +36,7 @@ Danh pháp base chính Q38B theo hãng: khe cắm module (1), nắp base (2), co
 <ManualFigure
   src="/img/manual/qsb-base.jpg"
   alt="Hình dạng base chính Q38B: các khe I/O0 đến I/O11, CPU, POWER và các lỗ lắp đặt"
-  caption="Base chính Q38B: thứ tự khe I/O0–I/O11 và các vị trí lắp đặt — hình chính thức SH-080483 §8.1"
+  caption="Base chính Q38B: thứ tự khe I/O0–I/O11 và các vị trí lắp đặt"
   doc="SH-080483"
   section="§8.1"
   page="239"

@@ -54,7 +54,7 @@ The manufacturer's 24 V open-collector encoder wiring (`+24 V`, `0 V`, phases A/
 <ManualFigure
   src="/img/manual/qd62-wiring.jpg"
   alt="24 V open-collector encoder wired to QD62: 24 V supply, phase A, phase B, ABCOM"
-  caption="24 V open-collector encoder to QD62 — official figure SH-080036 §4.4.2"
+  caption="24 V open-collector encoder to QD62"
   doc="SH-080036"
   section="§4.4.2"
   page="4-6"
@@ -66,7 +66,7 @@ The line-driver encoder wiring (AM26LS31 equivalent) through the differential pa
 <ManualFigure
   src="/img/manual/qd62-line-driver.jpg"
   alt="Line-driver encoder wired to QD62 through the A+/A− and B+/B− differential pairs"
-  caption="Line-driver encoder to QD62 — official figure SH-080036 §4.4.2"
+  caption="Line-driver encoder to QD62"
   doc="SH-080036"
   section="§4.4.2"
   page="4-8"

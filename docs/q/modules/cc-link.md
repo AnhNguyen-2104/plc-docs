@@ -61,7 +61,7 @@ Hình dạng module và vị trí công tắc/đầu cực theo hãng:
 <ManualFigure
   src="/img/manual/cclink-module.jpg"
   alt="Mặt module QJ61BT11: đèn LED, công tắc số trạm, công tắc MODE và khối đầu cực"
-  caption="Mặt module QJ61BT11: LED, công tắc số trạm, MODE và khối đầu cực — hình chính thức SH-080016 §7.3"
+  caption="Mặt module QJ61BT11: LED, công tắc số trạm, MODE và khối đầu cực"
   doc="SH-080016"
   section="§7.3"
   page="7-4"
@@ -79,7 +79,7 @@ Thứ tự đầu cực trên khối 2 mảnh, nhìn từ mặt module:
 <ManualFigure
   src="/img/manual/cclink-terminal.jpg"
   alt="Khối đầu cực CC-Link: NC, DA, DB, NC, SLD, DG, FG"
-  caption="Khối đầu cực CC-Link: NC–DA–DB–NC–SLD–DG–FG — hình chính thức SH-080016 §7.3"
+  caption="Khối đầu cực CC-Link: NC–DA–DB–NC–SLD–DG–FG"
   doc="SH-080016"
   section="§7.3"
   page="7-6"
@@ -113,7 +113,7 @@ Sơ đồ nối tuyến chính thức: master nằm giữa, điện trở kết 
 <ManualFigure
   src="/img/manual/cclink-wiring.jpg"
   alt="Sơ đồ nối CC-Link: master ở giữa, hai trạm remote hai đầu, điện trở kết thúc"
-  caption="Nối tuyến CC-Link: master ở giữa, điện trở kết thúc hai đầu — hình chính thức SH-080016 §7.5"
+  caption="Nối tuyến CC-Link: master ở giữa, điện trở kết thúc hai đầu"
   doc="SH-080016"
   section="§7.5"
   page="7-9"

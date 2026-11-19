@@ -36,7 +36,7 @@ The manufacturer's Q38B main base unit nomenclature: module connector (1), base 
 <ManualFigure
   src="/img/manual/qsb-base.jpg"
   alt="Q38B main base unit: I/O0 to I/O11 slots, CPU, POWER and mounting holes"
-  caption="Q38B main base unit: I/O0–I/O11 slot order and mounting points — official figure SH-080483 §8.1"
+  caption="Q38B main base unit: I/O0–I/O11 slot order and mounting points"
   doc="SH-080483"
   section="§8.1"
   page="239"

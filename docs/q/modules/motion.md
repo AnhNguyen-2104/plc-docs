@@ -56,7 +56,7 @@ Sơ đồ truyền tín hiệu qua SSCNET giữa QD77MS và servo amplifier theo
 <ManualFigure
   src="/img/manual/qd77ms-sscnet.jpg"
   alt="Truyền tín hiệu QD77MS qua SSCNET tới servo amplifier, kèm encoder và tín hiệu ngoài"
-  caption="Truyền tín hiệu QD77MS qua SSCNET — hình chính thức IB-0300185 §1.1.6"
+  caption="Truyền tín hiệu QD77MS qua SSCNET"
   doc="IB-0300185"
   section="§1.1.6"
   page="1-20"
@@ -67,7 +67,7 @@ Cách nối cáp SSCNET nối tiếp QD75M với các amplifier MR-H-BN/MR-J2-B 
 <ManualFigure
   src="/img/manual/qd75m-sscnet.jpg"
   alt="Nối cáp SSCNET QD75M với các servo amplifier MR-H-BN, MR-J2-B và connector kết thúc"
-  caption="Nối cáp SSCNET QD75M → servo amplifier — hình chính thức IB-0300062 Phụ lục 3"
+  caption="Nối cáp SSCNET QD75M → servo amplifier"
   doc="IB-0300062"
   section="Phụ lục 3"
   page="App-29"

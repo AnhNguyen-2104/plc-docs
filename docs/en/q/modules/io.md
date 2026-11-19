@@ -17,7 +17,7 @@ The manufacturer's figure for the QX40 input circuit:
 <ManualFigure
   src="/img/manual/qx40-input-circuit.jpg"
   alt="QX40 positive-common input circuit: photocoupler, 4.7 kΩ resistor"
-  caption="QX40 input circuit: photocoupler, positive common — official figure SH-080042 §2.4"
+  caption="QX40 input circuit: photocoupler, positive common"
   doc="SH-080042"
   section="§2.4"
   page="2-4"
@@ -29,7 +29,7 @@ The manufacturer's terminal block table TB1–TB18:
 <ManualFigure
   src="/img/manual/qx40-terminals.jpg"
   alt="QX40 terminal block table: TB1 to TB18, X0 to XF and COM"
-  caption="QX40 terminal block: TB1–TB16 for X0–XF, TB17 is COM — official table SH-080042 §2.4"
+  caption="QX40 terminal block: TB1–TB16 for X0–XF, TB17 is COM"
   doc="SH-080042"
   section="§2.4"
   page="2-4"
@@ -75,7 +75,7 @@ The manufacturer's figure for the QY40P transistor output circuit:
 <ManualFigure
   src="/img/manual/qy40p-output-circuit.jpg"
   alt="QY40P sink transistor output circuit: zener diode, load and fuse"
-  caption="QY40P output circuit: sink transistor, zener — official figure SH-080042 §3.5"
+  caption="QY40P output circuit: sink transistor, zener"
   doc="SH-080042"
   section="§3.5"
   page="3-7"
@@ -87,7 +87,7 @@ The QY40P terminal block table TB1–TB18:
 <ManualFigure
   src="/img/manual/qy40p-terminals.jpg"
   alt="QY40P terminal block table: TB1 to TB18, Y0 to YF, TB17 12/24 VDC and TB18 COM"
-  caption="QY40P terminal block: TB1–TB16 for Y0–YF, TB17 12/24 VDC, TB18 COM — official table SH-080042 §3.5"
+  caption="QY40P terminal block: TB1–TB16 for Y0–YF, TB17 12/24 VDC, TB18 COM"
   doc="SH-080042"
   section="§3.5"
   page="3-7"

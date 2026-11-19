@@ -49,7 +49,7 @@ Ví dụ cấu hình mạng của hãng: trạm của mình, trạm khác, route
 <ManualFigure
   src="/img/manual/ethernet-config.jpg"
   alt="Cấu hình mạng Ethernet: trạm QJ71E71-100, trạm khác, router và Internet"
-  caption="Cấu hình mạng Ethernet với E71 — hình chính thức SH-080009 §1"
+  caption="Cấu hình mạng Ethernet với E71"
   doc="SH-080009"
   section="§1"
   page="20"
@@ -63,7 +63,7 @@ Mặt module, cổng RJ45 và vị trí LED theo hãng:
 <ManualFigure
   src="/img/manual/ethernet-module.jpg"
   alt="Mặt module QJ71E71-100: LED, cổng RJ45, cổng 10BASE5/10BASE2 và tem số sê-ri"
-  caption="Mặt module QJ71E71-100: LED và các cổng — hình chính thức SH-080009 §2"
+  caption="Mặt module QJ71E71-100: LED và các cổng"
   doc="SH-080009"
   section="§2"
   page="27"

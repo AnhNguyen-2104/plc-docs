@@ -61,7 +61,7 @@ The manufacturer's module appearance and switch/terminal locations:
 <ManualFigure
   src="/img/manual/cclink-module.jpg"
   alt="QJ61BT11 module front: LEDs, station number switches, MODE switch and terminal block"
-  caption="QJ61BT11 module front: LEDs, station switches, MODE and terminal block — official figure SH-080016 §7.3"
+  caption="QJ61BT11 module front: LEDs, station switches, MODE and terminal block"
   doc="SH-080016"
   section="§7.3"
   page="7-4"
@@ -79,7 +79,7 @@ Terminal order on the two-piece block, seen from the module front:
 <ManualFigure
   src="/img/manual/cclink-terminal.jpg"
   alt="CC-Link terminal block: NC, DA, DB, NC, SLD, DG, FG"
-  caption="CC-Link terminal block: NC–DA–DB–NC–SLD–DG–FG — official figure SH-080016 §7.3"
+  caption="CC-Link terminal block: NC–DA–DB–NC–SLD–DG–FG"
   doc="SH-080016"
   section="§7.3"
   page="7-6"
@@ -113,7 +113,7 @@ The manufacturer's bus wiring diagram: master in the middle, terminating resisto
 <ManualFigure
   src="/img/manual/cclink-wiring.jpg"
   alt="CC-Link bus wiring: master in the middle, remote stations at both ends, terminating resistors"
-  caption="CC-Link bus wiring: master in the middle, resistors at both ends — official figure SH-080016 §7.5"
+  caption="CC-Link bus wiring: master in the middle, resistors at both ends"
   doc="SH-080016"
   section="§7.5"
   page="7-9"

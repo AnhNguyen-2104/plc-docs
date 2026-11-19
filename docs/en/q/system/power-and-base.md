@@ -82,7 +82,7 @@ The manufacturer's single power supply wiring diagram: `L`/`N`, `FG`/`LG`, fuse 
 <ManualFigure
   src="/img/manual/qcpu-power-wiring.jpg"
   alt="Single power supply wiring: 100–240 VAC into L/N, FG/LG earthed, Q38B and extension base"
-  caption="Single power supply wiring: L/N 100–240 VAC, FG/LG and earth — official figure SH-080483 §4.8.1"
+  caption="Single power supply wiring: L/N 100–240 VAC, FG/LG and earth"
   doc="SH-080483"
   section="§4.8.1"
   page="107"

@@ -56,7 +56,7 @@ The manufacturer's SSCNET signal path between the QD77MS and the servo amplifier
 <ManualFigure
   src="/img/manual/qd77ms-sscnet.jpg"
   alt="QD77MS signals over SSCNET to the servo amplifier, with encoder and external inputs"
-  caption="QD77MS signal path over SSCNET — official figure IB-0300185 §1.1.6"
+  caption="QD77MS signal path over SSCNET"
   doc="IB-0300185"
   section="§1.1.6"
   page="1-20"
@@ -67,7 +67,7 @@ Daisy-chaining SSCNET cables from the QD75M to MR-H-BN/MR-J2-B amplifiers, with 
 <ManualFigure
   src="/img/manual/qd75m-sscnet.jpg"
   alt="SSCNET cable daisy-chain from QD75M to MR-H-BN and MR-J2-B servo amplifiers with termination connector"
-  caption="QD75M → servo amplifier SSCNET cable — official figure IB-0300062 Appendix 3"
+  caption="QD75M → servo amplifier SSCNET cable"
   doc="IB-0300062"
   section="Appendix 3"
   page="App-29"

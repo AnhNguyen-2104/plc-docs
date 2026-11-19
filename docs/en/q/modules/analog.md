@@ -31,7 +31,7 @@ The manufacturer's Q64AD analog input wiring (`V+`/`V−`, `I+`, `A.G.`, shielde
 <ManualFigure
   src="/img/manual/q64ad-wiring.jpg"
   alt="Q64AD wiring: V+, V−, I+, A.G., SLD and shielded twisted pair"
-  caption="Q64AD analog input wiring — official figure SH-080055 §4.4.2"
+  caption="Q64AD analog input wiring"
   doc="SH-080055"
   section="§4.4.2"
   page="4-6"
@@ -80,7 +80,7 @@ The manufacturer's Q62DA analog output wiring, covering both voltage and current
 <ManualFigure
   src="/img/manual/q62da-wiring.jpg"
   alt="Q62DA wiring: voltage output V+/COM and current output I+/COM, load and FG"
-  caption="Q62DA analog output wiring: voltage and current — official figure SH-080054 §4.4.2"
+  caption="Q62DA analog output wiring: voltage and current"
   doc="SH-080054"
   section="§4.4.2"
   page="4-7"
