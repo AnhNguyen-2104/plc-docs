@@ -33,8 +33,6 @@ Sigma-7 SGD7S bản analog/pulse (200 V) nhận xung lệnh vi sai qua `PULS//PU
 
 <WiringDiagram variant="yaskawa-sigma7" />
 
-<PinMapDiagram variant="yaskawa-sigma7" />
-
 ## 2. Đấu với QD75D4
 
 - `READY` 1A11 ← `S-RDY+` 29, `RDYCOM` 1A12 ← `S-RDY−` 30: đây là cặp ngõ ra cách ly đi thẳng vào photocoupler READY, **không** phải +24 V. Chân 29/30 lấy từ ví dụ kết nối QD75D ↔ Yaskawa trong SH-080058 (Phụ lục 8.1); bảng CN1 của SGD7S chưa được đối chiếu nên coi là chưa xác minh.

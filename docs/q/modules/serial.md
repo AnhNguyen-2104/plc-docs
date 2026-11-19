@@ -37,18 +37,7 @@ Bảng gán kênh và kiểu giao diện theo SH-080006 §3.1 p.3-1. Khoảng c�
 
 Khối cắm của bản -R4 cần tuốt vỏ 7 mm và dùng plate terminal đi kèm khi nối dây bện chống nhiễu; bản QJ71C24N dùng khối đầu cực bắt vít M3 — SH-080006 §4.4 (3) p.4-5.
 
-## 2. Sơ đồ khối
-
-<ModuleBlockDiagram
-  model="QJ71C24N"
-  connector="RS-422/485 terminal block (CH2)"
-  :inputs="ch2Inputs"
-  :outputs="ch2Outputs"
-/>
-
-Sơ đồ trên mô tả trường hợp CH2 RS-422/485 **4 dây**. Với 2 dây (RS-485), cặp phát và cặp thu dùng chung hai dây, và chức năng echo back phải được đặt đúng — SH-080006 §3.3.4 p.3-12.
-
-## 3. Chân CH1 RS-232 (D-sub 9)
+## 2. Chân CH1 RS-232 (D-sub 9)
 
 Sơ đồ chân D-sub 9 phía module do hãng công bố:
 
@@ -80,7 +69,7 @@ Số chân và mô tả từng tín hiệu theo SH-080006 §3.2.1 (1) p.3-3 đ�
 
 Khi dùng chế độ bán song công, `RS` nối vào một trong `CS`/`DR`/`CD` của thiết bị ngoài và `CD` nối vào `RS`/`ER` của thiết bị ngoài — SH-080007 §8.4 p.218.
 
-## 4. Khối đầu cực CH2 RS-422/485
+## 3. Khối đầu cực CH2 RS-422/485
 
 | Đầu cực | Tín hiệu | 4 dây | 2 dây (RS-485) |
 | --- | --- | --- | --- |
@@ -126,7 +115,7 @@ Cách phân biệt và lắp điện trở kết thúc 330 Ω / 110 Ω đúng ch
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080006/sh080006w.pdf"
 />
 
-## 5. Công tắc cài đặt
+## 4. Công tắc cài đặt
 
 Cài đặt qua PLC parameter (I/O assignment → Switch setting), gồm 5 switch — SH-080006 §4.5.2 p.4-14.
 
@@ -178,7 +167,7 @@ Mã giao thức — SH-080006 §4.5.2 (1)(c) p.4-17:
 
 Số trạm đặt ở switch 5 dùng cho MC protocol khi nhiều module cùng tuyến; đặt `0` khi cấu hình 1:1 — SH-080006 §4.5.2 (1)(d) p.4-18. Cài đặt chỉ có hiệu lực sau khi chuyển nguồn module OFF→ON hoặc reset CPU — SH-080006 §4.5.2 POINT p.4-14.
 
-## 6. Truy cập buffer memory và ví dụ ladder
+## 5. Truy cập buffer memory và ví dụ ladder
 
 Vùng đệm mặc định — SH-080006 §6.1.2 p.6-6 và §6.2.2 p.6-25:
 
@@ -229,7 +218,7 @@ Lệnh chuyên dụng thay cho `TO`/`FROM`:
 
 Không dùng đồng thời `OUTPUT` với `ONDEMAND`/`BIDOUT`/`BIDIN`/`CPRTCL` trên cùng một kênh; lỗi cài đặt giao thức `7FF2H` — SH-080006 §10.3 (2) p.10-8.
 
-## 7. Checklist đấu dây
+## 6. Checklist đấu dây
 
 - [ ] Điện trở kết thúc chỉ đặt ở **hai trạm đầu tuyến**, không đặt ở trạm giữa — SH-080006 §4.4.2 (1)(c) p.4-9.
 - [ ] Trị số điện trở đúng kiểu truyền: 330 Ω cho RS-422, 110 Ω cho RS-485 — cùng mục p.4-9.
@@ -241,7 +230,7 @@ Không dùng đồng thời `OUTPUT` với `ONDEMAND`/`BIDOUT`/`BIDIN`/`CPRTCL` 
 - [ ] Cáp tín hiệu cách dây động lực tối thiểu 100 mm — SH-080006 §4.4 (6) p.4-5.
 - [ ] Đã chạy loopback test trước khi ghép thiết bị thật — SH-080006 §4.8 p.4-31.
 
-## 8. Đọc tiếp
+## 7. Đọc tiếp
 
 - Giao thức MC, định dạng khung và lệnh: SH-080007 (sổ tay Application).
 - Cài đặt chi tiết từng bit và mã lỗi: SH-080006 (sổ tay Basic).

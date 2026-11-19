@@ -59,7 +59,14 @@ Ví dụ nối trong SH-080058 §3.4.1 p.3-24 vẽ theo MR-J3-A (`PULSE F+/F−`
 
 <WiringDiagram variant="mr-j4-a" />
 
-<PinMapDiagram variant="mr-j4-a" />
+<ManualFigure
+  src="/img/manual/mrj4-cn1-wiring.jpg"
+  alt="Sơ đồ đấu nối nội bộ CN1 của MR-J4-A: nhóm ngõ vào DICOM 20/21, nhóm ngõ ra DOCOM 46/47 và RD 49"
+  caption="Đấu nối nội bộ CN1 (mạch vào/ra 24 V DC): DICOM, DOCOM 46/47, CPO…RD 49 — hình §2.5 cho MR-J4-_A_-RJ 100 W trở lên"
+  doc="SH-030143-C"
+  section="§2.5"
+  page="2-40"
+/>
 
 ## 2. Servo-ON từ PLC
 

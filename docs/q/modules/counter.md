@@ -25,29 +25,7 @@ Chế độ được chọn bằng switch 1 của intelligent function module tr
 
 QD62/QD62E **không có ngõ Z riêng**. Module chỉ có pha A, pha B, ngõ preset và ngõ bắt đầu chức năng; nếu encoder có xung Z, phải đưa Z về một điểm vào số thường hoặc dùng ngõ preset với mạch ngoài, chứ không cắm được vào chân Z của module.
 
-## 2. Sơ đồ khối
-
-<ModuleBlockDiagram
-  model="QD62 / QD62E"
-  role="2 kênh đếm xung, ngõ ra EQU1/EQU2"
-  connector="40-pin connector"
-  :width-pins="40"
-  :inputs="[
-    { signal: 'Phase A', pin: 'A20 (CH1) / A13 (CH2)', device: 'Encoder A' },
-    { signal: 'Phase B', pin: 'A18 (CH1) / A11 (CH2)', device: 'Encoder B' },
-    { signal: 'ABCOM', pin: 'B19 (CH1) / B12 (CH2)', device: '0 V encoder' },
-    { signal: 'Preset', pin: 'B17 (CH1) / B10 (CH2)', device: 'Công tắc preset' },
-    { signal: 'Function start', pin: 'B15 (CH1) / B08 (CH2)', device: 'Công tắc chức năng' },
-    { signal: '12/24 V', pin: 'B01, B02', device: 'Nguồn 12/24 VDC' },
-    { signal: '0 V', pin: 'A01, A02', device: '0 V chung' }
-  ]"
-  :outputs="[
-    { signal: 'EQU1', pin: 'A06 (CH1) / A05 (CH2)', device: 'Đèn / rơ le so sánh 1' },
-    { signal: 'EQU2', pin: 'B06 (CH1) / B05 (CH2)', device: 'Đèn / rơ le so sánh 2' }
-  ]"
-/>
-
-## 3. Bảng chân (QD62/QD62E)
+## 2. Bảng chân (QD62/QD62E)
 
 | Chân CH1 | Chân CH2 | Tín hiệu | Nguồn |
 | --- | --- | --- | --- |
@@ -95,7 +73,7 @@ Sơ đồ nối encoder line driver (tương đương AM26LS31) qua cặp vi sai
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080036/sh080036q.pdf"
 />
 
-## 4. Thông số QD62/QD62E
+## 3. Thông số QD62/QD62E
 
 | Hạng mục | Giá trị | Nguồn |
 | --- | --- | --- |
@@ -110,7 +88,7 @@ Sơ đồ nối encoder line driver (tương đương AM26LS31) qua cặp vi sai
 
 QD62 và QD62E khác nhau ở chiều dòng của tầng ra: QD62 sink (tải đấu về dương nguồn), QD62E source (tải đấu về 0 V). Cả hai đều có chung dải đếm 32-bit và tốc độ tối đa 200 kPPS; QD62D mới lên 500 kPPS.
 
-## 5. Truy cập buffer memory
+## 4. Truy cập buffer memory
 
 | Địa chỉ | Nội dung | Độ rộng | Nguồn |
 | --- | --- | --- | --- |
@@ -139,7 +117,7 @@ Giá trị 32-bit nằm trên hai từ liên tiếp, thứ tự thấp trước.
 
 `U0` giả định module ở khe đầu; thay bằng số I/O thực của khe. Đoạn ladder minh hoạ cấu trúc, chưa chạy trên PLC thật; cần đối chiếu địa chỉ khe và switch tốc độ trước khi nạp.
 
-## 6. Đấu dây encoder
+## 5. Đấu dây encoder
 
 - Dùng cặp xoắn có vỏ bọc cho A, B và nối vỏ bọc một điểm phía encoder.
 - Với encoder open collector 24 V, đấu `Phase A 24 V` (A20) và `Phase B 24 V` (A18); với encoder 5 V line driver, đấu `5 V` (A19/A17) hoặc dùng QD62D cho vi sai.

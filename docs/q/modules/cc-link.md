@@ -54,7 +54,7 @@ Chiều dài tuyến tối đa theo tốc độ (toàn hệ thống dùng module
 
 Với hệ thống chỉ dùng module Ver.1.00, chiều dài tổng ngắn hơn: 625 kbps còn 600 m, 2,5 Mbps còn 200 m, 5 Mbps còn 150 m — SH-080016 §3.1.1 p.3-2. Chọn tốc độ theo chiều dài thực tế, không chọn theo tốc độ mong muốn trước.
 
-## 2. Sơ đồ khối
+## 2. Mặt module
 
 Hình dạng module và vị trí công tắc/đầu cực theo hãng:
 
@@ -68,14 +68,7 @@ Hình dạng module và vị trí công tắc/đầu cực theo hãng:
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080016/sh080016e.pdf"
 />
 
-<ModuleBlockDiagram
-  model="QJ61BT11N"
-  connector="CC-Link terminal block"
-  :inputs="ccInputs"
-  :outputs="ccOutputs"
-/>
-
-Sơ đồ minh hoạ master ở giữa tuyến với hai trạm remote. Master **được phép** nằm ở giữa, không bắt buộc ở đầu tuyến; chỉ điện trở kết thúc mới bắt buộc ở hai đầu — SH-080016 §7.5 (4) p.7-9.
+Master **được phép** nằm ở giữa tuyến, không bắt buộc ở đầu tuyến; chỉ điện trở kết thúc mới bắt buộc ở hai đầu — SH-080016 §7.5 (4) p.7-9.
 
 ## 3. Đầu cực và quy tắc tuyến
 

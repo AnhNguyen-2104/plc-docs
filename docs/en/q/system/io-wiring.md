@@ -26,8 +26,6 @@ The manufacturer's figure for the QX40 input circuit: photocoupler, series resis
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
 />
 
-<IOWiringDiagram variant="input-sink" module="QX40" />
-
 **Negative-common input (PNP).** `COM` goes to `0 V`; the PNP sensor sources current into `X`. The current direction is the reverse of the case above.
 
 The manufacturer's figure for the QX80 input circuit: the same photocoupler, but `COM` ties to `0 V` (negative common).
@@ -41,8 +39,6 @@ The manufacturer's figure for the QX80 input circuit: the same photocoupler, but
   page="2-24"
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
 />
-
-<IOWiringDiagram variant="input-source" module="QX80" />
 
 **Relay output.** A dry contact switches the load; the fuse and surge suppressor are external parts.
 
@@ -58,8 +54,6 @@ The manufacturer's figure for the QY10 relay output circuit: contact, load and t
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
 />
 
-<IOWiringDiagram variant="output-relay" module="QY10" />
-
 **Sink-type transistor output.** The load sits between `+24 V` and `Y`; the transistor pulls `Y` down to `COM` (0 V). Inductive loads need a diode across the coil.
 
 The manufacturer's figure for the QY40P transistor output circuit: sink transistor, zener diode and external fuse.
@@ -74,21 +68,35 @@ The manufacturer's figure for the QY40P transistor output circuit: sink transist
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
 />
 
-<IOWiringDiagram variant="output-transistor" module="QY40P" />
-
 ## 2. Differential encoder
 
 The QD62 is a 24 V DC-input counter module; the differential pairs A+/A−, B+/B− belong to the QD62D terminal table (RS-422-A line receiver, AM26C32), and the manual assigns no terminal to a Z phase. On a QD62 a 24 V open-collector encoder lands on the 24 V input terminals; a 5 V line-driver encoder uses the differential pairs and runs in a shielded twisted-pair cable.
 
-<IOWiringDiagram variant="encoder-differential" module="QD62D" />
+<ManualFigure
+  src="/img/manual/qd62-line-driver.jpg"
+  alt="Line-driver encoder wired to QD62 through the A+/A− and B+/B− differential pairs"
+  caption="Line-driver encoder to QD62: A+/A− and B+/B− differential pairs — official figure SH-080036 §4.4.2"
+  doc="SH-080036"
+  section="§4.4.2"
+  page="4-8"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080036/sh080036q.pdf"
+/>
 
-The QD62D has no Z terminal, so the Z+/Z− pair does not appear in the drawing. On a QD62 (24 V DC input) an open-collector encoder follows the positive-common input diagram in section 1. The manual requires 1-phase input to be wired on the phase A side; signal cable stays at least 150 mm from power lines and the screen is earthed at one point on the encoder side (SH-080036 §3.5 p.3-14, §3.6 p.3-15, §4.4.1 p.4-5, §4.4.2 p.4-6).
+The QD62D has no Z terminal, so the Z+/Z− pair does not appear in the terminal table. On a QD62 (24 V DC input) an open-collector encoder follows the positive-common input diagram in section 1. The manual requires 1-phase input to be wired on the phase A side; signal cable stays at least 150 mm from power lines and the screen is earthed at one point on the encoder side (SH-080036 §3.5 p.3-14, §3.6 p.3-15, §4.4.1 p.4-5, §4.4.2 p.4-6).
 
 ## 3. Analog input
 
 Channel 1 of the Q64AD uses `V+` (terminal 1) and `V−` (terminal 2); for a current input `V+` is also tied to `I+` (terminal 3). The signal pair must be a shielded twisted-pair cable, and the screen is earthed at one point on the PLC side only.
 
-<IOWiringDiagram variant="analog-shielded" module="Q64AD" />
+<ManualFigure
+  src="/img/manual/q64ad-wiring.jpg"
+  alt="Q64AD wiring: V+, V−, I+, A.G., SLD and shielded twisted pair"
+  caption="Q64AD analog input wiring: V+/V−, I+, A.G., shielded twisted pair — official figure SH-080055 §4.4.2"
+  doc="SH-080055"
+  section="§4.4.2"
+  page="4-6"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080055/sh080055u.pdf"
+/>
 
 `A.G.` (terminal 17) is a single terminal shared as the reference for every channel and normally needs no wiring, so it must never be earthed a second time; an unused channel must have `V+` shorted to `V−` to stop the digital value drifting (SH-080055 §4.3 p.4-4, §4.4.1 p.4-5, §4.4.2 p.4-6).
 

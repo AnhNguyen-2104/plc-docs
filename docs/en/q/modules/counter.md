@@ -25,29 +25,7 @@ The mode is chosen by switch 1 of the intelligent function module in GX Works2: 
 
 QD62/QD62E have **no dedicated Z input**. The module exposes phase A, phase B, a preset input and a function-start input; an encoder's Z pulse must go to an ordinary digital input or through external logic into the preset input, not to a Z pin.
 
-## 2. Block diagram
-
-<ModuleBlockDiagram
-  model="QD62 / QD62E"
-  role="2-channel pulse counter, EQU1/EQU2 outputs"
-  connector="40-pin connector"
-  :width-pins="40"
-  :inputs="[
-    { signal: 'Phase A', pin: 'A20 (CH1) / A13 (CH2)', device: 'Encoder A' },
-    { signal: 'Phase B', pin: 'A18 (CH1) / A11 (CH2)', device: 'Encoder B' },
-    { signal: 'ABCOM', pin: 'B19 (CH1) / B12 (CH2)', device: 'Encoder 0 V' },
-    { signal: 'Preset', pin: 'B17 (CH1) / B10 (CH2)', device: 'Preset switch' },
-    { signal: 'Function start', pin: 'B15 (CH1) / B08 (CH2)', device: 'Function switch' },
-    { signal: '12/24 V', pin: 'B01, B02', device: '12/24 VDC supply' },
-    { signal: '0 V', pin: 'A01, A02', device: 'Common 0 V' }
-  ]"
-  :outputs="[
-    { signal: 'EQU1', pin: 'A06 (CH1) / A05 (CH2)', device: 'Comparator lamp / relay 1' },
-    { signal: 'EQU2', pin: 'B06 (CH1) / B05 (CH2)', device: 'Comparator lamp / relay 2' }
-  ]"
-/>
-
-## 3. Terminal table (QD62/QD62E)
+## 2. Terminal table (QD62/QD62E)
 
 | CH1 terminal | CH2 terminal | Signal | Source |
 | --- | --- | --- | --- |
@@ -95,7 +73,7 @@ The line-driver encoder wiring (AM26LS31 equivalent) through the differential pa
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080036/sh080036q.pdf"
 />
 
-## 4. QD62/QD62E specifications
+## 3. QD62/QD62E specifications
 
 | Item | Value | Source |
 | --- | --- | --- |
@@ -110,7 +88,7 @@ The line-driver encoder wiring (AM26LS31 equivalent) through the differential pa
 
 QD62 and QD62E differ in output-stage current direction: QD62 sinks (load returns to the positive supply), QD62E sources (load returns to 0 V). Both share the 32-bit range and the 200 kPPS ceiling; only QD62D reaches 500 kPPS.
 
-## 5. Buffer memory access
+## 4. Buffer memory access
 
 | Address | Content | Width | Source |
 | --- | --- | --- | --- |
@@ -139,7 +117,7 @@ QD62 and QD62E differ in output-stage current direction: QD62 sinks (load return
 
 `U0` assumes the module is in the first slot; substitute the actual slot I/O number. The ladder is structural and has not been run on a real PLC; confirm the slot address and speed switch before downloading.
 
-## 6. Encoder wiring
+## 5. Encoder wiring
 
 - Use shielded twisted pair for A, B and ground the shield at one point on the encoder side.
 - For a 24 V open-collector encoder, wire `Phase A 24 V` (A20) and `Phase B 24 V` (A18); for a 5 V line-driver encoder, use the `5 V` pair (A19/A17) or choose QD62D for differential.

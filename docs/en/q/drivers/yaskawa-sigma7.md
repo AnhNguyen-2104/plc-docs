@@ -33,8 +33,6 @@ The Sigma-7 SGD7S analog/pulse version (200 V) accepts differential command puls
 
 <WiringDiagram variant="yaskawa-sigma7" />
 
-<PinMapDiagram variant="yaskawa-sigma7" />
-
 ## 2. Wiring to the QD75D4
 
 - `READY` 1A11 ← `S-RDY+` 29, `RDYCOM` 1A12 ← `S-RDY−` 30: an isolated output pair that feeds the READY photocoupler directly, **not** +24 V. Pins 29/30 come from the QD75D ↔ Yaskawa connection example in SH-080058 (Appendix 8.1); the SGD7S CN1 table has not been cross-checked, so treat this as unverified.

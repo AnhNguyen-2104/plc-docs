@@ -35,8 +35,6 @@ Nguồn cung cấp ghi điểm `GND` là chân 1, nhưng chân 1 cũng được 
 
 <WiringDiagram variant="panasonic-minas-a6" />
 
-<PinMapDiagram variant="panasonic-minas-a6" />
-
 ## 2. Đấu với QD75D4
 
 - Cách đấu khuyến nghị: dùng **nhóm H (line driver)** — `PULSH1` 44/`PULSH2` 45 cho cặp `PULSE F+/F−` và `SIGNH1` 46/`SIGNH2` 47 cho cặp `PULSE R+/R−` của QD75D4. Đây là cặp vi sai đi thẳng, không cần thêm trở hạn dòng.

@@ -25,8 +25,6 @@ DM542 là driver step nhận xung kiểu pulse + direction qua khối đầu c�
 
 <WiringDiagram variant="stepper-dm542" />
 
-<PinMapDiagram variant="stepper-dm542" />
-
 ## 2. Đấu với QD75D4
 
 - QD75D4 xuất cặp vi sai `PULSE F+/F−` và `PULSE R+/R−`; DM542 lại nhận ngõ opto. **Không** đấu thẳng cặp vi sai vào `PUL+/PUL−` mà bỏ qua giao diện: phải theo đúng sơ đồ ngõ vào trong manual DM542 (trở hạn dòng/nguồn phù hợp) và đặc tính ngõ ra của QD75D4 (SH-080058 §3.4.1 p.3-19).

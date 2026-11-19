@@ -25,8 +25,6 @@ The DM542 is a stepper driver that accepts pulse + direction pulses through the 
 
 <WiringDiagram variant="stepper-dm542" />
 
-<PinMapDiagram variant="stepper-dm542" />
-
 ## 2. Wiring to the QD75D4
 
 - The QD75D4 outputs the differential pairs `PULSE F+/F−` and `PULSE R+/R−`; the DM542, however, accepts an opto input. Do **not** wire the differential pair straight into `PUL+/PUL−` while skipping the interface: follow the input diagram in the DM542 manual (suitable current-limiting resistor/supply) and the output characteristics of the QD75D4 (SH-080058 §3.4.1 p.3-19).

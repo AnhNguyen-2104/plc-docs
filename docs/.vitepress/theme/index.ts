@@ -8,11 +8,8 @@ import FamilyMatrix from './FamilyMatrix.vue'
 import SourceRef from './SourceRef.vue'
 import WiringDiagram from './WiringDiagram.vue'
 import LadderDiagram from './LadderDiagram.vue'
-import PinMapDiagram from './PinMapDiagram.vue'
 import ModuleMatrix from './ModuleMatrix.vue'
-import ModuleBlockDiagram from './ModuleBlockDiagram.vue'
 import SystemDiagram from './SystemDiagram.vue'
-import IOWiringDiagram from './IOWiringDiagram.vue'
 import ManualFigure from './ManualFigure.vue'
 import IoCatalog from './IoCatalog.vue'
 import './custom.css'
@@ -28,13 +25,10 @@ export default {
     app.component('SourceRef', SourceRef)
     app.component('WiringDiagram', WiringDiagram)
     app.component('LadderDiagram', LadderDiagram)
-    app.component('PinMapDiagram', PinMapDiagram)
     app.component('ModuleMatrix', ModuleMatrix)
-    app.component('ModuleBlockDiagram', ModuleBlockDiagram)
     app.component('SystemDiagram', SystemDiagram)
-    app.component('IOWiringDiagram', IOWiringDiagram)
     app.component('ManualFigure', ManualFigure)
     app.component('IoCatalog', IoCatalog)
   }
 } satisfies Theme
-export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef, WiringDiagram, LadderDiagram, PinMapDiagram, ModuleMatrix, ModuleBlockDiagram, SystemDiagram, IOWiringDiagram, ManualFigure, IoCatalog }
+export { ParamTable, CodeTabs, VerifiedOn, FamilyMatrix, SourceRef, WiringDiagram, LadderDiagram, ModuleMatrix, SystemDiagram, ManualFigure, IoCatalog }

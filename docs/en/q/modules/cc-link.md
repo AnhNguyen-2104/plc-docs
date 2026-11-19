@@ -54,7 +54,7 @@ Maximum overall cable length per speed (whole system using Ver.1.10 modules and 
 
 For a system using only Ver.1.00 modules the overall length is shorter: 600 m at 625 kbps, 200 m at 2.5 Mbps, 150 m at 5 Mbps — SH-080016 §3.1.1 p.3-2. Choose the speed from the actual cable length, not the other way round.
 
-## 2. Block diagram
+## 2. Module appearance
 
 The manufacturer's module appearance and switch/terminal locations:
 
@@ -68,14 +68,7 @@ The manufacturer's module appearance and switch/terminal locations:
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080016/sh080016e.pdf"
 />
 
-<ModuleBlockDiagram
-  model="QJ61BT11N"
-  connector="CC-Link terminal block"
-  :inputs="ccInputs"
-  :outputs="ccOutputs"
-/>
-
-The diagram shows a master in the middle of the line with two remote stations. The master **may** sit in the middle; it does not have to be at an end. Only the terminating resistors must be at both ends — SH-080016 §7.5 (4) p.7-9.
+The master **may** sit in the middle of the line; it does not have to be at an end. Only the terminating resistors must be at both ends — SH-080016 §7.5 (4) p.7-9.
 
 ## 3. Terminals and bus rules
 

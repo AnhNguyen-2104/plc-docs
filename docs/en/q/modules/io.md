@@ -12,33 +12,6 @@ This page catalogues the 46 digital I/O modules documented in SH-080042, one ver
 
 ## 1. QX40 pin layout
 
-<ModuleBlockDiagram
-  model="QX40"
-  role="16-point 24 VDC input, positive common"
-  connector="18-point terminal block"
-  :width-pins="18"
-  :inputs="[
-    { signal: 'X0', pin: 'TB1', device: 'Switch / sensor 1' },
-    { signal: 'X1', pin: 'TB2', device: 'Switch / sensor 2' },
-    { signal: 'X2', pin: 'TB3', device: 'Switch / sensor 3' },
-    { signal: 'X3', pin: 'TB4', device: 'Switch / sensor 4' },
-    { signal: 'X4', pin: 'TB5', device: 'Switch / sensor 5' },
-    { signal: 'X5', pin: 'TB6', device: 'Switch / sensor 6' },
-    { signal: 'X6', pin: 'TB7', device: 'Switch / sensor 7' },
-    { signal: 'X7', pin: 'TB8', device: 'Switch / sensor 8' },
-    { signal: 'X8', pin: 'TB9', device: 'Switch / sensor 9' },
-    { signal: 'X9', pin: 'TB10', device: 'Switch / sensor 10' },
-    { signal: 'XA', pin: 'TB11', device: 'Switch / sensor 11' },
-    { signal: 'XB', pin: 'TB12', device: 'Switch / sensor 12' },
-    { signal: 'XC', pin: 'TB13', device: 'Switch / sensor 13' },
-    { signal: 'XD', pin: 'TB14', device: 'Switch / sensor 14' },
-    { signal: 'XE', pin: 'TB15', device: 'Switch / sensor 15' },
-    { signal: 'XF', pin: 'TB16', device: 'Switch / sensor 16' },
-    { signal: 'COM', pin: 'TB17', device: '+24 V supply (common)' }
-  ]"
-  :outputs="[]"
-/>
-
 The manufacturer's figure for the QX40 input circuit:
 
 <ManualFigure
@@ -96,35 +69,6 @@ Every row in the catalogue carries its manual page; a model would only be marked
 | 5 VDC current consumption | 50 mA (TYP., all points ON) | SH-080042 §2.4 p.2-4 |
 
 ## 4. QY40P pin layout
-
-<ModuleBlockDiagram
-  model="QY40P"
-  role="16-point transistor output, sink type"
-  connector="18-point terminal block"
-  :width-pins="18"
-  :inputs="[
-    { signal: '12/24 VDC', pin: 'TB17', device: 'Load supply +' },
-    { signal: 'COM', pin: 'TB18', device: 'Common 0 V' }
-  ]"
-  :outputs="[
-    { signal: 'Y0', pin: 'TB1', device: 'Relay / valve / lamp 1' },
-    { signal: 'Y1', pin: 'TB2', device: 'Relay / valve / lamp 2' },
-    { signal: 'Y2', pin: 'TB3', device: 'Relay / valve / lamp 3' },
-    { signal: 'Y3', pin: 'TB4', device: 'Relay / valve / lamp 4' },
-    { signal: 'Y4', pin: 'TB5', device: 'Relay / valve / lamp 5' },
-    { signal: 'Y5', pin: 'TB6', device: 'Relay / valve / lamp 6' },
-    { signal: 'Y6', pin: 'TB7', device: 'Relay / valve / lamp 7' },
-    { signal: 'Y7', pin: 'TB8', device: 'Relay / valve / lamp 8' },
-    { signal: 'Y8', pin: 'TB9', device: 'Relay / valve / lamp 9' },
-    { signal: 'Y9', pin: 'TB10', device: 'Relay / valve / lamp 10' },
-    { signal: 'YA', pin: 'TB11', device: 'Relay / valve / lamp 11' },
-    { signal: 'YB', pin: 'TB12', device: 'Relay / valve / lamp 12' },
-    { signal: 'YC', pin: 'TB13', device: 'Relay / valve / lamp 13' },
-    { signal: 'YD', pin: 'TB14', device: 'Relay / valve / lamp 14' },
-    { signal: 'YE', pin: 'TB15', device: 'Relay / valve / lamp 15' },
-    { signal: 'YF', pin: 'TB16', device: 'Relay / valve / lamp 16' }
-  ]"
-/>
 
 The manufacturer's figure for the QY40P transistor output circuit:
 

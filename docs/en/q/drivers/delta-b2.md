@@ -34,8 +34,6 @@ The ASDA-B2 accepts differential command pulses via `PULSE/PULSE` and `SIGN/SIGN
 
 <WiringDiagram variant="delta-b2" />
 
-<PinMapDiagram variant="delta-b2" />
-
 ## 2. Wiring to the QD75D4
 
 - READY: `READY` 1A11 comes from `DO1+` 7 (`SRDY`), `RDYCOM` 1A12 goes to `+24 V` at `COM+` 11, `DO1−` 6 and `COM−` 14 go to 0 V. Loop: +24 V → RDYCOM (1A12) → READY photocoupler → 1A11 → DO1+ (7) → output transistor → DO1− (6) → 0 V. The QD75D4 manual only defines RDYCOM as "common for the drive READY signal" (SH-080058 §3.4.3) and READY as a 24 VDC/4.7 kΩ photocoupler input (§3.4.1); it does not fix RDYCOM at +24 V or 0 V, so the polarity is set by the drive output — `DO1` of the ASDA-B2 is a sinking output, hence RDYCOM sits at +24 V.

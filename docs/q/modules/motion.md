@@ -51,15 +51,6 @@ Nguồn: QD77MS4 — IB-0300185 §3.1 p.3-2 và p.3-3; QD75M1 — IB-0300062 §3
 
 ## 3. Sơ đồ khối
 
-<ModuleBlockDiagram
-  model="QD77MS4"
-  connector="SSCNET III/H (fiber-optic)"
-  :inputs="mvInputs"
-  :outputs="mvOutputs"
-/>
-
-Quy ước: `inputs` là tín hiệu CPU gửi vào module, `outputs` là tín hiệu module trả về CPU. Số thiết bị theo IB-0300185 §3.3.1 p.3-17 với module ở địa chỉ đầu `0H`.
-
 Sơ đồ truyền tín hiệu qua SSCNET giữa QD77MS và servo amplifier theo hãng:
 
 <ManualFigure

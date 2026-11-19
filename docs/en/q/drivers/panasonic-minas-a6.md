@@ -35,8 +35,6 @@ The supply that lists `GND` uses pin 1, but pin 1 is also listed for `OPC1`; thi
 
 <WiringDiagram variant="panasonic-minas-a6" />
 
-<PinMapDiagram variant="panasonic-minas-a6" />
-
 ## 2. Wiring to the QD75D4
 
 - Recommended connection: use the **H (line-driver) group** — `PULSH1` 44/`PULSH2` 45 for the QD75D4 `PULSE F+/F−` pair and `SIGNH1` 46/`SIGNH2` 47 for the `PULSE R+/R−` pair. These are differential inputs wired straight through, with no series resistor needed.

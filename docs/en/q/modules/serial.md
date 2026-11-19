@@ -37,18 +37,7 @@ Channel assignment and interface types per SH-080006 §3.1 p.3-1. Maximum transm
 
 The plug-in block of the -R4 version requires 7 mm of stripped insulation and the supplied plate terminals for the braided shield; the QJ71C24N uses an M3 screw terminal block — SH-080006 §4.4 (3) p.4-5.
 
-## 2. Block diagram
-
-<ModuleBlockDiagram
-  model="QJ71C24N"
-  connector="RS-422/485 terminal block (CH2)"
-  :inputs="ch2Inputs"
-  :outputs="ch2Outputs"
-/>
-
-The diagram above shows the CH2 RS-422/485 **4-wire** case. With 2-wire (RS-485), the transmit and receive pairs share two wires, and the echo-back function must be set correctly — SH-080006 §3.3.4 p.3-12.
-
-## 3. CH1 RS-232 pins (D-sub 9)
+## 2. CH1 RS-232 pins (D-sub 9)
 
 The manufacturer's D-sub 9 pin layout on the module side:
 
@@ -80,7 +69,7 @@ Pin numbers and signal descriptions per SH-080006 §3.2.1 (1) p.3-3 to p.3-4. Th
 
 For half-duplex operation, `RS` is connected to one of the external device's `CS`/`DR`/`CD` signals and `CD` to its `RS`/`ER` signal — SH-080007 §8.4 p.218.
 
-## 4. CH2 RS-422/485 terminal block
+## 3. CH2 RS-422/485 terminal block
 
 | Terminal | Signal | 4-wire | 2-wire (RS-485) |
 | --- | --- | --- | --- |
@@ -126,7 +115,7 @@ How to tell the 330 Ω / 110 Ω terminating resistors apart and insert them the 
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080006/sh080006w.pdf"
 />
 
-## 5. Switch settings
+## 4. Switch settings
 
 Configured through PLC parameters (I/O assignment → Switch setting), with 5 switches — SH-080006 §4.5.2 p.4-14.
 
@@ -178,7 +167,7 @@ Protocol code — SH-080006 §4.5.2 (1)(c) p.4-17:
 
 The station number in switch 5 is used by the MC protocol when several modules share a line; set `0` for a 1:1 configuration — SH-080006 §4.5.2 (1)(d) p.4-18. Settings take effect only after the module power is cycled OFF→ON or the CPU is reset — SH-080006 §4.5.2 POINT p.4-14.
 
-## 6. Buffer memory access and ladder example
+## 5. Buffer memory access and ladder example
 
 Default buffer areas — SH-080006 §6.1.2 p.6-6 and §6.2.2 p.6-25:
 
@@ -229,7 +218,7 @@ Dedicated instructions as an alternative to `TO`/`FROM`:
 
 Do not use `OUTPUT` together with `ONDEMAND`/`BIDOUT`/`BIDIN`/`CPRTCL` on the same channel; this causes protocol setting error `7FF2H` — SH-080006 §10.3 (2) p.10-8.
 
-## 7. Wiring checklist
+## 6. Wiring checklist
 
 - [ ] Terminating resistors fitted only at the **two end stations**, never at an intermediate station — SH-080006 §4.4.2 (1)(c) p.4-9.
 - [ ] Resistor value matches the transmission type: 330 Ω for RS-422, 110 Ω for RS-485 — same section p.4-9.
@@ -241,7 +230,7 @@ Do not use `OUTPUT` together with `ONDEMAND`/`BIDOUT`/`BIDIN`/`CPRTCL` on the sa
 - [ ] Signal cable kept at least 100 mm from power wiring — SH-080006 §4.4 (6) p.4-5.
 - [ ] Loopback test run before connecting the real device — SH-080006 §4.8 p.4-31.
 
-## 8. Read next
+## 7. Read next
 
 - MC protocol, frame formats and commands: SH-080007 (Application manual).
 - Bit-level settings and error codes: SH-080006 (Basic manual).

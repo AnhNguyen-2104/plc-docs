@@ -39,10 +39,6 @@ With the QD75D4, each axis has its own terminal block. Each F+/F− and R+/R− 
 
 <WiringDiagram variant="generic" />
 
-<PinMapDiagram variant="generic" />
-
-Schematic: differential pulses, READY, SON from the PLC, ALM back to the PLC.
-
 The manufacturer's connector pin layout for the QD75D4 (four axes AX1–AX4, left and right connector) — cross-check pin numbers before crimping:
 
 <ManualFigure

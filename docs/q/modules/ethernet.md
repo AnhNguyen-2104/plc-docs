@@ -56,7 +56,7 @@ Ví dụ cấu hình mạng của hãng: trạm của mình, trạm khác, route
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080009/sh080009y.pdf"
 />
 
-## 2. Sơ đồ khối và LED
+## 2. Mặt module và LED
 
 Mặt module, cổng RJ45 và vị trí LED theo hãng:
 
@@ -68,13 +68,6 @@ Mặt module, cổng RJ45 và vị trí LED theo hãng:
   section="§2"
   page="27"
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080009/sh080009y.pdf"
-/>
-
-<ModuleBlockDiagram
-  model="QJ71E71-100"
-  connector="RJ45"
-  :inputs="ethInputs"
-  :outputs="ethOutputs"
 />
 
 LED thực tế trên mặt module — SH-080009 §2 p.27. Không có LED tên `LINK`; đèn tốc độ tên là `100M`.

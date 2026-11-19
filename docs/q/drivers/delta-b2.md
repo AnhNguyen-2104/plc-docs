@@ -34,8 +34,6 @@ ASDA-B2 nhận xung lệnh vi sai qua `PULSE/PULSE` và `SIGN/SIGN`, có thêm c
 
 <WiringDiagram variant="delta-b2" />
 
-<PinMapDiagram variant="delta-b2" />
-
 ## 2. Đấu với QD75D4
 
 - READY: `READY` 1A11 lấy từ `DO1+` 7 (`SRDY`), `RDYCOM` 1A12 lên `+24 V` ở `COM+` 11, `DO1−` 6 và `COM−` 14 về 0 V. Vòng: +24 V → RDYCOM (1A12) → photocoupler READY → 1A11 → DO1+ (7) → transistor ngõ ra → DO1− (6) → 0 V. QD75D4 chỉ định nghĩa RDYCOM là "chung cho tín hiệu READY" (SH-080058 §3.4.3) và READY là ngõ photocoupler 24 VDC/4,7 kΩ (§3.4.1); manual không ấn định RDYCOM ở +24 V hay 0 V, nên cực tính do ngõ ra của drive quyết định — `DO1` của ASDA-B2 là ngõ ra kiểu sink nên RDYCOM phải ở +24 V.

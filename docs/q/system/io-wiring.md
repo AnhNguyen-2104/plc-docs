@@ -26,8 +26,6 @@ Sơ đồ chính thức của hãng cho mạch vào QX40: photocoupler, trở h�
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
 />
 
-<IOWiringDiagram variant="input-sink" module="QX40" />
-
 **Ngõ vào common âm (PNP).** `COM` nối `0 V`; cảm biến PNP đẩy dòng vào `X`. Chiều dòng ngược lại trường hợp trên.
 
 Sơ đồ chính thức của hãng cho mạch vào QX80: cùng photocoupler nhưng `COM` nối `0 V` (common âm).
@@ -41,8 +39,6 @@ Sơ đồ chính thức của hãng cho mạch vào QX80: cùng photocoupler nh�
   page="2-24"
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
 />
-
-<IOWiringDiagram variant="input-source" module="QX80" />
 
 **Ngõ ra rơ-le.** Tiếp điểm khô đóng cắt tải; cầu chì và bộ triệt xung là linh kiện ngoài module.
 
@@ -58,8 +54,6 @@ Sơ đồ chính thức của hãng cho mạch ra rơ-le QY10: tiếp điểm, t
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
 />
 
-<IOWiringDiagram variant="output-relay" module="QY10" />
-
 **Ngõ ra transistor kiểu sink.** Tải nối giữa `+24 V` và `Y`; transistor kéo `Y` về `COM` (0 V). Tải cảm cần diode song song.
 
 Sơ đồ chính thức của hãng cho mạch ra transistor QY40P: transistor sink, diode zener và cầu chì ngoài.
@@ -74,21 +68,35 @@ Sơ đồ chính thức của hãng cho mạch ra transistor QY40P: transistor s
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
 />
 
-<IOWiringDiagram variant="output-transistor" module="QY40P" />
-
 ## 2. Encoder vi sai
 
 QD62 là module đếm xung DC input 24 V; các cặp vi sai A+/A−, B+/B− thuộc bảng cực của QD62D (line receiver RS-422-A, AM26C32), và manual không dành cực nào cho pha Z. Với QD62, encoder hở collector 24 V đấu vào cực ngõ vào 24 V; encoder line driver 5 V đấu đúng cặp vi sai và đi trong cáp đôi xoắn có vỏ bọc.
 
-<IOWiringDiagram variant="encoder-differential" module="QD62D" />
+<ManualFigure
+  src="/img/manual/qd62-line-driver.jpg"
+  alt="Nối encoder line driver với QD62: các cặp vi sai A+/A−, B+/B−"
+  caption="Nối encoder line driver với QD62: các cặp vi sai A+/A−, B+/B− — hình chính thức SH-080036 §4.4.2"
+  doc="SH-080036"
+  section="§4.4.2"
+  page="4-8"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080036/sh080036q.pdf"
+/>
 
-QD62D không có cực Z, nên cặp Z+/Z− không xuất hiện trong sơ đồ. Với QD62 (24 V DC input), encoder hở collector đấu theo sơ đồ ngõ vào common dương ở mục 1. Theo manual, với ngõ vào 1 pha phải luôn đấu xung vào phía pha A; dây tín hiệu đặt cách dây động lực ít nhất 150 mm và vỏ bọc nối đất một điểm phía encoder (SH-080036 §3.5 p.3-14, §3.6 p.3-15, §4.4.1 p.4-5, §4.4.2 p.4-6).
+QD62D không có cực Z, nên cặp Z+/Z− không xuất hiện trong bảng cực. Với QD62 (24 V DC input), encoder hở collector đấu theo sơ đồ ngõ vào common dương ở mục 1. Theo manual, với ngõ vào 1 pha phải luôn đấu xung vào phía pha A; dây tín hiệu đặt cách dây động lực ít nhất 150 mm và vỏ bọc nối đất một điểm phía encoder (SH-080036 §3.5 p.3-14, §3.6 p.3-15, §4.4.1 p.4-5, §4.4.2 p.4-6).
 
 ## 3. Ngõ vào tương tự
 
 Kênh 1 của Q64AD dùng hai cực `V+` (cực 1) và `V−` (cực 2); nếu đấu dòng thì nối thêm `V+` với `I+` (cực 3). Cặp dây tín hiệu phải là cáp đôi xoắn có vỏ bọc, và vỏ chỉ nối đất tại một điểm phía PLC.
 
-<IOWiringDiagram variant="analog-shielded" module="Q64AD" />
+<ManualFigure
+  src="/img/manual/q64ad-wiring.jpg"
+  alt="Đấu dây Q64AD: V+, V−, I+, A.G., SLD, cặp xoắn có vỏ bọc"
+  caption="Đấu dây vào tương tự Q64AD: V+/V−, I+, A.G., cặp xoắn có vỏ bọc — hình chính thức SH-080055 §4.4.2"
+  doc="SH-080055"
+  section="§4.4.2"
+  page="4-6"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080055/sh080055u.pdf"
+/>
 
 `A.G.` (cực 17) là một cực duy nhất dùng chung làm mốc cho mọi kênh và bình thường không cần đấu dây, nên tuyệt đối không nối đất lần thứ hai; kênh không dùng phải nối tắt `V+` với `V−` để tránh giá trị số nhảy (SH-080055 §4.3 p.4-4, §4.4.1 p.4-5, §4.4.2 p.4-6).
 

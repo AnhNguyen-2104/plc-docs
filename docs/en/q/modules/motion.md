@@ -51,15 +51,6 @@ Sources: QD77MS4 — IB-0300185 §3.1 p.3-2 and p.3-3; QD75M1 — IB-0300062 §3
 
 ## 3. Block diagram
 
-<ModuleBlockDiagram
-  model="QD77MS4"
-  connector="SSCNET III/H (fiber-optic)"
-  :inputs="mvInputs"
-  :outputs="mvOutputs"
-/>
-
-Convention: `inputs` are CPU-to-module signals, `outputs` are module-to-CPU signals. Device numbers per IB-0300185 §3.3.1 p.3-17 with the module at head address `0H`.
-
 The manufacturer's SSCNET signal path between the QD77MS and the servo amplifier:
 
 <ManualFigure

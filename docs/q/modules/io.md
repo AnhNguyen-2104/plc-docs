@@ -12,33 +12,6 @@ Trang này lập danh mục 46 module vào/ra số được tài liệu hoá tro
 
 ## 1. Sơ đồ chân QX40
 
-<ModuleBlockDiagram
-  model="QX40"
-  role="16 điểm vào 24 VDC, common dương"
-  connector="Khối đấu dây 18 điểm"
-  :width-pins="18"
-  :inputs="[
-    { signal: 'X0', pin: 'TB1', device: 'Công tắc / cảm biến 1' },
-    { signal: 'X1', pin: 'TB2', device: 'Công tắc / cảm biến 2' },
-    { signal: 'X2', pin: 'TB3', device: 'Công tắc / cảm biến 3' },
-    { signal: 'X3', pin: 'TB4', device: 'Công tắc / cảm biến 4' },
-    { signal: 'X4', pin: 'TB5', device: 'Công tắc / cảm biến 5' },
-    { signal: 'X5', pin: 'TB6', device: 'Công tắc / cảm biến 6' },
-    { signal: 'X6', pin: 'TB7', device: 'Công tắc / cảm biến 7' },
-    { signal: 'X7', pin: 'TB8', device: 'Công tắc / cảm biến 8' },
-    { signal: 'X8', pin: 'TB9', device: 'Công tắc / cảm biến 9' },
-    { signal: 'X9', pin: 'TB10', device: 'Công tắc / cảm biến 10' },
-    { signal: 'XA', pin: 'TB11', device: 'Công tắc / cảm biến 11' },
-    { signal: 'XB', pin: 'TB12', device: 'Công tắc / cảm biến 12' },
-    { signal: 'XC', pin: 'TB13', device: 'Công tắc / cảm biến 13' },
-    { signal: 'XD', pin: 'TB14', device: 'Công tắc / cảm biến 14' },
-    { signal: 'XE', pin: 'TB15', device: 'Công tắc / cảm biến 15' },
-    { signal: 'XF', pin: 'TB16', device: 'Công tắc / cảm biến 16' },
-    { signal: 'COM', pin: 'TB17', device: 'Nguồn +24 V (cực chung)' }
-  ]"
-  :outputs="[]"
-/>
-
 Sơ đồ chính thức của hãng cho mạch vào QX40:
 
 <ManualFigure
@@ -96,35 +69,6 @@ Mọi dòng trong danh mục đều mang số trang manual; một model chỉ b�
 | Dòng tiêu thụ 5 VDC | 50 mA (TYP., toàn bộ điểm ON) | SH-080042 §2.4 p.2-4 |
 
 ## 4. Sơ đồ chân QY40P
-
-<ModuleBlockDiagram
-  model="QY40P"
-  role="16 điểm ra transistor kiểu sink"
-  connector="Khối đấu dây 18 điểm"
-  :width-pins="18"
-  :inputs="[
-    { signal: '12/24 VDC', pin: 'TB17', device: 'Nguồn phụ tải +' },
-    { signal: 'COM', pin: 'TB18', device: '0 V chung' }
-  ]"
-  :outputs="[
-    { signal: 'Y0', pin: 'TB1', device: 'Rơ le / van / đèn 1' },
-    { signal: 'Y1', pin: 'TB2', device: 'Rơ le / van / đèn 2' },
-    { signal: 'Y2', pin: 'TB3', device: 'Rơ le / van / đèn 3' },
-    { signal: 'Y3', pin: 'TB4', device: 'Rơ le / van / đèn 4' },
-    { signal: 'Y4', pin: 'TB5', device: 'Rơ le / van / đèn 5' },
-    { signal: 'Y5', pin: 'TB6', device: 'Rơ le / van / đèn 6' },
-    { signal: 'Y6', pin: 'TB7', device: 'Rơ le / van / đèn 7' },
-    { signal: 'Y7', pin: 'TB8', device: 'Rơ le / van / đèn 8' },
-    { signal: 'Y8', pin: 'TB9', device: 'Rơ le / van / đèn 9' },
-    { signal: 'Y9', pin: 'TB10', device: 'Rơ le / van / đèn 10' },
-    { signal: 'YA', pin: 'TB11', device: 'Rơ le / van / đèn 11' },
-    { signal: 'YB', pin: 'TB12', device: 'Rơ le / van / đèn 12' },
-    { signal: 'YC', pin: 'TB13', device: 'Rơ le / van / đèn 13' },
-    { signal: 'YD', pin: 'TB14', device: 'Rơ le / van / đèn 14' },
-    { signal: 'YE', pin: 'TB15', device: 'Rơ le / van / đèn 15' },
-    { signal: 'YF', pin: 'TB16', device: 'Rơ le / van / đèn 16' }
-  ]"
-/>
 
 Sơ đồ chính thức của hãng cho mạch ra transistor QY40P:
 

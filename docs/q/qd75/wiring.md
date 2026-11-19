@@ -39,10 +39,6 @@ Với QD75D4, mỗi trục có bộ đầu cực riêng. Mỗi cặp F+/F− và
 
 <WiringDiagram variant="generic" />
 
-<PinMapDiagram variant="generic" />
-
-Sơ đồ nguyên lý: xung vi sai, READY, SON từ PLC, ALM về PLC.
-
 Bố trí chân chính thức của hãng cho connector ngoại vi QD75D4 (bốn trục AX1–AX4, hai connector trái/phải) — đối chiếu số chân trước khi bấm dây:
 
 <ManualFigure

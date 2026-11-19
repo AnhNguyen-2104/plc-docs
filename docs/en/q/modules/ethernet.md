@@ -56,7 +56,7 @@ The manufacturer's network configuration example: own station, another station, 
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080009/sh080009y.pdf"
 />
 
-## 2. Block diagram and LEDs
+## 2. Module appearance and LEDs
 
 The manufacturer's module front, RJ45 port and LED locations:
 
@@ -68,13 +68,6 @@ The manufacturer's module front, RJ45 port and LED locations:
   section="§2"
   page="27"
   pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080009/sh080009y.pdf"
-/>
-
-<ModuleBlockDiagram
-  model="QJ71E71-100"
-  connector="RJ45"
-  :inputs="ethInputs"
-  :outputs="ethOutputs"
 />
 
 LEDs on the module front — SH-080009 §2 p.27. There is no LED named `LINK`; the speed LED is `100M`.
