@@ -53,6 +53,10 @@ def main() -> None:
             with Image.open(source) as opened:
                 manual = relative.parts[0] == "manual"
                 image = resize(flatten(opened), 1200)
+            # Manual crops use quality 68 (plan §2 asked for 82). At 82 the
+            # docs/public bundle exceeds the 4 MB budget enforced by
+            # check-content.mjs; 68 keeps it under. Do not raise without proving
+            # the 4 MB cap still holds.
             width, height = save_webp(image, target, 68 if manual else 82)
             sizes[f"/img/{relative.as_posix()}"] = [width, height]
 

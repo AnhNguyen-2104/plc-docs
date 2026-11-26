@@ -65,7 +65,10 @@ async function collectFiles(dir, acc = []) {
 function imageRefs(text) {
   const refs = new Set()
   for (const match of text.matchAll(/!\[[^\]]*\]\(([^)\s]+)/g)) refs.add(match[1])
-  for (const match of text.matchAll(/(?<!:)\bsrc="(\/img\/[^"]+)"/g)) refs.add(match[1])
+  for (const match of text.matchAll(/(?<![-\w:])(?::src|src)\s*=\s*(?:"([^"]*)"|'([^']*)')/g)) {
+    const value = match[1] ?? match[2] ?? ''
+    for (const img of value.matchAll(/\/img\/[^"'\s)]+/g)) refs.add(img[0])
+  }
   return [...refs].filter((ref) => ref.startsWith('/img/'))
 }
 
@@ -130,6 +133,40 @@ for (const file of publicFiles) {
 }
 if (publicBytes > 4 * 1024 * 1024) {
   errors.push(`❌ docs/public is ${(publicBytes / 1024 / 1024).toFixed(2)} MB, exceeds 4 MB`)
+}
+
+const photosFile = join(docsDir, '.vitepress', 'data', 'photos.ts')
+const photosSource = await readFile(photosFile, 'utf8')
+for (const block of photosSource.matchAll(/\n {2}'([^']+)':\s*\{([\s\S]*?)\n {2}\},?/g)) {
+  const model = block[1]
+  const entry = block[2]
+  for (const field of ['photo', 'photoThumb']) {
+    const match = entry.match(new RegExp(`${field}:\\s*'([^']+)'`))
+    if (!match) {
+      errors.push(`❌ photos.ts: ${model} missing ${field}`)
+      continue
+    }
+    const ref = match[1]
+    if (!ref.startsWith('/img/')) {
+      errors.push(`❌ photos.ts: ${model} ${field} '${ref}' must be under /img/`)
+      continue
+    }
+    if (!/\.webp$/i.test(ref)) {
+      errors.push(`❌ photos.ts: ${model} ${field} '${ref}' must be .webp`)
+      continue
+    }
+    const target = join(publicDir, ref.slice(1))
+    if (!(await exists(target))) {
+      errors.push(`❌ photos.ts: ${model} ${field} missing file ${ref}`)
+      continue
+    }
+    const info = await stat(target)
+    if (info.size > 150 * 1024) {
+      errors.push(
+        `❌ photos.ts: ${model} ${field} ${ref} is ${Math.round(info.size / 1024)} KB > 150 KB`
+      )
+    }
+  }
 }
 
 const themeDir = join(docsDir, '.vitepress', 'theme')

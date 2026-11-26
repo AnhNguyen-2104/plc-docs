@@ -120,6 +120,10 @@ async function tryResolve(entry) {
       networkError = error
       continue
     }
+    // Plan §2 targets >=600px product photos. Q03UDVCPU is a documented exception:
+    // Mitsubishi's spec page publishes only one 480x480 image (served as
+    // Q26UDVCPU.jpg) with no larger variant. Keep the 400px floor; never
+    // substitute a different model's photo to hit the target.
     const size = imageSize(buffer)
     if (!size || size.width < 400 || size.height < 300) continue
     const file = join(sourceDir, `${entry.id}.${size.ext}`)
