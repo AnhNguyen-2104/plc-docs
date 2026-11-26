@@ -99,11 +99,12 @@ const rows = computed<Row[]>(() => {
     const points = effectivePoints(id, no)
     const start = cursor
     cursor += points
-    const startXY = module ? `X/Y${hex(start)}` : ''
-    const range = points > 0 ? `${hex(start)}–${hex(start + points - 1)}` : '—'
     const isInput = module?.kind === 'input'
     const isOutput = module?.kind === 'output'
     const isCombined = module && !isInput && !isOutput
+    const prefix = !module ? '' : isInput ? 'X' : isOutput ? 'Y' : 'X/Y'
+    const startXY = points > 0 ? `${prefix}${hex(start)}` : ''
+    const range = points > 0 ? `${hex(start)}–${hex(start + points - 1)}` : '—'
     return {
       no,
       id,
