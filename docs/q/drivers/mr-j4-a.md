@@ -57,10 +57,16 @@ Bốn lưu ý bắt buộc:
 
 Ví dụ nối trong SH-080058 §3.4.1 p.3-24 vẽ theo MR-J3-A (`PULSE F+/F−` → `PP/PG`, `PULSE R+/R−` → `NP/NG`). Manual MR-J4-A trong tay **không** nêu rằng MR-J3-A và MR-J4-A giống nhau về chân; vì vậy trang này chỉ dùng bảng CN1 của MR-J4-A, không suy ra từ MR-J3-A.
 
-<WiringDiagram variant="mr-j4-a" />
+## Sơ đồ đấu dây
+
+<DriverWiring driver="mr-j4-a" />
+
+- Cặp vi sai đi thẳng vào line receiver của CN1; không đấu vào ngõ opto 24 V nào của driver.
+- `DOCOM` 46/47 và `DICOM` 20/21 là hai điểm chung khác nhóm — không nối chung chúng.
+- Hình chỉ vẽ trục 1 (1A15–1A18); trục 2–4 dùng tiền tố 1B/2A/2B, cùng thứ tự chân.
 
 <ManualFigure
-  src="/img/manual/mrj4-cn1-wiring.jpg"
+  src="/img/manual/mrj4-cn1-wiring.webp"
   alt="Sơ đồ đấu nối nội bộ CN1 của MR-J4-A: nhóm ngõ vào DICOM 20/21, nhóm ngõ ra DOCOM 46/47 và RD 49"
   caption="Đấu nối nội bộ CN1 (mạch vào/ra 24 V DC)"
   doc="SH-030143-C"

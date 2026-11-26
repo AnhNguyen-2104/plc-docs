@@ -1,0 +1,69 @@
+---
+title: "QH42P — Combined I/O module"
+family: q
+module: module-qh42p
+status: draft
+source: SH-080042
+---
+
+<ModulePage id="qh42p" />
+
+## 1. Signal groups to wire
+
+QH42P is a combined module with 32 24 VDC inputs and 32 sink transistor outputs. The signal groups to wire are:
+
+| Group | Signal | Direction | Notes |
+| --- | --- | --- | --- |
+| Input | X0…X1F | sensor/switch → module | 32 points, 24 VDC; common per SH-080042 §4-1 |
+| Output | Y0…Y1F | module → load | 32 sink transistor points, 12–24 VDC (SH-080042 §4-1) |
+| Input/output common | Input COM, output COM | — | Separate groups; do not tie input and output commons |
+| Module supply | 5 VDC from base | base → module | Taken from the base 5 V rail |
+
+## 2. Wiring principles
+
+- **Connection type:** 40-pin connector (A20/B20) — two rows A20/B20, 32 points per connector (SH-080042 §4.1, p. 4-3).
+- Input common per SH-080042 §4-1; confirm positive or negative common before wiring sensors.
+- Outputs are sink transistors: load between +V and Y, output COM to 0 V.
+- Do not tie the input COM to the output COM; keep the two groups separate.
+- Fit an external fuse and flyback diode for DC loads; route load wiring away from signal wiring.
+- Do not stuff multiple wires into one terminal; keep one wire per X/Y point.
+
+## 3. Reference diagram
+
+- Input side: use [QX40](/en/q/modules/m/qx40) for a positive common or [QX80](/en/q/modules/m/qx80) for a negative common. Only the photocoupler and sensor-selection principle apply; their terminal tables do not.
+- Output side: use [QY40P](/en/q/modules/m/qy40p) for the sink transistor. COM to 0 V and load between +V and Y apply; its current ratings do not.
+- The QH42P terminal table is in SH-080042 §4-1.
+
+## 4. Manufacturer input/output circuits
+
+The manufacturer pin-out for QH42P is in SH-080042 §4.1 (p. 4-3): <SourceRef doc="sh080042" page="4-3" />.
+
+<ManualFigure
+  src="/img/manual/qh42p-terminals.webp"
+  alt="QH42P pin-out: 1B20–2A01, X00–X1F, Y00–Y1F, COM1 and COM2"
+  caption="Manufacturer pin-out for QH42P — 40-pin connector (A20/B20)"
+  doc="SH-080042"
+  section="§4.1"
+  page="4-3"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
+
+The input example is on [QX40](/en/q/modules/m/qx40), the sink output example on [QY40P](/en/q/modules/m/qy40p).
+
+## 5. External device connections
+
+- Wire an NPN sensor to a positive common and a PNP sensor to a negative common, as specified in §4-1.
+- Connect the DC load between +V and Y; fit a flyback diode across the load, cathode to +V.
+- Fit an external fuse in the load circuit; check per-point and per-common current.
+- Use shielded twisted pair for remote sensors; ground the shield at one end in the PLC panel.
+
+## 6. Checklist before power-up
+
+- [ ] Power was switched off before wiring.
+- [ ] Input common matches the module type.
+- [ ] Sensor type NPN/PNP matches the common.
+- [ ] Input and output COM are not tied together.
+- [ ] Flyback diode and fuse are fitted for the load.
+- [ ] Per-point and per-common currents are within rating.
+- [ ] Every input and output point was tested by hand.
+- [ ] Signal wiring is at least 100 mm from power wiring.

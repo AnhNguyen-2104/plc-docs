@@ -1,0 +1,62 @@
+---
+title: "QX10-TS — Digital input module"
+family: q
+module: module-qx10ts
+status: draft
+source: SH-080042
+---
+
+<ModulePage id="qx10ts" />
+
+## 1. Signal groups to wire
+
+QX10-TS is a 16-point 100–120 VAC input module. This is an AC input module; supply polarity does not apply and one COM terminal is shared by the group. The signal groups to wire are:
+
+| Group | Signal | Direction | Notes |
+| --- | --- | --- | --- |
+| Input | X0…XF | sensor/switch → module | 16 points, 100–120 VAC; terminal table in SH-080042 §2-2 |
+| Common | COM | — | One shared COM; wire for the rated AC voltage |
+| Module supply | 5 VDC from base | base → module | Taken from the base 5 V rail; never connect an external supply to this rail |
+
+## 2. Wiring principles
+
+- **Connection type:** spring-clamp terminal block (-TS) — 18 spring-clamp points, one wire per point (SH-080042 §2.2, p. 2-2).
+- COM is the shared AC return; never tie it to the positive or 0 V rail of a DC supply.
+- Route signal wiring at least 100 mm from power wiring; if they must share a bundle, use shielded cable and ground the shield on the PLC side (SH-080483 §4.8.2 p.111).
+- The sensor or switch must be rated for the module's AC voltage; feed it from the same AC branch through its own fuse; never connect a DC sensor to an AC input.
+- Do not stuff multiple wires into one terminal; keep one wire per X point.
+
+## 3. Reference diagram
+
+No matching DC diagram exists. [QX40](/en/q/modules/m/qx40) and [QX80](/en/q/modules/m/qx80) are useful only for the photocoupler isolation; polarity and their DC terminal tables do not apply. The AC input circuit of QX10-TS is in SH-080042 §2-2.
+
+## 4. Manufacturer input/output circuits
+
+The manufacturer terminal diagram for QX10-TS is in SH-080042 §2.2: <SourceRef doc="sh080042" page="2-2" />. The figure below reproduces the terminal block from that section; the extracted positive-common input circuit is on [QX40](/en/q/modules/m/qx40), the negative-common one on [QX80](/en/q/modules/m/qx80).
+
+<ManualFigure
+  src="/img/manual/qx10ts-terminals.webp"
+  alt="QX10-TS terminal diagram: TB1–TB18 block and signal names"
+  caption="Manufacturer terminal diagram for QX10-TS: TB1–TB18 terminal block and signal names — spring-clamp terminal block (-TS)"
+  doc="SH-080042"
+  section="§2.2"
+  page="2-2"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
+
+## 5. External device connections
+
+- Use a dry contact or an AC sensor rated for the nominal voltage; never connect a DC sensor to an AC input.
+- Check the leakage current of two-wire sensors so they cannot hold the input ON when idle.
+- Route AC wires separately from DC signal and other power wiring.
+
+## 6. Checklist before power-up
+
+- [ ] Power was switched off before wiring.
+- [ ] COM and AC voltage correct for the rating is correct.
+- [ ] Sensor type is correct: dry contact or AC sensor.
+- [ ] Supply voltage is within the module rated range of 100–120 VAC.
+- [ ] Every point was tested by hand before automatic operation.
+- [ ] Signal wiring is at least 100 mm from power wiring.
+- [ ] Shield grounded at one end, per panel rules.
+- [ ] No multiple wires stuffed into one terminal.

@@ -9,6 +9,22 @@ export default defineConfig({
   cleanUrls: true,
   ignoreDeadLinks: false,
   lastUpdated: true,
+  head: [
+    ['meta', { name: 'theme-color', content: '#1a56a0' }],
+    ['meta', { property: 'og:site_name', content: 'PLC Handbook' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    [
+      'meta',
+      {
+        property: 'og:image',
+        content: 'https://anhnguyen-2104.github.io/plc-docs/img/og.webp'
+      }
+    ],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }]
+  ],
+  sitemap: { hostname: 'https://anhnguyen-2104.github.io/plc-docs/' },
+  vite: { build: { reportCompressedSize: false } },
   markdown: {
     config(md) {
       md.core.ruler.after('inline', 'task-lists', (state) => {
@@ -43,7 +59,7 @@ export default defineConfig({
       title: 'PLC Handbook',
       description: 'Cẩm nang lập trình PLC — MELSEC Q, module vị trí QD75D4, song ngữ Việt/Anh.',
       themeConfig: {
-        nav: [{ text: 'MELSEC Q', link: '/q/' }, { text: 'So sánh dòng PLC', link: '/compare/' }],
+        nav: [{ text: 'Bắt đầu', link: '/q/start/' }, { text: 'MELSEC Q', link: '/q/' }, { text: 'So sánh dòng PLC', link: '/compare/' }],
         sidebar: sidebar('vi'),
         outline: { label: 'Trong trang này', level: [2, 3] },
         docFooter: { prev: 'Trước', next: 'Sau' },
@@ -57,7 +73,7 @@ export default defineConfig({
       title: 'PLC Handbook',
       description: 'A PLC programming handbook — MELSEC Q, QD75D4 positioning module, bilingual Vietnamese/English.',
       themeConfig: {
-        nav: [{ text: 'MELSEC Q', link: '/en/q/' }, { text: 'PLC comparison', link: '/en/compare/' }],
+        nav: [{ text: 'Getting started', link: '/en/q/start/' }, { text: 'MELSEC Q', link: '/en/q/' }, { text: 'PLC comparison', link: '/en/compare/' }],
         sidebar: sidebar('en'),
         outline: { label: 'On this page', level: [2, 3] },
         docFooter: { prev: 'Previous', next: 'Next' },

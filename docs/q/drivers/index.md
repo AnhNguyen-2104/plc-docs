@@ -6,13 +6,11 @@ status: draft
 source: SH-080058
 ---
 
-<script setup>
-import { axisRow, qd75PinoutSrc } from '../../.vitepress/data/modules/qd75-wiring.ts'
-</script>
-
 # Tổng quan đấu dây driver
 
 QD75D4 không tự chạy động cơ: module phát ra xung lệnh vi sai, driver nhận xung, khuếch đại và quay động cơ theo đúng số xung nhận được. Trang này là điểm vào của nhóm trang đấu dây driver: nêu phần chung mà mọi driver cần, bảng so sánh năm driver đang có tài liệu, và các quy tắc cứng trước khi cấp điện.
+
+<DriverWiring driver="overview" />
 
 ## 1. Một driver xung cần gì từ QD75D4
 
@@ -23,36 +21,9 @@ QD75D4 không tự chạy động cơ: module phát ra xung lệnh vi sai, drive
 
 Điều tối quan trọng: **không đấu thẳng một cặp vi sai của QD75D4 vào ngõ vào opto 24 V**. Cặp vi sai chỉ đi vào ngõ vào vi sai (line receiver). Nếu buộc phải dùng ngõ opto, đó là chế độ open-collector và phải theo đúng điện trở hạn dòng / điện trở kéo lên mà manual của driver quy định.
 
-## 2. Đầu cực nhóm trục 1 của QD75D4
+## 2. Đầu cực và sơ đồ
 
-Bảng dưới lấy trực tiếp từ tệp dữ liệu dùng chung, không chép lại số tay. Nguồn: {{ qd75PinoutSrc }}.
-
-<table>
-  <thead>
-    <tr>
-      <th>Đầu cực</th>
-      <th>Tín hiệu (tên manual)</th>
-      <th>Hướng</th>
-      <th>Ghi chú</th>
-      <th>Nguồn</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="row in axisRow" :key="row.qd75Terminal">
-      <td>{{ row.qd75Terminal }}</td>
-      <td>{{ row.qd75Signal }}</td>
-      <td>{{ row.direction }}</td>
-      <td>{{ row.note ?? '' }}</td>
-      <td>{{ row.src }}</td>
-    </tr>
-  </tbody>
-</table>
-
-Ba điểm cần nhớ khi đọc bảng:
-
-- Bản vẽ thứ ba đặt tên `PGO5` và `PGOCOM`; manual in **`PG05`** và **`PG0COM`** bằng số 0. Trang này dùng tên của manual.
-- `READY` 1A11 có điểm chung riêng là `RDYCOM` 1A12 (SH-080058 §3.4.3 p.3-27); bảng trên chỉ liệt kê bảy đầu cực theo yêu cầu, không thay thế bảng chân đầy đủ trong manual.
-- Các trục 2–4 dùng cùng cấu trúc với tiền tố `2A`, `2B`, `3A`, `3B`, `4A`, `4B` (SH-080058 §3.4.2 p.3-25).
+Số đầu cực trục 1 và nguyên tắc đi dây nằm ở [Đấu dây QD75D4](/q/qd75/wiring). Sơ đồ khối nối năm driver ở trên; trang này không chép lại bảng chân.
 
 ## 3. So sánh năm driver đang có tài liệu
 

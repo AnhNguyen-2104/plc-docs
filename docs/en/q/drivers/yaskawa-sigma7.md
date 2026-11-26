@@ -31,7 +31,13 @@ The Sigma-7 SGD7S analog/pulse version (200 V) accepts differential command puls
 | 1, 2, 6, 10 | SG | Signal common | <SourceRef doc="sgd7s" page="4-38" /> |
 | 3, 13, 18 | PL1 / PL2 / PL3 | Internal 12 V for open collector | <SourceRef doc="sgd7s" page="4-37" /> |
 
-<WiringDiagram variant="yaskawa-sigma7" />
+## Schematic
+
+<DriverWiring driver="yaskawa-sigma7" />
+
+- `S-RDY` 29/30 is an isolated output pair that feeds the READY photocoupler directly — do not apply +24 V to `RDYCOM`.
+- `+24VIN` 47 takes an external 24 V supply, with `SG` 1/2/6/10 as the common; do not share the brake supply.
+- `CLR` 15/14 is wired only when the deviation must be cleared; the pulse pairs 7/8 and 11/12 must not be reversed.
 
 ## 2. Wiring to the QD75D4
 

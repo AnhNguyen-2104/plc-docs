@@ -32,7 +32,13 @@ The ASDA-B2 accepts differential command pulses via `PULSE/PULSE` and `SIGN/SIGN
 | 14 | COM− | Common point of the input group | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 | 17 | VDD | Internal 24 V, 500 mA maximum | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 
-<WiringDiagram variant="delta-b2" />
+## Schematic
+
+<DriverWiring driver="delta-b2" />
+
+- `PULSE/SIGN` on 43/41 and 39/37 are differential pairs; do not connect one wire of a pair to 0 V.
+- `COM+` 11 and `COM−` 14 serve the input group only; `VDD` 17 is the internal supply and is mutually exclusive with an external 24 V supply.
+- The `HPULSE/HSIGN` pairs 38/36 and 42/40 are for 5 V high-speed differential only; do not mix them with the 24 V pair.
 
 ## 2. Wiring to the QD75D4
 

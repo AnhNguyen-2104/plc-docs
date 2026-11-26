@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Bắt đầu với MELSEC Q
-      link: /q/
+      link: /q/start/
     - theme: alt
       text: So sánh dòng PLC
       link: /compare/

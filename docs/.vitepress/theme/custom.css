@@ -477,3 +477,246 @@
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
+
+/* PQ design tokens */
+:root {
+  --pq-graphite: #1d242b;
+  --pq-graphite-2: #272f38;
+  --pq-amber: #c97a1e;
+  --pq-blue: #2f5e7a;
+  --pq-paper: #fbfaf6;
+  --pq-line: #dcd8cc;
+  --pq-font-ui: 'Archivo', 'Inter', system-ui, sans-serif;
+  --pq-font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --vp-font-family-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+/* Typography: Archivo for UI titles, Inter body, mono for addresses/code */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--pq-font-ui);
+}
+
+/* Sidebar skin: graphite surface, amber active marker (light + dark) */
+.VPSidebar {
+  --vp-sidebar-bg-color: var(--pq-graphite);
+  --vp-c-text-1: #f2efe7;
+  --vp-c-text-2: #c2c9d1;
+  --vp-c-text-3: #8c97a3;
+  --vp-c-brand-1: #e9a85a;
+  --vp-c-divider: rgba(255, 255, 255, 0.08);
+  background-color: var(--pq-graphite);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.VPSidebar .curtain {
+  background-color: var(--pq-graphite);
+}
+
+/* One indent step per depth; no divider rails inside the tree. */
+.VPSidebar nav .VPSidebarItem.level-0 > .items,
+.VPSidebar nav .VPSidebarItem.level-1 > .items,
+.VPSidebar nav .VPSidebarItem.level-2 > .items,
+.VPSidebar nav .VPSidebarItem.level-3 > .items,
+.VPSidebar nav .VPSidebarItem.level-4 > .items,
+.VPSidebar nav .VPSidebarItem.level-5 > .items {
+  padding-left: 14px;
+  border-left: 0;
+}
+
+.VPSidebar nav .VPSidebarItem > .item {
+  min-height: 32px;
+  align-items: center;
+}
+
+.VPSidebar nav .VPSidebarItem.level-0 > .item > .text,
+.VPSidebar nav .VPSidebarItem.level-1 > .item > .text,
+.VPSidebar nav .VPSidebarItem.level-2 > .item > .text,
+.VPSidebar nav .VPSidebarItem.level-3 > .item > .text,
+.VPSidebar nav .VPSidebarItem.level-0 > .item > .link > .text,
+.VPSidebar nav .VPSidebarItem.level-1 > .item > .link > .text,
+.VPSidebar nav .VPSidebarItem.level-2 > .item > .link > .text,
+.VPSidebar nav .VPSidebarItem.level-3 > .item > .link > .text {
+  padding: 6px 0;
+  line-height: 20px;
+}
+
+.VPSidebar .VPSidebarItem.is-link > .item:hover,
+.VPSidebar .VPSidebarItem.collapsible > .item:hover {
+  background-color: var(--pq-graphite-2);
+  border-radius: 4px;
+}
+
+.VPSidebar .VPSidebarItem.is-active > .item {
+  background-color: var(--pq-graphite-2);
+  box-shadow: inset 3px 0 0 var(--pq-amber);
+  border-radius: 4px;
+}
+
+.VPSidebar .VPSidebarItem .indicator {
+  background-color: transparent;
+}
+
+.VPSidebar nav .VPSidebarItem.level-2 > .item > .text,
+.VPSidebar nav .VPSidebarItem.level-2.has-active > .item > .text {
+  font-family: var(--pq-font-ui);
+  font-weight: 600;
+  color: #c2c9d1;
+}
+
+.VPSidebar nav .VPSidebarItem.level-2:has(.pq-kind-head) {
+  margin-top: 6px;
+}
+
+.VPSidebar nav .VPSidebarItem.level-2:has(.pq-kind-head) > .item {
+  min-height: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Kind groups act as section headers, not another row of links. */
+.VPSidebar nav .pq-kind-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.VPSidebar nav .pq-kind-label {
+  font-family: var(--pq-font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a8b3be;
+}
+
+.VPSidebar nav .VPSidebarItem.level-2.has-active > .item > .text .pq-kind-label {
+  color: #d5dde4;
+}
+
+.VPSidebar nav .pq-kind-count {
+  margin-left: auto;
+  margin-right: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #d5dde4;
+  font-family: var(--pq-font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* Model rows stay on one line; page titles under modules may still wrap. */
+.VPSidebar nav .VPSidebarItem.level-2:has(.pq-kind-count) .VPSidebarItem.level-3 > .item > .link > .text {
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.VPSidebar nav .VPSidebarItem.level-3 > .item > .link > .text {
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* Keep every chevron on the same right edge. */
+.VPSidebar .caret {
+  width: 28px;
+  margin-right: 0;
+  padding-right: 2px;
+  justify-content: flex-end;
+  color: #9aa6b2;
+}
+
+@media (max-width: 959px) {
+  .VPSidebar nav .VPSidebarItem.level-3 > .item {
+    min-height: 40px;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar.top .VPNavBarTitle .title {
+    color: #f2efe7;
+  }
+}
+
+/* DriverWiring */
+.driver-wiring {
+  --fg: var(--vp-c-text-1);
+  --muted: var(--vp-c-text-3);
+  --border: var(--vp-c-divider);
+  --surface: var(--vp-c-bg-soft);
+  --accent: var(--vp-c-brand-1);
+  --success: var(--vp-c-success-1);
+  --warning: var(--vp-c-warning-1);
+  --error: var(--vp-c-danger-1);
+  --c1: #2563eb;
+  --c2: #7c3aed;
+  --c3: #0891b2;
+  --c4: #db2777;
+  --c5: #65a30d;
+  --c6: #d97706;
+  margin: 1.5rem 0;
+}
+
+.dark .driver-wiring {
+  --c1: #60a5fa;
+  --c2: #a78bfa;
+  --c3: #22d3ee;
+  --c4: #f472b6;
+  --c5: #a3e635;
+  --c6: #fbbf24;
+}
+
+.driver-wiring svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.dw-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin-top: 0.5rem;
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+}
+
+.dw-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dw-legend i {
+  display: inline-block;
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.driver-wiring figcaption {
+  margin-top: 0.4rem;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+}
+
+@media (min-width: 1100px) {
+  .driver-wiring {
+    position: relative;
+    left: 50%;
+    width: min(860px, calc(100vw - 420px));
+    transform: translateX(-50%);
+  }
+}

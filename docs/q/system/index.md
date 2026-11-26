@@ -34,7 +34,7 @@ Sơ đồ đánh số 0–7 cho tám vị trí đang dùng của cấu hình tha
 Danh pháp base chính Q38B theo hãng: khe cắm module (1), nắp base (2), connector module (3), lỗ vít cố định module (4), lỗ lắp đặt (5), lỗ adapter DIN (6), cùng thứ tự khe I/O0–I/O11.
 
 <ManualFigure
-  src="/img/manual/qsb-base.jpg"
+  src="/img/manual/qsb-base.webp"
   alt="Hình dạng base chính Q38B: các khe I/O0 đến I/O11, CPU, POWER và các lỗ lắp đặt"
   caption="Base chính Q38B: thứ tự khe I/O0–I/O11 và các vị trí lắp đặt"
   doc="SH-080483"

@@ -32,7 +32,13 @@ ASDA-B2 nhận xung lệnh vi sai qua `PULSE/PULSE` và `SIGN/SIGN`, có thêm c
 | 14 | COM− | Điểm chung nhóm ngõ vào | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 | 17 | VDD | 24 V nội, tối đa 500 mA | <SourceRef doc="asda-b2" page="3-18" /> <em>[secondary]</em> |
 
-<WiringDiagram variant="delta-b2" />
+## Sơ đồ đấu dây
+
+<DriverWiring driver="delta-b2" />
+
+- `PULSE/SIGN` vào 43/41 và 39/37 là cặp vi sai; không nối một dây của cặp xuống 0 V.
+- `COM+` 11 và `COM−` 14 chỉ dùng cho nhóm ngõ vào; `VDD` 17 là nguồn nội, loại trừ với 24 V ngoài.
+- Cặp `HPULSE/HSIGN` 38/36 và 42/40 chỉ dành cho vi sai 5 V tốc độ cao, không trộn với cặp 24 V.
 
 ## 2. Đấu với QD75D4
 

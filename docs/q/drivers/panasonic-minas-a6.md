@@ -33,7 +33,13 @@ MINAS A6 nhận xung lệnh vi sai qua `PULSH1/PULSH2` và `SIGNH1/SIGNH2` (line
 
 Nguồn cung cấp ghi điểm `GND` là chân 1, nhưng chân 1 cũng được ghi cho `OPC1`; trang này không in hàng `GND` để tránh khẳng định sai. Đọc lại bảng chân gốc của đúng model trước khi đấu điểm chung.
 
-<WiringDiagram variant="panasonic-minas-a6" />
+## Sơ đồ đấu dây
+
+<DriverWiring driver="panasonic-minas-a6" />
+
+- Nhóm H (44/45 và 46/47) là vi sai tốc độ cao; nhánh opto 3/4/5/6 chỉ là đường thay thế, không dùng đồng thời.
+- Khi dùng nhánh opto phải cấp `OPC1` 1 và `OPC2` 2 theo manual; nhóm H thì không cần.
+- `SI-COM` 7 lấy từ nguồn cách ly 12–24 V, `SO-COM` 41 là chung nhóm ngõ ra số.
 
 ## 2. Đấu với QD75D4
 

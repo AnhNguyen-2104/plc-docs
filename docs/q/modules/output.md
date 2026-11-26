@@ -1,92 +1,49 @@
 ---
-title: Module ra số MELSEC Q (17 model)
+title: Module ra số MELSEC Q — danh sách module
 family: q
 module: q-series
 status: draft
 source: SH-080042
 ---
 
-# Module ra số MELSEC Q (17 model)
+# Module ra số MELSEC Q — danh sách module
 
-Trang này tách riêng 17 module ngõ ra số của dòng MELSEC Q được tài liệu hoá trong SH-080042, gồm các model QY…. QY40P được giữ làm module tham chiếu để đi sâu sơ đồ chân và thông số đầy đủ; các model còn lại dùng bảng danh mục phía dưới. Cách chọn kiểu ra sink/source theo tải nằm ở [Đấu dây vào/ra](/q/system/io-wiring).
+<ModulePhoto id="qy40p" />
 
-## 1. Sơ đồ chân QY40P
+<ModulePhoto id="qy41h" />
 
-Bảng khối đấu dây TB1–TB18 của QY40P:
+Trang này liệt kê 17 module ngõ ra số của dòng MELSEC Q được tài liệu hoá trong SH-080042, gồm các model QY…. Mỗi model có trang riêng trong danh sách dưới đây để tra thông số tóm tắt và quy tắc đấu dây; [QY40P](/q/modules/m/qy40p) và [QY10](/q/modules/m/qy10) có thêm sơ đồ chân, mạch ra và thông số đầy đủ. Cách chọn kiểu ra sink/source theo tải nằm ở [Đấu dây vào/ra](/q/system/io-wiring).
 
-<ManualFigure
-  src="/img/manual/qy40p-terminals.jpg"
-  alt="Bảng khối đấu dây QY40P: TB1 đến TB18, Y0 đến YF, TB17 12/24 VDC và TB18 COM"
-  caption="Khối đấu dây QY40P: TB1–TB16 cho Y0–YF, TB17 12/24 VDC, TB18 COM"
-  doc="SH-080042"
-  section="§3.5"
-  page="3-7"
-  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
-/>
+## Danh sách module
 
-| Chân | Tín hiệu | Chức năng | Nguồn |
+| Model | Điểm | Vai trò | Manual |
 | --- | --- | --- | --- |
-| TB1–TB16 | Y0–YF | 16 điểm ra transistor | SH-080042 §3.5 p.3-7 |
-| TB17 | 12/24 VDC | Cấp nguồn cho tầng ra | SH-080042 §3.5 p.3-7 |
-| TB18 | COM | Cực chung (0 V) cho 16 điểm | SH-080042 §3.5 p.3-7 |
+| [QY40P](/q/modules/m/qy40p) | 16 | 16 điểm ra transistor kiểu sink | SH-080042 §3.5 |
+| [QY10](/q/modules/m/qy10) | 16 | 16 ngõ ra tiếp điểm rơ le, 8 A/common | SH-080042 §3-1 |
+| [QY10-TS](/q/modules/m/qy10ts) | 16 | 16 ngõ ra tiếp điểm rơ le, khối đấu dây lò xo (-TS) | SH-080042 §3-2 |
+| [QY18A](/q/modules/m/qy18a) | 8 | 8 ngõ ra tiếp điểm rơ le, độc lập từng điểm | SH-080042 §3-4 |
+| [QY22](/q/modules/m/qy22) | 16 | 16 ngõ ra TRIAC 100–240 VAC | SH-080042 §3-5 |
+| [QY40P-TS](/q/modules/m/qy40pts) | 16 | 16 ngõ ra transistor sink, khối đấu dây lò xo (-TS) | SH-080042 §3-8 |
+| [QY41H](/q/modules/m/qy41h) | 32 | 32 ngõ ra transistor sink, đáp ứng nhanh (H) | SH-080042 §3-10 |
+| [QY41P](/q/modules/m/qy41p) | 32 | 32 ngõ ra transistor sink | SH-080042 §3-11 |
+| [QY42P](/q/modules/m/qy42p) | 64 | 64 ngõ ra transistor sink | SH-080042 §3-12 |
+| [QY50](/q/modules/m/qy50) | 16 | 16 ngõ ra transistor sink 0,5 A/điểm | SH-080042 §3-13 |
+| [QY68A](/q/modules/m/qy68a) | 8 | 8 ngõ ra transistor sink/source, độc lập từng điểm | SH-080042 §3-15 |
+| [QY70](/q/modules/m/qy70) | 16 | 16 ngõ ra transistor sink, 5/12 VDC | SH-080042 §3-16 |
+| [QY71](/q/modules/m/qy71) | 32 | 32 ngõ ra transistor sink, 5/12 VDC | SH-080042 §3-18 |
+| [QY80](/q/modules/m/qy80) | 16 | 16 ngõ ra transistor source | SH-080042 §3-19 |
+| [QY80-TS](/q/modules/m/qy80ts) | 16 | 16 ngõ ra transistor source, khối đấu dây lò xo (-TS) | SH-080042 §3-21 |
+| [QY81P](/q/modules/m/qy81p) | 32 | 32 ngõ ra transistor source | SH-080042 §3-23 |
+| [QY82P](/q/modules/m/qy82p) | 64 | 64 ngõ ra transistor source | SH-080042 §3-24 |
 
-QY40P gom 16 điểm vào một cực `COM` duy nhất (TB18); module không có `COM0`/`COM1` chia nhóm như một số module 32/64 điểm. Với kiểu sink, tải đấu giữa `+12/24 V` (TB17) và từng điểm Y, còn `COM` về 0 V.
+## 1. Mạch ra của hãng
 
-## 2. Danh mục 17 module ra số
+Sơ đồ mạch ra rơ-le QY10 và mạch ra transistor QY40P nằm ở [trang QY10](/q/modules/m/qy10) và [trang QY40P](/q/modules/m/qy40p). Chọn kiểu ra theo tải: tiếp điểm rơ le cho tải AC/DC cách ly, transistor sink/source cho tải DC đóng cắt nhanh; TRIAC cho tải AC.
 
-<IoCatalog kind="output" />
+## 2. Nguồn
 
-Mọi dòng trong danh mục đều mang số trang manual; một model chỉ bị đánh dấu "dự kiến" nếu không trích được một thông số đơn lẻ kiểm chứng được (hiện tại không có).
-
-## 3. Mạch ra của hãng
-
-Sơ đồ chính thức của hãng cho mạch ra rơ-le QY10: tiếp điểm, tải và bộ triệt xung ngoài.
-
-<ManualFigure
-  src="/img/manual/qy10-output-circuit.jpg"
-  alt="Mạch ra rơ-le QY10: tiếp điểm, tải xoay chiều và bộ triệt xung"
-  caption="Mạch ra QY10: tiếp điểm rơ-le, tải"
-  doc="SH-080042"
-  section="§3.1"
-  page="3-1"
-  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
-/>
-
-Sơ đồ chính thức của hãng cho mạch ra transistor QY40P: transistor sink, diode zener và cầu chì ngoài.
-
-<ManualFigure
-  src="/img/manual/qy40p-output-circuit.jpg"
-  alt="Mạch ra transistor QY40P kiểu sink: zener, tải và cầu chì"
-  caption="Mạch ra QY40P: transistor sink, zener"
-  doc="SH-080042"
-  section="§3.5"
-  page="3-7"
-  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
-/>
-
-## 4. Thông số QY40P
-
-| Hạng mục | Giá trị | Nguồn |
-| --- | --- | --- |
-| Số điểm ra | 16 điểm | SH-080042 §3.5 p.3-7 |
-| Điện áp tải định mức | 12–24 VDC (+20/−15 %) | SH-080042 §3.5 p.3-7 |
-| Dòng tải tối đa | 0,1 A/điểm, 1,6 A/common | SH-080042 §3.5 p.3-7 |
-| Dòng xung tối đa | 0,7 A trong 10 ms | SH-080042 §3.5 p.3-7 |
-| Dòng rò khi OFF | ≤ 0,1 mA | SH-080042 §3.5 p.3-7 |
-| Sụt áp khi ON | 0,1 V (TYP.) tại 0,1 A; 0,2 V (MAX.) tại 0,1 A | SH-080042 §3.5 p.3-7 |
-| Thời gian đáp ứng | ≤ 1 ms (OFF→ON và ON→OFF, tải trở) | SH-080042 §3.5 p.3-7 |
-| Bảo vệ | Quá tải và quá nhiệt | SH-080042 §3.5 p.3-7 |
-| Số điểm chiếm dụng | 16 điểm (khai báo 16-point output) | SH-080042 §3.5 p.3-7 |
-| Dòng tiêu thụ 5 VDC | 65 mA (TYP., toàn bộ điểm ON) | SH-080042 §3.5 p.3-7 |
-
-Dòng rò 0,1 mA là con số cần nhớ khi đóng tải nhỏ: nó đủ để giữ rơ le 24 V công suất bé ở trạng thái nhả chậm hoặc không nhả, nên với tải nhạy phải kiểm tra cùng nhà sản xuất tải.
-
-> **Lưu ý về định mức 0,5 A/điểm.** Manual QY40P trên đĩa ghi 0,1 A/điểm và 1,6 A/common, không có định mức 0,5 A/điểm cho QY40P. Con số 0,5 A/điểm thuộc ngõ ra coincidence của QD62 (12/24 VDC, 0,5 A/điểm, 2 A/common — SH-080036 §3.1 p.3-2), không phải module ngõ ra transistor.
-
-## 5. Nguồn
-
-- QY40P: <SourceRef doc="sh080042" page="3.5" />, terminal block và thông số trong cùng mục.
-- QY10: <SourceRef doc="sh080042" page="3.1" />.
 - Vị trí khe, dòng tiêu thụ hệ thống và giới hạn base: <SourceRef doc="sh080483" page="8.3" />.
+- Nguồn của từng model: xem mục "Nguồn" trên trang model tương ứng.
 
 Sơ đồ mạch đấu dây thực tế (tải, diode dập xung, nguồn tải) nằm ở [Đấu dây vào/ra](/q/system/io-wiring).
+

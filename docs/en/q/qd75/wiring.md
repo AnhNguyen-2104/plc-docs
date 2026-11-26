@@ -45,12 +45,10 @@ With the QD75D4, each axis has its own terminal block. Each F+/F− and R+/R− 
 
 ## 3. Reference diagram
 
-<WiringDiagram variant="generic" />
-
 The manufacturer's connector pin layout for the QD75D4 (four axes AX1–AX4, left and right connector) — cross-check pin numbers before crimping:
 
 <ManualFigure
-  src="/img/manual/qd75-wiring.jpg"
+  src="/img/manual/qd75-wiring.webp"
   alt="QD75D4 external device connector pin layout, axes AX1 to AX4"
   caption="QD75D4 external device connector pin layout: four axes, left and right connector"
   doc="SH-080058"
@@ -64,7 +62,7 @@ The manufacturer's connector pin layout for the QD75D4 (four axes AX1–AX4, lef
 The input and differential output circuits inside the module, as drawn in the original manual; use them to check current direction and resistor placement before wiring outside:
 
 <ManualFigure
-  src="/img/manual/qd75-input-circuit.jpg"
+  src="/img/manual/qd75-input-circuit.webp"
   alt="QD75 input circuit: photocoupler, resistor and the DOG, FLS, RLS, STOP, CHG signals"
   caption="Input circuit: photocoupler and series resistor for DOG, FLS, RLS, STOP, CHG, PULSER"
   doc="SH-080058"
@@ -74,7 +72,7 @@ The input and differential output circuits inside the module, as drawn in the or
 />
 
 <ManualFigure
-  src="/img/manual/qd75-output-circuit.jpg"
+  src="/img/manual/qd75-output-circuit.webp"
   alt="QD75D differential output circuit: PULSE F, PULSE R, CLEAR and their pairs"
   caption="Differential output circuit: PULSE F+/F−, PULSE R+/R−, CLEAR — QD75D version"
   doc="SH-080058"

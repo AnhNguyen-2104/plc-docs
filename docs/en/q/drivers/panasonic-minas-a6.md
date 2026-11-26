@@ -33,7 +33,13 @@ The MINAS A6 accepts differential command pulses via `PULSH1/PULSH2` and `SIGNH1
 
 The supply that lists `GND` uses pin 1, but pin 1 is also listed for `OPC1`; this page does not print the `GND` row in order to avoid an incorrect assertion. Re-read the original pin table for the exact model before wiring the common point.
 
-<WiringDiagram variant="panasonic-minas-a6" />
+## Schematic
+
+<DriverWiring driver="panasonic-minas-a6" />
+
+- The H group (44/45 and 46/47) is high-speed differential; the opto branch 3/4/5/6 is an alternative only and is not used at the same time.
+- When the opto branch is used, `OPC1` 1 and `OPC2` 2 must be supplied per the manual; the H group does not need them.
+- `SI-COM` 7 comes from an isolated 12–24 V supply; `SO-COM` 41 is the digital output group common.
 
 ## 2. Wiring to the QD75D4
 

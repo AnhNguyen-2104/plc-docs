@@ -17,7 +17,7 @@ Ngõ vào và ngõ ra của MELSEC Q đều cách ly bằng photocoupler hoặc 
 Sơ đồ chính thức của hãng cho mạch vào QX40: photocoupler, trở hạn dòng và `COM` dương nối `+24 V`.
 
 <ManualFigure
-  src="/img/manual/qx40-input-circuit.jpg"
+  src="/img/manual/qx40-input-circuit.webp"
   alt="Mạch vào QX40 common dương: photocoupler, điện trở 4,7 kΩ và 24 VDC"
   caption="Mạch vào QX40: photocoupler, COM dương"
   doc="SH-080042"
@@ -31,7 +31,7 @@ Sơ đồ chính thức của hãng cho mạch vào QX40: photocoupler, trở h�
 Sơ đồ chính thức của hãng cho mạch vào QX80: cùng photocoupler nhưng `COM` nối `0 V` (common âm).
 
 <ManualFigure
-  src="/img/manual/qx80-input-circuit.jpg"
+  src="/img/manual/qx80-input-circuit.webp"
   alt="Mạch vào QX80 common âm: photocoupler và COM nối 0 V"
   caption="Mạch vào QX80: photocoupler, COM âm"
   doc="SH-080042"
@@ -45,7 +45,7 @@ Sơ đồ chính thức của hãng cho mạch vào QX80: cùng photocoupler nh�
 Sơ đồ chính thức của hãng cho mạch ra rơ-le QY10: tiếp điểm, tải và bộ triệt xung ngoài.
 
 <ManualFigure
-  src="/img/manual/qy10-output-circuit.jpg"
+  src="/img/manual/qy10-output-circuit.webp"
   alt="Mạch ra rơ-le QY10: tiếp điểm, tải xoay chiều và bộ triệt xung"
   caption="Mạch ra QY10: tiếp điểm rơ-le, tải"
   doc="SH-080042"
@@ -59,7 +59,7 @@ Sơ đồ chính thức của hãng cho mạch ra rơ-le QY10: tiếp điểm, t
 Sơ đồ chính thức của hãng cho mạch ra transistor QY40P: transistor sink, diode zener và cầu chì ngoài.
 
 <ManualFigure
-  src="/img/manual/qy40p-output-circuit.jpg"
+  src="/img/manual/qy40p-output-circuit.webp"
   alt="Mạch ra transistor QY40P kiểu sink: zener, tải và cầu chì"
   caption="Mạch ra QY40P: transistor sink, zener"
   doc="SH-080042"
@@ -73,7 +73,7 @@ Sơ đồ chính thức của hãng cho mạch ra transistor QY40P: transistor s
 QD62 là module đếm xung DC input 24 V; các cặp vi sai A+/A−, B+/B− thuộc bảng cực của QD62D (line receiver RS-422-A, AM26C32), và manual không dành cực nào cho pha Z. Với QD62, encoder hở collector 24 V đấu vào cực ngõ vào 24 V; encoder line driver 5 V đấu đúng cặp vi sai và đi trong cáp đôi xoắn có vỏ bọc.
 
 <ManualFigure
-  src="/img/manual/qd62-line-driver.jpg"
+  src="/img/manual/qd62-line-driver.webp"
   alt="Nối encoder line driver với QD62: các cặp vi sai A+/A−, B+/B−"
   caption="Nối encoder line driver với QD62: các cặp vi sai A+/A−, B+/B−"
   doc="SH-080036"
@@ -89,7 +89,7 @@ QD62D không có cực Z, nên cặp Z+/Z− không xuất hiện trong bảng c
 Kênh 1 của Q64AD dùng hai cực `V+` (cực 1) và `V−` (cực 2); nếu đấu dòng thì nối thêm `V+` với `I+` (cực 3). Cặp dây tín hiệu phải là cáp đôi xoắn có vỏ bọc, và vỏ chỉ nối đất tại một điểm phía PLC.
 
 <ManualFigure
-  src="/img/manual/q64ad-wiring.jpg"
+  src="/img/manual/q64ad-wiring.webp"
   alt="Đấu dây Q64AD: V+, V−, I+, A.G., SLD, cặp xoắn có vỏ bọc"
   caption="Đấu dây vào tương tự Q64AD: V+/V−, I+, A.G., cặp xoắn có vỏ bọc"
   doc="SH-080055"
@@ -144,7 +144,7 @@ QY18A là biến thể 8 điểm, các điểm độc lập, 2 A/điểm và 8 A
 
 > **Lưu ý về định mức 0,5 A/điểm.** Manual QY40P trên đĩa ghi 0,1 A/điểm và 1,6 A/common, không có định mức 0,5 A/điểm cho QY40P. Con số 0,5 A/điểm thuộc ngõ ra coincidence của QD62 (12/24 VDC, 0,5 A/điểm, 2 A/common — SH-080036 §3.1 p.3-2), không phải module ngõ ra transistor.
 
-## 7. Danh mục kiểm tra khi đấu dây
+## 7. Danh mục kiểm tra khi đấu dây {#wiring-checklist}
 
 - [ ] Xác định đúng kiểu common của module trước khi đấu `COM`: QX40 → `+24 V`, QX80 → `0 V`.
 - [ ] Đo điện áp nguồn 24 VDC tại điểm đấu dây, nằm trong dải +20/−15% của 24 V.

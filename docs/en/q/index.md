@@ -54,9 +54,10 @@ The core difference lies in how commands are transmitted to the driver and in th
 Start from the system frame, then the modules; the QD75 pages above remain unchanged.
 
 - [System overview](/en/q/system/) — rack, base, power supply, signal path.
+- [Getting started: project & rack configuration](/en/q/start/) — path from box to first run, with the address calculator.
 - [I/O wiring (X/Y)](/en/q/system/io-wiring) — six wiring types, with manual diagrams.
 - [Power supply and base unit](/en/q/system/power-and-base) — Q61P…Q64P, Q33B…Q312B.
-- [Module catalogue](/en/q/modules/) — 70 Q-series modules, including 46 digital I/O modules.
+- [Module catalogue](/en/q/modules/) — 74 Q-series modules, including 46 digital I/O modules.
 
 ## Further reading
 

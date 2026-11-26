@@ -34,7 +34,7 @@ The diagram numbers 0–7 for the eight positions in use in the reference config
 The manufacturer's Q38B main base unit nomenclature: module connector (1), base cover (2), module connector (3), module fixing screw hole (4), installation hole (5), DIN rail adapter hole (6), and the I/O0–I/O11 slot order.
 
 <ManualFigure
-  src="/img/manual/qsb-base.jpg"
+  src="/img/manual/qsb-base.webp"
   alt="Q38B main base unit: I/O0 to I/O11 slots, CPU, POWER and mounting holes"
   caption="Q38B main base unit: I/O0–I/O11 slot order and mounting points"
   doc="SH-080483"

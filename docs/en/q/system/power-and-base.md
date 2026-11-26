@@ -80,7 +80,7 @@ For an AC supply, the supply capacity should be **at least twice** the power con
 The manufacturer's single power supply wiring diagram: `L`/`N`, `FG`/`LG`, fuse and earth on the Q38B main base unit.
 
 <ManualFigure
-  src="/img/manual/qcpu-power-wiring.jpg"
+  src="/img/manual/qcpu-power-wiring.webp"
   alt="Single power supply wiring: 100–240 VAC into L/N, FG/LG earthed, Q38B and extension base"
   caption="Single power supply wiring: L/N 100–240 VAC, FG/LG and earth"
   doc="SH-080483"

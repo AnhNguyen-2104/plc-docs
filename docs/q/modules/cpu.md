@@ -1,14 +1,28 @@
 ---
-title: CPU MELSEC Q — Q00UJCPU, Q03UDV, Q06UDH
+title: CPU MELSEC Q — danh sách module
 family: q
 module: q-series
 status: draft
 source: SH-080483, SH-080807
 ---
 
-# CPU MELSEC Q — Q00UJCPU, Q03UDV, Q06UDH
+# CPU MELSEC Q — danh sách module
 
-Ba CPU dưới đây đại diện ba mức của dòng Universal model QCPU: Q00UJCPU là bản tích hợp nguồn và base cho hệ nhỏ, Q03UDVCPU thêm Ethernet tích hợp, còn Q06UDHCPU tăng gấp đôi dung lượng chương trình nhưng không có Ethernet tích hợp. Chọn CPU theo ba con số: dung lượng chương trình (bước), số điểm I/O tối đa và cổng lập trình có sẵn.
+<ModulePhoto id="q00ujcpu" />
+
+<ModulePhoto id="q03udv" />
+
+<ModulePhoto id="q06udh" />
+
+Ba CPU dưới đây đại diện ba mức của dòng Universal model QCPU: [Q00UJCPU](/q/modules/m/q00ujcpu) là bản tích hợp nguồn và base cho hệ nhỏ, [Q03UDVCPU](/q/modules/m/q03udv) thêm Ethernet tích hợp, còn [Q06UDHCPU](/q/modules/m/q06udh) tăng gấp đôi dung lượng chương trình nhưng không có Ethernet tích hợp. Chọn CPU theo ba con số: dung lượng chương trình (bước), số điểm I/O tối đa và cổng lập trình có sẵn.
+
+## Danh sách module
+
+| Model | Vai trò |
+| --- | --- |
+| [Q00UJCPU](/q/modules/m/q00ujcpu) | CPU tích hợp sẵn nguồn và base cho hệ nhỏ |
+| [Q03UDV](/q/modules/m/q03udv) | CPU Universal có Ethernet tích hợp |
+| [Q06UDH](/q/modules/m/q06udh) | CPU Universal hiệu năng cao, không có Ethernet tích hợp |
 
 ## 1. So sánh nhanh
 
@@ -38,7 +52,7 @@ Với Q03UDV, cổng Ethernet 100/10 Mbps cho phép nạp chương trình và gi
 Hình CPU Universal model (Q02U/Q03UD/Q04UDH…) với vị trí cổng, pin pin, đèn LED và nắp pin:
 
 <ManualFigure
-  src="/img/manual/qcpu-module.jpg"
+  src="/img/manual/qcpu-module.webp"
   alt="Mặt CPU Universal model Q: cổng USB/RS-232, đèn RUN/ERR, nắp pin và các công tắc"
   caption="Mặt CPU Universal model Q: cổng, LED và nắp pin"
   doc="SH-080483"

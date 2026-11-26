@@ -23,7 +23,13 @@ The DM542 is a stepper driver that accepts pulse + direction pulses through the 
 | P2 | ALM | Fault output | <SourceRef doc="dm542" page="4" /> <em>[secondary]</em> |
 | P2 | BR | Brake control | <SourceRef doc="dm542" page="4" /> <em>[secondary]</em> |
 
-<WiringDiagram variant="stepper-dm542" />
+## Schematic
+
+<DriverWiring driver="stepper-dm542" />
+
+- Block P1 is an opto input; the QD75D4 differential pair must go through the interface box per the DM542 manual, not straight in.
+- `ENA+/ENA−` left open means the driver is always enabled; wire them only when the driver must be disabled in hardware.
+- `DIR` must lead `PUL` by at least 5 µs; `ALM` on `P2` goes to the PLC and is not an emergency stop.
 
 ## 2. Wiring to the QD75D4
 

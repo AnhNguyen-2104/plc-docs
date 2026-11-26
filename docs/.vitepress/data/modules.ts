@@ -6,11 +6,27 @@ export type ModuleDef = {
   id: string
   familyId: string
   slug: string
+  group: Loc
   name: Loc
   pages: ModulePage[]
 }
 
 export const modules: ModuleDef[] = [
+  {
+    id: 'start',
+    familyId: 'q',
+    slug: 'start',
+    name: {
+      vi: 'Bắt đầu',
+      en: 'Getting started'
+    },
+    group: { vi: 'Bắt đầu', en: 'Getting started' },
+    pages: [
+      { slug: '', title: { vi: 'Từ hộp đến chạy', en: 'From box to run' } },
+      { slug: 'project', title: { vi: 'Tạo dự án GX Works2', en: 'Create a GX Works2 project' } },
+      { slug: 'configuration', title: { vi: 'Chọn module & vị trí slot', en: 'Modules & slot assignment' } }
+    ]
+  },
   {
     id: 'qd75d4',
     familyId: 'q',
@@ -19,6 +35,7 @@ export const modules: ModuleDef[] = [
       vi: 'QD75D4 — điều khiển vị trí',
       en: 'QD75D4 — positioning'
     },
+    group: { vi: 'Định vị & chuyển động', en: 'Positioning & motion' },
     pages: [
       { slug: '', title: { vi: 'Tổng quan', en: 'Overview' } },
       { slug: 'wiring', title: { vi: 'Đấu dây', en: 'Wiring' } },
@@ -40,6 +57,7 @@ export const modules: ModuleDef[] = [
       vi: 'Đấu dây driver',
       en: 'Driver wiring'
     },
+    group: { vi: 'Định vị & chuyển động', en: 'Positioning & motion' },
     pages: [
       { slug: '', title: { vi: 'Tổng quan đấu dây driver', en: 'Driver wiring overview' } },
       { slug: 'mr-j4-a', title: { vi: 'Mitsubishi MR-J4-A', en: 'Mitsubishi MR-J4-A' } },
@@ -58,6 +76,7 @@ export const modules: ModuleDef[] = [
       vi: 'Hệ thống & nguồn',
       en: 'System & power'
     },
+    group: { vi: 'Hệ thống & module', en: 'System & modules' },
     pages: [
       { slug: '', title: { vi: 'Tổng thể hệ thống', en: 'System overview' } },
       { slug: 'io-wiring', title: { vi: 'Đấu dây vào/ra', en: 'I/O wiring' } },
@@ -72,18 +91,12 @@ export const modules: ModuleDef[] = [
       vi: 'Danh mục module',
       en: 'Module catalogue'
     },
+    group: { vi: 'Hệ thống & module', en: 'System & modules' },
     pages: [
-      { slug: '', title: { vi: 'Tổng quan danh mục', en: 'Catalogue overview' } },
-      { slug: 'cpu', title: { vi: 'CPU', en: 'CPU' } },
-      { slug: 'input', title: { vi: 'Vào số', en: 'Digital inputs' } },
-      { slug: 'output', title: { vi: 'Ra số', en: 'Digital outputs' } },
-      { slug: 'io', title: { vi: 'Kết hợp vào/ra', en: 'Combined I/O' } },
-      { slug: 'analog', title: { vi: 'Tương tự', en: 'Analog' } },
-      { slug: 'counter', title: { vi: 'Đếm xung', en: 'Counter' } },
-      { slug: 'serial', title: { vi: 'Nối tiếp', en: 'Serial' } },
-      { slug: 'ethernet', title: { vi: 'Ethernet', en: 'Ethernet' } },
-      { slug: 'cc-link', title: { vi: 'CC-Link', en: 'CC-Link' } },
-      { slug: 'motion', title: { vi: 'Chuyển động', en: 'Motion' } }
-    ]
+      { slug: '', title: { vi: 'Tổng quan', en: 'Overview' } },
+      { slug: 'assembly', title: { vi: 'Ghép module', en: 'Module assembly' } },
+      { slug: 'guides', title: { vi: 'Hướng dẫn các module', en: 'Module guides' } },
+      { slug: 'usage', title: { vi: 'Cách dùng', en: 'How to use' } }
+    ],
   }
 ]

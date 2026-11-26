@@ -23,7 +23,13 @@ DM542 là driver step nhận xung kiểu pulse + direction qua khối đầu c�
 | P2 | ALM | Báo lỗi | <SourceRef doc="dm542" page="4" /> <em>[secondary]</em> |
 | P2 | BR | Điều khiển phanh | <SourceRef doc="dm542" page="4" /> <em>[secondary]</em> |
 
-<WiringDiagram variant="stepper-dm542" />
+## Sơ đồ đấu dây
+
+<DriverWiring driver="stepper-dm542" />
+
+- Khối P1 là ngõ opto; cặp vi sai của QD75D4 phải qua hộp giao diện theo manual DM542, không đấu thẳng.
+- `ENA+/ENA−` để hở nghĩa là driver luôn được cho phép; chỉ đấu khi cần ngắt bằng phần cứng.
+- `DIR` phải đi trước `PUL` ít nhất 5 µs; `ALM` trên `P2` về PLC, không dùng làm dừng khẩn cấp.
 
 ## 2. Đấu với QD75D4
 

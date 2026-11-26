@@ -53,10 +53,11 @@ Khác biệt cốt lõi nằm ở kiểu truyền lệnh tới driver và khả 
 
 Bắt đầu từ khung hệ thống rồi tới module; các trang QD75 ở trên vẫn giữ nguyên.
 
+- [Bắt đầu: tạo dự án & cấu hình rack](/q/start/) — lộ trình từ hộp đến chạy, kèm công cụ tính địa chỉ.
 - [Tổng thể hệ thống](/q/system/) — rack, base, nguồn, đường tín hiệu.
 - [Đấu dây vào/ra (X/Y)](/q/system/io-wiring) — sáu kiểu đấu dây, kèm hình manual.
 - [Nguồn và base unit](/q/system/power-and-base) — Q61P…Q64P, Q33B…Q312B.
-- [Danh mục module](/q/modules/) — 70 module Q-series, gồm 46 module vào/ra số.
+- [Danh mục module](/q/modules/) — 74 module Q-series, gồm 46 module vào/ra số.
 
 ## Đọc tiếp
 

@@ -80,7 +80,7 @@ Với nguồn xoay chiều, công suất nguồn cấp nên **lớn hơn ít nh�
 Sơ đồ đấu dây nguồn chính thức của hãng cho hệ một nguồn: `L`/`N`, `FG`/`LG`, cầu chì và tiếp đất trên base chính Q38B.
 
 <ManualFigure
-  src="/img/manual/qcpu-power-wiring.jpg"
+  src="/img/manual/qcpu-power-wiring.webp"
   alt="Sơ đồ đấu dây nguồn một hệ thống: 100–240 VAC vào L/N, FG/LG nối đất, Q38B và base mở rộng"
   caption="Đấu dây nguồn một hệ thống: L/N 100–240 VAC, FG/LG và tiếp đất"
   doc="SH-080483"

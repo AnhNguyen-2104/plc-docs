@@ -3,17 +3,8 @@ import { computed } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { qModules, type QModule } from '../data/modules/qseries'
 
-const { lang, page } = useData()
+const { lang } = useData()
 const isVi = computed(() => lang.value !== 'en')
-
-const current = computed(() => {
-  let rel = page.value.relativePath.replace(/\.md$/, '')
-  if (rel.endsWith('/index')) rel = rel.slice(0, -'/index'.length)
-  if (lang.value !== 'vi' && rel.startsWith(`${lang.value}/`)) {
-    rel = rel.slice(lang.value.length + 1)
-  }
-  return `/${rel}`
-})
 
 type Kind = 'input' | 'output' | 'combined'
 
@@ -36,12 +27,12 @@ function cell(value: { vi: string; en: string } | string): string {
   return typeof value === 'string' ? value : value[isVi.value ? 'vi' : 'en']
 }
 
-function isDocumented(module: QModule): boolean {
-  return module.status === 'documented'
+function moduleHref(module: QModule): string {
+  return withBase(`${isVi.value ? '/q' : '/en/q'}/modules/m/${module.id}`)
 }
 
-function isCurrent(module: QModule): boolean {
-  return module.page === current.value
+function isDocumented(module: QModule): boolean {
+  return module.status === 'documented'
 }
 
 function points(module: QModule): string {
@@ -60,6 +51,7 @@ function points(module: QModule): string {
       <table class="io-catalog-table">
         <thead>
           <tr>
+            <th aria-hidden="true"></th>
             <th>Model</th>
             <th>{{ isVi ? 'Điểm' : 'Points' }}</th>
             <th>{{ isVi ? 'Thông số' : 'Spec' }}</th>
@@ -72,15 +64,20 @@ function points(module: QModule): string {
             :key="module.id"
             :class="{ 'io-catalog-planned': !isDocumented(module) }"
           >
-            <th scope="row" class="io-catalog-model">
-              <a
-                v-if="isDocumented(module) && !isCurrent(module)"
-                class="io-catalog-link"
-                :href="withBase(module.page)"
-              >
-                {{ module.model }}
+            <td class="io-catalog-photo">
+              <a v-if="module.photoThumb" :href="moduleHref(module)">
+                <img
+                  :src="withBase(module.photoThumb)"
+                  :alt="module.model"
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                />
               </a>
-              <span v-else>{{ module.model }}</span>
+            </td>
+            <th scope="row" class="io-catalog-model">
+              <a class="io-catalog-link" :href="moduleHref(module)">{{ module.model }}</a>
               <span v-if="!isDocumented(module)" class="io-catalog-badge">{{ isVi ? ' (dự kiến)' : ' (planned)' }}</span>
             </th>
             <td>{{ points(module) }}</td>
@@ -127,6 +124,20 @@ function points(module: QModule): string {
 .io-catalog-model {
   white-space: nowrap;
   color: var(--vp-c-text-1);
+}
+
+.io-catalog-photo {
+  width: 52px;
+}
+
+.io-catalog-photo img {
+  display: block;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
 }
 
 .io-catalog-link {

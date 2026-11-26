@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useData } from 'vitepress'
-
+import { useData, withBase } from 'vitepress'
+import { qModules } from '../data/modules/qseries'
 type SlotColor = 'power' | 'io' | 'motion' | 'net' | 'neutral'
 
 const { lang } = useData()
@@ -85,6 +85,10 @@ const slots: Slot[] = [
 const slotX = (index: number) => 258 + index * 72
 const slotCx = (index: number) => slotX(index) + 35
 const pick = (value: { vi: string; en: string }) => (isVi.value ? value.vi : value.en)
+const slotPhoto = (model: string) => {
+  const module = qModules.find((entry) => entry.model === model)
+  return module?.photoThumb ? withBase(module.photoThumb) : ''
+}
 
 const title = computed(() =>
   isVi.value ? 'Hệ thống Q hoàn chỉnh — rack Q38B' : 'Complete Q system — Q38B rack'
@@ -190,20 +194,31 @@ const neutralNote = computed(() =>
             font-weight="700"
             fill="var(--vp-c-text-1)"
           >{{ slot.model }}</text>
-          <text
-            :x="slotCx(index)"
-            y="212"
-            text-anchor="middle"
-            font-size="9"
-            fill="var(--vp-c-text-2)"
-          >{{ pick(slot.role) }}</text>
-          <text
-            :x="slotCx(index)"
-            y="228"
-            text-anchor="middle"
-            font-size="8.5"
-            fill="var(--vp-c-text-2)"
-          >{{ pick(slot.spec) }}</text>
+          <image
+            v-if="slotPhoto(slot.model)"
+            :href="slotPhoto(slot.model)"
+            :x="slotX(index) + 4"
+            y="202"
+            width="62"
+            height="47"
+            preserveAspectRatio="xMidYMid meet"
+          />
+          <template v-else>
+            <text
+              :x="slotCx(index)"
+              y="212"
+              text-anchor="middle"
+              font-size="9"
+              fill="var(--vp-c-text-2)"
+            >{{ pick(slot.role) }}</text>
+            <text
+              :x="slotCx(index)"
+              y="228"
+              text-anchor="middle"
+              font-size="8.5"
+              fill="var(--vp-c-text-2)"
+            >{{ pick(slot.spec) }}</text>
+          </template>
         </template>
       </g>
 

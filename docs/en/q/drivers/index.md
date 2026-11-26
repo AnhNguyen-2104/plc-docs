@@ -6,13 +6,11 @@ status: draft
 source: SH-080058
 ---
 
-<script setup>
-import { axisRow, qd75PinoutSrc } from '../../../.vitepress/data/modules/qd75-wiring.ts'
-</script>
-
 # Driver wiring overview
 
 The QD75D4 does not drive the motor by itself: the module emits differential command pulses, the driver receives the pulses, amplifies them and turns the motor by exactly the number of pulses received. This page is the entry point of the driver-wiring group: it covers the common part every driver needs, a comparison table of the five documented drivers, and the hard rules before applying power.
+
+<DriverWiring driver="overview" />
 
 ## 1. What a pulse driver needs from the QD75D4
 
@@ -23,36 +21,9 @@ The QD75D4 does not drive the motor by itself: the module emits differential com
 
 Most important: **never wire a QD75D4 differential pair straight into a 24 V opto input**. A differential pair only goes into a differential input (line receiver). If an opto input must be used, that is open-collector mode and the current-limiting resistor / pull-up resistor specified in the driver manual must be followed exactly.
 
-## 2. Axis 1 terminal block of the QD75D4
+## 2. Terminals and diagram
 
-The table below is taken directly from the shared data file, not copied from the manual. Source: {{ qd75PinoutSrc }}.
-
-<table>
-  <thead>
-    <tr>
-      <th>Terminal</th>
-      <th>Signal (manual name)</th>
-      <th>Direction</th>
-      <th>Note</th>
-      <th>Source</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="row in axisRow" :key="row.qd75Terminal">
-      <td>{{ row.qd75Terminal }}</td>
-      <td>{{ row.qd75Signal }}</td>
-      <td>{{ row.direction }}</td>
-      <td>{{ row.note ?? '' }}</td>
-      <td>{{ row.src }}</td>
-    </tr>
-  </tbody>
-</table>
-
-Three points to remember when reading the table:
-
-- The third drawing names `PGO5` and `PGOCOM`; the manual prints **`PG05`** and **`PG0COM`** with a zero. This page uses the manual names.
-- `READY` 1A11 has its own common point `RDYCOM` 1A12 (SH-080058 §3.4.3 p.3-27); the table above lists only the seven terminals requested and does not replace the full pin table in the manual.
-- Axes 2–4 use the same structure with the prefixes `2A`, `2B`, `3A`, `3B`, `4A`, `4B` (SH-080058 §3.4.2 p.3-25).
+Axis 1 terminals and wiring rules live on [QD75D4 wiring](/en/q/qd75/wiring). The block diagram connecting the five drivers is shown above; this page does not repeat the pin table.
 
 ## 3. Comparison of the five documented drivers
 

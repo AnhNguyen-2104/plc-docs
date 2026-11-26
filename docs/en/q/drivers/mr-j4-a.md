@@ -57,10 +57,16 @@ Four mandatory notes:
 
 The wiring example in SH-080058 §3.4.1 p.3-24 is drawn for the MR-J3-A (`PULSE F+/F−` → `PP/PG`, `PULSE R+/R−` → `NP/NG`). The MR-J4-A manual at hand does **not** state that the MR-J3-A and MR-J4-A are pin-compatible; this page therefore uses only the MR-J4-A CN1 table and does not infer from the MR-J3-A.
 
-<WiringDiagram variant="mr-j4-a" />
+## Schematic
+
+<DriverWiring driver="mr-j4-a" />
+
+- The differential pair goes straight into the CN1 line receiver; do not wire it into any 24 V opto input of the driver.
+- `DOCOM` 46/47 and `DICOM` 20/21 are separate group commons — do not tie them together.
+- The diagram shows axis 1 only (1A15–1A18); axes 2–4 use the 1B/2A/2B prefixes with the same pin order.
 
 <ManualFigure
-  src="/img/manual/mrj4-cn1-wiring.jpg"
+  src="/img/manual/mrj4-cn1-wiring.webp"
   alt="MR-J4-A internal CN1 connection diagram: DICOM 20/21 input group, DOCOM 46/47 output group and RD 49"
   caption="CN1 internal wiring (24 V DC I/O circuit)"
   doc="SH-030143-C"

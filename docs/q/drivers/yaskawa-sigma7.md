@@ -31,7 +31,13 @@ Sigma-7 SGD7S bản analog/pulse (200 V) nhận xung lệnh vi sai qua `PULS//PU
 | 1, 2, 6, 10 | SG | Điểm chung tín hiệu | <SourceRef doc="sgd7s" page="4-38" /> |
 | 3, 13, 18 | PL1 / PL2 / PL3 | 12 V nội cho open collector | <SourceRef doc="sgd7s" page="4-37" /> |
 
-<WiringDiagram variant="yaskawa-sigma7" />
+## Sơ đồ đấu dây
+
+<DriverWiring driver="yaskawa-sigma7" />
+
+- `S-RDY` 29/30 là cặp ngõ ra cách ly đi thẳng vào photocoupler READY — không cấp +24 V vào `RDYCOM`.
+- `+24VIN` 47 lấy nguồn 24 V ngoài, điểm chung là `SG` 1/2/6/10; không dùng chung nguồn phanh.
+- `CLR` 15/14 chỉ đấu khi cần xoá lệch; cặp xung 7/8 và 11/12 không đảo cực.
 
 ## 2. Đấu với QD75D4
 

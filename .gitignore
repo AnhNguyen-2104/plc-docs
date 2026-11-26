@@ -7,3 +7,7 @@ _pv/
 .specs_extract.txt
 *.tmp
 .tmp/
+assets-src/
+.scratch/
+__pycache__/
+scripts/fetch-photos.log

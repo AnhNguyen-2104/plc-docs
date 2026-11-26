@@ -8,9 +8,15 @@ source: SH-080483, SH-080042, SH-080055, SH-080054, SH-080036
 
 # MELSEC Q module catalogue
 
-<ModuleMatrix />
+<ModuleSectionNav />
 
-This catalogue collects the Q-series modules this handbook can describe directly from the manufacturer manuals stored on disk, grouped by function: CPU, power supply, base unit, digital inputs, digital outputs, combined I/O, analog, counter, network and motion. Each row gives one key fact worth memorising, with its unit; the model name links to the page that covers the module. A row tagged "planned" is a module whose values could not be verified from the on-disk manuals, so only its qualitative role is kept.
+This catalogue collects the Q-series modules this handbook can describe directly from the manufacturer manuals stored on disk. Start with [Module assembly](/en/q/modules/assembly) to lay out the CPU, base, power supply and modules across slots; open [Module guides](/en/q/modules/guides) to look up a model; read [How to use](/en/q/modules/usage) on a first visit. The product photos below lead to each model's page. A row tagged "planned" is a module whose values could not be verified from the on-disk manuals, so only its qualitative role is kept.
+
+## Product photos
+
+Product photos are copyright Mitsubishi Electric and used for educational purposes; the source (the Mitsubishi FASpec page) is credited on each model's detail page. Models without a manufacturer photo are listed at the end of the grid.
+
+<ModuleGallery />
 
 ## Adding a module
 

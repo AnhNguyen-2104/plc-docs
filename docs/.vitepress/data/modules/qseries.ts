@@ -1,7 +1,22 @@
 import type { Loc } from '../families'
+import { modulePhotos } from '../photos'
 
 export type QKind = 'cpu' | 'power' | 'base' | 'input' | 'output' | 'combined' | 'analog' | 'counter' | 'network' | 'motion'
 
+export const Q_KINDS: QKind[] = ['cpu', 'power', 'base', 'input', 'output', 'combined', 'analog', 'counter', 'network', 'motion']
+
+export const Q_KIND_LABEL: Record<QKind, Loc> = {
+  cpu: { vi: 'CPU', en: 'CPU' },
+  power: { vi: 'Nguồn', en: 'Power supply' },
+  base: { vi: 'Base', en: 'Base unit' },
+  input: { vi: 'Ngõ vào số', en: 'Digital inputs' },
+  output: { vi: 'Ngõ ra số', en: 'Digital outputs' },
+  combined: { vi: 'Kết hợp vào/ra', en: 'Combined I/O' },
+  analog: { vi: 'Tương tự', en: 'Analog' },
+  counter: { vi: 'Đếm xung', en: 'Counter' },
+  network: { vi: 'Truyền thông', en: 'Network' },
+  motion: { vi: 'Chuyển động', en: 'Motion' }
+}
 export type QModule = {
   id: string
   model: string
@@ -12,9 +27,37 @@ export type QModule = {
   manual: { doc: string; page: string }
   page: string
   status: 'documented' | 'planned'
+  points?: number
+  current5v?: number | null
+  slots?: number
+  rated5v?: number
+  maxIoPoints?: number
+  maxModules?: number
+  integratedBase?: boolean
+  photo?: string
+  photoThumb?: string
+  photoAlt?: Loc
+  photoCredit?: string
 }
 
-export const qModules: QModule[] = [
+type QModuleDetail = Partial<
+  Pick<
+    QModule,
+    | 'points'
+    | 'current5v'
+    | 'slots'
+    | 'rated5v'
+    | 'maxIoPoints'
+    | 'maxModules'
+    | 'integratedBase'
+    | 'photo'
+    | 'photoThumb'
+    | 'photoAlt'
+    | 'photoCredit'
+  >
+>
+
+const baseModules: QModule[] = [
   {
     id: 'q00ujcpu',
     model: 'Q00UJCPU',
@@ -476,5 +519,141 @@ export const qModules: QModule[] = [
     manual: { doc: 'sh080058', page: '3-2' },
     page: '/q/qd75/',
     status: 'documented'
+  },
+  {
+    id: 'q63b',
+    model: 'Q63B',
+    name: { vi: 'Base mở rộng Q63B', en: 'Q63B extension base unit' },
+    kind: 'base',
+    role: { vi: 'Base mở rộng 3 khe, cần module nguồn riêng', en: '3-slot extension base, needs its own power supply' },
+    keySpec: { vi: '3 khe module I/O, dòng nội bộ 0,11 A', en: '3 I/O module slots, 0.11 A internal current' },
+    manual: { doc: 'sh080483', page: '8.3' },
+    page: '/q/system/power-and-base',
+    status: 'documented'
+  },
+  {
+    id: 'q65b',
+    model: 'Q65B',
+    name: { vi: 'Base mở rộng Q65B', en: 'Q65B extension base unit' },
+    kind: 'base',
+    role: { vi: 'Base mở rộng 5 khe, cần module nguồn riêng', en: '5-slot extension base, needs its own power supply' },
+    keySpec: { vi: '5 khe module I/O, dòng nội bộ 0,11 A', en: '5 I/O module slots, 0.11 A internal current' },
+    manual: { doc: 'sh080483', page: '8.3' },
+    page: '/q/system/power-and-base',
+    status: 'documented'
+  },
+  {
+    id: 'q68b',
+    model: 'Q68B',
+    name: { vi: 'Base mở rộng Q68B', en: 'Q68B extension base unit' },
+    kind: 'base',
+    role: { vi: 'Base mở rộng 8 khe, cần module nguồn riêng', en: '8-slot extension base, needs its own power supply' },
+    keySpec: { vi: '8 khe module I/O, dòng nội bộ 0,12 A', en: '8 I/O module slots, 0.12 A internal current' },
+    manual: { doc: 'sh080483', page: '8.3' },
+    page: '/q/system/power-and-base',
+    status: 'documented'
+  },
+  {
+    id: 'q612b',
+    model: 'Q612B',
+    name: { vi: 'Base mở rộng Q612B', en: 'Q612B extension base unit' },
+    kind: 'base',
+    role: { vi: 'Base mở rộng 12 khe, cần module nguồn riêng', en: '12-slot extension base, needs its own power supply' },
+    keySpec: { vi: '12 khe module I/O, dòng nội bộ 0,13 A', en: '12 I/O module slots, 0.13 A internal current' },
+    manual: { doc: 'sh080483', page: '8.3' },
+    page: '/q/system/power-and-base',
+    status: 'documented'
   }
 ]
+
+const details: Record<string, QModuleDetail> = {
+  q00ujcpu: { maxIoPoints: 256, maxModules: 16, integratedBase: true, current5v: 0.37 },
+  q03udv: { maxIoPoints: 4096, maxModules: 64, integratedBase: false, current5v: 0.58 },
+  q06udh: { maxIoPoints: 4096, maxModules: 64, integratedBase: false, current5v: 0.39 },
+
+  q61p: { rated5v: 6 },
+  q62p: { rated5v: 3 },
+  q63p: { rated5v: 6 },
+  q64p: { rated5v: 8.5 },
+
+  q33b: { slots: 3, current5v: 0.11 },
+  q35b: { slots: 5, current5v: 0.11 },
+  q38b: { slots: 8, current5v: 0.12 },
+  q312b: { slots: 12, current5v: 0.13 },
+  q63b: { slots: 3, current5v: 0.11 },
+  q65b: { slots: 5, current5v: 0.11 },
+  q68b: { slots: 8, current5v: 0.12 },
+  q612b: { slots: 12, current5v: 0.13 },
+
+  qx40: { points: 16, current5v: 0.05 },
+  qx10: { points: 16, current5v: 0.05 },
+  qx10ts: { points: 16, current5v: 0.05 },
+  qx28: { points: 8, current5v: 0.05 },
+  qx40s1: { points: 16, current5v: 0.06 },
+  qx40ts: { points: 16, current5v: 0.05 },
+  qx40h: { points: 16, current5v: 0.08 },
+  qx41: { points: 32, current5v: 0.075 },
+  qx41s1: { points: 32, current5v: 0.075 },
+  qx41s2: { points: 32, current5v: 0.075 },
+  qx42: { points: 64, current5v: 0.09 },
+  qx42s1: { points: 64, current5v: 0.09 },
+  qx50: { points: 16, current5v: 0.05 },
+  qx70: { points: 16, current5v: 0.055 },
+  qx70h: { points: 16, current5v: 0.08 },
+  qx71: { points: 32, current5v: 0.07 },
+  qx72: { points: 64, current5v: 0.085 },
+  qx80: { points: 16, current5v: 0.05 },
+  qx80ts: { points: 16, current5v: 0.05 },
+  qx80h: { points: 16, current5v: 0.08 },
+  qx81: { points: 32, current5v: 0.075 },
+  qx81s2: { points: 32, current5v: 0.075 },
+  qx82: { points: 64, current5v: 0.09 },
+  qx82s1: { points: 64, current5v: 0.09 },
+  qx90h: { points: 16, current5v: 0.08 },
+  qi60: { points: 16, current5v: 0.06 },
+
+  qy40p: { points: 16, current5v: 0.065 },
+  qy10: { points: 16, current5v: 0.43 },
+  qy10ts: { points: 16, current5v: 0.43 },
+  qy18a: { points: 8, current5v: 0.24 },
+  qy22: { points: 16, current5v: 0.25 },
+  qy40pts: { points: 16, current5v: 0.065 },
+  qy41h: { points: 32, current5v: 0.37 },
+  qy41p: { points: 32, current5v: 0.105 },
+  qy42p: { points: 64, current5v: 0.15 },
+  qy50: { points: 16, current5v: 0.08 },
+  qy68a: { points: 8, current5v: 0.11 },
+  qy70: { points: 16, current5v: 0.095 },
+  qy71: { points: 32, current5v: 0.15 },
+  qy80: { points: 16, current5v: 0.08 },
+  qy80ts: { points: 16, current5v: 0.08 },
+  qy81p: { points: 32, current5v: 0.095 },
+  qy82p: { points: 64, current5v: 0.16 },
+
+  qh42p: { points: 64, current5v: 0.13 },
+  qx41y41p: { points: 64, current5v: 0.13 },
+  qx48y57: { points: 16, current5v: 0.08 },
+
+  q64ad: { points: 16, current5v: 0.63 },
+  q62da: { points: 16, current5v: 0.33 },
+
+  qd62: { points: 16, current5v: 0.3 },
+  qd62e: { points: 16, current5v: 0.33 },
+
+  qj71c24n: { points: 32, current5v: 0.31 },
+  'qj71c24n-r4': { points: 32, current5v: 0.39 },
+  'qj71e71-100': { points: 32, current5v: 0.5 },
+  qj61bt11n: { points: 32, current5v: null },
+  'qj71lp21-25': { points: null, current5v: 0.55 },
+
+  qd75m1: { points: 32, current5v: 0.4 },
+  qd77ms4: { points: 32, current5v: 0.6 },
+  qd75d4: { points: 32, current5v: 0.82 },
+  qd75p4: { points: 32, current5v: 0.58 }
+}
+
+export const qModules: QModule[] = baseModules.map((module) => ({
+  ...module,
+  ...(details[module.id] ?? {}),
+  ...(modulePhotos[module.id] ?? {})
+}))

@@ -1,0 +1,62 @@
+---
+title: "QY10-TS — Module ra số"
+family: q
+module: module-qy10ts
+status: draft
+source: SH-080042
+---
+
+<ModulePage id="qy10ts" />
+
+## 1. Nhóm tín hiệu cần đấu
+
+QY10-TS là module 16 điểm tiếp điểm rơ le 24 VDC 2 A / 240 VAC 2 A. Tiếp điểm khô đóng cắt tải trực tiếp. Các nhóm tín hiệu cần đấu:
+
+| Nhóm | Tín hiệu | Hướng | Ghi chú |
+| --- | --- | --- | --- |
+| Ngõ ra | Y0…YF | module → tải | 16 điểm tiếp điểm rơ le, 24 VDC 2 A / 240 VAC 2 A, 8 A/common; bảng đầu cực ở SH-080042 §3-2 |
+| Cực chung | COM | — | COM của nhóm tiếp điểm; mỗi common 8 A |
+| Nguồn tải | 24 VDC 2 A hoặc 240 VAC 2 A | nguồn ngoài → tải | Nguồn tải riêng, có cầu chì |
+| Bảo vệ ngoài | cầu chì và bộ triệt xung ngoài | — | Lắp ngoài module, theo loại tải |
+
+## 2. Nguyên tắc đi dây
+
+- **Kiểu kết nối:** khối đấu dây lò xo (-TS) — 18 điểm đấu lò xo, một dây mỗi điểm (SH-080042 §3.2, p. 3-3).
+- Tiếp điểm khô không phân biệt cực tính; đóng cắt tải AC hoặc DC trong định mức.
+- Dây tải đi cách dây tín hiệu và dây động lực còn lại; không bó chung dây tải AC với dây tín hiệu DC.
+- Lắp cầu chì ngoài cho đường tải; module không thay thế cầu chì bảo vệ tải.
+- Không nhồi nhiều dây vào một điểm đấu; giữ một dây cho mỗi điểm Y.
+
+## 3. Sơ đồ tham chiếu
+
+QY10 là trang mẫu cho mạch ra tiếp điểm rơ le. [QY10-TS](/q/modules/m/qy10ts) dùng cùng mạch ra, chỉ khác khối đấu dây lò xo. Không áp dụng sơ đồ này cho ngõ ra TRIAC hay transistor.
+
+## 4. Sơ đồ mạch vào/ra của hãng
+
+Hình dưới trích bảng khối đấu dây của hãng cho QY10-TS tại SH-080042 §3.2 (tr. 3-3): <SourceRef doc="sh080042" page="3-3" />.
+
+<ManualFigure
+  src="/img/manual/qy10ts-terminals.webp"
+  alt="Bảng khối đấu dây QY10-TS: TB1–TB18 và tên tín hiệu"
+  caption="Bảng khối đấu dây của hãng cho QY10-TS — khối đấu dây lò xo (-TS)"
+  doc="SH-080042"
+  section="§3.2"
+  page="3-3"
+  pdf-url="https://dl.mitsubishielectric.com/dl/fa/document/manual/plc/sh080042/sh080042ah.pdf"
+/>
+
+## 5. Đấu nối thiết bị ngoài
+
+- Tải cảm AC hoặc DC: lắp bộ triệt xung ngoài phù hợp (snubber RC hoặc varistor) song song tải theo khuyến cáo nhà sản xuất tải.
+- Lắp cầu chì ngoài theo dòng tải; kiểm tra tải nhỏ nhất 5 VDC 1 mA.
+
+## 6. Checklist trước khi cấp điện
+
+- [ ] Đã cắt nguồn trước khi đấu dây.
+- [ ] COM của nhóm tiếp điểm đấu đúng.
+- [ ] Nguồn tải đúng 24 VDC 2 A / 240 VAC 2 A.
+- [ ] Đã lắp cầu chì và bộ triệt xung ngoài cho tải.
+- [ ] Dòng từng điểm và tổng dòng mỗi common nằm trong định mức 8 A/common.
+- [ ] Đã thử từng điểm bằng tay trước khi chạy tự động.
+- [ ] Dây tải đi cách dây tín hiệu và dây động lực còn lại.
+- [ ] Không nhồi nhiều dây vào một điểm đấu.

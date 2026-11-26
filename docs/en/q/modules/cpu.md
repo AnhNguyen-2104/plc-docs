@@ -1,14 +1,28 @@
 ---
-title: MELSEC Q CPUs — Q00UJCPU, Q03UDV, Q06UDH
+title: MELSEC Q CPUs — module list
 family: q
 module: q-series
 status: draft
 source: SH-080483, SH-080807
 ---
 
-# MELSEC Q CPUs — Q00UJCPU, Q03UDV, Q06UDH
+# MELSEC Q CPUs — module list
 
-The three CPUs below represent three tiers of the Universal model QCPU range: Q00UJCPU is the integrated power-supply-and-base unit for small systems, Q03UDVCPU adds built-in Ethernet, and Q06UDHCPU doubles the program capacity but has no built-in Ethernet. Choose on three numbers: program capacity (steps), maximum I/O points, and built-in programming ports.
+<ModulePhoto id="q00ujcpu" />
+
+<ModulePhoto id="q03udv" />
+
+<ModulePhoto id="q06udh" />
+
+The three CPUs below represent three tiers of the Universal model QCPU range: [Q00UJCPU](/en/q/modules/m/q00ujcpu) is the integrated power-supply-and-base unit for small systems, [Q03UDVCPU](/en/q/modules/m/q03udv) adds built-in Ethernet, and [Q06UDHCPU](/en/q/modules/m/q06udh) doubles the program capacity but has no built-in Ethernet. Choose on three numbers: program capacity (steps), maximum I/O points, and built-in programming ports.
+
+## Module list
+
+| Model | Role |
+| --- | --- |
+| [Q00UJCPU](/en/q/modules/m/q00ujcpu) | CPU with integrated power supply and base for small systems |
+| [Q03UDV](/en/q/modules/m/q03udv) | Universal CPU with built-in Ethernet |
+| [Q06UDH](/en/q/modules/m/q06udh) | High-performance Universal CPU without built-in Ethernet |
 
 ## 1. Quick comparison
 
@@ -38,7 +52,7 @@ On Q03UDV the 100/10 Mbps Ethernet port carries program transfer and monitoring 
 The Universal model QCPU front (Q02U/Q03UD/Q04UDH…) showing the ports, pins, LEDs and battery cover:
 
 <ManualFigure
-  src="/img/manual/qcpu-module.jpg"
+  src="/img/manual/qcpu-module.webp"
   alt="Universal model Q CPU front: USB/RS-232 ports, RUN/ERR LEDs, battery cover and switches"
   caption="Universal model Q CPU front: ports, LEDs and battery cover"
   doc="SH-080483"

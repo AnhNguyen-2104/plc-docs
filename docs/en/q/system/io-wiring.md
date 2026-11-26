@@ -17,7 +17,7 @@ MELSEC Q inputs and outputs are both isolated — by a photocoupler or a relay c
 The manufacturer's figure for the QX40 input circuit: photocoupler, series resistor, and a positive `COM` tied to `+24 V`.
 
 <ManualFigure
-  src="/img/manual/qx40-input-circuit.jpg"
+  src="/img/manual/qx40-input-circuit.webp"
   alt="QX40 positive-common input circuit: photocoupler, 4.7 kΩ resistor and 24 VDC"
   caption="QX40 input circuit: photocoupler, positive common"
   doc="SH-080042"
@@ -31,7 +31,7 @@ The manufacturer's figure for the QX40 input circuit: photocoupler, series resis
 The manufacturer's figure for the QX80 input circuit: the same photocoupler, but `COM` ties to `0 V` (negative common).
 
 <ManualFigure
-  src="/img/manual/qx80-input-circuit.jpg"
+  src="/img/manual/qx80-input-circuit.webp"
   alt="QX80 negative-common input circuit: photocoupler with COM at 0 V"
   caption="QX80 input circuit: photocoupler, negative common"
   doc="SH-080042"
@@ -45,7 +45,7 @@ The manufacturer's figure for the QX80 input circuit: the same photocoupler, but
 The manufacturer's figure for the QY10 relay output circuit: contact, load and the external surge suppressor.
 
 <ManualFigure
-  src="/img/manual/qy10-output-circuit.jpg"
+  src="/img/manual/qy10-output-circuit.webp"
   alt="QY10 relay output circuit: contact, AC load and surge suppressor"
   caption="QY10 output circuit: relay contact, load"
   doc="SH-080042"
@@ -59,7 +59,7 @@ The manufacturer's figure for the QY10 relay output circuit: contact, load and t
 The manufacturer's figure for the QY40P transistor output circuit: sink transistor, zener diode and external fuse.
 
 <ManualFigure
-  src="/img/manual/qy40p-output-circuit.jpg"
+  src="/img/manual/qy40p-output-circuit.webp"
   alt="QY40P sink transistor output circuit: zener, load and fuse"
   caption="QY40P output circuit: sink transistor, zener"
   doc="SH-080042"
@@ -73,7 +73,7 @@ The manufacturer's figure for the QY40P transistor output circuit: sink transist
 The QD62 is a 24 V DC-input counter module; the differential pairs A+/A−, B+/B− belong to the QD62D terminal table (RS-422-A line receiver, AM26C32), and the manual assigns no terminal to a Z phase. On a QD62 a 24 V open-collector encoder lands on the 24 V input terminals; a 5 V line-driver encoder uses the differential pairs and runs in a shielded twisted-pair cable.
 
 <ManualFigure
-  src="/img/manual/qd62-line-driver.jpg"
+  src="/img/manual/qd62-line-driver.webp"
   alt="Line-driver encoder wired to QD62 through the A+/A− and B+/B− differential pairs"
   caption="Line-driver encoder to QD62: A+/A− and B+/B− differential pairs"
   doc="SH-080036"
@@ -89,7 +89,7 @@ The QD62D has no Z terminal, so the Z+/Z− pair does not appear in the terminal
 Channel 1 of the Q64AD uses `V+` (terminal 1) and `V−` (terminal 2); for a current input `V+` is also tied to `I+` (terminal 3). The signal pair must be a shielded twisted-pair cable, and the screen is earthed at one point on the PLC side only.
 
 <ManualFigure
-  src="/img/manual/q64ad-wiring.jpg"
+  src="/img/manual/q64ad-wiring.webp"
   alt="Q64AD wiring: V+, V−, I+, A.G., SLD and shielded twisted pair"
   caption="Q64AD analog input wiring: V+/V−, I+, A.G., shielded twisted pair"
   doc="SH-080055"
@@ -144,7 +144,7 @@ The QY18A is an 8-point variant with independent points, 2 A per point and 8 A f
 
 > **Note on the 0.5 A/point rating.** The QY40P manual on disk states 0.1 A/point and 1.6 A/common; it gives no 0.5 A/point rating for the QY40P. The 0.5 A/point figure belongs to the QD62 coincidence output (12/24 VDC, 0.5 A/point, 2 A/common — SH-080036 §3.1 p.3-2), not to a transistor output module.
 
-## 7. Wiring checklist
+## 7. Wiring checklist {#wiring-checklist}
 
 - [ ] Confirm the module's common type before wiring `COM`: QX40 → `+24 V`, QX80 → `0 V`.
 - [ ] Measure the 24 VDC supply at the terminal; it must stay within +20/−15% of 24 V.
