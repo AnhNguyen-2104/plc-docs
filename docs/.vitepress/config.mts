@@ -1,6 +1,11 @@
 import { defineConfig } from 'vitepress'
 import { sidebar } from './sidebar'
 
+const HOST = 'https://anhnguyen-2104.github.io/plc-docs/'
+const FALLBACK_DESCRIPTION = {
+  vi: 'Cẩm nang lập trình PLC — MELSEC Q, module vị trí QD75D4, song ngữ Việt/Anh.',
+  en: 'A PLC programming handbook — MELSEC Q, QD75D4 positioning module, bilingual Vietnamese/English.'
+}
 export default defineConfig({
   title: 'PLC Handbook',
   titleTemplate: ':title | PLC Handbook',
@@ -23,7 +28,20 @@ export default defineConfig({
     ['meta', { property: 'og:image:width', content: '1200' }],
     ['meta', { property: 'og:image:height', content: '630' }]
   ],
-  sitemap: { hostname: 'https://anhnguyen-2104.github.io/plc-docs/' },
+  sitemap: { hostname: HOST },
+  transformPageData(pageData) {
+    const rel = pageData.relativePath.replace(/\.md$/, '').replace(/(^|\/)index$/, '$1')
+    const url = new URL(rel, HOST).href
+    const locale = pageData.relativePath.startsWith('en/') ? 'en' : 'vi'
+    const description = pageData.description || FALLBACK_DESCRIPTION[locale]
+    pageData.frontmatter.head ??= []
+    pageData.frontmatter.head.push(
+      ['meta', { property: 'og:title', content: pageData.title || 'PLC Handbook' }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:url', content: url }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }]
+    )
+  },
   vite: { build: { reportCompressedSize: false } },
   markdown: {
     config(md) {

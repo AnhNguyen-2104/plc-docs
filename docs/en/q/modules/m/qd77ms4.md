@@ -58,7 +58,7 @@ Source: <SourceRef doc="ib0300185" page="1.1.6" />.
 
 ### Start sequence
 
-```il
+```text
 (* Write the positioning data number into Cd.3 of axis 1 (1500) *)
 LD   M8000
 TO   U0\G1500  K100  K1    (* 1500 = Cd.3; K100 = run positioning data No. 100 *)

@@ -32,7 +32,7 @@ source: SH-080055, SH-080054
 
 Q64AD sits in the first slot (I/O number 0000 → `U0`) and Q62DA in the next (`U1`). The module's `Y` address shifts with the slot; here Q64AD uses `Y0009` and Q62DA uses `Y0019` for Operating condition setting request.
 
-```il
+```text
 ; --- Q64AD: enable A/D on CH1..CH4, continuous sampling ---
 |--[SM400]-----[TO  U0\G0  K000F  K1]--|  ; b0..b3 = 1: enable A/D on CH1..CH4 (Un\G0)
 |--[SM400]-----[TO  U0\G9  K0000  K1]--|  ; 0: sampling, no averaging (Un\G9)

@@ -32,7 +32,7 @@ source: SH-080055, SH-080054
 
 Q64AD ở khe đầu (I/O số 0000 → `U0`), Q62DA ở khe kế (`U1`). Địa chỉ `Y` của mỗi module dịch theo khe; ở đây Q64AD dùng `Y0009`, Q62DA dùng `Y0019` cho tín hiệu Operating condition setting request.
 
-```il
+```text
 ; --- Q64AD: bật A/D cho CH1..CH4, lấy mẫu liên tục ---
 |--[SM400]-----[TO  U0\G0  K000F  K1]--|  ; b0..b3 = 1: bật A/D CH1..CH4 (Un\G0)
 |--[SM400]-----[TO  U0\G9  K0000  K1]--|  ; 0: sampling, không lấy trung bình (Un\G9)

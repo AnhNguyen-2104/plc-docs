@@ -85,7 +85,7 @@ Five rungs: write Pr.1–Pr.5, turn on Y0/wait for X0, read back and enable the 
 
 A minimal interlock example, placed ahead of every run command:
 
-```il
+```text
 LD   X<emergency stop NC>      (* loss of signal = stop *)
 AND  X<limit +>
 AND  X<limit ->

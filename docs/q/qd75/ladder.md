@@ -85,7 +85,7 @@ Năm nhánh: ghi Pr.1–Pr.5, bật Y0/chờ X0, đọc lại và cho phép ch�
 
 Ví dụ liên động tối thiểu, đặt trước mọi lệnh chạy:
 
-```il
+```text
 LD   X<dừng khẩn NC>      (* mất tín hiệu = dừng *)
 AND  X<giới hạn +>
 AND  X<giới hạn ->

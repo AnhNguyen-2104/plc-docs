@@ -58,7 +58,7 @@ Nguồn: <SourceRef doc="ib0300185" page="1.1.6" />.
 
 ### Trình tự khởi động
 
-```il
+```text
 (* Ghi so hieu du lieu vi tri can chay vao Cd.3 truc 1 (1500) *)
 LD   M8000
 TO   U0\G1500  K100  K1    (* 1500 = Cd.3; K100 = chay positioning data so 100 *)

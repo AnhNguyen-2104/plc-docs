@@ -55,7 +55,7 @@ export function sidebar(locale: 'vi' | 'en') {
                 family.id === 'q' && page.slug === 'guides'
                   ? {
                       text: page.title[locale],
-                      link: `${prefix}/${family.id}/${module.slug}/${page.slug}/`,
+                      link: `${prefix}/${family.id}/${module.slug}/${page.slug}`,
                       collapsed: true,
                       items: buildKindTree()
                     }
