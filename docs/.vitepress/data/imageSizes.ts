@@ -86,7 +86,7 @@ export const imageSizes: Record<string, [number, number]> = {
   '/img/modules/q00ujcpu-thumb.webp': [160, 120],
   '/img/modules/q00ujcpu.webp': [640, 480],
   '/img/modules/q03udv-thumb.webp': [160, 160],
-  '/img/modules/q03udv.webp': [480, 480],
+  '/img/modules/q03udv.webp': [640, 640],
   '/img/modules/q06udh-thumb.webp': [160, 120],
   '/img/modules/q06udh.webp': [640, 480],
   '/img/modules/q312b-thumb.webp': [160, 120],

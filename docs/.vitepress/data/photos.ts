@@ -159,7 +159,7 @@ export const modulePhotos: Record<string, ModulePhotoFields> = {
       vi: 'Q03UDV — ảnh sản phẩm chính hãng',
       en: 'Q03UDV — manufacturer product photo'
     },
-    photoCredit: 'https://www.mitsubishielectric.com/fa/products/faspec/point.page?kisyu=/plcq&formNm=Q03UDVCPU&popup=1'
+    photoCredit: 'https://mitsubishi-electric-eshop.mee.com/mee/FA_IA/en/EUR/Catalogue/PLC/PLC-Modular/CPU-Module/Q03UDVCPU/p/000000000000266161'
   },
   'q62p': {
     photo: '/img/modules/q62p.webp',
